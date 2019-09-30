@@ -1,3 +1,9 @@
+---
+layout: default
+title: FAQs
+permalink: /faqs
+---
+
 Below are some FAQs. If you would like to add a question or elaborate on an answer, submit a pull request. 
 
 You may also enjoy the [Solid tag on Stackoverflow](https://stackoverflow.com/questions/tagged/solid).
