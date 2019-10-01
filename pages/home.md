@@ -35,6 +35,7 @@ permalink: /
         <div class="card-header">
           <i class="fas fa-2x fa-tools"></i>
           <span class="card-title">Build on Solid</span>
+          <img src="{{site.baseurl}}/assets/img/flowchart_develop-an-app.svg" alt="Develop your own solid app" />
         </div>
         <div class="card-body">
           <p>
