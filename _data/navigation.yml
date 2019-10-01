@@ -20,7 +20,7 @@
       link: building-a-solid-server
     - name: Running a Solid Server
       link: running-a-solid-server
-    - name: Solid and Linked Data vocabuaries
+    - name: Solid vocabuaries
       link: vocabularies
 - name: Use Solid
   link: /Use-Solid
