@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<!--
+	Solid by Inrupt
+-->
+<html>
+  <head>
+  <title>Solid</title>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, user-scalable=no"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="/favicon.ico?"
+  />
+  <link
+    rel="stylesheet"
+    href="/assets/css/flexboxgrid.min.css"
+  />
+  <link rel="stylesheet" href="/assets/main.css" />
+</head>
+
+
+  <body>
+    <div class="internal">
+      <header class="internal-header">
+    <div class="solid-nav">
+  <a href="/" class="logo"
+    ><img src="/assets/img/solid-emblem.svg"
+  /> Solid</a>
+  <nav class="menu">
+    <ul class="links">
+      
+      <li >
+        <a  href="/use-solid"  aria-label=Use Solid>Use Solid</a>
+        
+      </li>
+      
+      <li >
+        <a  href="/for-developers"  aria-label=For Developers>For Developers</a>
+        
+      </li>
+      
+      <li >
+        <a  href="/for-enterprises"  aria-label=For Enterprises>For Enterprises</a>
+        
+      </li>
+      
+      <li >
+        <a  href="/faqs"  aria-label=FAQ>FAQ</a>
+        
+      </li>
+      
+    </ul>
+  </nav>
+  <div class="burger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+</div>
+
+</header>
+      <main>
+        <div class="page-content">
+          <section class="row solid-post">
+    <nav class="solid-breadcrumbs col-xs-12">
+    
+    <div class="solid-breadcrumbs-container row">
+        <ul class="col-xs-10 col-sm-12">
+            <li><a href="/">Home</a> ></li>
+            
+            
+            <li>
+                <a
+                    href="/for-developers">
+                    For developers ></i>
+                </a>
+            </li>
+            
+            
+            
+            <li>
+                <a
+                    href="/for-developers/apps">
+                    Apps ></i>
+                </a>
+            </li>
+            
+            
+            
+            <li>
+                <a
+                    href="/for-developers/apps/vocabularies">
+                    Vocabularies ></i>
+                </a>
+            </li>
+            
+            
+            
+            <li>
+                <a
+                    href="/for-developers/apps/vocabularies/well-known">
+                    Well known ></i>
+                </a>
+            </li>
+            
+            
+            
+            <li>Core</li>
+            
+            
+        </ul>
+        <div class="menu-mobile menu-mobile-aside col-xs-2">
+            <button><i class="far"></i></button>
+        </div>
+    </div>
+</nav>
+    <article class="post h-entry col-xs-12 col-sm-8" itemscope itemtype="http://schema.org/BlogPosting">
+
+        <div class="post-content e-content" itemprop="articleBody">
+            <p>The following vocabularies are essential, because they describe… vocabularies. Let’s get meta for a moment.</p>
+
+<h1 id="-rdf"><a id="rdf"></a> RDF</h1>
+
+<h2 id="prefix-and-namespace">Prefix and namespace</h2>
+<ul>
+  <li>rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#</li>
+</ul>
+
+<h2 id="description">Description</h2>
+
+<p>RDF and RDFS are the foundation on which all other vocabularies are built. They enable the description of a graph of <a href="http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resources</a>, each identified by an IRI.</p>
+
+<p>RDF graphs are based on the notion of <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">rdf:statement</a>: a statement can be compared to a very simple sentence &lt;subject, verb, complement&gt;, e.g. <code class="highlighter-rouge">Charlie is a Person</code>. In the RDF terminology, we say that a <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">rdf:statement</a> has an <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject">rdfsubject</a> (the resource the statement is about), a <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#property">rdf:property</a> (the verb of the sentence, defining a characteristic of the subject) and an <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#object">rdf:object</a> (the value for the property for the subject). Therefore, the sentence <code class="highlighter-rouge">Charlie is a Person</code> could be expressed in RDF as <code class="highlighter-rouge">[ex](http://example.org/ns#):Charlie rdf:type [ex](http://example.org/ns#):Person</code>, where <code class="highlighter-rouge">&lt;http://example.org/ns#Charlie&gt;</code> is the subject, <code class="highlighter-rouge">rdf:type</code> the property, and <code class="highlighter-rouge">&lt;http://example.org/ns#Person&gt;</code> the object. Subject and predicate are necessarily individuals identified with an IRI, while the object is either an individual with an IRI, or a literal with a value (e.g. string or int).</p>
+
+<h2 id="main-concepts">Main concepts</h2>
+
+<ul>
+  <li>Typing a Resource: <code class="highlighter-rouge">&lt;resource IRI&gt; rdf:type &lt;type IRI&gt;</code>, where the type is a <a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:class</a></li>
+</ul>
+
+<h1 id="-rdfs"><a id="rdfs"></a> RDFS</h1>
+
+<h2 id="prefix-and-namespace-1">Prefix and namespace</h2>
+<ul>
+  <li>rdfs: http://www.w3.org/2000/01/rdf-schema#</li>
+</ul>
+
+<h2 id="description-1">Description</h2>
+
+<p>RDFS enables to build hierarchies of concepts by introducing the notion of <a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:class</a>, and the <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a> property. Similarly, <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:properties</a> can be organized hierarchically by using the <a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a> property. RDFS also enables describing the types that can be attached to <a href="http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:resources</a> when they are associated with a <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:property</a> by specifying the property’s <a href="http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a> (the type of its subject) and <a href="http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a> (the type of the object). For instance, let’s imagine <code class="highlighter-rouge">ex:hasAuthor</code>, a property expressing the fact that someone is the author of a book. If we state that <code class="highlighter-rouge">ex:hasAuthor rdfs:domain ex:Book</code> and that <code class="highlighter-rouge">ex:hasAuthor rdfs:range ex:Person</code>, effectively what we say is that anytime we find a statement such as <code class="highlighter-rouge">ex:aBook ex:hasAuthor ex:someone</code>, we know that <code class="highlighter-rouge">ex:aBook</code> is of type <code class="highlighter-rouge">ex:Book</code>, and that <code class="highlighter-rouge">ex:someone</code> is a <code class="highlighter-rouge">ex:Person</code></p>
+
+<h2 id="main-concepts-1">Main concepts</h2>
+
+<ul>
+  <li>Subclassing: <code class="highlighter-rouge">&lt;subclass IRI&gt; rdfs:subClassOf &lt;class IRI&gt;</code></li>
+  <li>Specifying a property’s domain: <code class="highlighter-rouge">&lt;property IRI&gt; rdfs:domain &lt;type IRI&gt;</code></li>
+  <li>Specifying a property’s range: <code class="highlighter-rouge">&lt;property IRI&gt; rdfs:range &lt;type IRI&gt;</code></li>
+  <li>Adding a human-readable name to a concept identified by an IRI: <code class="highlighter-rouge">&lt;IRI&gt; rdfs:label "Some name"</code></li>
+  <li>Adding a longer comment describing a concept: <code class="highlighter-rouge">&lt;IRI&gt; rdfs:comment "Some comment"</code></li>
+  <li>Redirecting to another information source: <code class="highlighter-rouge">&lt;IRI&gt; rdfs:seeAlso &lt;IRI&gt;</code></li>
+</ul>
+
+<h1 id="-owl"><a id="owl"></a> OWL</h1>
+
+<p><a href="/for-developers/apps/vocabularies/well-known">Back to the vocabularies index</a></p>
+
+        </div>
+
+        <a class="u-url" href="/for-developers/apps/vocabularies/well-known/core" hidden></a>
+    </article>
+    <aside class="col-xs-12 col-sm-4 right-side">
+        
+        <nav class="aside-menu">
+            
+                
+                    
+
+<ul>
+    
+        
+            <li>
+                
+                    <h4><a href="/for-developers/apps/first-app">Writing a Solid application</a></h4>
+                
+            </li>
+        
+    
+        
+            
+            <li> 
+                <h4>Vocabularies</h4>
+                <!-- This is for categories with sub-categories -->
+                
+                    
+                        <ul>
+                            <li>
+                                
+                                    
+                                        <h5><a href="/for-developers/apps/vocabularies">Overview</a></h5>
+                                                                             
+                                
+                            </li>
+                        </ul>
+                    
+                        <ul>
+                            <li>
+                                
+                                    
+                                        <h5><a href="/for-developers/apps/vocabularies/create/quickstart">Quickstart</a></h5>
+                                                                             
+                                
+                            </li>
+                        </ul>
+                    
+                        <ul>
+                            <li>
+                                
+                                    <h5><a href="#"">Discover</a></h5>
+                                    <ul>
+                                        
+                                            
+                                        
+                                            
+                                        
+                                            
+                                        
+                                            
+                                        
+                                            
+                                        
+                                            
+                                                <li >
+                                                    <a href="/for-developers/apps/vocabularies/well-known">Well-known vocabularies</a>
+                                                </li>                                    
+                                            
+                                        
+                                            
+                                                <li >
+                                                    <a href="/for-developers/apps/vocabularies/well-known/common">Common vocabularies</a>
+                                                </li>                                    
+                                            
+                                        
+                                            
+                                                <li >
+                                                    <a href="/for-developers/apps/vocabularies/well-known/technical">Vocabularies describing technical standards</a>
+                                                </li>                                    
+                                            
+                                        
+                                            
+                                                <li  class="active">
+                                                    <a href="/for-developers/apps/vocabularies/well-known/core">Core vocabularies for Linked Data</a>
+                                                </li>                                    
+                                            
+                                        
+                                            
+                                                <li >
+                                                    <a href="/for-developers/apps/vocabularies/well-known/solid">Vocabularies essential to solid</a>
+                                                </li>                                    
+                                            
+                                        
+                                            
+                                                <li >
+                                                    <a href="/for-developers/apps/vocabularies/discover">Discover new vocabularies</a>
+                                                </li>                                    
+                                            
+                                        
+                                            
+                                        
+                                            
+                                        
+                                            
+                                        
+                                            
+                                        
+                                            
+                                        
+                                            
+                                        
+                                            
+                                        
+                                            
+                                        
+                                            
+                                        
+                                            
+                                        
+                                    </ul>
+                                
+                            </li>
+                        </ul>
+                    
+                        <ul>
+                            <li>
+                                
+                                    
+                                        <h5><a href="/for-developers/apps/vocabularies/create">Create</a></h5>
+                                                                             
+                                
+                            </li>
+                        </ul>
+                    
+                        <ul>
+                            <li>
+                                
+                                    
+                                        <h5><a href="/for-developers/apps/vocabularies/code">Code</a></h5>
+                                                                             
+                                
+                            </li>
+                        </ul>
+                    
+                        <ul>
+                            <li>
+                                
+                                                                             
+                                
+                            </li>
+                        </ul>
+                      
+                
+            </li>
+        
+    
+        
+            <li>
+                
+                    <h4><a href="/for-developers/apps/common-patterns">Common patterns</a></h4>
+                
+            </li>
+        
+    
+        
+            <li>
+                
+                    <h4><a href="/for-developers/apps/tools">Tools and libraries</a></h4>
+                
+            </li>
+        
+    
+</ul>
+                
+            
+        </nav>
+    </aside>
+</section>
+        </div>
+      </main>
+      <footer class="solid-footer">
+  <nav>
+    <ul class="solid-footer-menu row">
+      <li class="col-xs-12 col-sm-3">
+        <ul class="sub-links">
+          <li>
+            <span class="home-link">
+              <a href="/" title="Homepage">
+                Home
+              </a>
+            </span>
+          </li>
+          <li>
+            <a href="/use-solid" title="Applicable licenses">
+              Use Solid
+            </a>
+          </li>
+          <li>
+            <a href="/implement" title="Get support to implement Solid for your organisation">
+              Implement Solid
+            </a>
+          </li>  
+          <li>
+            <a href="/team" title="How and when can you use the Solid logo?">
+              Team
+            </a>
+          </li>
+          <li>
+            <a href="/faqs" title="Frequently asked questions">
+              FAQs
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="col-xs-12 col-sm-3">
+        <ul class="sub-links">
+          <li>
+            <h3>What's New</h3>
+          </li>
+          <li>
+            <a href="/this-week-in-solid" title="Weekly updates of everything that's happening in Solid">
+              This Week in Solid
+            </a>
+          </li>
+          <li>
+            <a href="/press" title="How and when can you use the Solid logo?">
+              Press
+            </a>
+          </li>        
+          <li>
+            <a href="/events" title="What Solid-related events are planned?">
+              Solid Events
+            </a>
+          </li>  
+        </ul>
+      </li>    
+      <li class="col-xs-12 col-sm-3">
+        <ul class="sub-links">
+          <li>
+            <h3>
+              <a href="/for-developers" title="Information for developers">
+                For Developers
+              </a>
+            </h3>
+          </li>    
+          <li>
+            <a href="/for-developers/apps" title="Tutorials about writing Solid applications">
+              Writing apps
+            </a>
+          </li>
+          <li>
+            <a href="/for-developers/pod-server" title="Tutorials on runnign your own Pod server">
+              Running a Pod server
+            </a>
+          </li>
+          <li>
+            <a href="/funding" title="Where to find funding for building things with Solid">
+              Funding
+            </a>
+          </li>
+          <li>
+            <a href="https://forum.solidproject.org" title="Forum">
+              Forum
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="col-xs-12 col-sm-3">
+        <ul class="sub-links">
+          <li>
+            <h3>More</h3>
+          </li>
+          <li>
+            <a href="/standardisation" title="The process of standardising Solid">
+              Standardisation
+            </a>
+          </li>
+          <li>
+            <a href="/license" title="The licenses we use">
+              License
+            </a>
+          </li>    
+          <li>
+            <a href="/logo-usage-guidelines" title="How and when can you use the Solid logo?">
+              Logo Usage Guidelines
+            </a>
+          </li>
+        </ul>
+      </li>    
+    </ul>
+  </nav>
+  <div class="solid-bottom-footer row">
+    <div class="solid-copyright col-xs-12">
+      <img src="/assets/img/solid-emblem.svg" />
+      <nav>
+        <ul>
+          <li>
+            <a href="mailto:info@solidproject.org">info@solidproject.org</a>
+          </li>
+          <li>
+            <a href="https://github.com/solid/" title="Solid on GitHub">
+              <img
+                src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/github.svg"
+                alt="GitHub"
+                class="icon"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/project_solid" title="Solid on Twitter">
+              <img
+                src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/twitter.svg"
+                alt="Twitter"
+                class="icon"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+      <script src="/assets/js/app.js"></script>
+    </div>
+  </body>
+</html>

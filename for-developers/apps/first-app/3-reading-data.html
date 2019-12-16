@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!--
+	Solid by Inrupt
+-->
+<html>
+  <head>
+  <title>Solid</title>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, user-scalable=no"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="/favicon.ico?"
+  />
+  <link
+    rel="stylesheet"
+    href="/assets/css/flexboxgrid.min.css"
+  />
+  <link rel="stylesheet" href="/assets/main.css" />
+</head>
+
+
+  <body>
+    <div class="internal">
+      <header class="internal-header">
+    <div class="solid-nav">
+  <a href="/" class="logo"
+    ><img src="/assets/img/solid-emblem.svg"
+  /> Solid</a>
+  <nav class="menu">
+    <ul class="links">
+      
+      <li >
+        <a  href="/use-solid"  aria-label=Use Solid>Use Solid</a>
+        
+      </li>
+      
+      <li >
+        <a  href="/for-developers"  aria-label=For Developers>For Developers</a>
+        
+      </li>
+      
+      <li >
+        <a  href="/for-enterprises"  aria-label=For Enterprises>For Enterprises</a>
+        
+      </li>
+      
+      <li >
+        <a  href="/faqs"  aria-label=FAQ>FAQ</a>
+        
+      </li>
+      
+    </ul>
+  </nav>
+  <div class="burger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+</div>
+
+</header>
+      <main>
+        <div class="page-content">
+          <section class="row solid-post">
+    <nav class="solid-breadcrumbs col-xs-12">
+    
+    <div class="solid-breadcrumbs-container row">
+        <ul class="col-xs-10 col-sm-12">
+            <li><a href="/">Home</a> ></li>
+            
+            
+            <li>
+                <a
+                    href="/for-developers">
+                    For developers ></i>
+                </a>
+            </li>
+            
+            
+            
+            <li>
+                <a
+                    href="/for-developers/apps">
+                    Apps ></i>
+                </a>
+            </li>
+            
+            
+            
+            <li>
+                <a
+                    href="/for-developers/apps/first-app">
+                    First app ></i>
+                </a>
+            </li>
+            
+            
+            
+            <li>3 reading data</li>
+            
+            
+        </ul>
+        <div class="menu-mobile menu-mobile-aside col-xs-2">
+            <button><i class="far"></i></button>
+        </div>
+    </div>
+</nav>
+    <article class="post h-entry col-xs-12 col-sm-8" itemscope itemtype="http://schema.org/BlogPosting">
+
+        <div class="post-content e-content" itemprop="articleBody">
+            <p>(<a href="https://gitlab.com/vincenttunru/notepod/commit/5c534abdd2d6ed18be8ddc256427fb7bc0baae71">This step as a Git commit.</a>)</p>
+
+<p>We’ve <a href="/for-developers/apps/first-app/1-authentication">got the user’s WebID</a> and we
+<a href="/for-developers/apps/first-app/2-understanding-solid">know that it points to a
+Document</a>; it’s time we actually
+read some data from that Document!</p>
+
+<p>We will be using <a href="https://vincenttunru.gitlab.io/tripledoc/">Tripledoc</a>, which was designed
+specifically for this tutorial. Other libraries exist, such as
+<a href="https://www.npmjs.com/package/ldflex">ldflex</a>, <a href="https://www.npmjs.com/package/rdf-ext">rdf-ext</a> and
+<a href="https://www.npmjs.com/package/rdflib">rdflib</a>; Tripledoc has a more limitied scope designed to aid
+“thinking in Solid”. If, at some point in the future, you want to start combining many different
+data sources, you might want to consider investigating those alternative libraries.</p>
+
+<p>We will try to get the user’s name as follows:</p>
+
+<ol>
+  <li>Fetch the Document living at their WebID.</li>
+  <li>From that Document, read the Subject representing the current user.</li>
+  <li>Get the <code class="highlighter-rouge">foaf:name</code> of that Subject, if set.</li>
+</ol>
+
+<p>In code, that looks like this:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">fetchDocument</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">tripledoc</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">getName</span><span class="p">(</span><span class="nx">webId</span><span class="p">)</span> <span class="p">{</span>
+  <span class="cm">/* 1. Fetch the Document at `webId`: */</span>
+  <span class="kd">const</span> <span class="nx">webIdDoc</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchDocument</span><span class="p">(</span><span class="nx">webId</span><span class="p">);</span>
+  <span class="cm">/* 2. Read the Subject representing the current user: */</span>
+  <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">webIdDoc</span><span class="p">.</span><span class="nx">getSubject</span><span class="p">(</span><span class="nx">webId</span><span class="p">);</span>
+  <span class="cm">/* 3. Get their foaf:name: */</span>
+  <span class="k">return</span> <span class="nx">user</span><span class="p">.</span><span class="nx">getString</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://xmlns.com/foaf/0.1/name</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Tip: you can avoid typing the full ‘http://xmlns.com/foaf/0.1/name’ every time using the library
+<a href="https://www.npmjs.com/package/rdf-namespaces">rdf-namespaces</a>. It exports strings for the URLs of
+the terms in common Vocabularies, turning the above into:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">fetchDocument</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">tripledoc</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">foaf</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rdf-namespaces</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">getName</span><span class="p">(</span><span class="nx">webId</span><span class="p">)</span> <span class="p">{</span>
+  <span class="cm">/* 1. Fetch the Document at `webId`: */</span>
+  <span class="kd">const</span> <span class="nx">webIdDoc</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchDocument</span><span class="p">(</span><span class="nx">webId</span><span class="p">);</span>
+  <span class="cm">/* 2. Read the Subject representing the current user: */</span>
+  <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">webIdDoc</span><span class="p">.</span><span class="nx">getSubject</span><span class="p">(</span><span class="nx">webId</span><span class="p">);</span>
+  <span class="cm">/* 3. Get their foaf:name: */</span>
+  <span class="k">return</span> <span class="nx">user</span><span class="p">.</span><span class="nx">getString</span><span class="p">(</span><span class="nx">foaf</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><span class="codesandbox-button-wrapper">
+<a href="https://codesandbox.io/s/github/Vinnl/notepod/tree/3-reading-data/?module=%2Fsrc%2Fcomponents%2FDashboard.tsx"><img src="/assets/img/play-codesandbox.svg" alt="Edit on CodeSandbox" /></a>
+</span></p>
+
+<p>Two things to note here. First, we call <code class="highlighter-rouge">getString</code> to indicate that we are looking for an actual
+value (i.e. a Literal), rather than a URL. (Likewise, we could e.g. use <code class="highlighter-rouge">getInteger</code> or <code class="highlighter-rouge">getDecimal</code>
+if we would expect a number.) However, the value could also have been a URL pointing to a different
+Subject, in which case we could in turn fetch <em>that</em> Document. If that was what we expected, we
+could have used the method <code class="highlighter-rouge">getRef</code> instead.</p>
+
+<p>The second thing to consider is that we cannot make any assumptions about what data is or is not
+present in the user’s Pod. Thus, <code class="highlighter-rouge">user.getString(foaf.name)</code> might also return <code class="highlighter-rouge">null</code>. This
+could happen if the Document does not include the user’s name, if the name is stored differently
+(e.g. using <code class="highlighter-rouge">foaf:firstName</code> and <code class="highlighter-rouge">foaf:familyName</code>), or the <code class="highlighter-rouge">foaf:name</code> is not a literal string.</p>
+
+<p>Now that we’re able to read data from the user’s WebID, let’s find out how we can read arbitrary
+other data.</p>
+
+<p>Next: <a href="/for-developers/apps/first-app/4-data-model">Setting up a Data Model</a></p>
+
+        </div>
+
+        <a class="u-url" href="/for-developers/apps/first-app/3-reading-data" hidden></a>
+    </article>
+    <aside class="col-xs-12 col-sm-4 right-side">
+        
+        <nav class="aside-menu">
+            
+                
+                    
+
+<ul>
+    
+        
+            
+            <li> 
+                <h4>Writing a Solid application</h4>
+                <!-- This is for categories with sub-categories -->
+                
+                    <!-- List all posts in the category (no subcategories) -->
+                    <ul>
+                        
+                            <li ><a href="/for-developers/apps/first-app">Introduction</a></li>                                    
+                        
+                            <li ><a href="/for-developers/apps/first-app/1-authentication">Step 1: identifying the user</a></li>                                    
+                        
+                            <li ><a href="/for-developers/apps/first-app/2-understanding-solid">Step 2: Understanding Solid</a></li>                                    
+                        
+                            <li  class="active"><a href="/for-developers/apps/first-app/3-reading-data">Step 3: Reading data</a></li>                                    
+                        
+                            <li ><a href="/for-developers/apps/first-app/4-data-model">Step 4: Setting up a Data Model</a></li>                                    
+                        
+                            <li ><a href="/for-developers/apps/first-app/5-writing-data">Step 5: Writing data & what's next</a></li>                                    
+                        
+                    </ul>
+                
+            </li>
+        
+    
+        
+            <li>
+                
+                    <h4><a href="/for-developers/apps/vocabularies">Vocabularies</a></h4>
+                
+            </li>
+        
+    
+        
+            <li>
+                
+                    <h4><a href="/for-developers/apps/common-patterns">Common patterns</a></h4>
+                
+            </li>
+        
+    
+        
+            <li>
+                
+                    <h4><a href="/for-developers/apps/tools">Tools and libraries</a></h4>
+                
+            </li>
+        
+    
+</ul>
+                
+            
+        </nav>
+    </aside>
+</section>
+        </div>
+      </main>
+      <footer class="solid-footer">
+  <nav>
+    <ul class="solid-footer-menu row">
+      <li class="col-xs-12 col-sm-3">
+        <ul class="sub-links">
+          <li>
+            <span class="home-link">
+              <a href="/" title="Homepage">
+                Home
+              </a>
+            </span>
+          </li>
+          <li>
+            <a href="/use-solid" title="Applicable licenses">
+              Use Solid
+            </a>
+          </li>
+          <li>
+            <a href="/implement" title="Get support to implement Solid for your organisation">
+              Implement Solid
+            </a>
+          </li>  
+          <li>
+            <a href="/team" title="How and when can you use the Solid logo?">
+              Team
+            </a>
+          </li>
+          <li>
+            <a href="/faqs" title="Frequently asked questions">
+              FAQs
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="col-xs-12 col-sm-3">
+        <ul class="sub-links">
+          <li>
+            <h3>What's New</h3>
+          </li>
+          <li>
+            <a href="/this-week-in-solid" title="Weekly updates of everything that's happening in Solid">
+              This Week in Solid
+            </a>
+          </li>
+          <li>
+            <a href="/press" title="How and when can you use the Solid logo?">
+              Press
+            </a>
+          </li>        
+          <li>
+            <a href="/events" title="What Solid-related events are planned?">
+              Solid Events
+            </a>
+          </li>  
+        </ul>
+      </li>    
+      <li class="col-xs-12 col-sm-3">
+        <ul class="sub-links">
+          <li>
+            <h3>
+              <a href="/for-developers" title="Information for developers">
+                For Developers
+              </a>
+            </h3>
+          </li>    
+          <li>
+            <a href="/for-developers/apps" title="Tutorials about writing Solid applications">
+              Writing apps
+            </a>
+          </li>
+          <li>
+            <a href="/for-developers/pod-server" title="Tutorials on runnign your own Pod server">
+              Running a Pod server
+            </a>
+          </li>
+          <li>
+            <a href="/funding" title="Where to find funding for building things with Solid">
+              Funding
+            </a>
+          </li>
+          <li>
+            <a href="https://forum.solidproject.org" title="Forum">
+              Forum
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="col-xs-12 col-sm-3">
+        <ul class="sub-links">
+          <li>
+            <h3>More</h3>
+          </li>
+          <li>
+            <a href="/standardisation" title="The process of standardising Solid">
+              Standardisation
+            </a>
+          </li>
+          <li>
+            <a href="/license" title="The licenses we use">
+              License
+            </a>
+          </li>    
+          <li>
+            <a href="/logo-usage-guidelines" title="How and when can you use the Solid logo?">
+              Logo Usage Guidelines
+            </a>
+          </li>
+        </ul>
+      </li>    
+    </ul>
+  </nav>
+  <div class="solid-bottom-footer row">
+    <div class="solid-copyright col-xs-12">
+      <img src="/assets/img/solid-emblem.svg" />
+      <nav>
+        <ul>
+          <li>
+            <a href="mailto:info@solidproject.org">info@solidproject.org</a>
+          </li>
+          <li>
+            <a href="https://github.com/solid/" title="Solid on GitHub">
+              <img
+                src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/github.svg"
+                alt="GitHub"
+                class="icon"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/project_solid" title="Solid on Twitter">
+              <img
+                src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/twitter.svg"
+                alt="Twitter"
+                class="icon"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+      <script src="/assets/js/app.js"></script>
+    </div>
+  </body>
+</html>

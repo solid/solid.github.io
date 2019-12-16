@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<!--
+	Solid by Inrupt
+-->
+<html>
+  <head>
+  <title>Solid</title>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, user-scalable=no"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="/favicon.ico?"
+  />
+  <link
+    rel="stylesheet"
+    href="/assets/css/flexboxgrid.min.css"
+  />
+  <link rel="stylesheet" href="/assets/main.css" />
+</head>
+
+
+  <body>
+    <div class="internal">
+      <header class="internal-header">
+    <div class="solid-nav">
+  <a href="/" class="logo"
+    ><img src="/assets/img/solid-emblem.svg"
+  /> Solid</a>
+  <nav class="menu">
+    <ul class="links">
+      
+      <li >
+        <a  href="/use-solid"  aria-label=Use Solid>Use Solid</a>
+        
+      </li>
+      
+      <li >
+        <a  href="/for-developers"  aria-label=For Developers>For Developers</a>
+        
+      </li>
+      
+      <li >
+        <a  href="/for-enterprises"  aria-label=For Enterprises>For Enterprises</a>
+        
+      </li>
+      
+      <li >
+        <a  href="/faqs"  aria-label=FAQ>FAQ</a>
+        
+      </li>
+      
+    </ul>
+  </nav>
+  <div class="burger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+</div>
+
+</header>
+      <main>
+        <div class="page-content">
+          <section class="row solid-post">
+    <nav class="solid-breadcrumbs col-xs-12">
+    
+    <div class="solid-breadcrumbs-container row">
+        <ul class="col-xs-10 col-sm-12">
+            <li><a href="/">Home</a> ></li>
+            
+            
+            <li>
+                <a
+                    href="/for-developers">
+                    For developers ></i>
+                </a>
+            </li>
+            
+            
+            
+            <li>
+                <a
+                    href="/for-developers/apps">
+                    Apps ></i>
+                </a>
+            </li>
+            
+            
+            
+            <li>
+                <a
+                    href="/for-developers/apps/first-app">
+                    First app ></i>
+                </a>
+            </li>
+            
+            
+            
+            <li>4 data model</li>
+            
+            
+        </ul>
+        <div class="menu-mobile menu-mobile-aside col-xs-2">
+            <button><i class="far"></i></button>
+        </div>
+    </div>
+</nav>
+    <article class="post h-entry col-xs-12 col-sm-8" itemscope itemtype="http://schema.org/BlogPosting">
+
+        <div class="post-content e-content" itemprop="articleBody">
+            <p>(<a href="https://gitlab.com/vincenttunru/notepod/commit/900cbbb2c4b7fadef8aa5969a11d8816b37b00b7">This step as a Git commit.</a>)</p>
+
+<p>Now it’s time to start working on some actual functionality: we’ll be making an app that allows
+people to keep notes. In this step, we’ll prepare their Pod for our data model — much like how you
+might prepare database tables in a traditional application with a custom back-end.</p>
+
+<p>At a high level, we’ll set up the data model as follows:</p>
+
+<ol>
+  <li>Check if there exists a Document to track notes in.</li>
+  <li>If it does not exist, create it.</li>
+  <li>Fetch that Document.</li>
+</ol>
+
+<p>So to start with the first step: in which Document should we track notes? The answer can be found in
+the concept of the <em>Public Type Index</em>.</p>
+
+<p>The Public Type Index is itself a publicly accessible Document stored in the user’s Pod. This
+Document contains a list of links to other Documents, along with the type of data that is to be
+included in those Documents. To store notes, the data type we will use is the
+<a href="http://schema.org/TextDigitalDocument"><code class="highlighter-rouge">TextDigitalDocument</code></a>, defined by
+<a href="http://schema.org/">Schema.org</a>. Every time the user saves a note, we will store it as a
+TextDigitalDocument.</p>
+
+<p>If the Document containing these notes was located in the user’s Pod at <code class="highlighter-rouge">/public/notes.ttl</code>, their
+Public Type Index could refer to it like this:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Predicate</th>
+      <th>Object</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">#notes</code></td>
+      <td><code class="highlighter-rouge">rdf:type</code></td>
+      <td><code class="highlighter-rouge">solid:TypeRegistration</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#notes</code></td>
+      <td><code class="highlighter-rouge">solid:forClass</code></td>
+      <td><code class="highlighter-rouge">schema:TextDigitalDocument</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#notes</code></td>
+      <td><code class="highlighter-rouge">solid:instance</code></td>
+      <td><code class="highlighter-rouge">/public/notes.ttl</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The above Type Index includes one Type Registration, identified by <code class="highlighter-rouge">#notes</code>, that registers
+<code class="highlighter-rouge">/public/notes.ttl</code> for the data type <code class="highlighter-rouge">schema:TextDigitalDocument</code>.</p>
+
+<p>So how do we find the user’s Public Type Index? It’s usually listed in their profile, i.e. the
+Document accessible at their WebID:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Predicate</th>
+      <th>Object</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">#me</code></td>
+      <td><code class="highlighter-rouge">solid:publicTypeIndex</code></td>
+      <td><code class="highlighter-rouge">/settings/publicTypeIndex.ttl</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This is a pattern you’ll often encounter when writing Solid apps: you start with the user’s WebID,
+read the profile Document located there, and from there you can find the data you need.</p>
+
+<p>So let’s see what this looks like in code:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">fetchDocument</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">tripledoc</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">solid</span><span class="p">,</span> <span class="nx">schema</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rdf-namespaces</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">getNotesList</span><span class="p">(</span><span class="nx">profile</span><span class="p">)</span> <span class="p">{</span>
+  <span class="cm">/* 1. Check if there exists a Document to track notes in. */</span>
+  <span class="kd">const</span> <span class="nx">publicTypeIndexUrl</span> <span class="o">=</span> <span class="nx">profile</span><span class="p">.</span><span class="nx">getRef</span><span class="p">(</span><span class="nx">solid</span><span class="p">.</span><span class="nx">publicTypeIndex</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">publicTypeIndex</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchDocument</span><span class="p">(</span><span class="nx">publicTypeIndexUrl</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">notesListEntry</span> <span class="o">=</span> <span class="nx">publicTypeIndex</span><span class="p">.</span><span class="nx">findSubject</span><span class="p">(</span><span class="nx">solid</span><span class="p">.</span><span class="nx">forClass</span><span class="p">,</span> <span class="nx">schema</span><span class="p">.</span><span class="nx">TextDigitalDocument</span><span class="p">);</span>
+
+  <span class="cm">/* 2. If it does not exist, create it. */</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">notesListEntry</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// We will define this function later:</span>
+    <span class="k">return</span> <span class="nx">initialiseNotesList</span><span class="p">(</span><span class="nx">profile</span><span class="p">,</span> <span class="nx">publicTypeIndex</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="cm">/* 3. If it does exist, fetch that Document. */</span>
+  <span class="kd">const</span> <span class="nx">notesListUrl</span> <span class="o">=</span> <span class="nx">notesListEntry</span><span class="p">.</span><span class="nx">getRef</span><span class="p">(</span><span class="nx">solid</span><span class="p">.</span><span class="nx">instance</span><span class="p">);</span>
+  <span class="k">return</span> <span class="k">await</span> <span class="nx">fetchDocument</span><span class="p">(</span><span class="nx">notesListUrl</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><span class="codesandbox-button-wrapper">
+<a href="https://codesandbox.io/s/github/Vinnl/notepod/tree/4-data-model/?module=%2Fsrc%2Fservices%2FfetchPublicTypeIndex.ts"><img src="/assets/img/play-codesandbox.svg" alt="Edit on CodeSandbox" /></a>
+</span></p>
+
+<p>Given the <code class="highlighter-rouge">profile</code> <a href="/for-developers/apps/first-app/3-reading-data">we fetched before</a>, we can find a reference to the public Type
+Index under <code class="highlighter-rouge">solid:publicTypeIndex</code>. Then in the public Type Index, we can find the <code class="highlighter-rouge">#notes</code> entry
+by looking for the Subject that has a Statement saying it is for the class
+<code class="highlighter-rouge">schema:TextDigitalDocument</code>.</p>
+
+<p>If that Subject is not found, we initialise a new Document to contain the notes — more on that
+later. If it <em>is</em> found, we find the URL of the Document that should contain notes under the
+<code class="highlighter-rouge">solid:instance</code> key. All we then have to do is to call <code class="highlighter-rouge">fetchDocument</code> to retrieve the Document at
+that URL.</p>
+
+<p>One thing to keep in mind, again, is that you can make no assumptions about the data in the user’s
+Pod. Thus, to be safe you should also check whether the return value of <code class="highlighter-rouge">getRef()</code> is not <code class="highlighter-rouge">null</code>.
+Consider using <a href="https://www.typescriptlang.org/">TypeScript</a> to get a warning when you forget to do
+so.</p>
+
+<p>That leaves us with one loose thread: the function <code class="highlighter-rouge">initialiseNotesList()</code>, which creates a new
+Document that will contain the notes, and adds it to the Public Type Index. Let’s take a look:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createDocument</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">tripledoc</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">space</span><span class="p">,</span> <span class="nx">rdf</span><span class="p">,</span> <span class="nx">solid</span><span class="p">,</span> <span class="nx">schema</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rdf-namespaces</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">initialiseNotesList</span><span class="p">(</span><span class="nx">profile</span><span class="p">,</span> <span class="nx">typeIndex</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Get the root URL of the user's Pod:</span>
+  <span class="kd">const</span> <span class="nx">storage</span> <span class="o">=</span> <span class="nx">profile</span><span class="p">.</span><span class="nx">getRef</span><span class="p">(</span><span class="nx">space</span><span class="p">.</span><span class="nx">storage</span><span class="p">);</span>
+
+  <span class="c1">// Determine at what URL the new Document should be stored:</span>
+  <span class="kd">const</span> <span class="nx">notesListUrl</span> <span class="o">=</span> <span class="nx">storage</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">public/notes.ttl</span><span class="dl">'</span><span class="p">;</span>
+  <span class="c1">// Create the new Document:</span>
+  <span class="kd">const</span> <span class="nx">notesList</span> <span class="o">=</span> <span class="nx">createDocument</span><span class="p">(</span><span class="nx">notesListUrl</span><span class="p">);</span>
+  <span class="k">await</span> <span class="nx">notesList</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+
+  <span class="c1">// Store a reference to that Document in the public Type Index for `schema:TextDigitalDocument`:</span>
+  <span class="kd">const</span> <span class="nx">typeRegistration</span> <span class="o">=</span> <span class="nx">typeIndex</span><span class="p">.</span><span class="nx">addSubject</span><span class="p">();</span>
+  <span class="nx">typeRegistration</span><span class="p">.</span><span class="nx">addRef</span><span class="p">(</span><span class="nx">rdf</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span> <span class="nx">solid</span><span class="p">.</span><span class="nx">TypeRegistration</span><span class="p">)</span>
+  <span class="nx">typeRegistration</span><span class="p">.</span><span class="nx">addRef</span><span class="p">(</span><span class="nx">solid</span><span class="p">.</span><span class="nx">instance</span><span class="p">,</span> <span class="nx">notesList</span><span class="p">.</span><span class="nx">asRef</span><span class="p">())</span>
+  <span class="nx">typeRegistration</span><span class="p">.</span><span class="nx">addRef</span><span class="p">(</span><span class="nx">solid</span><span class="p">.</span><span class="nx">forClass</span><span class="p">,</span> <span class="nx">schema</span><span class="p">.</span><span class="nx">TextDigitalDocument</span><span class="p">)</span>
+  <span class="k">await</span> <span class="nx">typeIndex</span><span class="p">.</span><span class="nx">save</span><span class="p">([</span> <span class="nx">typeRegistration</span> <span class="p">]);</span>
+
+  <span class="c1">// Then finally return the new Document:</span>
+  <span class="k">return</span> <span class="nx">notesList</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><span class="codesandbox-button-wrapper">
+<a href="https://codesandbox.io/s/github/Vinnl/notepod/tree/4-data-model/?module=%2Fsrc%2Fservices%2FinitialiseNotesList.ts"><img src="/assets/img/play-codesandbox.svg" alt="Edit on CodeSandbox" /></a>
+</span></p>
+
+<p>(Keep in mind that, in order to write to the user’s Pod, the user will need to have given your app
+permission to write <a href="/for-developers/apps/first-app/1-authentication">when they signed in</a>.)</p>
+
+<p>If all the above looks awfully complicated: that’s because it is. <a href="https://ruben.verborgh.org/blog/2019/06/17/shaping-linked-data-apps/">Work is underway to make this
+easier in the future</a>,
+allowing you to point a library to a data model, and having the library make sure that the user’s
+Pod is prepared to handle that. For now, though, you’ll have to live with these convoluted
+instructions.</p>
+
+<p>Next: <a href="/for-developers/apps/first-app/5-writing-data">Writing data</a></p>
+
+        </div>
+
+        <a class="u-url" href="/for-developers/apps/first-app/4-data-model" hidden></a>
+    </article>
+    <aside class="col-xs-12 col-sm-4 right-side">
+        
+        <nav class="aside-menu">
+            
+                
+                    
+
+<ul>
+    
+        
+            
+            <li> 
+                <h4>Writing a Solid application</h4>
+                <!-- This is for categories with sub-categories -->
+                
+                    <!-- List all posts in the category (no subcategories) -->
+                    <ul>
+                        
+                            <li ><a href="/for-developers/apps/first-app">Introduction</a></li>                                    
+                        
+                            <li ><a href="/for-developers/apps/first-app/1-authentication">Step 1: identifying the user</a></li>                                    
+                        
+                            <li ><a href="/for-developers/apps/first-app/2-understanding-solid">Step 2: Understanding Solid</a></li>                                    
+                        
+                            <li ><a href="/for-developers/apps/first-app/3-reading-data">Step 3: Reading data</a></li>                                    
+                        
+                            <li  class="active"><a href="/for-developers/apps/first-app/4-data-model">Step 4: Setting up a Data Model</a></li>                                    
+                        
+                            <li ><a href="/for-developers/apps/first-app/5-writing-data">Step 5: Writing data & what's next</a></li>                                    
+                        
+                    </ul>
+                
+            </li>
+        
+    
+        
+            <li>
+                
+                    <h4><a href="/for-developers/apps/vocabularies">Vocabularies</a></h4>
+                
+            </li>
+        
+    
+        
+            <li>
+                
+                    <h4><a href="/for-developers/apps/common-patterns">Common patterns</a></h4>
+                
+            </li>
+        
+    
+        
+            <li>
+                
+                    <h4><a href="/for-developers/apps/tools">Tools and libraries</a></h4>
+                
+            </li>
+        
+    
+</ul>
+                
+            
+        </nav>
+    </aside>
+</section>
+        </div>
+      </main>
+      <footer class="solid-footer">
+  <nav>
+    <ul class="solid-footer-menu row">
+      <li class="col-xs-12 col-sm-3">
+        <ul class="sub-links">
+          <li>
+            <span class="home-link">
+              <a href="/" title="Homepage">
+                Home
+              </a>
+            </span>
+          </li>
+          <li>
+            <a href="/use-solid" title="Applicable licenses">
+              Use Solid
+            </a>
+          </li>
+          <li>
+            <a href="/implement" title="Get support to implement Solid for your organisation">
+              Implement Solid
+            </a>
+          </li>  
+          <li>
+            <a href="/team" title="How and when can you use the Solid logo?">
+              Team
+            </a>
+          </li>
+          <li>
+            <a href="/faqs" title="Frequently asked questions">
+              FAQs
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="col-xs-12 col-sm-3">
+        <ul class="sub-links">
+          <li>
+            <h3>What's New</h3>
+          </li>
+          <li>
+            <a href="/this-week-in-solid" title="Weekly updates of everything that's happening in Solid">
+              This Week in Solid
+            </a>
+          </li>
+          <li>
+            <a href="/press" title="How and when can you use the Solid logo?">
+              Press
+            </a>
+          </li>        
+          <li>
+            <a href="/events" title="What Solid-related events are planned?">
+              Solid Events
+            </a>
+          </li>  
+        </ul>
+      </li>    
+      <li class="col-xs-12 col-sm-3">
+        <ul class="sub-links">
+          <li>
+            <h3>
+              <a href="/for-developers" title="Information for developers">
+                For Developers
+              </a>
+            </h3>
+          </li>    
+          <li>
+            <a href="/for-developers/apps" title="Tutorials about writing Solid applications">
+              Writing apps
+            </a>
+          </li>
+          <li>
+            <a href="/for-developers/pod-server" title="Tutorials on runnign your own Pod server">
+              Running a Pod server
+            </a>
+          </li>
+          <li>
+            <a href="/funding" title="Where to find funding for building things with Solid">
+              Funding
+            </a>
+          </li>
+          <li>
+            <a href="https://forum.solidproject.org" title="Forum">
+              Forum
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="col-xs-12 col-sm-3">
+        <ul class="sub-links">
+          <li>
+            <h3>More</h3>
+          </li>
+          <li>
+            <a href="/standardisation" title="The process of standardising Solid">
+              Standardisation
+            </a>
+          </li>
+          <li>
+            <a href="/license" title="The licenses we use">
+              License
+            </a>
+          </li>    
+          <li>
+            <a href="/logo-usage-guidelines" title="How and when can you use the Solid logo?">
+              Logo Usage Guidelines
+            </a>
+          </li>
+        </ul>
+      </li>    
+    </ul>
+  </nav>
+  <div class="solid-bottom-footer row">
+    <div class="solid-copyright col-xs-12">
+      <img src="/assets/img/solid-emblem.svg" />
+      <nav>
+        <ul>
+          <li>
+            <a href="mailto:info@solidproject.org">info@solidproject.org</a>
+          </li>
+          <li>
+            <a href="https://github.com/solid/" title="Solid on GitHub">
+              <img
+                src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/github.svg"
+                alt="GitHub"
+                class="icon"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/project_solid" title="Solid on Twitter">
+              <img
+                src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/twitter.svg"
+                alt="Twitter"
+                class="icon"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+      <script src="/assets/js/app.js"></script>
+    </div>
+  </body>
+</html>
