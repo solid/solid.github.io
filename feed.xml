@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2019-12-16T15:05:12+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><subtitle>The web was designed to make it possible for information – data – to transfer conveniently no matter where you are or what device you are using. Today data is used as a bargaining chip to lock you in. Solid is a standard that describes how to build storage, apps, and identification in such a way that you can conveniently connect and switch without losing data.</subtitle><entry><title type="html">Week Updates 2019-12-18</title><link href="https://solidproject.org//this-week-in-solid/2019-12-18" rel="alternate" type="text/html" title="Week Updates 2019-12-18" /><published>2019-12-18T00:00:00+00:00</published><updated>2019-12-18T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-18">&lt;h1 id=&quot;this-year-in-solid-2019&quot;&gt;This Year in Solid 2019&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2019-12-16T20:26:46+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><subtitle>The web was designed to make it possible for information – data – to transfer conveniently no matter where you are or what device you are using. Today data is used as a bargaining chip to lock you in. Solid is a standard that describes how to build storage, apps, and identification in such a way that you can conveniently connect and switch without losing data.</subtitle><entry><title type="html">Week Updates 2019-12-18</title><link href="https://solidproject.org//this-week-in-solid/2019-12-18" rel="alternate" type="text/html" title="Week Updates 2019-12-18" /><published>2019-12-18T00:00:00+00:00</published><updated>2019-12-18T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-18">&lt;h1 id=&quot;this-year-in-solid-2019&quot;&gt;This Year in Solid 2019&lt;/h1&gt;
 
 &lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
 
@@ -260,7 +260,7 @@ Job Openings&lt;/p&gt;
 
 &lt;p&gt;Hello and welcome to another edition of &lt;em&gt;This Week in Solid&lt;/em&gt;!&lt;/p&gt;
 
-&lt;p&gt;If you are familiar with this newsletter you can &lt;a href=&quot;##updates&quot;&gt;skip directly to updates&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you are familiar with this newsletter you can &lt;a href=&quot;#updates&quot;&gt;skip directly to updates&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a standard that describes how to build data storage and applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
@@ -318,15 +318,13 @@ Job Openings&lt;/p&gt;
 
 &lt;p&gt;If you have any new &lt;a href=&quot;https://github.com/solid/solid-apps&quot;&gt;apps&lt;/a&gt;, &lt;a href=&quot;https://github.com/solid/pods&quot;&gt;Pods&lt;/a&gt;, or &lt;a href=&quot;https://github.com/solid/solid-idp-list&quot;&gt;identity providers&lt;/a&gt;, or there are updates to existing Solid implementations, make sure to add them to the list so they get included in next week’s edition.&lt;/p&gt;
 
-&lt;h3 id=&quot;the-solid-standard&quot;&gt;The Solid Standard&lt;/h3&gt;
-
 &lt;p&gt;Until next week!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/Mitzi-Laszlo&quot;&gt;Mitzi László&lt;/a&gt;&lt;/p&gt;</content><author><name>Mitzi László</name></author><category term="weekly" /><category term="updates" /><summary type="html">14th November</summary></entry><entry><title type="html">Week Updates 2019-11-07</title><link href="https://solidproject.org//this-week-in-solid/2019-11-07" rel="alternate" type="text/html" title="Week Updates 2019-11-07" /><published>2019-11-07T00:00:00+00:00</published><updated>2019-11-07T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-11-07">&lt;h1 id=&quot;7th-november&quot;&gt;7th November&lt;/h1&gt;
 
 &lt;p&gt;Hello and welcome to another edition of &lt;em&gt;This Week in Solid&lt;/em&gt;!&lt;/p&gt;
 
-&lt;p&gt;If you are familiar with this newsletter you can &lt;a href=&quot;##updates&quot;&gt;skip directly to updates&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you are familiar with this newsletter you can &lt;a href=&quot;#updates&quot;&gt;skip directly to updates&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a standard that describes how to build data storage and applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
@@ -381,7 +379,7 @@ Job Openings&lt;/p&gt;
 
 &lt;p&gt;Hello and welcome to another edition of &lt;em&gt;This Week in Solid&lt;/em&gt;!&lt;/p&gt;
 
-&lt;p&gt;If you are familiar with this newsletter you can &lt;a href=&quot;##updates&quot;&gt;skip directly to updates&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you are familiar with this newsletter you can &lt;a href=&quot;#updates&quot;&gt;skip directly to updates&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a standard that describes how to build data storage and applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
@@ -428,7 +426,7 @@ Job Openings&lt;/p&gt;
 
 &lt;p&gt;Hello and welcome to another edition of &lt;em&gt;This Week in Solid&lt;/em&gt;!&lt;/p&gt;
 
-&lt;p&gt;If you are familiar with this newsletter you can &lt;a href=&quot;##updates&quot;&gt;skip directly to updates&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you are familiar with this newsletter you can &lt;a href=&quot;#updates&quot;&gt;skip directly to updates&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a standard that describes how to build data storage and applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
