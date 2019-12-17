@@ -131,7 +131,7 @@
 <p>We initially defined our properties as <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>. However, we can see in the graphical representation that there are two different kind of properties:</p>
 <ul>
   <li>the ones that connect a bubble to another,</li>
-  <li>the one that connects a bubble to a litteral value (i.e. a string, a number, a date, etc).</li>
+  <li>the one that connects a bubble to a literal value (i.e. a string, a number, a date, etc).</li>
 </ul>
 
 <p>The properties of things in RDF are called properties (how convenient). Therefore, following what we did for Classes, we might write:</p>
@@ -224,7 +224,7 @@
 
 <h3 id="adding-multilingual-support">Adding multilingual support</h3>
 
-<p>So far all our labels and comments are written in English, yet there is no explicit indication of that in the vocabulary. To do so, RDF uses the concept of <strong>language tag</strong>: after a string, you can add a tag (e.g. @en for English, or @es for Spanish) to stipulate its language.</p>
+<p>So far all our labels and comments are written in English, yet there is no explicit indication of that in the vocabulary. To do so, RDF uses the concept of <strong>language tag</strong>: after a string, you can add a tag (e.g. <code class="highlighter-rouge">@en</code> for English, or <code class="highlighter-rouge">@es</code> for Spanish) to stipulate its language.</p>
 
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2019-12-17T09:51:28+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><subtitle>The web was designed to make it possible for information – data – to transfer conveniently no matter where you are or what device you are using. Today data is used as a bargaining chip to lock you in. Solid is a standard that describes how to build storage, apps, and identification in such a way that you can conveniently connect and switch without losing data.</subtitle><entry><title type="html">Week Updates 2019-12-18</title><link href="https://solidproject.org//this-week-in-solid/2019-12-18" rel="alternate" type="text/html" title="Week Updates 2019-12-18" /><published>2019-12-18T00:00:00+00:00</published><updated>2019-12-18T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-18">&lt;h1 id=&quot;this-year-in-solid-2019&quot;&gt;This Year in Solid 2019&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2019-12-17T10:14:18+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><subtitle>The web was designed to make it possible for information – data – to transfer conveniently no matter where you are or what device you are using. Today data is used as a bargaining chip to lock you in. Solid is a standard that describes how to build storage, apps, and identification in such a way that you can conveniently connect and switch without losing data.</subtitle><entry><title type="html">Week Updates 2019-12-18</title><link href="https://solidproject.org//this-week-in-solid/2019-12-18" rel="alternate" type="text/html" title="Week Updates 2019-12-18" /><published>2019-12-18T00:00:00+00:00</published><updated>2019-12-18T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-18">&lt;h1 id=&quot;this-year-in-solid-2019&quot;&gt;This Year in Solid 2019&lt;/h1&gt;
 
 &lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
 
@@ -6,7 +6,7 @@
 
 &lt;p&gt;This is the last edition of 2019 so here’s a recap of This Year in Solid to look at the highlights of the year.&lt;/p&gt;
 
-&lt;p&gt;The main activities happening within Solid GitHub are: governance, awareness, standardisation as well as implementation and tooling which is happening both in the Solid Github as well as in other locations. Let’s go through each of these activities one by one.&lt;/p&gt;
+&lt;p&gt;The main activities happening within Solid GitHub are: governance, awareness, standardisation as well as implementation and tooling which is happening both in the Solid GitHub as well as in other locations. Let’s go through each of these activities one by one.&lt;/p&gt;
 
 &lt;h3 id=&quot;a-record-of-who-is-working-on-what-where&quot;&gt;A record of who is working on what, where&lt;/h3&gt;
 &lt;p&gt;At the start of the year newcomers were not sure how to contribute to Solid. Over the year we have worked on recording who works on what and where so that new comers know how to support others and when to start new projects.&lt;/p&gt;
@@ -47,7 +47,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Solid team employed at Empathy&lt;/strong&gt;: At Empathy.co we envision an e-commerce search based on the Solid ecosystem following its specification &amp;amp; principles. Where user rights and data ownership prevails. We envision an e-commerce search based on data stored in Pods where relevant results could depend on context data stored by the user &amp;amp; privacy relies on it. We think that if we want to see this succeeding, the Pod management needs to be a Pod experience. Something that the user sees as a projection of themselves, something they love to feel endorsed by &amp;amp; they want to see it as a part of the ‘I’. That’s why we are working on the UX/UI Pod experience”&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Course teaching how to build a Solid app at University of Oviedo&lt;/strong&gt; Last year, the students that attended the course “Software Architecture” participated in the Solid chat challenge. It consisted in the development of a Solid chat app as part of the course assignment. The course is taught in the second semester, 3rd year, of the Bachelor degree in Software Engineering at the School of Computer Science from the University of Oviedo, Spain. The students were grouped in teams of 4-8 students and had to describe the architecture of the app and to implement a prototype using open source software. The total number of students that participated was 116. An important aspect is that the students had previous knowledge of programming languages like Java or Javascript, but 85% of the students didn’t even know that RDF existed, and as the course was about Software architecture, the teachers didn’t have time to explain RDF or semantic technologies properly. So part of the challenge was also to see how students could develop a Solid app without prior knowledge of those subjects or having to learn those subjects by themselves. In general, the students succeeded to create the Solid chat apps and 14 projects were presented, which are available at the course web page. A Jury was formed by 2 people of Inrupt and one teacher to select the winner project. During the presentation of the results, Mitzi Laszlo, from Inrupt, gave a talk abotu Solid and we invited several local companies to the event. The companies Empathy, Izertis and The-Cocktail were interested to sponsor some of the students which continue developing some projects using Solid.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Course teaching how to build a Solid app at University of Oviedo&lt;/strong&gt; Last year, the students that attended the course “Software Architecture” participated in the Solid chat challenge. It consisted in the development of a Solid chat app as part of the course assignment. The course is taught in the second semester, 3rd year, of the Bachelor degree in Software Engineering at the School of Computer Science from the University of Oviedo, Spain. The students were grouped in teams of 4-8 students and had to describe the architecture of the app and to implement a prototype using open source software. The total number of students that participated was 116. An important aspect is that the students had previous knowledge of programming languages like Java or JavaScript, but 85% of the students didn’t even know that RDF existed, and as the course was about Software architecture, the teachers didn’t have time to explain RDF or semantic technologies properly. So part of the challenge was also to see how students could develop a Solid app without prior knowledge of those subjects or having to learn those subjects by themselves. In general, the students succeeded to create the Solid chat apps and 14 projects were presented, which are available at the course web page. A Jury was formed by 2 people of Inrupt and one teacher to select the winner project. During the presentation of the results, Mitzi László, from Inrupt, gave a talk about Solid and we invited several local companies to the event. The companies Empathy, Izertis and The-Cocktail were interested to sponsor some of the students which continue developing some projects using Solid.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;wishlist-for-2020&quot;&gt;Wishlist for 2020&lt;/h2&gt;
@@ -186,7 +186,7 @@
 
 &lt;p&gt;Check out a recap of the talk at ECP from last week &lt;a href=&quot;http://www.pilod.nl/wiki/Jaarcongres_ECP_2019_-_Solid_Session_Summary&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;There’s also a article that mentions Solid on the &lt;a href=&quot;https://blogs.lse.ac.uk/businessreview/2019/11/20/how-to-turn-trust-into-a-competitive-advantage/&quot;&gt;LSE Business Reveiw&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;There’s also a article that mentions Solid on the &lt;a href=&quot;https://blogs.lse.ac.uk/businessreview/2019/11/20/how-to-turn-trust-into-a-competitive-advantage/&quot;&gt;LSE Business Review&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;There are a few upcoming events where you can learn more and meet others working on Solid:&lt;/p&gt;
 &lt;ul&gt;
@@ -277,7 +277,7 @@ Job Openings&lt;/p&gt;
 
 &lt;p&gt;If you have any feedback on solidproject.org you can &lt;a href=&quot;https://github.com/solid/solid.github.io/issues&quot;&gt;submit an issue&lt;/a&gt; for the Creators to have a look at for the next version.&lt;/p&gt;
 
-&lt;p&gt;This week we will start a slower user testing on the documentation for developers. If you’re intrested have a look at (insert page) and (insert instructions). You can provide feedback by &lt;a href=&quot;https://github.com/solid/solid.github.io/issues&quot;&gt;submitting an issue&lt;/a&gt; with answers to the following questions:&lt;/p&gt;
+&lt;p&gt;This week we will start a slower user testing on the documentation for developers. If you’re interested have a look at (insert page) and (insert instructions). You can provide feedback by &lt;a href=&quot;https://github.com/solid/solid.github.io/issues&quot;&gt;submitting an issue&lt;/a&gt; with answers to the following questions:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -443,7 +443,7 @@ Job Openings&lt;/p&gt;
 
 &lt;p&gt;This week Michiel de Jong gave an app development tutorial session where they worked through the inrupt SDK, data discovery, and how to send notifications inside a Solid app.&lt;/p&gt;
 
-&lt;p&gt;Next weeks call will be cancelled so the next call will be on the 31st October at 1000CEST on &lt;a href=&quot;https://zoom.us/j/121552099&quot;&gt;this line&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Next weeks call will be cancelled so the next call will be on the 31st October at 1000 CEST on &lt;a href=&quot;https://zoom.us/j/121552099&quot;&gt;this line&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;press&quot;&gt;Press&lt;/h3&gt;
 &lt;p&gt;You can read about &lt;a href=&quot;http://dweb.happybeing.com/blog/post/004-why-solid-on-safe/&quot;&gt;Why Solid on SAFE&lt;/a&gt; by Mark Hughes and there were a couple of talks:&lt;/p&gt;
@@ -455,7 +455,7 @@ Job Openings&lt;/p&gt;
 &lt;p&gt;Upcoming this week is:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;2019-10-26 &lt;a href=&quot;https://www.eventbrite.com/e/solid-intro-workshop-this-is-for-everyone-join-the-movement-tickets-77597174237?aff=ebdssbdestsearch&quot;&gt;Solid London&lt;/a&gt; organised by &lt;a href=&quot;https://github.com/ktulusan&quot;&gt;Kartika Tulusan&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;2019-10-26 to 2019-10-27 Sarven Capadisli, Mitzi László, Jackson Morgan, Paul Worral at the &lt;a href=&quot;https://inrupt.com&quot;&gt;inrupt&lt;/a&gt; stand at &lt;a href=&quot;https://www.mozillafestival.org&quot;&gt;MozFest&lt;/a&gt; in London&lt;/li&gt;
+  &lt;li&gt;2019-10-26 to 2019-10-27 Sarven Capadisli, Mitzi László, Jackson Morgan, Paul Worrall at the &lt;a href=&quot;https://inrupt.com&quot;&gt;inrupt&lt;/a&gt; stand at &lt;a href=&quot;https://www.mozillafestival.org&quot;&gt;MozFest&lt;/a&gt; in London&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Have you seen any articles or talks about Solid this week? If you’ve seen any talks, articles, or written blog posts about Solid please do send them over for next week.&lt;/p&gt;

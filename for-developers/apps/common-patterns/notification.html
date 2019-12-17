@@ -133,7 +133,7 @@
 
 <p><img src="https://www.w3.org/TR/ldn/linked-data-notifications-overview.svg" alt="LDN overview" /></p>
 
-<p>The following terms are defined by the LDN recommandation, and here is specifically how we use them in the context of solid:</p>
+<p>The following terms are defined by the LDN recommendation, and here is specifically how we use them in the context of solid:</p>
 <ul>
   <li>Sender: The application sending the notification</li>
   <li>Target: The id of the entity receiving the notification</li>
@@ -144,9 +144,9 @@
 
 <h2 id="first-things-first-inbox-discovery">First things first: inbox discovery</h2>
 
-<p>Notifications should be sent to inboxes, and any resource can advertize for an inbox (not only webids). It’s up to the sender and to the receiver to select the appropriate resource when sending/receiving notifications. For instance, when sending a notification specifically related to Cleopatras busy schedule, one might consider addressing it to the inbox advertised by her calendar resource, <code class="highlighter-rouge">https://cleopatra.solid.community/public/calendar/inbox/</code>, that you can discover by examining the response to a GET on <code class="highlighter-rouge">https://cleopatra.solid.community/public/calendar</code>.</p>
+<p>Notifications should be sent to inboxes, and any resource can advertise for an inbox (not only WebIDs). It’s up to the sender and to the receiver to select the appropriate resource when sending/receiving notifications. For instance, when sending a notification specifically related to Cleopatra’s busy schedule, one might consider addressing it to the inbox advertised by her calendar resource, <code class="highlighter-rouge">https://cleopatra.solid.community/public/calendar/inbox/</code>, that you can discover by examining the response to a GET on <code class="highlighter-rouge">https://cleopatra.solid.community/public/calendar</code>.</p>
 
-<p>Let’s dereference <a href="https://cleopatra.solid.community/profile/card#me">cleopatra’s webid</a>, with a simple HTTP GET. You should be served an RDF document in which, among other things, you will find:</p>
+<p>Let’s dereference <a href="https://cleopatra.solid.community/profile/card#me">Cleopatra’s WebID</a>, with a simple HTTP GET. You should be served an RDF document in which, among other things, you will find:</p>
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">ldp:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/ldp#&gt;</span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">inbox:</span><span class="w"> </span><span class="nl">&lt;/inbox/&gt;</span><span class="p">.</span><span class="w">
 
@@ -156,7 +156,7 @@
     </span><span class="nn">ldp:</span><span class="n">inbox</span><span class="w"> </span><span class="nn">inbox:</span><span class="p">;</span><span class="w">
 </span></code></pre></div></div>
 
-<p>From this snippet, we see that the WebId advertises for an inbox, in this case <code class="highlighter-rouge">https://cleopatra.solid.community/inbox/</code>, thanks to the property <code class="highlighter-rouge">ldp:inbox</code>. And that’s it, no we can get to notification sending!</p>
+<p>From this snippet, we see that the WebID advertises for an inbox, in this case <code class="highlighter-rouge">https://cleopatra.solid.community/inbox/</code>, thanks to the property <code class="highlighter-rouge">ldp:inbox</code>. And that’s it, no we can get to notification sending!</p>
 
 <iframe src="https://codesandbox.io/embed/discover-inbox-cf6gs?fontsize=14" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="discover-inbox" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
