@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2019-12-17T12:57:57+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><subtitle>The web was designed to make it possible for information – data – to transfer conveniently no matter where you are or what device you are using. Today data is used as a bargaining chip to lock you in. Solid is a standard that describes how to build storage, apps, and identification in such a way that you can conveniently connect and switch without losing data.</subtitle><entry><title type="html">Week Updates 2019-12-18</title><link href="https://solidproject.org//this-week-in-solid/2019-12-18" rel="alternate" type="text/html" title="Week Updates 2019-12-18" /><published>2019-12-18T00:00:00+00:00</published><updated>2019-12-18T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-18">&lt;h1 id=&quot;this-year-in-solid-2019&quot;&gt;This Year in Solid 2019&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2019-12-18T06:06:47+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><subtitle>The web was designed to make it possible for information – data – to transfer conveniently no matter where you are or what device you are using. Today data is used as a bargaining chip to lock you in. Solid is a standard that describes how to build storage, apps, and identification in such a way that you can conveniently connect and switch without losing data.</subtitle><entry><title type="html">Week Updates 2019-12-18</title><link href="https://solidproject.org//this-week-in-solid/2019-12-18" rel="alternate" type="text/html" title="Week Updates 2019-12-18" /><published>2019-12-18T00:00:00+00:00</published><updated>2019-12-18T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-18">&lt;h1 id=&quot;this-year-in-solid-2019&quot;&gt;This Year in Solid 2019&lt;/h1&gt;
 
 &lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
 
@@ -42,6 +42,37 @@
   &lt;li&gt;&lt;a href=&quot;https://vincenttunru.gitlab.io/tripledoc/&quot;&gt;triple doc&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/inrupt/solid-lib-comparison&quot;&gt;Exploration of client-side RDF libraries&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h4 id=&quot;solid-data-browser&quot;&gt;Solid Data Browser&lt;/h4&gt;
+
+&lt;p&gt;In 2019 the data browser team at inrupt has supported the development of the Solid Data Browser by making it easier to 
+develop the project itself via &lt;a href=&quot;https://github.com/inrupt/mashlib-dev&quot;&gt;mashlib-dev&lt;/a&gt;. We’ve 
+&lt;a href=&quot;https://github.com/solid/mashlib/pulls?utf8=%E2%9C%93&amp;amp;q=is%3Apr+is%3Aclosed&quot;&gt;also&lt;/a&gt; 
+&lt;a href=&quot;https://github.com/solid/solid-panes/pulls?page=2&amp;amp;q=is%3Apr+is%3Aclosed&amp;amp;utf8=%E2%9C%93&quot;&gt;fixed&lt;/a&gt; 
+&lt;a href=&quot;https://github.com/solid/solid-ui/pulls?page=2&amp;amp;q=is%3Apr+is%3Aclosed&amp;amp;utf8=%E2%9C%93&quot;&gt;many&lt;/a&gt; 
+&lt;a href=&quot;https://github.com/solid/chat-pane/pulls?page=2&amp;amp;q=is%3Apr+is%3Aclosed&amp;amp;utf8=%E2%9C%93&quot;&gt;issues&lt;/a&gt; 
+&lt;a href=&quot;https://github.com/solid/contacts-pane/pulls?page=2&amp;amp;q=is%3Apr+is%3Aclosed&amp;amp;utf8=%E2%9C%93&quot;&gt;and&lt;/a&gt; 
+&lt;a href=&quot;https://github.com/solid/folder-pane/pulls?page=2&amp;amp;q=is%3Apr+is%3Aclosed&amp;amp;utf8=%E2%9C%93&quot;&gt;bugs&lt;/a&gt; 
+&lt;a href=&quot;https://github.com/solid/issue-pane/pulls?page=2&amp;amp;q=is%3Apr+is%3Aclosed&amp;amp;utf8=%E2%9C%93&quot;&gt;in&lt;/a&gt; 
+&lt;a href=&quot;https://github.com/solid/meeting-pane/pulls?page=2&amp;amp;q=is%3Apr+is%3Aclosed&amp;amp;utf8=%E2%9C%93&quot;&gt;the&lt;/a&gt; 
+&lt;a href=&quot;https://github.com/solid/source-pane/pulls?page=2&amp;amp;q=is%3Apr+is%3Aclosed&amp;amp;utf8=%E2%9C%93&quot;&gt;related&lt;/a&gt; 
+&lt;a href=&quot;https://github.com/solid/pane-registry/pulls?page=2&amp;amp;q=is%3Apr+is%3Aclosed&amp;amp;utf8=%E2%9C%93&quot;&gt;projects&lt;/a&gt;, as well as 
+contributing to related tools such as &lt;a href=&quot;https://github.com/linkeddata/rdflib.js&quot;&gt;rdflib&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Major contributions that the team has undertaken is the introduction of global elements such as the header, dashboard, 
+and user menu. We’ve also introduced &lt;a href=&quot;https://github.com/solid/userguide/blob/master/appendix/userroles.md&quot;&gt;user roles&lt;/a&gt; 
+that allow people to better tailor their experience with the data browser, as well as removing some of the confusing 
+features from users that are new to the data browser. Lastly, we’ve started migrating the code to TypeScript, which 
+will allow us to maintain our code better and introduce less bugs.&lt;/p&gt;
+
+&lt;p&gt;The data browser is a large project with many potential use-cases, and we’ve spent quite a bit of time to plan how we 
+want to continue the development. In 2020 we will share the results of this work with everyone, and you can expect to 
+see more documentation such as roadmaps and more involvement with other teams to shape the future of the data browser.&lt;/p&gt;
+
+&lt;p&gt;You can follow &lt;a href=&quot;https://github.com/orgs/solid/projects/4&quot;&gt;the team’s project board&lt;/a&gt; if you want to see what we’re 
+focusing on at a given time, and we’re always open for a chat on 
+&lt;a href=&quot;https://gitter.im/solid/data-browser&quot;&gt;our Gitter channel&lt;/a&gt; or 
+&lt;a href=&quot;https://forum.solidproject.org/c/build-a-solid-app/solid-data-browser&quot;&gt;on the forum&lt;/a&gt; ^_^&lt;/p&gt;
 
 &lt;h3 id=&quot;implementations&quot;&gt;Implementations&lt;/h3&gt;
 
