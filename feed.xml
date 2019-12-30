@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2019-12-20T09:53:23+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><entry><title type="html">Week Updates 2019-12-18</title><link href="https://solidproject.org//this-week-in-solid/2019-12-18" rel="alternate" type="text/html" title="Week Updates 2019-12-18" /><published>2019-12-18T00:00:00+00:00</published><updated>2019-12-18T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-18">&lt;h1 id=&quot;this-year-in-solid-2019&quot;&gt;This Year in Solid 2019&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2019-12-30T14:19:43+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><entry><title type="html">This Week In Solid</title><link href="https://solidproject.org//2020/01/02/this-week-in-solid.html" rel="alternate" type="text/html" title="This Week In Solid" /><published>2020-01-02T00:00:00+00:00</published><updated>2020-01-02T00:00:00+00:00</updated><id>https://solidproject.org//2020/01/02/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//2020/01/02/this-week-in-solid.html"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Week Updates 2019-12-18</title><link href="https://solidproject.org//this-week-in-solid/2019-12-18" rel="alternate" type="text/html" title="Week Updates 2019-12-18" /><published>2019-12-18T00:00:00+00:00</published><updated>2019-12-18T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-18">&lt;h1 id=&quot;this-year-in-solid-2019&quot;&gt;This Year in Solid 2019&lt;/h1&gt;
 
 &lt;p&gt;Hello and welcome to another edition of &lt;a href=&quot;https://solidproject.org/this-week-in-solid&quot;&gt;This Week in Solid&lt;/a&gt;!&lt;/p&gt;
 
@@ -477,48 +477,4 @@ Job Openings&lt;/p&gt;
 
 &lt;p&gt;Until next week!&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/Mitzi-Laszlo&quot;&gt;Mitzi László&lt;/a&gt;&lt;/p&gt;</content><author><name>Mitzi László</name></author><category term="weekly" /><category term="updates" /><summary type="html">24th October 2019</summary></entry><entry><title type="html">Week Updates 2019-10-17</title><link href="https://solidproject.org//this-week-in-solid/2019-10-17" rel="alternate" type="text/html" title="Week Updates 2019-10-17" /><published>2019-10-17T00:00:00+00:00</published><updated>2019-10-17T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-10-17">&lt;h1 id=&quot;17th-october-2019&quot;&gt;17th October 2019&lt;/h1&gt;
-
-&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
-
-&lt;p&gt;This is a weekly summary of Solid progress.&lt;/p&gt;
-
-&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed &lt;a href=&quot;https://github.com/solid/information/blob/master/weekly-updates/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this week’s issue please &lt;a href=&quot;https://github.com/solid/information/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Want to get involved? &lt;a href=&quot;https://github.com/solid/process&quot;&gt;Contributions are welcome.&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;weekly-solid-call&quot;&gt;Weekly Solid Call&lt;/h2&gt;
-
-&lt;p&gt;Every Thursday there is an hour long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks works on Solid.&lt;/p&gt;
-
-&lt;p&gt;The next Solid Weekly will be at 1600 CEST on the 24th October on &lt;a href=&quot;https://whereby.com/solid-project&quot;&gt;this line&lt;/a&gt; where &lt;a href=&quot;https://github.com/michielbdejong&quot;&gt;Michiel de Jong&lt;/a&gt; will be giving a special introduction to Solid app development. 
-Press&lt;/p&gt;
-
-&lt;p&gt;This week you read about and come and see talks on Solid here:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;11-10-2019 John Leonard &lt;a href=&quot;https://www.computing.co.uk/ctg/analysis/3082496/solids-ruben-verborgh-we-need-competition-based-on-quality-of-service-not-on-data-harvesting&quot;&gt;interview with Ruben Verborgh&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;24-10-2019 Mitzi László at the &lt;a href=&quot;http://www.ada-lovelace-festival.com&quot;&gt;Ada Lovelace Festival in Berlin&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Sarven Capadisli will be at &lt;a href=&quot;http://www.mozillafestival.org&quot;&gt;MozFest in London&lt;/a&gt; with a possible satellite Solid London (details coming soon)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Have you seen any articles or talks about Solid this week? If you’ve seen any talks, articles, or written blog posts about Solid please do send them over for next week. Solid Events are run by people like you. If you are interested in organising a Solid Event in your city reach out on info@solidproject.org.&lt;/p&gt;
-
-&lt;h2 id=&quot;standardisation&quot;&gt;Standardisation&lt;/h2&gt;
-
-&lt;p&gt;Read more about the &lt;a href=&quot;https://github.com/solid/specification/milestone/1&quot;&gt;scope of the standardisation work&lt;/a&gt; being carried out by panellists and editors between now and the 19th December here. &lt;a href=&quot;https://github.com/solid/process&quot;&gt;Contributions are welcome.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;There are no updates from the editors on the standardisation work this week.&lt;/p&gt;
-
-&lt;h2 id=&quot;solid-implementations&quot;&gt;Solid Implementations&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://github.com/solid/node-solid-server/releases/tag/v5.2.0&quot;&gt;Node Solid Server 5.2.0&lt;/a&gt; was released. This includes a new version of the Solid Data Browser and a much needed fix to the handling of content-types.&lt;/p&gt;
-
-&lt;p&gt;If you have any new apps, Pods, or identity providers, or there are updates to existing Solid implementations, make sure to add them to the list so they get included in next week’s edition.&lt;/p&gt;
-
-&lt;p&gt;Until next week!&lt;/p&gt;
-
-&lt;p&gt;Mitzi László
-Solid Manager&lt;/p&gt;</content><author><name>Mitzi László</name></author><category term="weekly" /><category term="updates" /><summary type="html">17th October 2019</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://github.com/Mitzi-Laszlo&quot;&gt;Mitzi László&lt;/a&gt;&lt;/p&gt;</content><author><name>Mitzi László</name></author><category term="weekly" /><category term="updates" /><summary type="html">24th October 2019</summary></entry></feed>
