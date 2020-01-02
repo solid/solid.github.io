@@ -1,352 +1,439 @@
-<!DOCTYPE html>
-<!--
-	Solid by Inrupt
--->
+<!doctype html>
 <html>
   <head>
-  <title>Solid</title>
-  <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, user-scalable=no"
-  />
-  <link
-    rel="shortcut icon"
-    type="image/x-icon"
-    href="/favicon.ico?"
-  />
-  <link
-    rel="stylesheet"
-    href="/assets/css/flexboxgrid.min.css"
-  />
-  <link rel="stylesheet" href="/assets/main.css" />
-</head>
-
+    <title>Home · Solid</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/favicon.ico?"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
 
   <body>
     <header>
-  <div class="solid-nav">
-  <a href="/" class="logo"
-    ><img src="/assets/img/solid-emblem.svg" alt="[Solid logo]"
-  /> Solid</a>
-  <nav class="menu">
-    <ul class="links">
-      
-      <li >
-        <a  href="/use-solid"  aria-label="Use Solid">Use Solid</a>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img
+          src="/assets/img/solid-emblem.svg"
+          alt="[Solid logo]"
+        />
+      </a>
+      <a class="is-hidden-mobile navbar-item navbar-brand-name is-uppercase is-size-4" href="/">
+        Solid
+      </a>
+    </div>
+  
+    <div class="navbar-menu">
+      <div class="navbar-end">
         
-      </li>
-      
-      <li >
-        <a  href="/for-developers"  aria-label="For Developers">For Developers</a>
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/use-solid"
+          >Use Solid</a>
         
-      </li>
-      
-      <li >
-        <a  href="/for-enterprises"  aria-label="For Enterprises">For Enterprises</a>
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/for-developers"
+          >For Developers</a>
         
-      </li>
-      
-      <li >
-        <a  href="/faqs"  aria-label="FAQ">FAQ</a>
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/for-enterprises"
+          >For Enterprises</a>
         
-      </li>
-      
-    </ul>
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/faqs"
+          >FAQ</a>
+        
+      </div>
+    </div>
   </nav>
-  <div class="burger">
-    <div class="line1"></div>
-    <div class="line2"></div>
-    <div class="line3"></div>
-  </div>
-</div>
-
 </header>
 
+    
+    
+
     <main>
-      <div class="home">
-  <div class="title-banner">
-    <!-- <h1 class="title">Solid</h1> -->
-    <div class="subtitle">
-      Switch between storage and apps <br /> while taking the data along 
+      <section id="home-hero" class="hero is-dark is-large">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title has-text-centered is-size-3 is-size-2-tablet is-size-1-desktop">
+        Switch between storage and apps
+        <br />
+        while taking the data along 
+      </h1>
     </div>
-      <a href="#what-is-solid" class="learn-more-link">
-        <!-- What Is Solid?<br/> -->
-        <img src="/assets/img/fontawesome-free-5.11.2-web/svgs/solid/angle-double-down.svg" alt="[]" class="chevron" />
-      </a>
+  </div>
+</section>
+
+<div id="landing-content">
+  <section id="why-carousel" class="section">
+
+  <div class="container">
+    
+
+    <div class="columns">
+      <div class="column">
+        <div class="card">
+  <div class="card-body has-text-centered section">
+    <figure class="image is-64x64">
+      <img src="/assets/img/fontawesome-free-5.11.2-web/svgs/solid/dolly.svg" alt="[]" />
+    </figure>
+    <p class="title is-size-4 is-uppercase">
+      <strong>Move freely between services</strong>
+    </p>
+    <hr />
+    <p class="content is-size-5">
+      Switch to the best tools and take your data with you.
+    </p>
+  </div>
+</div>
       </div>
-  <div class="page-content">
-  <!-- <h2 class="intro-heading">Why you'll love Solid as a user</h2> -->
-    <div class="cards row around">
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-      <div class="card">
-        <div class="card-header">
-          <img src="/assets/img/fontawesome-free-5.11.2-web/svgs/solid/dolly.svg" alt="[]" class="icon" />
-          <span class="card-title">Move freely between services</span>
-        </div>
-        <div class="card-body">
-          <p>
-          Switch to the best tools and <b>take your data with you</b>. 
-          </p>
-        </div>
+      <div class="column">
+        <div class="card">
+  <div class="card-body has-text-centered section">
+    <figure class="image is-64x64">
+      <img src="/assets/img/fontawesome-free-5.11.2-web/svgs/solid/recycle.svg" alt="[]" />
+    </figure>
+    <p class="title is-size-4 is-uppercase">
+      <strong>Reuse data across apps</strong>
+    </p>
+    <hr />
+    <p class="content is-size-5">
+      Stop re-entering the same data again and again by recycling data from app to app.
+    </p>
+  </div>
+</div>
+      </div>
+      <div class="column">
+        <div class="card">
+  <div class="card-body has-text-centered section">
+    <figure class="image is-64x64">
+      <img src="/assets/img/fontawesome-free-5.11.2-web/svgs/solid/users.svg" alt="[]" />
+    </figure>
+    <p class="title is-size-4 is-uppercase">
+      <strong>Connect with anyone</strong>
+    </p>
+    <hr />
+    <p class="content is-size-5">
+      Connect to your friends no matter what app they are using.
+    </p>
+  </div>
+</div>
+      </div>
+      <div class="column">
+        <div class="card">
+  <div class="card-body has-text-centered section">
+    <figure class="image is-64x64">
+      <img src="/assets/img/fontawesome-free-5.11.2-web/svgs/solid/crosshairs.svg" alt="[]" />
+    </figure>
+    <p class="title is-size-4 is-uppercase">
+      <strong>Select what you share precisely</strong>
+    </p>
+    <hr />
+    <p class="content is-size-5">
+      Give access to the bare minimum of data needed for the service to work.
+    </p>
+  </div>
+</div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-      <div class="card">
-        <div class="card-header">
-          <img src="/assets/img/fontawesome-free-5.11.2-web/svgs/solid/recycle.svg" alt="[]" class="icon" />
-          <span class="card-title">Reuse data across apps</span>
+  </div>
+</section>
+
+
+  <section id="choose-your-own-adventure" class="hero is-medium">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title has-text-centered is-size-3 is-size-2-tablet is-size-2-desktop">
+        Find out why you'll love Solid
+      </h1>
+      <div class="section field is-grouped">
+        <div class="control">
+          <a href="/for-developers" class="button is-large is-primary is-rounded is-uppercase">As a developer</a>
         </div>
-        <div class="card-body">
-          <p>
-          Stop re-entering the same data again and again by <b>recycling data from app to app</b>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-      <div class="card">
-        <div class="card-header">
-          <img src="/assets/img/fontawesome-free-5.11.2-web/svgs/solid/users.svg" alt="[]" class="icon" />
-          <span class="card-title">Connect with anyone</span>
-        </div>
-        <div class="card-body">
-          <p>
-            Connect to your friends <b>no matter what app they are using</b>. 
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-      <div class="card">
-        <div class="card-header">
-          <img src="/assets/img/fontawesome-free-5.11.2-web/svgs/solid/crosshairs.svg" alt="[]" class="icon" />
-          <span class="card-title">Select what you share precisely</span>
-        </div>
-        <div class="card-body">
-          <p>
-            Give access to <b>the bare minimum of data needed</b> for the service to work.
-          </p>
+        <div class="control">
+          <a href="/for-enterprises" class="button is-large is-primary is-rounded is-uppercase">As an enterprise</a>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-    <span id="what-is-solid"></span>
-    <div class="img-info-banner row around">
-      <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 image">
-        <img src="/assets/img/like-peas-in-a-pod.svg" alt="[]" />
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-        <div class="info-card">
-          <h3 class="title">Like peas in a Pod</h3>
-          <p class="info">
-            Your <a href="/faqs#pod" title="Frequently Asked Questions - what is a Pod?">Pod</a> is where you store your data. Pods and apps are separate but compatible so you are free to change apps while keeping your data. For example, if you want to switch messaging app you can take your contacts and chat history along easily, as long as both apps support Solid.
-          </p>
+
+  <div id="tour">
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-hidden-touch is-offset-1 is-4">
+            <figure class="image">
+              <img src="/assets/img/like-peas-in-a-pod.svg" alt="[]" />
+            </figure>
+          </div>
+          <div class="column is-offset-1 is-5">
+            <h2 class="title">Like peas in a Pod</h2>
+            <p class="content is-large">
+              Your <a href="/faqs#pod" title="Frequently Asked Questions - what is a Pod?">Pod</a> is where you store your data. Pods and apps are separate but compatible so you are free to change apps while keeping your data. For example, if you want to switch messaging app you can take your contacts and chat history along easily, as long as both apps support Solid.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="img-info-banner row around reverse">
-      <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 image">
-        <img src="/assets/img/single-sign-on.svg" alt="[]" />
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-        <div class="info-card">
-          <h3 class="title">The last login you'll ever need</h3>
-          <p class="info">
-          Your <a href="/faqs#webid" title="Frequently Asked Questions - what is a WebID?">WebID</a> changes the power dynamic. You call the shots: instead of creating an account for each app, have each app find your account. On top of that, your WebID makes it possible for people to connect to you, no matter what Solid apps they are using.
-          </p>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-offset-1 is-5">
+            <h2 class="title">The last login you'll ever need</h2>
+            <p class="content is-large">
+              Your <a href="/faqs#webid" title="Frequently Asked Questions - what is a WebID?">WebID</a> changes the power dynamic. You call the shots: instead of creating an account for each app, have each app find your account. On top of that, your WebID makes it possible for people to connect to you, no matter what Solid apps they are using.
+            </p>
+          </div>
+          <div class="column is-hidden-touch is-offset-1 is-4">
+            <figure class="image">
+              <img src="/assets/img/single-sign-on.svg" alt="[]" />
+            </figure>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="img-info-banner row around">
-      <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 image">
-        <img src="/assets/img/solid-open-specs.svg" alt="[]" />
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-        <div class="info-card">
-          <h3 class="title">
-            Open specifications built on open standards
-          </h3>
-          <p class="info">
-           Websites, you can browse them on any device
-           and with a browser you choose.
-           Solid gives you that same choice, but for <em>data</em>:
-           you can pick the apps you trust
-           to handle your personal data.
-           To realize such unprecedented interoperability,
-           Solid uses the same recipe as the Web:
-           following <a href="https://solid.github.io/specification/">open standards and specifications</a>.
-           Anyone is welcome to <a href="/standardisation">join the standardisation process</a>.
-          </p>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-hidden-touch is-offset-1 is-4">
+            <figure class="image is-square">
+              <img src="/assets/img/solid-is-a-standard.svg" alt="[]" />
+            </figure>
+          </div>
+          <div class="column is-offset-1 is-5">
+            <h2 class="title">
+              Open specifications built on open standards
+            </h2>
+            <p class="content is-large">
+              Websites, you can browse them on any device
+              and with a browser you choose.
+              Solid gives you that same choice, but for <em>data</em>:
+              you can pick the apps you trust
+              to handle your personal data.
+              To realize such unprecedented interoperability,
+              Solid uses the same recipe as the Web:
+              following <a href="https://solid.github.io/specification/">open standards and specifications</a>.
+              Anyone is welcome to <a href="/standardisation">join the standardisation process</a>.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <form action="https://tinyletter.com/ThisWeekInSolid" class="newsletter-form" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/ThisWeekInSolid', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
-      <h2>
+    </section>
+  </div>
+
+  <div class="columns">
+    <div class="column is-half-desktop is-offset-one-quarter-desktop">
+      <div class="section">
+  <form action="https://tinyletter.com/ThisWeekInSolid" class="card" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/ThisWeekInSolid', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+    <div class="card-body section">
+      <h2 class="title">
         <a href="/this-week-in-solid" title="View past editions of This Week in Solid">
           This Week in Solid
         </a>
       </h2>
-      <p>
+      <p class="content">
         <label for="tlemail">
           Leave your email address to get a bite-sized overview of everything Solid, delivered straight to your inbox once a week.
         </label>
       </p>
-      <p>
-        <input type="email" name="email" placeholder="yourmail@example.com" id="tlemail" />
-      </p>
+      <div class="field">
+        <div class="control">
+          <input class="input is-large" type="email" name="email" placeholder="yourmail@example.com" id="tlemail" />
+        </div>
+      </div>
       <input type="hidden" value="1" name="embed" />
-      <input type="submit" value="Subscribe" />
-    </form>
-
+      <div class="field">
+        <div class="control">
+          <input type="submit" class="button is-large" value="Subscribe" />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+    </div>
   </div>
+
 </div>
 
     </main>
-    <footer class="solid-footer">
-  <nav>
-    <ul class="solid-footer-menu row">
-      <li class="col-xs-12 col-sm-3">
-        <ul class="sub-links">
-          <li>
-            <span class="home-link">
-              <a href="/" title="Homepage">
-                Home
-              </a>
-            </span>
-          </li>
-          <li>
-            <a href="/use-solid" title="Applicable licenses">
-              Use Solid
-            </a>
-          </li>
-          <li>
-            <a href="/implement" title="Get support to implement Solid for your organisation">
-              Implement Solid
-            </a>
-          </li>  
-          <li>
-            <a href="/team" title="How and when can you use the Solid logo?">
-              Team
-            </a>
-          </li>
-          <li>
-            <a href="/faqs" title="Frequently asked questions">
-              FAQs
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="col-xs-12 col-sm-3">
-        <ul class="sub-links">
-          <li>
-            <h3>What's New</h3>
-          </li>
-          <li>
-            <a href="/this-week-in-solid" title="Weekly updates of everything that's happening in Solid">
-              This Week in Solid
-            </a>
-          </li>
-          <li>
-            <a href="/press" title="How and when can you use the Solid logo?">
-              Press
-            </a>
-          </li>        
-          <li>
-            <a href="/events" title="What Solid-related events are planned?">
-              Solid Events
-            </a>
-          </li>  
-        </ul>
-      </li>    
-      <li class="col-xs-12 col-sm-3">
-        <ul class="sub-links">
-          <li>
-            <h3>
-              <a href="/for-developers" title="Information for developers">
-                For Developers
-              </a>
-            </h3>
-          </li>    
-          <li>
-            <a href="/for-developers/apps" title="Tutorials about writing Solid applications">
-              Writing apps
-            </a>
-          </li>
-          <li>
-            <a href="/for-developers/pod-server" title="Tutorials on runnign your own Pod server">
-              Running a Pod server
-            </a>
-          </li>
-          <li>
-            <a href="/funding" title="Where to find funding for building things with Solid">
-              Funding
-            </a>
-          </li>
-          <li>
-            <a href="https://forum.solidproject.org" title="Forum">
-              Forum
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="col-xs-12 col-sm-3">
-        <ul class="sub-links">
-          <li>
-            <h3>More</h3>
-          </li>
-          <li>
-            <a href="/standardisation" title="The process of standardising Solid">
-              Standardisation
-            </a>
-          </li>
-          <li>
-            <a href="/license" title="The licenses we use">
-              License
-            </a>
-          </li>    
-          <li>
-            <a href="/logo-usage-guidelines" title="How and when can you use the Solid logo?">
-              Logo Usage Guidelines
-            </a>
-          </li>
-        </ul>
-      </li>    
-    </ul>
-  </nav>
-  <div class="solid-bottom-footer row">
-    <div class="solid-copyright col-xs-12">
-      <img src="/assets/img/solid-emblem.svg" alt="[Solid logo]" />
-      <nav>
-        <ul>
-          <li>
-            <a href="mailto:info@solidproject.org">info@solidproject.org</a>
-          </li>
-          <li>
-            <a href="https://github.com/solid/" title="Solid on GitHub">
-              <img
-                src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/github.svg"
-                alt="GitHub"
-                class="icon"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/project_solid" title="Solid on Twitter">
-              <img
-                src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/twitter.svg"
-                alt="Twitter"
-                class="icon"
-              />
-            </a>
-          </li>
-        </ul>
-      </nav>
+    <footer id="footer" class="footer">
+  <div class="container">
+    <div class="columns">
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <a class="title is-size-5" href="/">Home</a>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/use-solid">Use Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/implement">Implement Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/team">Team</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/faqs">FAQs</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <span class="title is-size-5">What's new</span>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/this-week-in-solid">This week in Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/press">Press</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/events">Solid events</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <a class="title is-size-5" href="/for-developers">For developers</a>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/for-developers/apps">Writing apps</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/for-developers/pod-server">Running a Pod server</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/funding">Funding</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="https://forum.solidproject.org">Forum</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <span class="title is-size-5">More</span>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/standardisation">Standardisation</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/license">License</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/logo-usage-guidelines">Logo usage guidelines</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
     </div>
   </div>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img
+          src="/assets/img/solid-emblem.svg"
+          alt="[Solid logo]"
+        />
+      </a>
+      <a class="navbar-item" href="mailto:info@solidproject.org">
+        info@solidproject.org
+      </a>
+      <a class="navbar-item" href="https://github.com/solid/" title="Solid on GitHub">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/github.svg"
+            alt="GitHub"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+      <a class="navbar-item" href="https://twitter.com/project_solid" title="Solid on Twitter">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/twitter.svg"
+            alt="Twitter"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+    </div>
+  </nav>
 </footer>
 
-    <script src="/assets/js/app.js"></script>
   </body>
+
+
 </html>

@@ -1,119 +1,97 @@
-<!DOCTYPE html>
-<!--
-	Solid by Inrupt
--->
+<!doctype html>
 <html>
   <head>
-  <title>Solid</title>
-  <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, user-scalable=no"
-  />
-  <link
-    rel="shortcut icon"
-    type="image/x-icon"
-    href="/favicon.ico?"
-  />
-  <link
-    rel="stylesheet"
-    href="/assets/css/flexboxgrid.min.css"
-  />
-  <link rel="stylesheet" href="/assets/main.css" />
-</head>
-
+    <title>Step 4: Setting up a Data Model · Solid</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/favicon.ico?"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
 
   <body>
-    <div class="internal">
-      <header class="internal-header">
-    <div class="solid-nav">
-  <a href="/" class="logo"
-    ><img src="/assets/img/solid-emblem.svg" alt="[Solid logo]"
-  /> Solid</a>
-  <nav class="menu">
-    <ul class="links">
-      
-      <li >
-        <a  href="/use-solid"  aria-label="Use Solid">Use Solid</a>
-        
-      </li>
-      
-      <li >
-        <a  href="/for-developers"  aria-label="For Developers">For Developers</a>
-        
-      </li>
-      
-      <li >
-        <a  href="/for-enterprises"  aria-label="For Enterprises">For Enterprises</a>
-        
-      </li>
-      
-      <li >
-        <a  href="/faqs"  aria-label="FAQ">FAQ</a>
-        
-      </li>
-      
-    </ul>
-  </nav>
-  <div class="burger">
-    <div class="line1"></div>
-    <div class="line2"></div>
-    <div class="line3"></div>
-  </div>
-</div>
-
-</header>
-      <main>
-        <div class="page-content">
-          <section class="row solid-post">
-    <nav class="solid-breadcrumbs col-xs-12">
-    
-    <div class="solid-breadcrumbs-container row">
-        <ul class="col-xs-10 col-sm-12">
-            <li><a href="/">Home</a> ></li>
-            
-            
-            <li>
-                <a
-                    href="/for-developers">
-                    For developers &gt;
-                </a>
-            </li>
-            
-            
-            
-            <li>
-                <a
-                    href="/for-developers/apps">
-                    Apps &gt;
-                </a>
-            </li>
-            
-            
-            
-            <li>
-                <a
-                    href="/for-developers/apps/first-app">
-                    First app &gt;
-                </a>
-            </li>
-            
-            
-            
-            <li>4 data model</li>
-            
-            
-        </ul>
-        <div class="menu-mobile menu-mobile-aside col-xs-2">
-            <button><i class="far"></i></button>
-        </div>
+    <header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img
+          src="/assets/img/solid-emblem.svg"
+          alt="[Solid logo]"
+        />
+      </a>
+      <a class="is-hidden-mobile navbar-item navbar-brand-name is-uppercase is-size-4" href="/">
+        Solid
+      </a>
     </div>
-</nav>
+  
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/use-solid"
+          >Use Solid</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/for-developers"
+          >For Developers</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/for-enterprises"
+          >For Enterprises</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/faqs"
+          >FAQ</a>
+        
+      </div>
+    </div>
+  </nav>
+</header>
 
-    <article class="post h-entry col-xs-12 col-sm-8" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    
+  <nav id="breadcrumb" class="breadcrumb">
+    <div class="container">
+      <ul>
+        <li>
+          <a href="/">
+            Home
+          </a>
+        </li>
+        
+        
+          <li>
+            <a href="/for-developers/">
+              For developers
+            </a>
+          </li>
+        
+        
+        
+          <li>
+            <a href="">
+              Step 4: Setting up a Data Model
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
 
-        <div class="post-content e-content" itemprop="articleBody">
-            <p>(<a href="https://gitlab.com/vincenttunru/notepod/commit/900cbbb2c4b7fadef8aa5969a11d8816b37b00b7">This step as a Git commit.</a>)</p>
+
+    <main>
+      <div class="container">
+  <div class="columns">
+    <div class="column is-two-thirds">
+      <article class="section content">
+        <p>(<a href="https://gitlab.com/vincenttunru/notepod/commit/900cbbb2c4b7fadef8aa5969a11d8816b37b00b7">This step as a Git commit.</a>)</p>
 
 <p>Now it’s time to start working on some actual functionality: we’ll be making an app that allows
 people to keep notes. In this step, we’ll prepare their Pod for our data model — much like how you
@@ -276,221 +254,268 @@ instructions.</p>
 
 <p>Next: <a href="/for-developers/apps/first-app/5-writing-data">Writing data</a></p>
 
-        </div>
+      </article>
+    </div>
+    <aside id="sidebar" class="column is-one-third is-hidden-mobile section">
+      <div class="menu is-large">
+        
+          
 
-        <a class="u-url" href="/for-developers/apps/first-app/4-data-model" hidden></a>
-    </article>
-    <aside class="col-xs-12 col-sm-4 right-side">
+<ul class="menu-list">
+  
+    
+      <li>
         
-        <nav class="aside-menu">
+          <a href="/for-developers/apps/first-app">Writing a Solid application</a>
+        
+        <!-- This is for categories with sub-categories -->
+        
+          <!-- List all posts in the category (no subcategories) -->
+          <ul>
             
-                
-                    
-
-<ul>
-    
-        
+              <li>
+                <a
+                  href="/for-developers/apps/first-app"
+                  
+                >Introduction</a></li>
             
-            <li> 
-                <h4>Writing a Solid application</h4>
-                <!-- This is for categories with sub-categories -->
-                
-                    <!-- List all posts in the category (no subcategories) -->
-                    <ul>
-                        
-                            <li ><a href="/for-developers/apps/first-app">Introduction</a></li>                                    
-                        
-                            <li ><a href="/for-developers/apps/first-app/1-authentication">Step 1: identifying the user</a></li>                                    
-                        
-                            <li ><a href="/for-developers/apps/first-app/2-understanding-solid">Step 2: Understanding Solid</a></li>                                    
-                        
-                            <li ><a href="/for-developers/apps/first-app/3-reading-data">Step 3: Reading data</a></li>                                    
-                        
-                            <li  class="active"><a href="/for-developers/apps/first-app/4-data-model">Step 4: Setting up a Data Model</a></li>                                    
-                        
-                            <li ><a href="/for-developers/apps/first-app/5-writing-data">Step 5: Writing data & what's next</a></li>                                    
-                        
-                    </ul>
-                
-            </li>
+              <li>
+                <a
+                  href="/for-developers/apps/first-app/1-authentication"
+                  
+                >Step 1: identifying the user</a></li>
+            
+              <li>
+                <a
+                  href="/for-developers/apps/first-app/2-understanding-solid"
+                  
+                >Step 2: Understanding Solid</a></li>
+            
+              <li>
+                <a
+                  href="/for-developers/apps/first-app/3-reading-data"
+                  
+                >Step 3: Reading data</a></li>
+            
+              <li>
+                <a
+                  href="/for-developers/apps/first-app/4-data-model"
+                   class="is-active" 
+                >Step 4: Setting up a Data Model</a></li>
+            
+              <li>
+                <a
+                  href="/for-developers/apps/first-app/5-writing-data"
+                  
+                >Step 5: Writing data & what's next</a></li>
+            
+          </ul>
         
+      </li>
+                    <a href="/for-developers/apps/vocabularies"></a>
     
-        
-            <li>
-                
-                    <h4><a href="/for-developers/apps/vocabularies">Vocabularies</a></h4>
-                
-            </li>
-        
+  
     
+      <li>
         
-            <li>
-                
-                    <h4><a href="/for-developers/apps/common-patterns">Common patterns</a></h4>
-                
-            </li>
+          <a href="/for-developers/apps/vocabularies">Vocabularies</a>
         
+      </li>
     
-        
-            <li>
-                
-                    <h4><a href="/for-developers/apps/tools">Tools and libraries</a></h4>
-                
-            </li>
-        
+  
     
+      <li>
+        
+          <a href="/for-developers/apps/common-patterns">Common patterns</a>
+        
+      </li>
+    
+  
+    
+      <li>
+        
+          <a href="/for-developers/apps/tools">Tools and libraries</a>
+        
+      </li>
+    
+  
 </ul>
-                
-            
-        </nav>
+        
+      </div>
     </aside>
-</section>
+  </div>
+</div>
+
+    </main>
+    <footer id="footer" class="footer">
+  <div class="container">
+    <div class="columns">
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <a class="title is-size-5" href="/">Home</a>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/use-solid">Use Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/implement">Implement Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/team">Team</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/faqs">FAQs</a>
+                
+              </li>
+            
+          </ul>
         </div>
-      </main>
-      <footer class="solid-footer">
-  <nav>
-    <ul class="solid-footer-menu row">
-      <li class="col-xs-12 col-sm-3">
-        <ul class="sub-links">
-          <li>
-            <span class="home-link">
-              <a href="/" title="Homepage">
-                Home
-              </a>
-            </span>
-          </li>
-          <li>
-            <a href="/use-solid" title="Applicable licenses">
-              Use Solid
-            </a>
-          </li>
-          <li>
-            <a href="/implement" title="Get support to implement Solid for your organisation">
-              Implement Solid
-            </a>
-          </li>  
-          <li>
-            <a href="/team" title="How and when can you use the Solid logo?">
-              Team
-            </a>
-          </li>
-          <li>
-            <a href="/faqs" title="Frequently asked questions">
-              FAQs
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="col-xs-12 col-sm-3">
-        <ul class="sub-links">
-          <li>
-            <h3>What's New</h3>
-          </li>
-          <li>
-            <a href="/this-week-in-solid" title="Weekly updates of everything that's happening in Solid">
-              This Week in Solid
-            </a>
-          </li>
-          <li>
-            <a href="/press" title="How and when can you use the Solid logo?">
-              Press
-            </a>
-          </li>        
-          <li>
-            <a href="/events" title="What Solid-related events are planned?">
-              Solid Events
-            </a>
-          </li>  
-        </ul>
-      </li>    
-      <li class="col-xs-12 col-sm-3">
-        <ul class="sub-links">
-          <li>
-            <h3>
-              <a href="/for-developers" title="Information for developers">
-                For Developers
-              </a>
-            </h3>
-          </li>    
-          <li>
-            <a href="/for-developers/apps" title="Tutorials about writing Solid applications">
-              Writing apps
-            </a>
-          </li>
-          <li>
-            <a href="/for-developers/pod-server" title="Tutorials on runnign your own Pod server">
-              Running a Pod server
-            </a>
-          </li>
-          <li>
-            <a href="/funding" title="Where to find funding for building things with Solid">
-              Funding
-            </a>
-          </li>
-          <li>
-            <a href="https://forum.solidproject.org" title="Forum">
-              Forum
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="col-xs-12 col-sm-3">
-        <ul class="sub-links">
-          <li>
-            <h3>More</h3>
-          </li>
-          <li>
-            <a href="/standardisation" title="The process of standardising Solid">
-              Standardisation
-            </a>
-          </li>
-          <li>
-            <a href="/license" title="The licenses we use">
-              License
-            </a>
-          </li>    
-          <li>
-            <a href="/logo-usage-guidelines" title="How and when can you use the Solid logo?">
-              Logo Usage Guidelines
-            </a>
-          </li>
-        </ul>
-      </li>    
-    </ul>
-  </nav>
-  <div class="solid-bottom-footer row">
-    <div class="solid-copyright col-xs-12">
-      <img src="/assets/img/solid-emblem.svg" alt="[Solid logo]" />
-      <nav>
-        <ul>
-          <li>
-            <a href="mailto:info@solidproject.org">info@solidproject.org</a>
-          </li>
-          <li>
-            <a href="https://github.com/solid/" title="Solid on GitHub">
-              <img
-                src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/github.svg"
-                alt="GitHub"
-                class="icon"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/project_solid" title="Solid on Twitter">
-              <img
-                src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/twitter.svg"
-                alt="Twitter"
-                class="icon"
-              />
-            </a>
-          </li>
-        </ul>
-      </nav>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <span class="title is-size-5">What's new</span>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/this-week-in-solid">This week in Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/press">Press</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/events">Solid events</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <a class="title is-size-5" href="/for-developers">For developers</a>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/for-developers/apps">Writing apps</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/for-developers/pod-server">Running a Pod server</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/funding">Funding</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="https://forum.solidproject.org">Forum</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <span class="title is-size-5">More</span>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/standardisation">Standardisation</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/license">License</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/logo-usage-guidelines">Logo usage guidelines</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
     </div>
   </div>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img
+          src="/assets/img/solid-emblem.svg"
+          alt="[Solid logo]"
+        />
+      </a>
+      <a class="navbar-item" href="mailto:info@solidproject.org">
+        info@solidproject.org
+      </a>
+      <a class="navbar-item" href="https://github.com/solid/" title="Solid on GitHub">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/github.svg"
+            alt="GitHub"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+      <a class="navbar-item" href="https://twitter.com/project_solid" title="Solid on Twitter">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/twitter.svg"
+            alt="Twitter"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+    </div>
+  </nav>
 </footer>
 
-      <script src="/assets/js/app.js"></script>
-    </div>
   </body>
+
+
 </html>

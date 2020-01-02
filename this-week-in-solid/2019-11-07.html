@@ -1,121 +1,113 @@
-<!DOCTYPE html>
-<!--
-	Solid by Inrupt
--->
+<!doctype html>
 <html>
   <head>
-  <title>Solid</title>
-  <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, user-scalable=no"
-  />
-  <link
-    rel="shortcut icon"
-    type="image/x-icon"
-    href="/favicon.ico?"
-  />
-  <link
-    rel="stylesheet"
-    href="/assets/css/flexboxgrid.min.css"
-  />
-  <link rel="stylesheet" href="/assets/main.css" />
-</head>
-
+    <title>This Week in Solid 2019-11-07 · Solid</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/favicon.ico?"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
 
   <body>
-    <div class="internal">
-      <header class="internal-header">
-    <div class="solid-nav">
-  <a href="/" class="logo"
-    ><img src="/assets/img/solid-emblem.svg" alt="[Solid logo]"
-  /> Solid</a>
-  <nav class="menu">
-    <ul class="links">
-      
-      <li >
-        <a  href="/use-solid"  aria-label="Use Solid">Use Solid</a>
+    <header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img
+          src="/assets/img/solid-emblem.svg"
+          alt="[Solid logo]"
+        />
+      </a>
+      <a class="is-hidden-mobile navbar-item navbar-brand-name is-uppercase is-size-4" href="/">
+        Solid
+      </a>
+    </div>
+  
+    <div class="navbar-menu">
+      <div class="navbar-end">
         
-      </li>
-      
-      <li >
-        <a  href="/for-developers"  aria-label="For Developers">For Developers</a>
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/use-solid"
+          >Use Solid</a>
         
-      </li>
-      
-      <li >
-        <a  href="/for-enterprises"  aria-label="For Enterprises">For Enterprises</a>
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/for-developers"
+          >For Developers</a>
         
-      </li>
-      
-      <li >
-        <a  href="/faqs"  aria-label="FAQ">FAQ</a>
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/for-enterprises"
+          >For Enterprises</a>
         
-      </li>
-      
-    </ul>
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/faqs"
+          >FAQ</a>
+        
+      </div>
+    </div>
   </nav>
-  <div class="burger">
-    <div class="line1"></div>
-    <div class="line2"></div>
-    <div class="line3"></div>
-  </div>
-</div>
-
 </header>
-      <main>
-        <div class="page-content">
-          <section class="row solid-post">
-    <section class="solid-breadcrumbs col-xs-12">
+
+    
+    
+  <nav id="breadcrumb" class="breadcrumb">
+    <div class="container">
+      <ul>
+        <li>
+          <a href="/">
+            Home
+          </a>
+        </li>
         
-        <div class="solid-breadcrumbs-container row">
-            <ul class="col-xs-10 col-sm-12">
-                <li><a href="/">Home</a> ></li>
-                
-                
-                <li>
-                    <a
-                        href="/this-week-in-solid">
-                        This week in solid ></i>
-                    </a>
-                </li>
-                
-                
-                
-                <li>2019 11 07</li>
-                
-                
-            </ul>
-            <div class="menu-mobile menu-mobile-aside col-xs-2">
-                <button><i class="far"></i></button>
-            </div>
-        </div>
-    </section>
-    <article class="post h-entry col-xs-12 col-sm-8" itemscope itemtype="http://schema.org/BlogPosting">
+        
+        
+        
+          <li>
+            <a href="">
+              This Week in Solid 2019-11-07
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
 
-        <header class="post-header">
-            
-            <h1 class="post-title p-name" itemprop="name headline">Week Updates 2019-11-07</h1>
-            <p class="post-meta"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
-                            itemprop="name">Mitzi László</span></span><time class="dt-published" datetime="2019-11-07T00:00:00+00:00" itemprop="datePublished">Nov 7, 2019
-                </time>
-            </p>    
-        </header>
 
-        <div class="post-content e-content" itemprop="articleBody">
-            <h1 id="7th-november">7th November</h1>
+    <main>
+      <div class="container">
+  <div class="columns">
+    <div class="column is-two-thirds">
+      <article class="section content">
 
-<p>Hello and welcome to another edition of <em>This Week in Solid</em>!</p>
+        <h1 id="7th-november">7th November</h1>
 
-<p>If you are familiar with this newsletter you can <a href="#updates">skip directly to updates</a>.</p>
+<p>Hello and welcome to another edition of This Week in Solid!</p>
 
 <p><a href="https://solidproject.org">Solid</a> is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.</p>
 
 <p>This is a weekly summary of Solid progress.</p>
 
-<p>Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed <a href="https://github.com/solid/information/blob/master/weekly-updates/next.md">on GitHub</a>. If you find any errors in this week’s issue please <a href="https://github.com/solid/information/pulls">submit a pull request</a>.</p>
+<p>Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed <a href="http://github.com/solid/solidproject.org/blob/master/_posts/this-week-in-solid/next.md">on GitHub</a>. If you find any errors in this week’s issue please <a href="https://github.com/solid/solidproject.org/pulls">submit a pull request</a>.</p>
 
-<p>Want to get involved? <a href="https://github.com/solid/process">Contributions are welcome.</a></p>
+<p>Want to get involved? <a href="https://solidproject.org/standardisation">Contributions are welcome.</a></p>
+
+<p>Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid.</p>
+
+<p>Tune in at <a href="https://zoom.us/j/261297657">this line</a>:</p>
+<ul>
+  <li>on the 2nd January 2020 at 16:00.</li>
+  <li>on the 9th January 2020 at 10:00.</li>
+  <li>on the 16th January 2020 at 16:00.</li>
+  <li>on the 23rd January 2020 at 10:00.</li>
+  <li>(and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)</li>
+</ul>
 
 <h2 id="updates">Updates</h2>
 
@@ -160,500 +152,395 @@
 
 <p><a href="https://github.com/Mitzi-Laszlo">Mitzi László</a></p>
 
-        </div><a class="u-url" href="/this-week-in-solid/2019-11-07" hidden></a>
-        <section class="solid-related-post col-xs-12">
-            
+      </article>
 
-
-
-
-<div class="related-post-container row">
-    
-
-        
-        
-
-        
-
-        
-
-    
-
-        
-        
-
-        
-
-        
-            <div class="post-detail col-xs-12 col-sm-6">
-                
-                <h5>
-                    <a href="/this-week-in-solid/2019-12-18">Week Updates 2019-12-18</a>
-                </h5>
-                <p class="post-meta"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
-                            itemprop="name">Mitzi László</span></span><time class="dt-published" datetime="2019-11-07T00:00:00+00:00" itemprop="datePublished">Nov 7, 2019
-                    </time>
-                </p>    
-            </div>
-        
-        
-        
-
-    
-
-        
-        
-
-        
-
-        
-            <div class="post-detail col-xs-12 col-sm-6">
-                
-                <h5>
-                    <a href="/this-week-in-solid/2019-12-12">Week Updates 2019-12-12</a>
-                </h5>
-                <p class="post-meta"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
-                            itemprop="name">Mitzi László</span></span><time class="dt-published" datetime="2019-11-07T00:00:00+00:00" itemprop="datePublished">Nov 7, 2019
-                    </time>
-                </p>    
-            </div>
-        
-        
-        
-
-    
-
-        
-        
-
-        
-
-        
-            <div class="post-detail col-xs-12 col-sm-6">
-                
-                <h5>
-                    <a href="/this-week-in-solid/2019-12-05">Week Updates 2019-12-05</a>
-                </h5>
-                <p class="post-meta"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
-                            itemprop="name">Mitzi László</span></span><time class="dt-published" datetime="2019-11-07T00:00:00+00:00" itemprop="datePublished">Nov 7, 2019
-                    </time>
-                </p>    
-            </div>
-        
-        
-        
-
-    
-
-        
-        
-
-        
-
-        
-            <div class="post-detail col-xs-12 col-sm-6">
-                
-                <h5>
-                    <a href="/this-week-in-solid/2019-11-28">Week Updates 2019-11-28</a>
-                </h5>
-                <p class="post-meta"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
-                            itemprop="name">Mitzi László</span></span><time class="dt-published" datetime="2019-11-07T00:00:00+00:00" itemprop="datePublished">Nov 7, 2019
-                    </time>
-                </p>    
-            </div>
-        
-        
-            
-</div>
-        </section>
-    </article>
-    <aside class="col-xs-12 col-sm-4 right-side">
-        <nav class="aside-menu">
-            <ul>
-                <li>
-                    <h4 class="accordionItem">
-                        Recent Posts
-                        <img
-                        src="/assets/img/fontawesome-free-5.11.2-web/svgs/solid/chevron-down.svg"
-                        alt="[down arrow]"
-                        class="chevron"
-                        />
-                    </h4>
-                    <ul>
-                        
-                            
-                                
-                                    <li><a href="/2020/01/02/this-week-in-solid.html">This Week In Solid</a></li>
-                                
-                            
-                        
-                            
-                                
-                                    <li><a href="/this-week-in-solid/2019-12-18">Week Updates 2019-12-18</a></li>
-                                
-                            
-                        
-                            
-                                
-                                    <li><a href="/this-week-in-solid/2019-12-12">Week Updates 2019-12-12</a></li>
-                                
-                            
-                        
-                            
-                                
-                                    <li><a href="/this-week-in-solid/2019-12-05">Week Updates 2019-12-05</a></li>
-                                
-                            
-                        
-                            
-                                
-                                    <li><a href="/this-week-in-solid/2019-11-28">Week Updates 2019-11-28</a></li>
-                                
-                            
-                        
-                    </ul>
-                </li>
-            </ul>
-
-            <ul>
-                <li>
-                    <h4 class="accordionItem">Archive<i class="fas fa-chevron-down"></i></h4>
-                    
-                    <ul>
-                    
-                        <li>
-                            <h4 class="accordionItem">2020<i class="fas fa-chevron-down"></i></h4>
-                            <ul>
-                                
-                                
-                                <li><a href="/2020/01/02/this-week-in-solid.html">This Week In Solid</a></li>
-                                
-                                
-                            </ul>
-                        </li>
-                    
-                        <li>
-                            <h4 class="accordionItem">2019<i class="fas fa-chevron-down"></i></h4>
-                            <ul>
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-12-18">Week Updates 2019-12-18</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-12-12">Week Updates 2019-12-12</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-12-05">Week Updates 2019-12-05</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-11-28">Week Updates 2019-11-28</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-11-21">Week Updates 2019-11-21</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-11-14">Week Updates 2019-11-14</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-11-07">Week Updates 2019-11-07</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-10-31">Week Updates 2019-10-31</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-10-24">Week Updates 2019-10-24</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-10-17">Week Updates 2019-10-17</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-10-10">Week Updates 2019-10-10</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-10-03">Week Updates 2019-10-03</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-09-26">Week Updates 2019-09-26</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-09-19">Week Updates 2019-09-19</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-09-12">Week Updates 2019-09-12</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-09-05">Week Updates 2019-09-05</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-08-29">Week Updates 2019-08-29</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-08-22">Week Updates 2019-08-22</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-08-15">Week Updates 2019-08-15</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-08-08">Week Updates 2019-08-08</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-08-01">Week Updates 2019-08-01</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-07-25">Week Updates 2019-07-25</a></li>
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid/2019-07-18">Week Updates 2019-07-18</a></li>
-                                
-                                
-                                
-                                
-                                
-                                <li><a href="/this-week-in-solid">This Week in Solid</a></li>
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                            </ul>
-                        </li>
-                    
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </aside>
-</section>
-
+      <div class="section">
+  <form
+    action="https://tinyletter.com/ThisWeekInSolid"
+    class="card"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://tinyletter.com/ThisWeekInSolid', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"
+  >
+    <div class="card-body section">
+      <h2 class="title">
+        <a href="/this-week-in-solid" title="View past editions of This Week in Solid">
+          This Week in Solid
+        </a>
+      </h2>
+      <p class="content">
+        <label for="tlemail">
+          Leave your email address to get a bite-sized overview of everything Solid, delivered straight to your inbox once a week.
+        </label>
+      </p>
+      <div class="field">
+        <div class="control">
+          <input class="input is-large" type="email" name="email" placeholder="yourmail@example.com" id="tlemail"/>
         </div>
-      </main>
-      <footer class="solid-footer">
-  <nav>
-    <ul class="solid-footer-menu row">
-      <li class="col-xs-12 col-sm-3">
-        <ul class="sub-links">
-          <li>
-            <span class="home-link">
-              <a href="/" title="Homepage">
-                Home
-              </a>
-            </span>
-          </li>
-          <li>
-            <a href="/use-solid" title="Applicable licenses">
-              Use Solid
-            </a>
-          </li>
-          <li>
-            <a href="/implement" title="Get support to implement Solid for your organisation">
-              Implement Solid
-            </a>
-          </li>  
-          <li>
-            <a href="/team" title="How and when can you use the Solid logo?">
-              Team
-            </a>
-          </li>
-          <li>
-            <a href="/faqs" title="Frequently asked questions">
-              FAQs
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="col-xs-12 col-sm-3">
-        <ul class="sub-links">
-          <li>
-            <h3>What's New</h3>
-          </li>
-          <li>
-            <a href="/this-week-in-solid" title="Weekly updates of everything that's happening in Solid">
-              This Week in Solid
-            </a>
-          </li>
-          <li>
-            <a href="/press" title="How and when can you use the Solid logo?">
-              Press
-            </a>
-          </li>        
-          <li>
-            <a href="/events" title="What Solid-related events are planned?">
-              Solid Events
-            </a>
-          </li>  
-        </ul>
-      </li>    
-      <li class="col-xs-12 col-sm-3">
-        <ul class="sub-links">
-          <li>
-            <h3>
-              <a href="/for-developers" title="Information for developers">
-                For Developers
-              </a>
-            </h3>
-          </li>    
-          <li>
-            <a href="/for-developers/apps" title="Tutorials about writing Solid applications">
-              Writing apps
-            </a>
-          </li>
-          <li>
-            <a href="/for-developers/pod-server" title="Tutorials on runnign your own Pod server">
-              Running a Pod server
-            </a>
-          </li>
-          <li>
-            <a href="/funding" title="Where to find funding for building things with Solid">
-              Funding
-            </a>
-          </li>
-          <li>
-            <a href="https://forum.solidproject.org" title="Forum">
-              Forum
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="col-xs-12 col-sm-3">
-        <ul class="sub-links">
-          <li>
-            <h3>More</h3>
-          </li>
-          <li>
-            <a href="/standardisation" title="The process of standardising Solid">
-              Standardisation
-            </a>
-          </li>
-          <li>
-            <a href="/license" title="The licenses we use">
-              License
-            </a>
-          </li>    
-          <li>
-            <a href="/logo-usage-guidelines" title="How and when can you use the Solid logo?">
-              Logo Usage Guidelines
-            </a>
-          </li>
-        </ul>
-      </li>    
-    </ul>
-  </nav>
-  <div class="solid-bottom-footer row">
-    <div class="solid-copyright col-xs-12">
-      <img src="/assets/img/solid-emblem.svg" alt="[Solid logo]" />
-      <nav>
-        <ul>
-          <li>
-            <a href="mailto:info@solidproject.org">info@solidproject.org</a>
-          </li>
-          <li>
-            <a href="https://github.com/solid/" title="Solid on GitHub">
-              <img
-                src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/github.svg"
-                alt="GitHub"
-                class="icon"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/project_solid" title="Solid on Twitter">
-              <img
-                src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/twitter.svg"
-                alt="Twitter"
-                class="icon"
-              />
-            </a>
-          </li>
-        </ul>
-      </nav>
+      </div>
+      <input type="hidden" value="1" name="embed"/>
+      <div class="field">
+        <div class="control">
+          <input type="submit" class="button is-large" value="Subscribe" />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+    </div>
+    <aside id="sidebar" class="column is-one-third is-hidden-mobile section">
+      <div class="menu is-large">
+        
+          
+            <p class="menu-label">2020</p>
+            <ul class="menu-list">
+                
+                  
+                    <li><a href="/2020/01/02/this-week-in-solid.html">This Week In Solid</a></li>
+                  
+                
+            </ul>
+          
+            <p class="menu-label">2019</p>
+            <ul class="menu-list">
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-12-18">This Week in Solid 2019-12-18</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-12-12">This Week in Solid 2019-12-12</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-12-05">This Week in Solid 2019-12-05</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-11-28">This Week in Solid 2019-11-28</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-11-21">This Week in Solid 2019-11-21</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-11-14">This Week in Solid 2019-11-14</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-11-07">This Week in Solid 2019-11-07</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-10-31">This Week in Solid 2019-10-31</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-10-24">This Week in Solid 2019-10-24</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-10-17">This Week in Solid 2019-10-17</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-10-10">This Week in Solid 2019-10-10</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-10-03">This Week in Solid 2019-10-03</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-09-26">This Week in Solid 2019-09-26</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-09-19">This Week in Solid 2019-09-19</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-09-12">This Week in Solid 2019-09-12</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-09-05">This Week in Solid 2019-09-05</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-08-29">This Week in Solid 2019-08-29</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-08-22">This Week in Solid 2019-08-22</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-08-15">This Week in Solid 2019-08-15</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-08-08">This Week in Solid 2019-08-08</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-08-01">This Week in Solid 2019-08-01</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-07-25">This Week in Solid 2019-07-25</a></li>
+                  
+                
+                  
+                    <li><a href="/this-week-in-solid/2019-07-18">This Week in Solid 2019-07-18</a></li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+            </ul>
+          
+      </div>
+    </aside>
+  </div>
+</div>
+
+    </main>
+    <footer id="footer" class="footer">
+  <div class="container">
+    <div class="columns">
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <a class="title is-size-5" href="/">Home</a>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/use-solid">Use Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/implement">Implement Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/team">Team</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/faqs">FAQs</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <span class="title is-size-5">What's new</span>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/this-week-in-solid">This week in Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/press">Press</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/events">Solid events</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <a class="title is-size-5" href="/for-developers">For developers</a>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/for-developers/apps">Writing apps</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/for-developers/pod-server">Running a Pod server</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/funding">Funding</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="https://forum.solidproject.org">Forum</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <span class="title is-size-5">More</span>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/standardisation">Standardisation</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/license">License</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/logo-usage-guidelines">Logo usage guidelines</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
     </div>
   </div>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img
+          src="/assets/img/solid-emblem.svg"
+          alt="[Solid logo]"
+        />
+      </a>
+      <a class="navbar-item" href="mailto:info@solidproject.org">
+        info@solidproject.org
+      </a>
+      <a class="navbar-item" href="https://github.com/solid/" title="Solid on GitHub">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/github.svg"
+            alt="GitHub"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+      <a class="navbar-item" href="https://twitter.com/project_solid" title="Solid on Twitter">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/twitter.svg"
+            alt="Twitter"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+    </div>
+  </nav>
 </footer>
 
-      <script src="/assets/js/app.js"></script>
-    </div>
   </body>
+
+
 </html>
