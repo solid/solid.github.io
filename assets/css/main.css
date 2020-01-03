@@ -1033,10 +1033,10 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   background-color: #7a7a7a !important; }
 
 .has-text-grey-light {
-  color: #b5b5b5 !important; }
+  color: #d9d9d9 !important; }
 
 .has-background-grey-light {
-  background-color: #b5b5b5 !important; }
+  background-color: #d9d9d9 !important; }
 
 .has-text-grey-lighter {
   color: #d8d8d8 !important; }
@@ -1349,7 +1349,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
     margin-left: calc(-0.5em - 1px);
     margin-right: calc(-0.5em - 1px); }
   .button:hover, .button.is-hovered {
-    border-color: #b5b5b5;
+    border-color: #d9d9d9;
     color: #363636; }
   .button:focus, .button.is-focused {
     border-color: #3273dc;
@@ -2482,7 +2482,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .input:-ms-input-placeholder, .textarea:-ms-input-placeholder, .select select:-ms-input-placeholder {
     color: rgba(90, 90, 90, 0.3); }
   .input:hover, .textarea:hover, .select select:hover, .is-hovered.input, .is-hovered.textarea, .select select.is-hovered {
-    border-color: #b5b5b5; }
+    border-color: #d9d9d9; }
   .input:focus, .textarea:focus, .select select:focus, .is-focused.input, .is-focused.textarea, .select select.is-focused, .input:active, .textarea:active, .select select:active, .is-active.input, .is-active.textarea, .select select.is-active {
     border-color: #7C4DFF;
     box-shadow: 0 0 0 0.125em rgba(124, 77, 255, 0.25); }
@@ -3262,7 +3262,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
       cursor: default;
       pointer-events: none; }
     .breadcrumb li + li::before {
-      color: #b5b5b5;
+      color: #d9d9d9;
       content: "/"; }
   .breadcrumb ul,
   .breadcrumb ol {
@@ -6032,6 +6032,19 @@ a.navbar-item,
   text-decoration: underline; }
 #footer .brand-icon {
   filter: invert(1); }
+
+.talk {
+  margin-bottom: 32px;
+  padding: 32px;
+  border: 1px solid #d9d9d9; }
+  .talk .column:first-child {
+    border-right: 1px solid #d9d9d9; }
+  .talk aside.column:last-child {
+    padding-left: 32px; }
+  .talk .speaker {
+    color: #5a5a5a; }
+  .talk .icon img {
+    width: 1em; }
 
 .codesandbox-button-wrapper {
   display: block;
