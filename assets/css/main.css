@@ -5964,7 +5964,7 @@ a.navbar-item,
 
 .footer {
   background-color: #202542;
-  padding: 3rem 1.5rem 6rem;
+  padding: 3rem 1.5rem 0;
   color: #d8d8d8; }
 
 #breadcrumb {
@@ -5982,7 +5982,7 @@ a.navbar-item,
 #landing-content {
   background-image: url("/assets/img/hexagon.svg");
   background-repeat: no-repeat;
-  background-position: 0 13.15625rem; }
+  background-position: right 13.15625rem; }
   #home-hero + #landing-content {
     margin-top: -13.15625rem; }
 
@@ -6020,12 +6020,25 @@ a.navbar-item,
     #choose-your-own-adventure .button {
       width: 100%; } }
   #choose-your-own-adventure .button:hover, #choose-your-own-adventure .button:focus {
-    background-color: transparent;
+    background-color: white;
     color: #7C4DFF; }
 
 #tour .section {
   margin: 160px 0; }
+  #tour .section:first-child {
+    margin-top: 0; }
+  #tour .section:last-child {
+    margin-bottom: 0; }
+#tour .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
 
+#newsletter {
+  margin-bottom: 32px; }
+
+#footer .navbar {
+  margin-top: 32px; }
 #footer a, #footer span {
   color: #d8d8d8; }
 #footer a:hover, #footer a:focus {
@@ -6045,6 +6058,11 @@ a.navbar-item,
     color: #5a5a5a; }
   .talk .icon img {
     width: 1em; }
+
+.illustration {
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
 
 .codesandbox-button-wrapper {
   display: block;
