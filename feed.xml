@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2020-01-07T15:41:24+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><entry><title type="html">This Week in Solid 2020-01-09</title><link href="https://solidproject.org//this-week-in-solid/2020-01-09" rel="alternate" type="text/html" title="This Week in Solid 2020-01-09" /><published>2020-01-09T00:00:00+00:00</published><updated>2020-01-09T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-01-09">&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2020-01-07T15:47:16+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><entry><title type="html">This Week in Solid 2020-01-09</title><link href="https://solidproject.org//this-week-in-solid/2020-01-09" rel="alternate" type="text/html" title="This Week in Solid 2020-01-09" /><published>2020-01-09T00:00:00+00:00</published><updated>2020-01-09T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-01-09">&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
@@ -24,185 +24,160 @@
 &lt;h3 id=&quot;press&quot;&gt;&lt;a href=&quot;https://solidproject.org/press&quot;&gt;Press&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;This week we had our first Solid event in Africa led by Ali Siragedien with &lt;a href=&quot;http://solid-khartoum.atspace.cc&quot;&gt;Solid Khartoum&lt;/a&gt;. There are a few upcoming events where you can learn more and meet others working on Solid:&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;div class=&quot;talk&quot;&gt;
-&lt;div class=&quot;columns&quot;&gt;
-  &lt;div class=&quot;column is-two-thirds&quot;&gt;
-    &lt;p&gt;
-      &lt;small&gt;2020-01-10&lt;/small&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
+&lt;div class=&quot;talk&quot;&gt;
+  &lt;div class=&quot;columns&quot;&gt;
+    &lt;div class=&quot;column is-two-thirds&quot;&gt;
+      &lt;p&gt;
+        &lt;small&gt;2020-01-10&lt;/small&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
         
-        &lt;a href=&quot;https://p2p.paris/fr/event/festival-0/&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-          P2P
+          &lt;a href=&quot;https://p2p.paris/fr/event/festival-0/&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
+            P2P
+          &lt;/a&gt;
+        
+        &lt;br /&gt;
+        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Alice Poggioli&lt;/i&gt;&lt;/span&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;aside class=&quot;column&quot;&gt;
+      
+        &lt;a href=&quot;https://p2p.paris/fr/event/festival-0/&quot; class=&quot;button is-text&quot;&gt;
+          &lt;span class=&quot;icon is-small&quot;&gt;
+            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
+          &lt;/span&gt;
+          &lt;span&gt;Visit website&lt;/span&gt;
         &lt;/a&gt;
-        
-      &lt;br /&gt;
-      &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Alice Poggioli&lt;/i&gt;&lt;/span&gt;
-    &lt;/p&gt;
+      
+      
+      
+    &lt;/aside&gt;
   &lt;/div&gt;
-  &lt;aside class=&quot;column&quot;&gt;
-      
-      &lt;a href=&quot;https://p2p.paris/fr/event/festival-0/&quot; class=&quot;button is-text&quot;&gt;
-        &lt;span class=&quot;icon is-small&quot;&gt;
-          &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-        &lt;/span&gt;
-        &lt;span&gt;Visit website&lt;/span&gt;
-      &lt;/a&gt;
-      
-      
-      
-  &lt;/aside&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;div class=&quot;talk&quot;&gt;
-&lt;div class=&quot;columns&quot;&gt;
-  &lt;div class=&quot;column is-two-thirds&quot;&gt;
-    &lt;p&gt;
-      &lt;small&gt;2020-01-11&lt;/small&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
+&lt;div class=&quot;talk&quot;&gt;
+  &lt;div class=&quot;columns&quot;&gt;
+    &lt;div class=&quot;column is-two-thirds&quot;&gt;
+      &lt;p&gt;
+        &lt;small&gt;2020-01-11&lt;/small&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
         
-        &lt;a href=&quot;https://p2p.paris/fr/event/festival-0/&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-          P2P
+          &lt;a href=&quot;https://p2p.paris/fr/event/festival-0/&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
+            P2P
+          &lt;/a&gt;
+        
+        &lt;br /&gt;
+        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Jonas Smedegaard&lt;/i&gt;&lt;/span&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;aside class=&quot;column&quot;&gt;
+      
+        &lt;a href=&quot;https://p2p.paris/fr/event/festival-0/&quot; class=&quot;button is-text&quot;&gt;
+          &lt;span class=&quot;icon is-small&quot;&gt;
+            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
+          &lt;/span&gt;
+          &lt;span&gt;Visit website&lt;/span&gt;
         &lt;/a&gt;
-        
-      &lt;br /&gt;
-      &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Jonas Smedegaard&lt;/i&gt;&lt;/span&gt;
-    &lt;/p&gt;
+      
+      
+      
+    &lt;/aside&gt;
   &lt;/div&gt;
-  &lt;aside class=&quot;column&quot;&gt;
-      
-      &lt;a href=&quot;https://p2p.paris/fr/event/festival-0/&quot; class=&quot;button is-text&quot;&gt;
-        &lt;span class=&quot;icon is-small&quot;&gt;
-          &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-        &lt;/span&gt;
-        &lt;span&gt;Visit website&lt;/span&gt;
-      &lt;/a&gt;
-      
-      
-      
-  &lt;/aside&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;div class=&quot;talk&quot;&gt;
-&lt;div class=&quot;columns&quot;&gt;
-  &lt;div class=&quot;column is-two-thirds&quot;&gt;
-    &lt;p&gt;
-      &lt;small&gt;2020-01-27&lt;/small&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
+&lt;div class=&quot;talk&quot;&gt;
+  &lt;div class=&quot;columns&quot;&gt;
+    &lt;div class=&quot;column is-two-thirds&quot;&gt;
+      &lt;p&gt;
+        &lt;small&gt;2020-01-27&lt;/small&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
         
-        &lt;a href=&quot;https://cs3.deic.dk&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-          Workshop on Cloud Services for File Synchronisation and Sharing
+          &lt;a href=&quot;https://cs3.deic.dk&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
+            Workshop on Cloud Services for File Synchronisation and Sharing
+          &lt;/a&gt;
+        
+        &lt;br /&gt;
+        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Michiel de Jong&lt;/i&gt;&lt;/span&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;aside class=&quot;column&quot;&gt;
+      
+        &lt;a href=&quot;https://cs3.deic.dk&quot; class=&quot;button is-text&quot;&gt;
+          &lt;span class=&quot;icon is-small&quot;&gt;
+            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
+          &lt;/span&gt;
+          &lt;span&gt;Visit website&lt;/span&gt;
         &lt;/a&gt;
-        
-      &lt;br /&gt;
-      &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Michiel de Jong&lt;/i&gt;&lt;/span&gt;
-    &lt;/p&gt;
+      
+      
+      
+    &lt;/aside&gt;
   &lt;/div&gt;
-  &lt;aside class=&quot;column&quot;&gt;
-      
-      &lt;a href=&quot;https://cs3.deic.dk&quot; class=&quot;button is-text&quot;&gt;
-        &lt;span class=&quot;icon is-small&quot;&gt;
-          &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-        &lt;/span&gt;
-        &lt;span&gt;Visit website&lt;/span&gt;
-      &lt;/a&gt;
-      
-      
-      
-  &lt;/aside&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;2019-01-30 &lt;a href=&quot;https://www.pilod.nl/wiki/2nd_Solid_Amsterdam_Meetup_%E2%80%93_January_30th,_2020&quot;&gt;Solid Amsterdam&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;div class=&quot;talk&quot;&gt;
-&lt;div class=&quot;columns&quot;&gt;
-  &lt;div class=&quot;column is-two-thirds&quot;&gt;
-    &lt;p&gt;
-      &lt;small&gt;2020-02-24&lt;/small&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-        
-        &lt;a href=&quot;https://www.rsaconference.com/experts/davi-ottenheimer-3&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-          RSA
-        &lt;/a&gt;
-        
-      &lt;br /&gt;
-      &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Davi Ottenheimer&lt;/i&gt;&lt;/span&gt;
-    &lt;/p&gt;
-  &lt;/div&gt;
-  &lt;aside class=&quot;column&quot;&gt;
-      
-      &lt;a href=&quot;https://www.rsaconference.com/experts/davi-ottenheimer-3&quot; class=&quot;button is-text&quot;&gt;
-        &lt;span class=&quot;icon is-small&quot;&gt;
-          &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-        &lt;/span&gt;
-        &lt;span&gt;Visit website&lt;/span&gt;
-      &lt;/a&gt;
-      
-      
-      
-  &lt;/aside&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;div class=&quot;talk&quot;&gt;
-&lt;div class=&quot;columns&quot;&gt;
-  &lt;div class=&quot;column is-two-thirds&quot;&gt;
-    &lt;p&gt;
-      &lt;small&gt;2020-02-07&lt;/small&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
+&lt;div class=&quot;talk&quot;&gt;
+  &lt;div class=&quot;columns&quot;&gt;
+    &lt;div class=&quot;column is-two-thirds&quot;&gt;
+      &lt;p&gt;
+        &lt;small&gt;2020-02-24&lt;/small&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
         
-        &lt;a href=&quot;https://indico.cern.ch/e/CERN-Solid-brainstorming&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-          Solid CERN
+          &lt;a href=&quot;https://www.rsaconference.com/experts/davi-ottenheimer-3&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
+            RSA
+          &lt;/a&gt;
+        
+        &lt;br /&gt;
+        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Davi Ottenheimer&lt;/i&gt;&lt;/span&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;aside class=&quot;column&quot;&gt;
+      
+        &lt;a href=&quot;https://www.rsaconference.com/experts/davi-ottenheimer-3&quot; class=&quot;button is-text&quot;&gt;
+          &lt;span class=&quot;icon is-small&quot;&gt;
+            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
+          &lt;/span&gt;
+          &lt;span&gt;Visit website&lt;/span&gt;
         &lt;/a&gt;
-        
-      &lt;br /&gt;
-      &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Maria Dimou, Sarven Capadisli, and Mitzi László&lt;/i&gt;&lt;/span&gt;
-    &lt;/p&gt;
+      
+      
+      
+    &lt;/aside&gt;
   &lt;/div&gt;
-  &lt;aside class=&quot;column&quot;&gt;
-      
-      &lt;a href=&quot;https://indico.cern.ch/e/CERN-Solid-brainstorming&quot; class=&quot;button is-text&quot;&gt;
-        &lt;span class=&quot;icon is-small&quot;&gt;
-          &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-        &lt;/span&gt;
-        &lt;span&gt;Visit website&lt;/span&gt;
-      &lt;/a&gt;
-      
-      
-      
-  &lt;/aside&gt;
 &lt;/div&gt;
+
+&lt;div class=&quot;talk&quot;&gt;
+  &lt;div class=&quot;columns&quot;&gt;
+    &lt;div class=&quot;column is-two-thirds&quot;&gt;
+      &lt;p&gt;
+        &lt;small&gt;2020-02-07&lt;/small&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+        
+          &lt;a href=&quot;https://indico.cern.ch/e/CERN-Solid-brainstorming&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
+            Solid CERN
+          &lt;/a&gt;
+        
+        &lt;br /&gt;
+        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Maria Dimou, Sarven Capadisli, and Mitzi László&lt;/i&gt;&lt;/span&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;aside class=&quot;column&quot;&gt;
+      
+        &lt;a href=&quot;https://indico.cern.ch/e/CERN-Solid-brainstorming&quot; class=&quot;button is-text&quot;&gt;
+          &lt;span class=&quot;icon is-small&quot;&gt;
+            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
+          &lt;/span&gt;
+          &lt;span&gt;Visit website&lt;/span&gt;
+        &lt;/a&gt;
+      
+      
+      
+    &lt;/aside&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
 
 &lt;p&gt;Solid Events are run by people like you, read more about tips on organising a successful Solid Event &lt;a href=&quot;https://solidproject.org/events&quot;&gt;here&lt;/a&gt; or &lt;a href=&quot;https://forum.solidproject.org/c/solid-events&quot;&gt;chat&lt;/a&gt; with other attendees and organisers.&lt;/p&gt;
 
