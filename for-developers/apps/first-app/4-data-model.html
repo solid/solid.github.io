@@ -107,14 +107,14 @@
         <p>(<a href="https://gitlab.com/vincenttunru/notepod/commit/900cbbb2c4b7fadef8aa5969a11d8816b37b00b7">This step as a Git commit.</a>)</p>
 
 <p>Now it’s time to start working on some actual functionality: we’ll be making an app that allows
-people to keep notes. In this step, we’ll prepare their Pod for our data model — much like how you
-might prepare database tables in a traditional application with a custom back-end.</p>
+people to keep notes. In this step, we’ll prepare their Pod for our data model — much as you
+might prepare database tables in a traditional application with a relational back-end.</p>
 
 <p>At a high level, we’ll set up the data model as follows:</p>
 
 <ol>
-  <li>Check if there exists a Document to track notes in.</li>
-  <li>If it does not exist, create it.</li>
+  <li>Check if a Document tracking our notes already exists.</li>
+  <li>If it doesn’t exist, create it.</li>
   <li>Fetch that Document.</li>
 </ol>
 
@@ -190,20 +190,20 @@ read the profile Document located there, and from there you can find the data yo
 <span class="k">import</span> <span class="p">{</span> <span class="nx">solid</span><span class="p">,</span> <span class="nx">schema</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rdf-namespaces</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">getNotesList</span><span class="p">(</span><span class="nx">profile</span><span class="p">)</span> <span class="p">{</span>
-  <span class="cm">/* 1. Check if there exists a Document to track notes in. */</span>
-  <span class="kd">const</span> <span class="nx">publicTypeIndexUrl</span> <span class="o">=</span> <span class="nx">profile</span><span class="p">.</span><span class="nx">getRef</span><span class="p">(</span><span class="nx">solid</span><span class="p">.</span><span class="nx">publicTypeIndex</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">publicTypeIndex</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchDocument</span><span class="p">(</span><span class="nx">publicTypeIndexUrl</span><span class="p">);</span>
+  <span class="cm">/* 1. Check if a Document tracking our notes already exists. */</span>
+  <span class="kd">const</span> <span class="nx">publicTypeIndexRef</span> <span class="o">=</span> <span class="nx">profile</span><span class="p">.</span><span class="nx">getRef</span><span class="p">(</span><span class="nx">solid</span><span class="p">.</span><span class="nx">publicTypeIndex</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">publicTypeIndex</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchDocument</span><span class="p">(</span><span class="nx">publicTypeIndexRef</span><span class="p">);</span>
   <span class="kd">const</span> <span class="nx">notesListEntry</span> <span class="o">=</span> <span class="nx">publicTypeIndex</span><span class="p">.</span><span class="nx">findSubject</span><span class="p">(</span><span class="nx">solid</span><span class="p">.</span><span class="nx">forClass</span><span class="p">,</span> <span class="nx">schema</span><span class="p">.</span><span class="nx">TextDigitalDocument</span><span class="p">);</span>
 
-  <span class="cm">/* 2. If it does not exist, create it. */</span>
+  <span class="cm">/* 2. If it doesn't exist, create it. */</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">notesListEntry</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// We will define this function later:</span>
     <span class="k">return</span> <span class="nx">initialiseNotesList</span><span class="p">(</span><span class="nx">profile</span><span class="p">,</span> <span class="nx">publicTypeIndex</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="cm">/* 3. If it does exist, fetch that Document. */</span>
-  <span class="kd">const</span> <span class="nx">notesListUrl</span> <span class="o">=</span> <span class="nx">notesListEntry</span><span class="p">.</span><span class="nx">getRef</span><span class="p">(</span><span class="nx">solid</span><span class="p">.</span><span class="nx">instance</span><span class="p">);</span>
-  <span class="k">return</span> <span class="k">await</span> <span class="nx">fetchDocument</span><span class="p">(</span><span class="nx">notesListUrl</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">notesListRef</span> <span class="o">=</span> <span class="nx">notesListEntry</span><span class="p">.</span><span class="nx">getRef</span><span class="p">(</span><span class="nx">solid</span><span class="p">.</span><span class="nx">instance</span><span class="p">);</span>
+  <span class="k">return</span> <span class="k">await</span> <span class="nx">fetchDocument</span><span class="p">(</span><span class="nx">notesListRef</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 <p><span class="codesandbox-button-wrapper">
@@ -221,7 +221,7 @@ later. If it <em>is</em> found, we find the URL of the Document that should cont
 that URL.</p>
 
 <p>One thing to keep in mind, again, is that you can make no assumptions about the data in the user’s
-Pod. Thus, to be safe you should also check whether the return value of <code class="highlighter-rouge">getRef()</code> is not <code class="highlighter-rouge">null</code>.
+Pod. Thus, to be safe you should always check whether the return value of <code class="highlighter-rouge">getRef()</code> is <code class="highlighter-rouge">null</code>.
 Consider using <a href="https://www.typescriptlang.org/">TypeScript</a> to get a warning when you forget to do
 so.</p>
 
@@ -235,10 +235,10 @@ Document that will contain the notes, and adds it to the Public Type Index. Let�
   <span class="c1">// Get the root URL of the user's Pod:</span>
   <span class="kd">const</span> <span class="nx">storage</span> <span class="o">=</span> <span class="nx">profile</span><span class="p">.</span><span class="nx">getRef</span><span class="p">(</span><span class="nx">space</span><span class="p">.</span><span class="nx">storage</span><span class="p">);</span>
 
-  <span class="c1">// Determine at what URL the new Document should be stored:</span>
-  <span class="kd">const</span> <span class="nx">notesListUrl</span> <span class="o">=</span> <span class="nx">storage</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">public/notes.ttl</span><span class="dl">'</span><span class="p">;</span>
+  <span class="c1">// Decide at what URL within the user's Pod the new Document should be stored:</span>
+  <span class="kd">const</span> <span class="nx">notesListRef</span> <span class="o">=</span> <span class="nx">storage</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">public/notes.ttl</span><span class="dl">'</span><span class="p">;</span>
   <span class="c1">// Create the new Document:</span>
-  <span class="kd">const</span> <span class="nx">notesList</span> <span class="o">=</span> <span class="nx">createDocument</span><span class="p">(</span><span class="nx">notesListUrl</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">notesList</span> <span class="o">=</span> <span class="nx">createDocument</span><span class="p">(</span><span class="nx">notesListRef</span><span class="p">);</span>
   <span class="k">await</span> <span class="nx">notesList</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
 
   <span class="c1">// Store a reference to that Document in the public Type Index for `schema:TextDigitalDocument`:</span>
@@ -248,7 +248,7 @@ Document that will contain the notes, and adds it to the Public Type Index. Let�
   <span class="nx">typeRegistration</span><span class="p">.</span><span class="nx">addRef</span><span class="p">(</span><span class="nx">solid</span><span class="p">.</span><span class="nx">forClass</span><span class="p">,</span> <span class="nx">schema</span><span class="p">.</span><span class="nx">TextDigitalDocument</span><span class="p">)</span>
   <span class="k">await</span> <span class="nx">typeIndex</span><span class="p">.</span><span class="nx">save</span><span class="p">([</span> <span class="nx">typeRegistration</span> <span class="p">]);</span>
 
-  <span class="c1">// Then finally return the new Document:</span>
+  <span class="c1">// And finally, return our newly created (currently empty) notes Document:</span>
   <span class="k">return</span> <span class="nx">notesList</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -257,13 +257,13 @@ Document that will contain the notes, and adds it to the Public Type Index. Let�
 </span></p>
 
 <p>(Keep in mind that, in order to write to the user’s Pod, the user will need to have given your app
-permission to write <a href="/for-developers/apps/first-app/1-authentication">when they signed in</a>.)</p>
+explicit permission to write <a href="/for-developers/apps/first-app/1-authentication">when they signed in</a>.)</p>
 
-<p>If all the above looks awfully complicated: that’s because it is. <a href="https://ruben.verborgh.org/blog/2019/06/17/shaping-linked-data-apps/">Work is underway to make this
+<p>If all the above looks terribly complicated: that’s because it is. <a href="https://ruben.verborgh.org/blog/2019/06/17/shaping-linked-data-apps/">Work is underway to make this
 easier in the future</a>,
-allowing you to point a library to a data model, and having the library make sure that the user’s
-Pod is prepared to handle that. For now, though, you’ll have to live with these convoluted
-instructions.</p>
+allowing you to point a library at any data model, and having the library make sure that the user’s
+Pod is automatically prepared to handle that model. For now though, you’ll have to work through
+these step-by-step instructions.</p>
 
 <p>Next: <a href="/for-developers/apps/first-app/5-writing-data">Writing data</a></p>
 

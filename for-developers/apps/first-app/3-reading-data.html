@@ -111,18 +111,18 @@
 Document</a>; it’s time we actually
 read some data from that Document!</p>
 
-<p>We will be using <a href="https://vincenttunru.gitlab.io/tripledoc/">Tripledoc</a>, which was designed
-specifically for this tutorial. Other libraries exist, such as
+<p>We’ll be using <a href="https://vincenttunru.gitlab.io/tripledoc/">Tripledoc</a>, which was designed
+specifically for this purpose. Other libraries exist, such as
 <a href="https://www.npmjs.com/package/ldflex">ldflex</a>, <a href="https://www.npmjs.com/package/rdf-ext">rdf-ext</a> and
-<a href="https://www.npmjs.com/package/rdflib">rdflib</a>; Tripledoc has a more limited scope designed to aid
-“thinking in Solid”. If, at some point in the future, you want to start combining many different
-data sources, you might want to consider investigating those alternative libraries.</p>
+<a href="https://www.npmjs.com/package/rdflib">rdflib</a>; Tripledoc intentionally has a more limited scope designed to aid
+“thinking in Solid”. If at some point in the future you want to start combining many different
+data sources, you might want to consider investigating these alternative libraries.</p>
 
-<p>We will try to get the user’s name as follows:</p>
+<p>We’ll try to get the user’s name as follows:</p>
 
 <ol>
   <li>Fetch the Document living at their WebID.</li>
-  <li>From that Document, read the Subject representing the current user.</li>
+  <li>From that Document, read the Subject representing the current user’s profile.</li>
   <li>Get the <code class="highlighter-rouge">foaf:name</code> of that Subject, if set.</li>
 </ol>
 
@@ -133,10 +133,10 @@ data sources, you might want to consider investigating those alternative librari
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">getName</span><span class="p">(</span><span class="nx">webId</span><span class="p">)</span> <span class="p">{</span>
   <span class="cm">/* 1. Fetch the Document at `webId`: */</span>
   <span class="kd">const</span> <span class="nx">webIdDoc</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchDocument</span><span class="p">(</span><span class="nx">webId</span><span class="p">);</span>
-  <span class="cm">/* 2. Read the Subject representing the current user: */</span>
-  <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">webIdDoc</span><span class="p">.</span><span class="nx">getSubject</span><span class="p">(</span><span class="nx">webId</span><span class="p">);</span>
+  <span class="cm">/* 2. Read the Subject representing the current user's profile: */</span>
+  <span class="kd">const</span> <span class="nx">profile</span> <span class="o">=</span> <span class="nx">webIdDoc</span><span class="p">.</span><span class="nx">getSubject</span><span class="p">(</span><span class="nx">webId</span><span class="p">);</span>
   <span class="cm">/* 3. Get their foaf:name: */</span>
-  <span class="k">return</span> <span class="nx">user</span><span class="p">.</span><span class="nx">getString</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://xmlns.com/foaf/0.1/name</span><span class="dl">'</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">profile</span><span class="p">.</span><span class="nx">getString</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://xmlns.com/foaf/0.1/name</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -150,10 +150,10 @@ the terms in common Vocabularies, turning the above into:</p>
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">getName</span><span class="p">(</span><span class="nx">webId</span><span class="p">)</span> <span class="p">{</span>
   <span class="cm">/* 1. Fetch the Document at `webId`: */</span>
   <span class="kd">const</span> <span class="nx">webIdDoc</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchDocument</span><span class="p">(</span><span class="nx">webId</span><span class="p">);</span>
-  <span class="cm">/* 2. Read the Subject representing the current user: */</span>
-  <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">webIdDoc</span><span class="p">.</span><span class="nx">getSubject</span><span class="p">(</span><span class="nx">webId</span><span class="p">);</span>
+  <span class="cm">/* 2. Read the Subject representing the current user's profile: */</span>
+  <span class="kd">const</span> <span class="nx">profile</span> <span class="o">=</span> <span class="nx">webIdDoc</span><span class="p">.</span><span class="nx">getSubject</span><span class="p">(</span><span class="nx">webId</span><span class="p">);</span>
   <span class="cm">/* 3. Get their foaf:name: */</span>
-  <span class="k">return</span> <span class="nx">user</span><span class="p">.</span><span class="nx">getString</span><span class="p">(</span><span class="nx">foaf</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">profile</span><span class="p">.</span><span class="nx">getString</span><span class="p">(</span><span class="nx">foaf</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 <p><span class="codesandbox-button-wrapper">
@@ -161,15 +161,15 @@ the terms in common Vocabularies, turning the above into:</p>
 </span></p>
 
 <p>Two things to note here. First, we call <code class="highlighter-rouge">getString</code> to indicate that we are looking for an actual
-value (i.e. a Literal), rather than a URL. (Likewise, we could e.g. use <code class="highlighter-rouge">getInteger</code> or <code class="highlighter-rouge">getDecimal</code>
-if we would expect a number.) However, the value could also have been a URL pointing to a different
+value (i.e. a Literal), rather than a URL. (Likewise, we could use <code class="highlighter-rouge">getInteger</code> or <code class="highlighter-rouge">getDecimal</code>
+if we expected a number instead.) However, the value could also have been a URL pointing to a different
 Subject, in which case we could in turn fetch <em>that</em> Document. If that was what we expected, we
 could have used the method <code class="highlighter-rouge">getRef</code> instead.</p>
 
-<p>The second thing to consider is that we cannot make any assumptions about what data is or is not
-present in the user’s Pod. Thus, <code class="highlighter-rouge">user.getString(foaf.name)</code> might also return <code class="highlighter-rouge">null</code>. This
+<p>The second thing to consider is that we cannot make any assumptions about what data is, or is not,
+present in the user’s Pod. Thus, <code class="highlighter-rouge">profile.getString(foaf.name)</code> might also return <code class="highlighter-rouge">null</code>. This
 could happen if the Document does not include the user’s name, if the name is stored differently
-(e.g. using <code class="highlighter-rouge">foaf:firstName</code> and <code class="highlighter-rouge">foaf:familyName</code>), or the <code class="highlighter-rouge">foaf:name</code> is not a literal string.</p>
+(e.g. using <code class="highlighter-rouge">foaf:firstName</code> and <code class="highlighter-rouge">foaf:familyName</code>), or the value of <code class="highlighter-rouge">foaf:name</code> is not a literal string.</p>
 
 <p>Now that we’re able to read data from the user’s WebID, let’s find out how we can read arbitrary
 other data.</p>

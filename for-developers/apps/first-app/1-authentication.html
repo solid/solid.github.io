@@ -105,8 +105,7 @@
     <div class="column is-two-thirds">
       <article class="section content">
         <p>The starting point for any Solid Web App is to obtain the user’s <em>WebID</em>. The WebID is a URL at
-which one can find information about the user, and where to write data to. The WebID will be provided by the user’s <em>Identity Provider</em> (which is usually their Pod Provider) after the user
-gives your Web App permission to interact with their Pod.</p>
+which one can find information about the user, and where to read or write data. The WebID will be provided by the user’s <em>Identity Provider</em> (which is usually their Pod Provider), but any interaction with a user’s Pod will require explicit permission to be granted by the Pod owner.</p>
 
 <p>To obtain this permission, we will be using <a href="https://www.npmjs.com/package/solid-auth-client">solid-auth-client</a>. Its usage is relatively straightforward:</p>
 
@@ -134,7 +133,7 @@ gives your Web App permission to interact with their Pod.</p>
   <span class="c1">// `https://inrupt.net` or `https://solid.community`) using a method of your choice.</span>
   <span class="kd">const</span> <span class="nx">identityProvider</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getIdentityProvider</span><span class="p">();</span>
 
-  <span class="cm">/* 3. Initialise the login process - this will redirect the user to their Identity Provider: */</span>
+  <span class="cm">/* 3. Initiate the login process - this will redirect the user to their Identity Provider: */</span>
   <span class="nx">auth</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">identityProvider</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>

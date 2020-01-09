@@ -112,10 +112,13 @@ already have our <code class="highlighter-rouge">notesList</code></a>, most of t
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">addNote</span><span class="p">(</span><span class="nx">note</span><span class="p">,</span> <span class="nx">notesList</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Initialise the new Subject:</span>
   <span class="kd">const</span> <span class="nx">newNote</span> <span class="o">=</span> <span class="nx">notesList</span><span class="p">.</span><span class="nx">addSubject</span><span class="p">();</span>
+
   <span class="c1">// Indicate that the Subject is a schema:TextDigitalDocument:</span>
   <span class="nx">newNote</span><span class="p">.</span><span class="nx">addRef</span><span class="p">(</span><span class="nx">rdf</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span> <span class="nx">schema</span><span class="p">.</span><span class="nx">TextDigitalDocument</span><span class="p">);</span>
+
   <span class="c1">// Set the Subject's `schema:text` to the actual note contents:</span>
   <span class="nx">newNote</span><span class="p">.</span><span class="nx">addLiteral</span><span class="p">(</span><span class="nx">schema</span><span class="p">.</span><span class="nx">text</span><span class="p">,</span> <span class="nx">note</span><span class="p">);</span>
+
   <span class="c1">// Store the date the note was created (i.e. now):</span>
   <span class="nx">newNote</span><span class="p">.</span><span class="nx">addLiteral</span><span class="p">(</span><span class="nx">schema</span><span class="p">.</span><span class="nx">dateCreated</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()))</span>
 
@@ -135,7 +138,7 @@ already have our <code class="highlighter-rouge">notesList</code></a>, most of t
   <li><a href="https://codesandbox.io/s/github/Vinnl/notepod/tree/5-writing-data/?module=%2Fsrc%2FApp.tsx">Play around in the completed note-taking app</a>.</li>
   <li><a href="/for-developers/apps/vocabularies">Learn more about Vocabularies</a>: learn about commonly used Vocabularies, how to find other Vocabularies if those do not match your use case, or how to write your own if none suit your app.</li>
   <li><a href="/for-developers/apps/tools">Try other libraries and tools</a>: we used <a href="https://vincenttunru.gitlab.io/tripledoc/">Tripledoc</a> in this tutorial, but you might be interested in libraries for languages other than JavaScript, or that give you more power.</li>
-  <li><a href="https://forum.solidproject.org/">Get help</a>: if you get stuck, do not hesitate to ask your question at our <a href="https://forum.solidproject.org/">Forum</a> or <a href="https://gitter.im/solid/chat">chat</a>.</li>
+  <li><a href="https://forum.solidproject.org/">Get help</a>: if you get stuck, please don’t hesitate to ask questions at our <a href="https://forum.solidproject.org/">Forum</a> or <a href="https://gitter.im/solid/chat">chat</a>.</li>
 </ul>
 
 <p>Good luck!</p>
