@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2020-01-28T17:36:40+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><entry><title type="html">This Week in Solid 2019-12-18</title><link href="https://solidproject.org//this-week-in-solid/2019-12-18" rel="alternate" type="text/html" title="This Week in Solid 2019-12-18" /><published>2019-12-18T00:00:00+00:00</published><updated>2019-12-18T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-18">&lt;h1 id=&quot;this-year-in-solid-2019&quot;&gt;This Year in Solid 2019&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2020-01-30T08:21:06+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><entry><title type="html">This Week in Solid 2019-12-18</title><link href="https://solidproject.org//this-week-in-solid/2019-12-18" rel="alternate" type="text/html" title="This Week in Solid 2019-12-18" /><published>2019-12-18T00:00:00+00:00</published><updated>2019-12-18T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-18">&lt;h1 id=&quot;this-year-in-solid-2019&quot;&gt;This Year in Solid 2019&lt;/h1&gt;
 
 &lt;p&gt;Hello and welcome to another edition of &lt;a href=&quot;https://solidproject.org/this-week-in-solid&quot;&gt;This Week in Solid&lt;/a&gt;!&lt;/p&gt;
 
@@ -179,7 +179,7 @@ The focus has been to make it easier to develop the project itself via &lt;a hre
 
 &lt;h2 id=&quot;press&quot;&gt;&lt;a href=&quot;https://solidproject.org/press&quot;&gt;Press&lt;/a&gt;&lt;/h2&gt;
 
-&lt;p&gt;Check out a recap of the talk at ECP from last week &lt;a href=&quot;http://www.pilod.nl/wiki/Jaarcongres_ECP_2019_-_Solid_Session_Summary&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Check out a recap of the talk at ECP from last week &lt;a href=&quot;https://www.pldn.nl/index.php/Jaarcongres_ECP_2019_-_Solid_Session_Summary&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;There’s also a article that mentions Solid on the &lt;a href=&quot;https://blogs.lse.ac.uk/businessreview/2019/11/20/how-to-turn-trust-into-a-competitive-advantage/&quot;&gt;LSE Business Review&lt;/a&gt;&lt;/p&gt;
 
@@ -301,7 +301,7 @@ Job Openings&lt;/p&gt;
       &lt;/tbody&gt;
     &lt;/table&gt;
   &lt;/li&gt;
-  &lt;li&gt;2019-12-10 &lt;a href=&quot;http://www.pilod.nl/wiki/Solid_Christmas_Meetup_Enschede_-_How_to_Fix_the_Internet!&quot;&gt;Solid Enschede&lt;/a&gt; organised by Erwin Folmer&lt;/li&gt;
+  &lt;li&gt;2019-12-10 &lt;a href=&quot;https://www.pldn.nl/index.php/Solid_Christmas_Meetup_Enschede_-_How_to_Fix_the_Internet!&quot;&gt;Solid Enschede&lt;/a&gt; organised by Erwin Folmer&lt;/li&gt;
   &lt;li&gt;2019-01-xx (date to be confirmed) Solid Amsterdam organised by &lt;a href=&quot;https://github.com/jjvbeele&quot;&gt;Jeroen van Beele&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -362,7 +362,7 @@ Job Openings&lt;/p&gt;
       &lt;/tbody&gt;
     &lt;/table&gt;
   &lt;/li&gt;
-  &lt;li&gt;2019-12-10 &lt;a href=&quot;http://www.pilod.nl/wiki/Solid_Christmas_Meetup_Enschede_-_How_to_Fix_the_Internet!&quot;&gt;Solid Enschede&lt;/a&gt; organised by Erwin Folmer&lt;/li&gt;
+  &lt;li&gt;2019-12-10 &lt;a href=&quot;https://www.pldn.nl/index.php/Solid_Christmas_Meetup_Enschede_-_How_to_Fix_the_Internet!&quot;&gt;Solid Enschede&lt;/a&gt; organised by Erwin Folmer&lt;/li&gt;
   &lt;li&gt;2019-01-xx (date to be confirmed) Solid Amsterdam organised by &lt;a href=&quot;https://github.com/jjvbeele&quot;&gt;Jeroen van Beele&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -419,12 +419,12 @@ Job Openings&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.wsj.com/articles/tech-giants-have-hijacked-the-web-its-time-for-a-reboot-11572062420&quot;&gt;The Wall Street Journal - Tech Giants Have Hijacked the Web. It’s Time for a Reboot by Paul Vigna&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://mailchi.mp/dit.dk/data-ethics-2019-inspiration1&quot;&gt;Summary of the Data Ethics conference&lt;/a&gt; where Mitzi László gave a talk on Solid.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.pilod.nl/wiki/Solid_Amsterdam_–_1st_Session_Summary&quot;&gt;Summary of Solid Amsterdam&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.pldn.nl/index.php/Solid_Amsterdam_–_1st_Session_Summary&quot;&gt;Summary of Solid Amsterdam&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;There are few upcoming events where you can learn more and meet others working on Solid:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;2019-12-10 &lt;a href=&quot;http://www.pilod.nl/wiki/Solid_Christmas_Meetup_Enschede_-_How_to_Fix_the_Internet!&quot;&gt;Solid Enschede&lt;/a&gt; organised by Erwin Folmer&lt;/li&gt;
+  &lt;li&gt;2019-12-10 &lt;a href=&quot;https://www.pldn.nl/index.php/Solid_Christmas_Meetup_Enschede_-_How_to_Fix_the_Internet!&quot;&gt;Solid Enschede&lt;/a&gt; organised by Erwin Folmer&lt;/li&gt;
   &lt;li&gt;2019-11-20 &lt;a href=&quot;https://www.eventbrite.com/e/data-control-ethics-solid-workshop-this-is-for-everyone-join-the-movement-tickets-79208132657?ref=estw&quot;&gt;Solid London&lt;/a&gt; organised by Kartika Tulusan&lt;/li&gt;
 &lt;/ul&gt;
 
