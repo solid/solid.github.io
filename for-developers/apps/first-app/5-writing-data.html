@@ -117,10 +117,10 @@ already have our <code class="highlighter-rouge">notesList</code></a>, most of t
   <span class="nx">newNote</span><span class="p">.</span><span class="nx">addRef</span><span class="p">(</span><span class="nx">rdf</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span> <span class="nx">schema</span><span class="p">.</span><span class="nx">TextDigitalDocument</span><span class="p">);</span>
 
   <span class="c1">// Set the Subject's `schema:text` to the actual note contents:</span>
-  <span class="nx">newNote</span><span class="p">.</span><span class="nx">addLiteral</span><span class="p">(</span><span class="nx">schema</span><span class="p">.</span><span class="nx">text</span><span class="p">,</span> <span class="nx">note</span><span class="p">);</span>
+  <span class="nx">newNote</span><span class="p">.</span><span class="nx">addString</span><span class="p">(</span><span class="nx">schema</span><span class="p">.</span><span class="nx">text</span><span class="p">,</span> <span class="nx">note</span><span class="p">);</span>
 
   <span class="c1">// Store the date the note was created (i.e. now):</span>
-  <span class="nx">newNote</span><span class="p">.</span><span class="nx">addLiteral</span><span class="p">(</span><span class="nx">schema</span><span class="p">.</span><span class="nx">dateCreated</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()))</span>
+  <span class="nx">newNote</span><span class="p">.</span><span class="nx">addDateTime</span><span class="p">(</span><span class="nx">schema</span><span class="p">.</span><span class="nx">dateCreated</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()))</span>
 
   <span class="kd">const</span> <span class="nx">success</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">notesList</span><span class="p">.</span><span class="nx">save</span><span class="p">([</span><span class="nx">newNote</span><span class="p">]);</span>
   <span class="k">return</span> <span class="nx">success</span><span class="p">;</span>
