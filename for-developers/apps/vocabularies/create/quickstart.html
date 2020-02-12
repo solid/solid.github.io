@@ -117,7 +117,11 @@
   <li>An <code class="highlighter-rouge">obelisk</code> has a <code class="highlighter-rouge">height</code>, which is a numerical value.</li>
 </ul>
 
-<p>The highlighted elements of these sentences are going to be the ‘terms’ in our vocabulary. We can identify two types of terms: the things that we talk about (e.g. <code class="highlighter-rouge">obelisk</code> or <code class="highlighter-rouge">sculptor</code>), and their properties (e.g. <code class="highlighter-rouge">built by</code> or <code class="highlighter-rouge">height</code>). Let’s make a graphical representation of that, by putting the things in bubbles and the properties into squares:</p>
+<p>The highlighted elements of these sentences are going to be the ‘terms’ in our 
+vocabulary. We can identify two types of terms: the things that we talk about
+(e.g. <code class="highlighter-rouge">obelisk</code> or <code class="highlighter-rouge">sculptor</code>), and their properties (e.g. <code class="highlighter-rouge">built by</code> or 
+<code class="highlighter-rouge">height</code>). Let’s make a graphical representation of that by putting the things
+ in bubbles, and the properties in squares:</p>
 
 <p><img src="/assets/img/tutorials/vocabularies/obelisk_vocab_1.png" alt="The obelisk vocabulary" /></p>
 
@@ -125,18 +129,29 @@
 
 <h3 id="identifying-everything-with-iris">Identifying everything with IRIs</h3>
 
-<p>RDF is the language used to build vocabularies for use across the Web (aka Linked Data). In RDF, everything is identified by IRIs (which are simply standard web URIs (Universal Resource Identifiers), but just a little bit more modern in that they can contain characters from a more <em>Internationalised</em> set of characters (e.g. ‘α’, ‘δ’, or ‘ό’)).</p>
+<p>RDF is the language used to build vocabularies for use across the Web (aka
+Linked Data). In RDF, everything is identified by IRIs (which are simply
+standard web URIs (Universal Resource Identifiers), but just a little bit more
+modern in that they can contain characters from a more <em>Internationalised</em> set
+of characters (e.g. ‘α’, ‘δ’, or ‘ό’)).</p>
 
-<p>First, we’ll need an IRI to represent (or identify) our new vocabulary (as we said, everything in RDF is identified with IRIs!), e.g. <a href="http://w3id.org/obelisk/">http://w3id.org/obelisk/</a>. From there, let’s now update our plain English example a little bit:</p>
+<p>First, we’ll need an IRI to represent (or identify) our new vocabulary (as we
+said, everything in RDF is identified with IRIs!), e.g. 
+<a href="http://w3id.org/obelisk/">http://w3id.org/obelisk/</a>. From there, let’s now
+update our plain English example a little bit:</p>
 <ul>
   <li>An <a href="http://w3id.org/obelisk/Obelisk">http://w3id.org/obelisk/Obelisk</a> is <a href="http://w3id.org/obelisk/ownedBy">http://w3id.org/obelisk/ownedBy</a> a <a href="http://w3id.org/obelisk/Person">http://w3id.org/obelisk/Person</a>.</li>
   <li>An <a href="http://w3id.org/obelisk/Obelisk">http://w3id.org/obelisk/Obelisk</a> is <a href="http://w3id.org/obelisk/builtBy">http://w3id.org/obelisk/builtBy</a> a <a href="http://w3id.org/obelisk/Sculptor">http://w3id.org/obelisk/Sculptor</a>.</li>
   <li>An <a href="http://w3id.org/obelisk/Obelisk">http://w3id.org/obelisk/Obelisk</a> has a <a href="http://w3id.org/obelisk/height">http://w3id.org/obelisk/height</a>, which is a numerical value.</li>
 </ul>
 
-<p>Identifiers quickly become unpleasant to read when they are IRIs, so RDF introduces the notion of prefixes (a simple concept borrowed from XML namespaces). From now on we’ll use the prefix <code class="highlighter-rouge">obelisk:</code> to stand in for our vocabulary identifier <code class="highlighter-rouge">http://w3id.org/obelisk/</code>, which means our vocabulary now looks like:</p>
+<p>As we can see, identifiers quickly become unpleasant to read when they are IRIs,
+so RDF introduces the notion of prefixes (a simple concept borrowed from XML
+namespaces). From now on we’ll use the prefix <code class="highlighter-rouge">obelisk:</code> to stand in for our
+vocabulary identifier <code class="highlighter-rouge">http://w3id.org/obelisk/</code>, which means our vocabulary
+now looks like:</p>
 <ul>
-  <li>Use the prefix ‘obelisk’ for our vocabulary identifier http://w3id.org/obelisk/.</li>
+  <li>Use the prefix ‘obelisk:’ for our vocabulary identifier http://w3id.org/obelisk/.</li>
   <li>An <a href="http://w3id.org/obelisk/Obelisk">obelisk:Obelisk</a> is <a href="http://w3id.org/obelisk/ownedBy">obelisk:ownedBy</a> an <a href="http://w3id.org/obelisk/Person">obelisk:Person</a>.</li>
   <li>An <a href="http://w3id.org/obelisk/Obelisk">obelisk:Obelisk</a> is <a href="http://w3id.org/obelisk/builtBy">obelisk:builtBy</a> an <a href="http://w3id.org/obelisk/Sculptor">obelisk:Sculptor</a>.</li>
   <li>An <a href="http://w3id.org/obelisk/Obelisk">obelisk:Obelisk</a> has an <a href="http://w3id.org/obelisk/height">obelisk:height</a>, which is a numerical value.</li>
