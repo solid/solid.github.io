@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Create your vocabulary  · Solid</title>
+    <title>How to create your own vocabulary · Solid</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
@@ -90,7 +90,7 @@
         
           <li>
             <a href="">
-              Create your vocabulary 
+              How to create your own vocabulary
             </a>
           </li>
         
@@ -104,7 +104,9 @@
   <div class="columns">
     <div class="column is-two-thirds">
       <article class="section content">
-        <p>Let us build a very simple vocabulary describing <a href="https://en.wikipedia.org/wiki/Obelisk">obelisks</a>, so that <a href="https://cleopatra.solid.community/profile/card#me">Cleopatra</a> and <a href="https://jcaesar.solid.community/profile/card#me">Caesar</a> can share information about their personal collections.</p>
+        <h1 id="how-to-create-your-own-vocabulary">How to create your own vocabulary</h1>
+
+<p>Let’s build a very simple vocabulary describing <a href="https://en.wikipedia.org/wiki/Obelisk">obelisks</a> (tall, four-sided, narrow tapering monuments that end in a pyramid-like shape), so that <a href="https://cleopatra.solid.community/profile/card#me">Cleopatra</a> and <a href="https://jcaesar.solid.community/profile/card#me">Caesar</a> can share information about their personal collections.</p>
 
 <h2 id="from-plain-english-to-a-graphical-representation">From plain English to a graphical representation</h2>
 
@@ -123,7 +125,7 @@
 
 <h3 id="identifying-everything-with-iris">Identifying everything with IRIs</h3>
 
-<p>RDF is the language used to build vocabularies for use across the Web (aka Linked Data). In RDF, everything is identified by IRIs, which are simply standard Web URIs, but just a bit more modern in that they can contain characters from a more <em>Internationalised</em> set of characters (e.g. ‘α’, ‘δ’, or ‘ό’).</p>
+<p>RDF is the language used to build vocabularies for use across the Web (aka Linked Data). In RDF, everything is identified by IRIs (which are simply standard web URIs (Universal Resource Identifiers), but just a little bit more modern in that they can contain characters from a more <em>Internationalised</em> set of characters (e.g. ‘α’, ‘δ’, or ‘ό’)).</p>
 
 <p>First, we’ll need an IRI to represent (or identify) our new vocabulary (as we said, everything in RDF is identified with IRIs!), e.g. <a href="http://w3id.org/obelisk/">http://w3id.org/obelisk/</a>. From there, let’s now update our plain English example a little bit:</p>
 <ul>
@@ -135,16 +137,16 @@
 <p>Identifiers quickly become unpleasant to read when they are IRIs, so RDF introduces the notion of prefixes (a simple concept borrowed from XML namespaces). From now on we’ll use the prefix <code class="highlighter-rouge">obelisk:</code> to stand in for our vocabulary identifier <code class="highlighter-rouge">http://w3id.org/obelisk/</code>, which means our vocabulary now looks like:</p>
 <ul>
   <li>Use the prefix ‘obelisk’ for our vocabulary identifier http://w3id.org/obelisk/.</li>
-  <li>An <a href="http://w3id.org/obelisk/Obelisk">obelisk:Obelisk</a> is <a href="http://w3id.org/obelisk/ownedBy">obelisk:ownedBy</a> a <a href="http://w3id.org/obelisk/Person">obelisk:Person</a>.</li>
-  <li>An <a href="http://w3id.org/obelisk/Obelisk">obelisk:Obelisk</a> is <a href="http://w3id.org/obelisk/builtBy">obelisk:builtBy</a> a <a href="http://w3id.org/obelisk/Sculptor">obelisk:Sculptor</a>.</li>
-  <li>An <a href="http://w3id.org/obelisk/Obelisk">obelisk:Obelisk</a> has a <a href="http://w3id.org/obelisk/height">obelisk:height</a>, which is a numerical value.</li>
+  <li>An <a href="http://w3id.org/obelisk/Obelisk">obelisk:Obelisk</a> is <a href="http://w3id.org/obelisk/ownedBy">obelisk:ownedBy</a> an <a href="http://w3id.org/obelisk/Person">obelisk:Person</a>.</li>
+  <li>An <a href="http://w3id.org/obelisk/Obelisk">obelisk:Obelisk</a> is <a href="http://w3id.org/obelisk/builtBy">obelisk:builtBy</a> an <a href="http://w3id.org/obelisk/Sculptor">obelisk:Sculptor</a>.</li>
+  <li>An <a href="http://w3id.org/obelisk/Obelisk">obelisk:Obelisk</a> has an <a href="http://w3id.org/obelisk/height">obelisk:height</a>, which is a numerical value.</li>
 </ul>
 
-<h3 id="things-and-properties-of-things">Things, and properties of things</h3>
+<h3 id="things-and-properties-of-things">Things, and Properties of Things</h3>
 
-<p>So from the above we can see that we want to describe both ‘things’ (e.g. Obelisks and Sculptors), and the properties of those things (e.g. their height, or who built them). So to distinguish between things and their properties, RDF allows us explicit state which is which - i.e. ‘things’ are called Classes, and ‘properties’ are called Properties.</p>
+<p>So from the above we can see that we want to describe both ‘Things’ (e.g. Obelisks and Sculptors), and the Properties of those things (e.g. their height, or who built them). So to distinguish between things and their properties, RDF allows us explicitly state which is which - i.e. ‘things’ are called Classes, and ‘properties’ are called Properties.</p>
 
-<h3 id="defining-classes-of-things">Defining classes of things</h3>
+<h3 id="defining-classes-of-things">Defining Classes of Things</h3>
 
 <p>In RDF, the general things that we can talk about are called <strong>Classes</strong>. Everything that went in a bubble in our first schema is therefore a Class, so we could add the following to our vocabulary:</p>
 <ul>
@@ -160,7 +162,7 @@
   <li><a href="http://w3id.org/obelisk/Sculptor">obelisk:Sculptor</a> <a href="???">is a</a> <a href="???">class</a>.</li>
 </ul>
 
-<p>What we need now are IRI for the “<a href="???">is a</a>” property and the “<a href="???">Class</a>” Class. Fortunately, these are defined in the RDF and RDFS vocabularies: “<a href="???">is a</a>” is defined by <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a>, and “<a href="???">class</a>” by <a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>. Therefore, we could write:</p>
+<p>What we need now are IRIs for the “<a href="???">is a</a>” property and the “<a href="???">Class</a>” Class. Fortunately, these are defined in the RDF and RDFS vocabularies: “<a href="???">is a</a>” is defined by <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a>, and “<a href="???">class</a>” by <a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>. Therefore, we can now write:</p>
 
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -171,7 +173,7 @@
 </span><span class="nn">obelisk:</span><span class="n">Sculptor</span><span class="w"> </span><span class="nn">rdf:</span><span class="n">type</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">Class</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span></code></pre></div></div>
 
-<p>And congratulations, you’ve just created your first snippet of RDF! This particular RDF syntax is called Turtle, there are many other standardized syntaxes, but we don’t need to cover them in this tutorial.</p>
+<p>And congratulations, you’ve just created your first snippet of valid RDF! This particular RDF syntax is called Turtle, there are many other standardized syntaxes, but we don’t need to cover them in this tutorial.</p>
 
 <h3 id="defining-properties-of-things">Defining properties of things</h3>
 
@@ -269,9 +271,9 @@
 
 <h2 id="adding-some-metadata">Adding some metadata</h2>
 
-<p>The finishing touch to this vocabulary is to add some metadata to the vocabulary itself, so that people we share this vocabulary with, or who find it on the Web, can know who created it, and when, and what it’s intended purpose is without having to go through its details.</p>
+<p>The finishing touch to this vocabulary is to add some metadata about the vocabulary itself, so that people we share this vocabulary with (or who search for it, or who just stumble across it on the web), can know who created it, and when, and what it’s intended purpose is without having to go through all the details of the individual terms contained within it.</p>
 
-<p>We already decided that the IRI of the vocabulary would be <code class="highlighter-rouge">http://w3id.org/obelisk/</code>, so this is the identifier we are going to use in RDF to say stuff about the vocabulary. In Linked Data terminology a vocabulary is called an <a href="http://www.w3.org/2002/07/owl#Ontology"><code class="highlighter-rouge">owl:Ontology</code></a>, so the first thing to say is:</p>
+<p>We already decided that the IRI of the vocabulary would be <code class="highlighter-rouge">http://w3id.org/obelisk/</code>, so this is the identifier we are going to use in RDF to say stuff about the vocabulary itself. In Linked Data terminology a vocabulary is called an <a href="http://www.w3.org/2002/07/owl#Ontology"><code class="highlighter-rouge">owl:Ontology</code></a>, so the first thing to say is:</p>
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -287,7 +289,7 @@
 </span><span class="c1"># ...</span><span class="w">
 </span></code></pre></div></div>
 
-<h3 id="adding-some-description">Adding some description</h3>
+<h3 id="adding-a-description">Adding a description</h3>
 
 <p>Much like we described each term with human-friendly labels and comments, we can add a title (<a href="http://purl.org/dc/terms/title"><code class="highlighter-rouge">dcterms:title</code></a>) and a description (<a href="http://purl.org/dc/terms/description"><code class="highlighter-rouge">dcterms:description</code></a>) to our vocabulary. To make it easier to reuse, we can also indicate a preferred prefix (<a href="http://purl.org/vocab/vann/preferredNamespacePrefix"><code class="highlighter-rouge">vann:preferredNamespacePrefix</code></a>) and a preferred IRI (<a href="http://purl.org/vocab/vann/preferredNamespaceUri"><code class="highlighter-rouge">vann:preferredNamespaceUri</code></a>) (since multiple IRIs may point to the same vocabulary).</p>
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -366,7 +368,7 @@
                           <a
                             href="/for-developers/apps/vocabularies/create/quickstart"
                              class="is-active" 
-                          >Create your vocabulary </a>
+                          >How to create your own vocabulary</a>
                         </li>
                       
                     
