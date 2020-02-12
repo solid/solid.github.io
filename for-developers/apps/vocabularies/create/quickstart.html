@@ -159,25 +159,37 @@ now looks like:</p>
 
 <h3 id="things-and-properties-of-things">Things, and Properties of Things</h3>
 
-<p>So from the above we can see that we want to describe both ‘Things’ (e.g. Obelisks and Sculptors), and the Properties of those things (e.g. their height, or who built them). So to distinguish between things and their properties, RDF allows us explicitly state which is which - i.e. ‘things’ are called Classes, and ‘properties’ are called Properties.</p>
+<p>So from the above we can see that we want to describe both ‘Things’ (e.g.
+Obelisks and Sculptors), and the Properties of those things (e.g. their height,
+or who built them). So to distinguish between things and their properties, RDF
+allows us explicitly state which is which - i.e. ‘things’ are called Classes,
+and ‘properties’ are called Properties.</p>
 
 <h3 id="defining-classes-of-things">Defining Classes of Things</h3>
 
-<p>In RDF, the general things that we can talk about are called <strong>Classes</strong>. Everything that went in a bubble in our first schema is therefore a Class, so we could add the following to our vocabulary:</p>
+<p>In RDF, the general things that we can talk about are called <strong>Classes</strong>.
+Everything that went in a bubble in our first schema is therefore a Class, so
+we could add the following to our vocabulary:</p>
 <ul>
   <li><a href="http://w3id.org/obelisk/Obelisk">obelisk:Obelisk</a> is a Class.</li>
   <li><a href="http://w3id.org/obelisk/Person">obelisk:Person</a> is a Class.</li>
   <li><a href="http://w3id.org/obelisk/Sculptor">obelisk:Sculptor</a> is a Class.</li>
 </ul>
 
-<p>If we look at these sentences, they are structured exactly like the ones from the rest of our vocabulary. Let us underline the important bits in the same way:</p>
+<p>If we look at these sentences, they are structured exactly like the ones from
+the rest of our vocabulary. Let us underline the important bits in the same way:</p>
 <ul>
   <li><a href="http://w3id.org/obelisk/Obelisk">obelisk:Obelisk</a> <a href="???">is a</a> <a href="???">class</a>.</li>
   <li><a href="http://w3id.org/obelisk/Person">obelisk:Person</a> <a href="???">is a</a> <a href="???">class</a>.</li>
   <li><a href="http://w3id.org/obelisk/Sculptor">obelisk:Sculptor</a> <a href="???">is a</a> <a href="???">class</a>.</li>
 </ul>
 
-<p>What we need now are IRIs for the “<a href="???">is a</a>” property and the “<a href="???">Class</a>” Class. Fortunately, these are defined in the RDF and RDFS vocabularies: “<a href="???">is a</a>” is defined by <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a>, and “<a href="???">class</a>” by <a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>. Therefore, we can now write:</p>
+<p>What we need now are IRIs for the “<a href="???">is a</a>” property and the “<a href="???">Class</a>”
+Class. Fortunately, these are defined in the RDF and RDFS vocabularies:
+“<a href="???">is a</a>” is defined by
+<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a>, and “<a href="???">class</a>”
+by <a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>. Therefore, we can
+now write:</p>
 
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -188,18 +200,25 @@ now looks like:</p>
 </span><span class="nn">obelisk:</span><span class="n">Sculptor</span><span class="w"> </span><span class="nn">rdf:</span><span class="n">type</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">Class</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span></code></pre></div></div>
 
-<p>And congratulations, you’ve just created your first snippet of valid RDF! This particular RDF syntax is called Turtle, there are many other standardized syntaxes, but we don’t need to cover them in this tutorial.</p>
+<p>And congratulations, you’ve just created your first snippet of valid RDF! This
+particular RDF syntax is called Turtle, there are many other standardized
+syntaxes, but we don’t need to cover them in this tutorial.</p>
 
 <h3 id="defining-properties-of-things">Defining properties of things</h3>
 
-<p>The properties of things in RDF are called properties (how convenient). Therefore, as we did for Classes, we might write:</p>
+<p>The properties of things in RDF are called properties (how convenient).
+Therefore, as we did for Classes, we might write:</p>
 <ul>
   <li><a href="http://w3id.org/obelisk/ownedBy">obelisk:ownedBy</a> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">is a</a> <a href="???">property</a>.</li>
   <li><a href="http://w3id.org/obelisk/builtBy">obelisk:builtBy</a> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">is a</a> <a href="???">property</a>.</li>
   <li><a href="http://w3id.org/obelisk/height">obelisk:height</a> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">is a</a> <a href="???">property</a>.</li>
 </ul>
 
-<p>We already know that <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">is a</a> is identified by the IRI <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a>, and <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">property</a> is identified by <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a> so we can now go ahead and change that into:</p>
+<p>We already know that <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">is a</a> is
+identified by the IRI <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a>,
+and <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">property</a> is
+identified by <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>
+so we can now go ahead and change that into:</p>
 <ul>
   <li><a href="http://w3id.org/obelisk/ownedBy">obelisk:ownedBy</a> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>.</li>
   <li><a href="http://w3id.org/obelisk/builtBy">obelisk:builtBy</a> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>.</li>
@@ -225,7 +244,11 @@ now looks like:</p>
 
 <h3 id="using-labels-and-comments">Using labels and comments</h3>
 
-<p>So far we have created identifiers that are primarily intended for machines (although it is certainly not recommended, the IRIs themselves do not need to be meaningful to humans at all). For example, the following would technically be an equivalent vocabulary:</p>
+<p>So far we have created identifiers that are primarily intended for machines
+(although it is certainly not recommended, the IRIs themselves do not need to
+be meaningful to humans at all). For example, the following would technically
+be an equivalent vocabulary:</p>
+
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">o:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -238,7 +261,15 @@ now looks like:</p>
 </span><span class="nn">o:</span><span class="n">p003</span><span class="w"> </span><span class="nn">rdf:</span><span class="n">type</span><span class="w"> </span><span class="nn">rdf:</span><span class="n">Property</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Even if we don’t want our vocabulary to look like this, the point is that it’s really useful to also provide human-readable descriptions of the terms in our vocabularies. To do so we’ll use the properties <a href="http://www.w3.org/2000/01/rdf-schema#label"><code class="highlighter-rouge">rdfs:label</code></a> to add a human-readable label for the term identified by the IRI, and <a href="http://www.w3.org/2000/01/rdf-schema#comment"><code class="highlighter-rouge">rdfs:comment</code></a> to add a few sentences describing what is meant by the term in the context we use it. This could lead to something like this:</p>
+<p>Even if we don’t want our vocabulary to look like this, the point is that it’s
+really useful to also provide human-readable descriptions of the terms in our
+vocabularies. To do so we’ll use the properties
+<a href="http://www.w3.org/2000/01/rdf-schema#label"><code class="highlighter-rouge">rdfs:label</code></a> to add a
+human-readable label for the term identified by the IRI, and
+<a href="http://www.w3.org/2000/01/rdf-schema#comment"><code class="highlighter-rouge">rdfs:comment</code></a> to add a few
+sentences describing what is meant by the term in the context we use it. This
+could lead to something like this:</p>
+
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -262,12 +293,14 @@ now looks like:</p>
     </span><span class="nn">rdfs:</span><span class="n">comment</span><span class="w"> </span><span class="s">"Relationship between an obelisk and the person who built it."</span><span class="w"> </span><span class="p">.</span><span class="w">
 
 </span><span class="nn">obelisk:</span><span class="n">height</span><span class="w"> </span><span class="nn">rdf:</span><span class="n">type</span><span class="w"> </span><span class="nn">rdf:</span><span class="n">Property</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"heigth"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"height"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="c1"># Note: so far we didn't specify any units for the height (we'll fix this properly later), but we can however provide a hint in the comment.</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">comment</span><span class="w"> </span><span class="s">"The distance from the ground to the highest point of the obelisk, in meters."</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Please note that we are using a shortcut provided by the Turtle syntax to avoid repeating the thing that we talk about when adding multiple properties to it (e.g. <code class="highlighter-rouge">obelisk:ownedBy</code> in the next snippet):</p>
+<p>Please note that we are using a shortcut provided by the Turtle syntax to avoid
+repeating the thing that we talk about when adding multiple properties to it
+(e.g. <code class="highlighter-rouge">obelisk:ownedBy</code> in the next snippet):</p>
 <ul>
   <li>The long version:
     <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">obelisk:</span><span class="n">ownedBy</span><span class="w"> </span><span class="nn">rdf:</span><span class="n">type</span><span class="w"> </span><span class="nn">rdf:</span><span class="n">Property</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -291,7 +324,7 @@ explicit indication that the text is actually in English within the vocabulary
 itself. To make the language of any text explicit, RDF provides the concept of a
 <strong>language tag</strong>, which can be placed directly after the text string itself. The
 value of these language tags is defined by the international IETF standard 
-(BCP-47)[https://tools.ietf.org/html/bcp47] - for example, we can use <code class="highlighter-rouge">@en</code> for
+<a href="https://tools.ietf.org/html/bcp47">BCP-47</a> - for example, we can use <code class="highlighter-rouge">@en</code> for
 English, or <code class="highlighter-rouge">@fr</code> for French.</p>
 
 <p>This example shows how easy it is to explicitly provide both English and French
@@ -316,11 +349,27 @@ labels and comments for terms in our vocabulary:</p>
     </span><span class="nn">rdfs:</span><span class="n">comment</span><span class="w"> </span><span class="s">"Un artiste qui taille des obélisques"</span><span class="na">@fr</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span></code></pre></div></div>
 
+<p>Of course for many text values the concept of ‘language’ is meaningless, for
+instance Social Security Numbers in the United States are often written as 
+stings, as they contain hyphens (e.g. ‘123-12-7890’), or the concept of a 
+username (or nickname) will most often not have any associated language. For
+these common use-cases, simply not specifying a language tag at all is expected.</p>
+
 <h2 id="adding-some-metadata">Adding some metadata</h2>
 
-<p>The finishing touch to this vocabulary is to add some metadata about the vocabulary itself, so that people we share this vocabulary with (or who search for it, or who just stumble across it on the web), can know who created it, and when, and what it’s intended purpose is without having to go through all the details of the individual terms contained within it.</p>
+<p>The finishing touch to this vocabulary is to add some metadata about the
+vocabulary itself, so that people we share this vocabulary with (or who search
+for it, or who just stumble across it on the web), can know who created it, and
+when, and what it’s intended purpose is, without having to go through all the
+details of the individual terms contained within it.</p>
 
-<p>We already decided that the IRI of the vocabulary would be <code class="highlighter-rouge">http://w3id.org/obelisk/</code>, so this is the identifier we are going to use in RDF to say stuff about the vocabulary itself. In Linked Data terminology a vocabulary is called an <a href="http://www.w3.org/2002/07/owl#Ontology"><code class="highlighter-rouge">owl:Ontology</code></a>, so the first thing to say is:</p>
+<p>We already decided that the IRI of our vocabulary would be
+<code class="highlighter-rouge">http://w3id.org/obelisk/</code>, so this is the identifier we are going to use in
+RDF to say stuff about the vocabulary itself. In Linked Data terminology a
+vocabulary is called an
+<a href="http://www.w3.org/2002/07/owl#Ontology"><code class="highlighter-rouge">owl:Ontology</code></a>, so the first thing to
+say is:</p>
+
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -338,7 +387,15 @@ labels and comments for terms in our vocabulary:</p>
 
 <h3 id="adding-a-description">Adding a description</h3>
 
-<p>Much like we described each term with human-friendly labels and comments, we can add a title (<a href="http://purl.org/dc/terms/title"><code class="highlighter-rouge">dcterms:title</code></a>) and a description (<a href="http://purl.org/dc/terms/description"><code class="highlighter-rouge">dcterms:description</code></a>) to our vocabulary. To make it easier to reuse, we can also indicate a preferred prefix (<a href="http://purl.org/vocab/vann/preferredNamespacePrefix"><code class="highlighter-rouge">vann:preferredNamespacePrefix</code></a>) and a preferred IRI (<a href="http://purl.org/vocab/vann/preferredNamespaceUri"><code class="highlighter-rouge">vann:preferredNamespaceUri</code></a>) (since multiple IRIs may point to the same vocabulary).</p>
+<p>Much like we described each term with human-friendly labels and comments, we
+can now add a title (using the property
+<a href="http://purl.org/dc/terms/title"><code class="highlighter-rouge">dcterms:title</code></a>) and a description (using the
+property <a href="http://purl.org/dc/terms/description"><code class="highlighter-rouge">dcterms:description</code></a>) to
+our vocabulary. To make it easier to reuse, we can also indicate a suggested
+or preferred prefix (<a href="http://purl.org/vocab/vann/preferredNamespacePrefix"><code class="highlighter-rouge">vann:preferredNamespacePrefix</code></a>)
+and a suggested or preferred IRI (<a href="http://purl.org/vocab/vann/preferredNamespaceUri"><code class="highlighter-rouge">vann:preferredNamespaceUri</code></a>)
+(since multiple IRIs may point to the same vocabulary).</p>
+
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -362,7 +419,9 @@ labels and comments for terms in our vocabulary:</p>
 </span><span class="c1"># ...</span><span class="w">
 </span></code></pre></div></div>
 
-<p>A reference version of this final vocabulary is available <a href="/assets/misc/tutorials/quickstart-obelisk.ttl">here</a>, and you can experiment with the syntax using a <a href="http://www.easyrdf.org/converter?data=%40prefix%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%20.%0A%40prefix%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%20.%0A%40prefix%20owl%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%20.%0A%40prefix%20vann%3A%20%3Chttp%3A%2F%2Fpurl.org%2Fvocab%2Fvann%2F%3E%20.%0A%40prefix%20dcterms%3A%20%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%20.%0A%0A%40prefix%20obelisk%3A%20%3Chttp%3A%2F%2Fw3id.org%2Fobelisk%2F%3E%20.%0A%0Aobelisk%3A%20rdf%3Atype%20owl%3AOntology%20%3B%0A%20%20%20%20%23%20Description%0A%20%20%20%20dcterms%3Atitle%20%22Obelisk%20ontology%22%20%3B%0A%20%20%20%20dcterms%3Adescription%20%22%22%22%0A%20%20%20%20The%20obelisk%20ontology%20aims%20at%20describing%20obelisks.%0A%20%20%20%20%22%22%22%20%3B%0A%20%20%20%20vann%3ApreferredNamespacePrefix%20%22obelisk%22%20%3B%0A%20%20%20%20vann%3ApreferredNamespaceURI%20%3Chttp%3A%2F%2Fw3id.org%2Fobelisk%2F%3E%20.%0A%0Aobelisk%3AObelisk%20a%20rdfs%3AClass%20%3B%0A%20%20%20%20rdfs%3Alabel%20%22Obelisk%22%20%3B%0A%20%20%20%20rdfs%3Acomment%20%22An%20obelisk%20is%20a%20four-sided%20pilar%20with%20a%20pyramid-shaped%20top.%22%20.%0A%0Aobelisk%3ASculptor%20a%20rdfs%3AClass%20%3B%0A%20%20%20%20rdfs%3Alabel%20%22Sculptor%22%20%3B%0A%20%20%20%20rdfs%3Acomment%20%22An%20artist%20who%20sculpts%20obelisks.%22%20.%0A%0Aobelisk%3AownedBy%20a%20rdf%3AProperty%20%3B%0A%20%20%20%20rdfs%3Alabel%20%22owned%20by%22%20%3B%0A%20%20%20%20rdfs%3Acomment%20%22Relationship%20between%20an%20obelisk%20and%20the%20person%20who%20owns%20it%2C%20which%20is%20typically%20the%20person%20who%20ordered%20it%2C%20or%20to%20whom%20it%20was%20offered.%22%20.%0A%0Aobelisk%3AbuiltBy%20a%20rdf%3AProperty%20%3B%0A%20%20%20%20rdfs%3Alabel%20%22built%20by%22%20%3B%0A%20%20%20%20rdfs%3Acomment%20%22Relationship%20between%20an%20obelisk%20and%20the%20person%20who%20built%20it.%22%20.%0A%0Aobelisk%3Aheigth%20a%20rdf%3AProperty%20%3B%0A%20%20%20%20rdfs%3Alabel%20%22heigth%22%20%3B%0A%20%20%20%20rdfs%3Acomment%20%22The%20distance%20from%20the%20ground%20to%20the%20highest%20point%20of%20the%20obelisk%2C%20in%20meters.%22%20.%0A&amp;uri=https%3A%2F%2Fw3id.org%2Fobelisk" target="_blank">live RDF validator</a>.</p>
+<p>A reference version of this final vocabulary is available
+<a href="/assets/misc/tutorials/quickstart-obelisk.ttl">here</a>, and you can experiment
+with the syntax using a <a href="http://www.easyrdf.org/converter?data=%40prefix%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%20.%0A%40prefix%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%20.%0A%40prefix%20owl%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%20.%0A%40prefix%20vann%3A%20%3Chttp%3A%2F%2Fpurl.org%2Fvocab%2Fvann%2F%3E%20.%0A%40prefix%20dcterms%3A%20%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%20.%0A%0A%40prefix%20obelisk%3A%20%3Chttp%3A%2F%2Fw3id.org%2Fobelisk%2F%3E%20.%0A%0Aobelisk%3A%20rdf%3Atype%20owl%3AOntology%20%3B%0A%20%20%20%20%23%20Description%0A%20%20%20%20dcterms%3Atitle%20%22Obelisk%20ontology%22%20%3B%0A%20%20%20%20dcterms%3Adescription%20%22%22%22%0A%20%20%20%20The%20obelisk%20ontology%20aims%20at%20describing%20obelisks.%0A%20%20%20%20%22%22%22%20%3B%0A%20%20%20%20vann%3ApreferredNamespacePrefix%20%22obelisk%22%20%3B%0A%20%20%20%20vann%3ApreferredNamespaceURI%20%3Chttp%3A%2F%2Fw3id.org%2Fobelisk%2F%3E%20.%0A%0Aobelisk%3AObelisk%20a%20rdfs%3AClass%20%3B%0A%20%20%20%20rdfs%3Alabel%20%22Obelisk%22%20%3B%0A%20%20%20%20rdfs%3Acomment%20%22An%20obelisk%20is%20a%20four-sided%20pilar%20with%20a%20pyramid-shaped%20top.%22%20.%0A%0Aobelisk%3ASculptor%20a%20rdfs%3AClass%20%3B%0A%20%20%20%20rdfs%3Alabel%20%22Sculptor%22%20%3B%0A%20%20%20%20rdfs%3Acomment%20%22An%20artist%20who%20sculpts%20obelisks.%22%20.%0A%0Aobelisk%3AownedBy%20a%20rdf%3AProperty%20%3B%0A%20%20%20%20rdfs%3Alabel%20%22owned%20by%22%20%3B%0A%20%20%20%20rdfs%3Acomment%20%22Relationship%20between%20an%20obelisk%20and%20the%20person%20who%20owns%20it%2C%20which%20is%20typically%20the%20person%20who%20ordered%20it%2C%20or%20to%20whom%20it%20was%20offered.%22%20.%0A%0Aobelisk%3AbuiltBy%20a%20rdf%3AProperty%20%3B%0A%20%20%20%20rdfs%3Alabel%20%22built%20by%22%20%3B%0A%20%20%20%20rdfs%3Acomment%20%22Relationship%20between%20an%20obelisk%20and%20the%20person%20who%20built%20it.%22%20.%0A%0Aobelisk%3Aheight%20a%20rdf%3AProperty%20%3B%0A%20%20%20%20rdfs%3Alabel%20%22height%22%20%3B%0A%20%20%20%20rdfs%3Acomment%20%22The%20distance%20from%20the%20ground%20to%20the%20highest%20point%20of%20the%20obelisk%2C%20in%20meters.%22%20.%0A&amp;uri=https%3A%2F%2Fw3id.org%2Fobelisk" target="_blank">live RDF validator</a>.</p>
 
 <p>Next step: <a href="/for-developers/apps/vocabularies/publish/quickstart">publish your vocabulary on your Pod</a>.</p>
 
