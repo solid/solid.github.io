@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2020-03-04T14:12:23+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><entry><title type="html">This Week in Solid 2020-03-05</title><link href="https://solidproject.org//this-week-in-solid/2020-03-05" rel="alternate" type="text/html" title="This Week in Solid 2020-03-05" /><published>2020-03-05T00:00:00+00:00</published><updated>2020-03-05T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-03-05">&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2020-03-10T12:09:28+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><entry><title type="html">This Week in Solid 2020-03-05</title><link href="https://solidproject.org//this-week-in-solid/2020-03-05" rel="alternate" type="text/html" title="This Week in Solid 2020-03-05" /><published>2020-03-05T00:00:00+00:00</published><updated>2020-03-05T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-03-05">&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
@@ -753,15 +753,7 @@ Job Openings&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;2019-11-14 Mitzi László will be speaking at the &lt;a href=&quot;https://ecp.nl/jaarcongres/programma/#event-158&quot;&gt;ECP Jaarcongres&lt;/a&gt; in the Hague&lt;/li&gt;
   &lt;li&gt;2019-11-20 &lt;a href=&quot;https://www.eventbrite.com/e/data-control-ethics-solid-workshop-this-is-for-everyone-join-the-movement-tickets-79208132657?ref=estw&quot;&gt;Solid London&lt;/a&gt; organised by Kartika Tulusan&lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;2019-11-21 Solid Montreal, organised by &lt;a href=&quot;https://github.com/vid&quot;&gt;David H Manson&lt;/a&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
+  &lt;li&gt;2019-11-21 Solid Montreal, organised by &lt;a href=&quot;https://github.com/vid&quot;&gt;David H Manson&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;2019-12-10 &lt;a href=&quot;https://www.pldn.nl/index.php/Solid_Christmas_Meetup_Enschede_-_How_to_Fix_the_Internet!&quot;&gt;Solid Enschede&lt;/a&gt; organised by Erwin Folmer&lt;/li&gt;
   &lt;li&gt;2019-01-xx (date to be confirmed) Solid Amsterdam organised by &lt;a href=&quot;https://github.com/jjvbeele&quot;&gt;Jeroen van Beele&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
