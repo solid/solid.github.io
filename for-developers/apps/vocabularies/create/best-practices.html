@@ -88,6 +88,8 @@
         
         
         
+        
+        
           <li>
             <a href="">
               Vocabulary building best practices
@@ -117,10 +119,10 @@
 
 <h4 id="at-the-term-granularity">At the term granularity</h4>
 
-<p>There are tools within RDF to help you document your vocabulary. First, remember that an IRI should primarily be a machine-understandable identifier: it’s nice if it’s readable by humans, but it’s not its intended use. Therefore,  you should always use <code class="highlighter-rouge">rdfs:label</code> and <code class="highlighter-rouge">rdfs:comment</code> to attach human-understandable descriptions to your concepts (please refer to <a href="/for-developers/apps/vocabularies/well-known">the vocabulary documentation</a> for more information). Pro tip: you can use the requirements you defined earlier to build the comments.</p>
+<p>There are tools within RDF to help you document your vocabulary. First, remember that an IRI should primarily be a machine-understandable identifier: it’s nice if it’s readable by humans, but it’s not its intended use. Therefore,  you should always use <code class="language-plaintext highlighter-rouge">rdfs:label</code> and <code class="language-plaintext highlighter-rouge">rdfs:comment</code> to attach human-understandable descriptions to your concepts (please refer to <a href="/for-developers/apps/vocabularies/well-known">the vocabulary documentation</a> for more information). Pro tip: you can use the requirements you defined earlier to build the comments.</p>
 
 <p>For instance:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@prefix webco: &lt;http://w3id.org/webcomic/ns#&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@prefix webco: &lt;http://w3id.org/webcomic/ns#&gt;
 
 webco:Webcomic a rdfs:Class;
     rdfs:label "Webcomic"@en;
@@ -135,7 +137,7 @@ webco:Webcomic a rdfs:Class;
 <p>Remember: your vocabulary itself will be online, with its own identifier. Which means that you can add useful metainformation to your vocabulary… as part of the published vocabulary.</p>
 
 <p>For instance:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@prefix cc: &lt;http://creativecommons.org/ns#&gt; .
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@prefix cc: &lt;http://creativecommons.org/ns#&gt; .
 @prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
 
@@ -166,9 +168,9 @@ The Webcomic ontology aims at describing webcomics, the things they talk about, 
 <p>There are different “usual” ways to link to other vocabularies:</p>
 
 <ul>
-  <li><strong>Equivalence</strong>: You state that your term and the other represent exactly the same concept, and that logically, anything that goes for one goes for the other. For instance, we could say that <code class="highlighter-rouge">webco:Webcomic owl:sameAs schema:CreativeWork</code>. It is quite a strong statement, but it makes it possible to make plenty of deductions using a reasoner. The downside is that if you add a property to your local term, that is therefore considered applied to the other term, which can lead to contradiction when your vocabulary is reused. Let’s imagine that the Webcomic vocabulary contains the triple <code class="highlighter-rouge">webco:Webcomic owl:disjointFrom ex:Book</code> (where <code class="highlighter-rouge">ex:Book</code> is a well-known term for books).  If a book ontology importing our webcomic vocabulary states that <code class="highlighter-rouge">ex:Book rdfs:subClassOf schema:CreativeWork</code>, an inconsistency is created, because <code class="highlighter-rouge">ex:Book</code> is both a subclass of and disjoint from <code class="highlighter-rouge">schema:CreativeWork</code>. The take-away message here is that equivalence should be used wisely.</li>
-  <li><strong>Subclassing</strong>: You state that your concept is a subclass of the remote concept you want to extend. It is not as powerful as equivalence, but it also causes less trouble. In this case, we would say that <code class="highlighter-rouge">webco:Webcomic rdfs:subClassOf schema:CreativeWork</code>.</li>
-  <li><strong>Direct reuse</strong>: In this case, you do not create a new term at all in your vocabulary, and you use the remote term directly. For instance, we could say that <code class="highlighter-rouge">webco:follows rdfs:domain schema:Person</code> instead of <code class="highlighter-rouge">webco:follows rdfs:domain webco:Person</code> and <code class="highlighter-rouge">webco:Person rdfs:subClassOf schema:Person</code>. This prevents redefining existing terms, but if not done carefully, it can create the same issues as equivalence.</li>
+  <li><strong>Equivalence</strong>: You state that your term and the other represent exactly the same concept, and that logically, anything that goes for one goes for the other. For instance, we could say that <code class="language-plaintext highlighter-rouge">webco:Webcomic owl:sameAs schema:CreativeWork</code>. It is quite a strong statement, but it makes it possible to make plenty of deductions using a reasoner. The downside is that if you add a property to your local term, that is therefore considered applied to the other term, which can lead to contradiction when your vocabulary is reused. Let’s imagine that the Webcomic vocabulary contains the triple <code class="language-plaintext highlighter-rouge">webco:Webcomic owl:disjointFrom ex:Book</code> (where <code class="language-plaintext highlighter-rouge">ex:Book</code> is a well-known term for books).  If a book ontology importing our webcomic vocabulary states that <code class="language-plaintext highlighter-rouge">ex:Book rdfs:subClassOf schema:CreativeWork</code>, an inconsistency is created, because <code class="language-plaintext highlighter-rouge">ex:Book</code> is both a subclass of and disjoint from <code class="language-plaintext highlighter-rouge">schema:CreativeWork</code>. The take-away message here is that equivalence should be used wisely.</li>
+  <li><strong>Subclassing</strong>: You state that your concept is a subclass of the remote concept you want to extend. It is not as powerful as equivalence, but it also causes less trouble. In this case, we would say that <code class="language-plaintext highlighter-rouge">webco:Webcomic rdfs:subClassOf schema:CreativeWork</code>.</li>
+  <li><strong>Direct reuse</strong>: In this case, you do not create a new term at all in your vocabulary, and you use the remote term directly. For instance, we could say that <code class="language-plaintext highlighter-rouge">webco:follows rdfs:domain schema:Person</code> instead of <code class="language-plaintext highlighter-rouge">webco:follows rdfs:domain webco:Person</code> and <code class="language-plaintext highlighter-rouge">webco:Person rdfs:subClassOf schema:Person</code>. This prevents redefining existing terms, but if not done carefully, it can create the same issues as equivalence.</li>
 </ul>
 
 <p>Do as you see fit, but when in doubt subclassing is a safe option.</p>
@@ -449,7 +451,7 @@ The Webcomic ontology aims at describing webcomics, the things they talk about, 
             
               <li>
                 
-                  <a class="is-size-5" href="/this-week-in-solid">This week in Solid</a>
+                  <a class="is-size-5" href="/newsletter">This Month in Solid</a>
                 
               </li>
             

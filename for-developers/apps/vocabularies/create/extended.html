@@ -88,6 +88,8 @@
         
         
         
+        
+        
           <li>
             <a href="">
               Improve your vocabulary
@@ -150,7 +152,7 @@
 
 <h3 id="connecting-to-other-vocabularies">Connecting to other vocabularies</h3>
 
-<p>Terms in vocabularies are identified by IRI, and it’s not for decoration: it means that you can use the identifiers across the entire Web. The cool thing about that is that it makes it really easy to reuse terms from remote vocabularies in your own vocabularies. For instance, <a href="http://w3id.org/obelisk/Obelisk"><code class="highlighter-rouge">obelisk:Obelisk</code></a> is quite a specific term, so it makes perfect sense to define it ourselves. What about <a href="http://w3id.org/obelisk/Person"><code class="highlighter-rouge">obelisk:Person</code></a> ? Maybe there is a reference vocabulary out there that defines the concept of person… And if you pay a quick visit to <a href="/for-developers/apps/vocabularies/well-known">our list of well-known vocabularies</a>, you will see that indeed there is! For instance, <a href="http://xmlns.com/foaf/0.1/">Friend of a Friend</a> (foaf for short) defines the term <a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a>, and it would make our vocabulary easier to integrate into any application if we just reused this term instead of defining our own. Therefore, our vocabulary could look more something like this:</p>
+<p>Terms in vocabularies are identified by IRI, and it’s not for decoration: it means that you can use the identifiers across the entire Web. The cool thing about that is that it makes it really easy to reuse terms from remote vocabularies in your own vocabularies. For instance, <a href="http://w3id.org/obelisk/Obelisk"><code class="language-plaintext highlighter-rouge">obelisk:Obelisk</code></a> is quite a specific term, so it makes perfect sense to define it ourselves. What about <a href="http://w3id.org/obelisk/Person"><code class="language-plaintext highlighter-rouge">obelisk:Person</code></a> ? Maybe there is a reference vocabulary out there that defines the concept of person… And if you pay a quick visit to <a href="/for-developers/apps/vocabularies/well-known">our list of well-known vocabularies</a>, you will see that indeed there is! For instance, <a href="http://xmlns.com/foaf/0.1/">Friend of a Friend</a> (foaf for short) defines the term <a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a>, and it would make our vocabulary easier to integrate into any application if we just reused this term instead of defining our own. Therefore, our vocabulary could look more something like this:</p>
 
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -206,7 +208,7 @@
 
 <h3 id="adding-multilingual-support">Adding multilingual support</h3>
 
-<p>So far all our labels and comments are written in English, yet there is no explicit indication of that in the vocabulary. To do so, RDF uses the concept of <strong>language tag</strong>: after a string, you can add a tag (e.g. <code class="highlighter-rouge">@en</code> for English, or <code class="highlighter-rouge">@es</code> for Spanish) to stipulate its language.</p>
+<p>So far all our labels and comments are written in English, yet there is no explicit indication of that in the vocabulary. To do so, RDF uses the concept of <strong>language tag</strong>: after a string, you can add a tag (e.g. <code class="language-plaintext highlighter-rouge">@en</code> for English, or <code class="language-plaintext highlighter-rouge">@es</code> for Spanish) to stipulate its language.</p>
 
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -291,7 +293,7 @@
 
 <h2 id="adding-some-metadata">Adding some metadata</h2>
 
-<p>The finishing touch to this vocabulary is to add some metadata, so that people who find it will have a global description before going through its details. We already decided that the IRI of the vocabulary would be <code class="highlighter-rouge">http://w3id.org/obelisk/</code>, so this is the identifier we are going to use in RDF to say stuff about the vocabulary. In Linked Data terminology a vocabulary is called an <a href="http://www.w3.org/2002/07/owl#Ontology"><code class="highlighter-rouge">owl:Ontology</code></a>, so the first thing to say is:</p>
+<p>The finishing touch to this vocabulary is to add some metadata, so that people who find it will have a global description before going through its details. We already decided that the IRI of the vocabulary would be <code class="language-plaintext highlighter-rouge">http://w3id.org/obelisk/</code>, so this is the identifier we are going to use in RDF to say stuff about the vocabulary. In Linked Data terminology a vocabulary is called an <a href="http://www.w3.org/2002/07/owl#Ontology"><code class="language-plaintext highlighter-rouge">owl:Ontology</code></a>, so the first thing to say is:</p>
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -311,7 +313,7 @@
 
 <h3 id="adding-some-description">Adding some description</h3>
 
-<p>Much like we described each term with human-friendly labels and comments, we can add a title (<a href="http://purl.org/dc/terms/title"><code class="highlighter-rouge">dcterms:title</code></a>) and a description (<a href="http://purl.org/dc/terms/description"><code class="highlighter-rouge">dcterms:description</code></a>) to our vocabulary. To make it easier to reuse, we can also indicate a preferred prefix (<a href="http://purl.org/vocab/vann/preferredNamespacePrefix"><code class="highlighter-rouge">vann:preferredNamespacePrefix</code></a>) and a preferred IRI (<a href="http://purl.org/vocab/vann/preferredNamespaceUri"><code class="highlighter-rouge">vann:preferredNamespaceUri</code></a>) (since multiple IRIs may point to the same vocabulary).</p>
+<p>Much like we described each term with human-friendly labels and comments, we can add a title (<a href="http://purl.org/dc/terms/title"><code class="language-plaintext highlighter-rouge">dcterms:title</code></a>) and a description (<a href="http://purl.org/dc/terms/description"><code class="language-plaintext highlighter-rouge">dcterms:description</code></a>) to our vocabulary. To make it easier to reuse, we can also indicate a preferred prefix (<a href="http://purl.org/vocab/vann/preferredNamespacePrefix"><code class="language-plaintext highlighter-rouge">vann:preferredNamespacePrefix</code></a>) and a preferred IRI (<a href="http://purl.org/vocab/vann/preferredNamespaceUri"><code class="language-plaintext highlighter-rouge">vann:preferredNamespaceUri</code></a>) (since multiple IRIs may point to the same vocabulary).</p>
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -340,10 +342,10 @@
 
 <p>It is good practice to give ownership information about the vocabulary:</p>
 <ul>
-  <li>who created it (<a href="http://purl.org/dc/terms/creator"><code class="highlighter-rouge">dcterms:creator</code></a>),</li>
-  <li>who contributed to it (<a href="http://purl.org/dc/terms/contributor"><code class="highlighter-rouge">dcterms:contributor</code></a>),</li>
-  <li>who publishes it (<a href="http://purl.org/dc/terms/publisher"><code class="highlighter-rouge">dcterms:publisher</code></a>),</li>
-  <li>under what license it is distributed (<a href="http://purl.org/dc/terms/license"><code class="highlighter-rouge">dcterms:license</code></a>)</li>
+  <li>who created it (<a href="http://purl.org/dc/terms/creator"><code class="language-plaintext highlighter-rouge">dcterms:creator</code></a>),</li>
+  <li>who contributed to it (<a href="http://purl.org/dc/terms/contributor"><code class="language-plaintext highlighter-rouge">dcterms:contributor</code></a>),</li>
+  <li>who publishes it (<a href="http://purl.org/dc/terms/publisher"><code class="language-plaintext highlighter-rouge">dcterms:publisher</code></a>),</li>
+  <li>under what license it is distributed (<a href="http://purl.org/dc/terms/license"><code class="language-plaintext highlighter-rouge">dcterms:license</code></a>)</li>
 </ul>
 
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -380,9 +382,9 @@
 
 <p>A vocabulary may change over time, and so it is helpful to also provide some explicit version information. Details about versioning a vocabulary are given later in the <a href="/for-developers/apps/vocabularies/publish">vocabulary publication tutorial</a>, but we can add some basic information here, e.g.:</p>
 <ul>
-  <li>a version number (<a href="http://www.w3.org/2002/07/owl#versionInfo"><code class="highlighter-rouge">owl:versionInfo</code></a>)</li>
-  <li>an initial publication date (<a href="http://purl.org/dc/terms/issued"><code class="highlighter-rouge">dcterms:issued</code></a>)</li>
-  <li>a version release date (<a href="http://purl.org/dc/terms/modified"><code class="highlighter-rouge">dcterms:modified</code></a>)</li>
+  <li>a version number (<a href="http://www.w3.org/2002/07/owl#versionInfo"><code class="language-plaintext highlighter-rouge">owl:versionInfo</code></a>)</li>
+  <li>an initial publication date (<a href="http://purl.org/dc/terms/issued"><code class="language-plaintext highlighter-rouge">dcterms:issued</code></a>)</li>
+  <li>a version release date (<a href="http://purl.org/dc/terms/modified"><code class="language-plaintext highlighter-rouge">dcterms:modified</code></a>)</li>
 </ul>
 
 <p>This last modification yields a vocabulary in good shape to be used to describe our data:</p>
@@ -717,7 +719,7 @@
             
               <li>
                 
-                  <a class="is-size-5" href="/this-week-in-solid">This week in Solid</a>
+                  <a class="is-size-5" href="/newsletter">This Month in Solid</a>
                 
               </li>
             

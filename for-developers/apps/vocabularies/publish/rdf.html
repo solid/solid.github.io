@@ -88,6 +88,8 @@
         
         
         
+        
+        
           <li>
             <a href="">
               Publish your vocabulary as RDF
@@ -112,12 +114,12 @@
 <ol>
   <li>Keep it <strong>simple</strong>: short, memorable IRI are less error-prone</li>
   <li>Ensure <strong>stability</strong> (remember: <a href="https://www.w3.org/Provider/Style/URI">cool IRI don’t change</a>). To this end, consider applying for a <a href="https://w3id.org/">w3id</a>, a permanent IRI that redirects to your own, less stable namespace.</li>
-  <li>Promote <strong>manageability</strong> by using versioned IRI. The <strong>W3C versioning</strong> approach is to ensure that the permanent IRI of a document always points to its latest version, and that each version has a specific IRI typically including its publication date or version number (referenced with the property <a href="http://www.w3.org/2002/07/owl#versionInfo"><code class="highlighter-rouge">owl:versionInfo</code></a>). Each version points to the previous one with an <a href="http://www.w3.org/2002/07/owl#priorVersion"><code class="highlighter-rouge">owl:priorVersion</code></a> link, and the latest version includes a <a href="http://www.w3.org/2002/07/owl#versionIRI"><code class="highlighter-rouge">owl:versionIRI</code></a> property indicating its versioned IRI. The <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core</a> also provides versioning terms: <a href="http://purl.org/dc/terms/isReplacedBy"><code class="highlighter-rouge">terms:isReplacedBy</code></a> and <a href="http://purl.org/dc/terms/replaces"><code class="highlighter-rouge">terms:replaces</code></a> to connect versions to one another, <a href="http://purl.org/dc/terms/isVersionOf"><code class="highlighter-rouge">terms:isVersionOf</code></a> to connect version to the permanent IRI.</li>
+  <li>Promote <strong>manageability</strong> by using versioned IRI. The <strong>W3C versioning</strong> approach is to ensure that the permanent IRI of a document always points to its latest version, and that each version has a specific IRI typically including its publication date or version number (referenced with the property <a href="http://www.w3.org/2002/07/owl#versionInfo"><code class="language-plaintext highlighter-rouge">owl:versionInfo</code></a>). Each version points to the previous one with an <a href="http://www.w3.org/2002/07/owl#priorVersion"><code class="language-plaintext highlighter-rouge">owl:priorVersion</code></a> link, and the latest version includes a <a href="http://www.w3.org/2002/07/owl#versionIRI"><code class="language-plaintext highlighter-rouge">owl:versionIRI</code></a> property indicating its versioned IRI. The <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core</a> also provides versioning terms: <a href="http://purl.org/dc/terms/isReplacedBy"><code class="language-plaintext highlighter-rouge">terms:isReplacedBy</code></a> and <a href="http://purl.org/dc/terms/replaces"><code class="language-plaintext highlighter-rouge">terms:replaces</code></a> to connect versions to one another, <a href="http://purl.org/dc/terms/isVersionOf"><code class="language-plaintext highlighter-rouge">terms:isVersionOf</code></a> to connect version to the permanent IRI.</li>
 </ol>
 
 <p>We already chose a w3id identifier for the webcomic vocabulary, so all we need to do is versioning, which could look like the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@prefix terms: &lt;http://purl.org/dc/terms/&gt; .
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@prefix terms: &lt;http://purl.org/dc/terms/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt;.
 
 &lt;http://w3id.org/webcomic/ns&gt; rdf:type owl:Ontology ;
@@ -134,7 +136,7 @@
   <li>A <a href="http://purl.org/vocommons/voaf#preferredNamespaceUri">voaf:preferredNamespaceUri</a> to reference the preferred IRI of the vocabulary, e.g. its permanent IRI as opposed to its versioned ones.</li>
   <li>A <a href="http://purl.org/vocommons/voaf#preferredNamespacePrefix">voaf:preferredNamespacePrefix</a> to indicate a short, convenient way of referencing your vocabulary instead of its IRI.</li>
   <li>A <a href="http://purl.org/dc/terms/title">terms:title</a> and <a href="http://purl.org/dc/terms/description">terms:description</a>, which play the same role as <a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a> and <a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:comment</a></li>
-  <li>In addition to the version information that we already mentionned (namely <a href="http://www.w3.org/2002/07/owl#versionInfo"><code class="highlighter-rouge">owl:versionInfo</code></a>), information about release dates with <a href="http://purl.org/dc/terms/issued">terms:issued</a> for the initial release and <a href="http://purl.org/dc/terms/modified">terms:modified</a> for the release of the current version</li>
+  <li>In addition to the version information that we already mentionned (namely <a href="http://www.w3.org/2002/07/owl#versionInfo"><code class="language-plaintext highlighter-rouge">owl:versionInfo</code></a>), information about release dates with <a href="http://purl.org/dc/terms/issued">terms:issued</a> for the initial release and <a href="http://purl.org/dc/terms/modified">terms:modified</a> for the release of the current version</li>
   <li>Relevant information for authoring and intellectual property:
     <ul>
       <li><a href="http://purl.org/dc/terms/creator">terms:creator</a> and <a href="http://purl.org/dc/terms/contributor">terms:contributor</a> the creator(s) and contributor(s) of the vocabulary. All the better if they have webid that can be linked to!</li>
@@ -146,7 +148,7 @@
 
 <p>Putting all together, the metadata of the webcomic vocabulary could look something like that:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@prefix cc: &lt;http://creativecommons.org/ns#&gt; .
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@prefix cc: &lt;http://creativecommons.org/ns#&gt; .
 @prefix terms: &lt;http://purl.org/dc/terms/&gt; .
 @prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
 
@@ -177,10 +179,10 @@ The Webcomic ontology aims at describing webcomics, the things they talk about, 
 
 <p>Now that you have an IRI, a vocabulary and its metadata, and its documentation (that you might want to regenerate to include the metadata), you’re nearly there! The next step to publishing your vocabulary is setting up <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation">content negotiation</a>, so that your server serves tailored content depending on who asks. The first usage for this is to show, under the same IRI, documentation to humans and RDF to programs. If you exported your vocabulary in different RDF syntaxes, you can also use content negotiation to serve these different flavours to clients who specifically ask for one. The content negotiation mechanism also explains why we left the file extension out of the IRI: the resource identified by the IRI is not necessarily a single document.</p>
 
-<p>Content negotiation is based on HTTP <code class="highlighter-rouge">Accept</code> headers:</p>
+<p>Content negotiation is based on HTTP <code class="language-plaintext highlighter-rouge">Accept</code> headers:</p>
 <ul>
-  <li>On <code class="highlighter-rouge">Accept: X</code>, X being a IANA MIME type for an RDF syntax (e.g. <code class="highlighter-rouge">text/turtle</code>, <code class="highlighter-rouge">application/rdf+xml</code>, <code class="highlighter-rouge">application/trig</code>, ` text/n3<code class="highlighter-rouge">, </code> 	application/ld+json`…), serve the appropriate document</li>
-  <li>On <code class="highlighter-rouge">Accept: Y</code>, Y being a IANA MIME type for human-readable text (e.g. <code class="highlighter-rouge">text/plain</code>, <code class="highlighter-rouge">application/xhtml+xml</code>, <code class="highlighter-rouge">text/html</code>…), serve the documentation</li>
+  <li>On <code class="language-plaintext highlighter-rouge">Accept: X</code>, X being a IANA MIME type for an RDF syntax (e.g. <code class="language-plaintext highlighter-rouge">text/turtle</code>, <code class="language-plaintext highlighter-rouge">application/rdf+xml</code>, <code class="language-plaintext highlighter-rouge">application/trig</code>, ` text/n3<code class="language-plaintext highlighter-rouge">, </code> 	application/ld+json`…), serve the appropriate document</li>
+  <li>On <code class="language-plaintext highlighter-rouge">Accept: Y</code>, Y being a IANA MIME type for human-readable text (e.g. <code class="language-plaintext highlighter-rouge">text/plain</code>, <code class="language-plaintext highlighter-rouge">application/xhtml+xml</code>, <code class="language-plaintext highlighter-rouge">text/html</code>…), serve the documentation</li>
   <li>If the client does not provide one, be sure to implement a default behavior, e.g. serving the Turtle document.</li>
 </ul>
 
@@ -456,7 +458,7 @@ The Webcomic ontology aims at describing webcomics, the things they talk about, 
             
               <li>
                 
-                  <a class="is-size-5" href="/this-week-in-solid">This week in Solid</a>
+                  <a class="is-size-5" href="/newsletter">This Month in Solid</a>
                 
               </li>
             

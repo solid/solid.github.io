@@ -88,6 +88,8 @@
         
         
         
+        
+        
           <li>
             <a href="">
               How to create your own vocabulary
@@ -112,15 +114,15 @@
 
 <p>Let’s start by stating in English what we’d like to put in our vocabulary:</p>
 <ul>
-  <li>An <code class="highlighter-rouge">obelisk</code> is <code class="highlighter-rouge">owned by</code> a <code class="highlighter-rouge">person</code>.</li>
-  <li>An <code class="highlighter-rouge">obelisk</code> is <code class="highlighter-rouge">built by</code> a <code class="highlighter-rouge">sculptor</code>.</li>
-  <li>An <code class="highlighter-rouge">obelisk</code> has a <code class="highlighter-rouge">height</code>, which is a numerical value.</li>
+  <li>An <code class="language-plaintext highlighter-rouge">obelisk</code> is <code class="language-plaintext highlighter-rouge">owned by</code> a <code class="language-plaintext highlighter-rouge">person</code>.</li>
+  <li>An <code class="language-plaintext highlighter-rouge">obelisk</code> is <code class="language-plaintext highlighter-rouge">built by</code> a <code class="language-plaintext highlighter-rouge">sculptor</code>.</li>
+  <li>An <code class="language-plaintext highlighter-rouge">obelisk</code> has a <code class="language-plaintext highlighter-rouge">height</code>, which is a numerical value.</li>
 </ul>
 
 <p>The highlighted elements of these sentences are going to be the ‘terms’ in our 
 vocabulary. We can identify two types of terms: the things that we talk about
-(e.g. <code class="highlighter-rouge">obelisk</code> or <code class="highlighter-rouge">sculptor</code>), and their properties (e.g. <code class="highlighter-rouge">built by</code> or 
-<code class="highlighter-rouge">height</code>). Let’s make a graphical representation of that by putting the things
+(e.g. <code class="language-plaintext highlighter-rouge">obelisk</code> or <code class="language-plaintext highlighter-rouge">sculptor</code>), and their properties (e.g. <code class="language-plaintext highlighter-rouge">built by</code> or 
+<code class="language-plaintext highlighter-rouge">height</code>). Let’s make a graphical representation of that by putting the things
  in bubbles, and the properties in squares:</p>
 
 <p><img src="/assets/img/tutorials/vocabularies/obelisk_vocab_1.png" alt="The obelisk vocabulary" /></p>
@@ -148,8 +150,8 @@ update our plain English example a little bit:</p>
 
 <p>As we can see, identifiers quickly become unpleasant to read when they are IRIs,
 so RDF introduces the notion of prefixes (a simple concept borrowed from XML
-namespaces). From now on we’ll use the prefix <code class="highlighter-rouge">obelisk:</code> to stand in for our
-vocabulary identifier <code class="highlighter-rouge">http://w3id.org/obelisk/</code>, which means our vocabulary
+namespaces). From now on we’ll use the prefix <code class="language-plaintext highlighter-rouge">obelisk:</code> to stand in for our
+vocabulary identifier <code class="language-plaintext highlighter-rouge">http://w3id.org/obelisk/</code>, which means our vocabulary
 now looks like:</p>
 <ul>
   <li>Use the prefix ‘obelisk:’ for our vocabulary identifier http://w3id.org/obelisk/.</li>
@@ -265,9 +267,9 @@ be an equivalent vocabulary:</p>
 <p>Even if we don’t want our vocabulary to look like this, the point is that it’s
 really useful to also provide human-readable descriptions of the terms in our
 vocabularies. To do so we’ll use the properties
-<a href="http://www.w3.org/2000/01/rdf-schema#label"><code class="highlighter-rouge">rdfs:label</code></a> to add a
+<a href="http://www.w3.org/2000/01/rdf-schema#label"><code class="language-plaintext highlighter-rouge">rdfs:label</code></a> to add a
 human-readable label for the term identified by the IRI, and
-<a href="http://www.w3.org/2000/01/rdf-schema#comment"><code class="highlighter-rouge">rdfs:comment</code></a> to add a few
+<a href="http://www.w3.org/2000/01/rdf-schema#comment"><code class="language-plaintext highlighter-rouge">rdfs:comment</code></a> to add a few
 sentences describing what is meant by the term in the context we use it. This
 could lead to something like this:</p>
 
@@ -301,7 +303,7 @@ could lead to something like this:</p>
 
 <p>Please note that we are using a shortcut provided by the Turtle syntax to avoid
 repeating the thing that we talk about when adding multiple properties to it
-(e.g. <code class="highlighter-rouge">obelisk:ownedBy</code> in the next snippet):</p>
+(e.g. <code class="language-plaintext highlighter-rouge">obelisk:ownedBy</code> in the next snippet):</p>
 <ul>
   <li>The long version:
     <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">obelisk:</span><span class="n">ownedBy</span><span class="w"> </span><span class="nn">rdf:</span><span class="n">type</span><span class="w"> </span><span class="nn">rdf:</span><span class="n">Property</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -326,8 +328,8 @@ explicit indication that the text is actually in English within the vocabulary
 itself. To make the language of any text explicit, RDF provides the concept of a
 <strong>language tag</strong>, which can be placed directly after the text string itself. The
 value of these language tags is defined by the international IETF standard 
-<a href="https://tools.ietf.org/html/bcp47">BCP-47</a> - for example, we can use <code class="highlighter-rouge">@en</code> for
-English, or <code class="highlighter-rouge">@fr</code> for French.</p>
+<a href="https://tools.ietf.org/html/bcp47">BCP-47</a> - for example, we can use <code class="language-plaintext highlighter-rouge">@en</code> for
+English, or <code class="language-plaintext highlighter-rouge">@fr</code> for French.</p>
 
 <p>This example shows how easy it is to explicitly provide both English and French
 labels and comments for terms in our vocabulary:</p>
@@ -366,10 +368,10 @@ when, and what it’s intended purpose is, without having to go through all the
 details of the individual terms contained within it.</p>
 
 <p>We already decided that the IRI of our vocabulary would be
-<code class="highlighter-rouge">http://w3id.org/obelisk/</code>, so this is the identifier we are going to use in
+<code class="language-plaintext highlighter-rouge">http://w3id.org/obelisk/</code>, so this is the identifier we are going to use in
 RDF to say stuff about the vocabulary itself. In Linked Data terminology a
 vocabulary is called an
-<a href="http://www.w3.org/2002/07/owl#Ontology"><code class="highlighter-rouge">owl:Ontology</code></a>, so the first thing to
+<a href="http://www.w3.org/2002/07/owl#Ontology"><code class="language-plaintext highlighter-rouge">owl:Ontology</code></a>, so the first thing to
 say is:</p>
 
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -391,11 +393,11 @@ say is:</p>
 
 <p>Much like we described each term with human-friendly labels and comments, we
 can now add a title (using the property
-<a href="http://purl.org/dc/terms/title"><code class="highlighter-rouge">dcterms:title</code></a>) and a description (using the
-property <a href="http://purl.org/dc/terms/description"><code class="highlighter-rouge">dcterms:description</code></a>) to
+<a href="http://purl.org/dc/terms/title"><code class="language-plaintext highlighter-rouge">dcterms:title</code></a>) and a description (using the
+property <a href="http://purl.org/dc/terms/description"><code class="language-plaintext highlighter-rouge">dcterms:description</code></a>) to
 our vocabulary. To make it easier to reuse, we can also indicate a suggested
-or preferred prefix (<a href="http://purl.org/vocab/vann/preferredNamespacePrefix"><code class="highlighter-rouge">vann:preferredNamespacePrefix</code></a>)
-and a suggested or preferred IRI (<a href="http://purl.org/vocab/vann/preferredNamespaceUri"><code class="highlighter-rouge">vann:preferredNamespaceUri</code></a>)
+or preferred prefix (<a href="http://purl.org/vocab/vann/preferredNamespacePrefix"><code class="language-plaintext highlighter-rouge">vann:preferredNamespacePrefix</code></a>)
+and a suggested or preferred IRI (<a href="http://purl.org/vocab/vann/preferredNamespaceUri"><code class="language-plaintext highlighter-rouge">vann:preferredNamespaceUri</code></a>)
 (since multiple IRIs may point to the same vocabulary).</p>
 
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -430,9 +432,9 @@ vocabularies.</p>
 <ul>
   <li>The basic convention is to use <a href="https://en.wikipedia.org/wiki/Camel_case">Camel Case</a>
 for all your terms, e.g. ‘ownedBy’ or ‘builtBy’.</li>
-  <li>Capitalize the first letter of Class terms, e.g. <code class="highlighter-rouge">Obelisk</code>, or <code class="highlighter-rouge">Sculptor</code>.</li>
-  <li>Lower-case the first letter of Property terms, e.g. <code class="highlighter-rouge">height</code> or <code class="highlighter-rouge">ownedBy</code>.</li>
-  <li>Lower-case prefixes, e.g. <code class="highlighter-rouge">@prefix obelisk: &lt;...&gt;</code>.</li>
+  <li>Capitalize the first letter of Class terms, e.g. <code class="language-plaintext highlighter-rouge">Obelisk</code>, or <code class="language-plaintext highlighter-rouge">Sculptor</code>.</li>
+  <li>Lower-case the first letter of Property terms, e.g. <code class="language-plaintext highlighter-rouge">height</code> or <code class="language-plaintext highlighter-rouge">ownedBy</code>.</li>
+  <li>Lower-case prefixes, e.g. <code class="language-plaintext highlighter-rouge">@prefix obelisk: &lt;...&gt;</code>.</li>
   <li>Don’t use hyphens, use underscores instead, because it simplifies using them in some programming languages.</li>
 </ul>
 
@@ -678,7 +680,7 @@ with the syntax using a <a href="http://www.easyrdf.org/converter?data=%40prefix
             
               <li>
                 
-                  <a class="is-size-5" href="/this-week-in-solid">This week in Solid</a>
+                  <a class="is-size-5" href="/newsletter">This Month in Solid</a>
                 
               </li>
             

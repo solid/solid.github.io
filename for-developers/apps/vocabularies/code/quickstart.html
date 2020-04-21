@@ -88,6 +88,8 @@
         
         
         
+        
+        
           <li>
             <a href="">
               Code with your vocabulary
@@ -108,7 +110,7 @@
 
 <h2 id="the-artifact-generator">The artifact generator</h2>
 
-<p>The last thing we want developers to do is memorize and type IRIs all over their code. That’s why some libraries (such as <code class="highlighter-rouge">rdf-namespaces</code>) define constants giving easy access to the terms from common vocabularies:</p>
+<p>The last thing we want developers to do is memorize and type IRIs all over their code. That’s why some libraries (such as <code class="language-plaintext highlighter-rouge">rdf-namespaces</code>) define constants giving easy access to the terms from common vocabularies:</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">rdf</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rdf-namespaces</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="c1">// The value of iri will be http://www.w3.org/1999/02/22-rdf-syntax-ns#type.</span>
@@ -122,14 +124,14 @@
 
 <p>To generate a JavaScript artifact with the default options, you can use the following command:</p>
 <ul>
-  <li><code class="highlighter-rouge">lit-artifact-generator --inputResources https://solidproject.org/assets/misc/tutorials/quickstart-obelisk.ttl --outputDirectory /path/to/a/directory --noprompt</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">lit-artifact-generator --inputResources https://solidproject.org/assets/misc/tutorials/quickstart-obelisk.ttl --outputDirectory /path/to/a/directory --noprompt</code>.</li>
 </ul>
 
 <p>You can specify a local vocabulary file rather than an IRI if your vocabulary is not yet available online.</p>
 
 <h3 id="use-the-artifact">Use the artifact</h3>
 
-<p>In your application (TODO: provide git repo with demo app), simply <code class="highlighter-rouge">require</code> the generated output, and use your vocabulary terms directly:</p>
+<p>In your application (TODO: provide git repo with demo app), simply <code class="language-plaintext highlighter-rouge">require</code> the generated output, and use your vocabulary terms directly:</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">OBELISK</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">/path/to/generated/artifact/OBELISK</span><span class="dl">"</span><span class="p">)</span>
 
 <span class="c1">// The value of sculptorIri will be http://w3id.org/obelisk/Sculptor</span>
@@ -142,8 +144,8 @@
 <p>From there, we can build a simple app that tells you, based on a person’s WebID, if that person is an obelisk sculptor or not. Note that the generated artifact is:</p>
 <ul>
   <li>imported on line 1,</li>
-  <li>used on line 16 to get an IRI (<code class="highlighter-rouge">OBELISK.Sculptor.value</code>),</li>
-  <li>used on line 20 to get a label (<code class="highlighter-rouge">OBELISK.Sculptor.labelInLang()</code>).</li>
+  <li>used on line 16 to get an IRI (<code class="language-plaintext highlighter-rouge">OBELISK.Sculptor.value</code>),</li>
+  <li>used on line 20 to get a label (<code class="language-plaintext highlighter-rouge">OBELISK.Sculptor.labelInLang()</code>).</li>
 </ul>
 
 <iframe src="https://codesandbox.io/embed/lit-using-generated-artifact-8vfyf?fontsize=14" title="lit-using-generated-artifact" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
@@ -388,7 +390,7 @@
             
               <li>
                 
-                  <a class="is-size-5" href="/this-week-in-solid">This week in Solid</a>
+                  <a class="is-size-5" href="/newsletter">This Month in Solid</a>
                 
               </li>
             

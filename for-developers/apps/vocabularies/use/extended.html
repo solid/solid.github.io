@@ -88,6 +88,8 @@
         
         
         
+        
+        
           <li>
             <a href="">
               Describe data for Solid
@@ -104,7 +106,7 @@
   <div class="columns">
     <div class="column is-two-thirds">
       <article class="section content">
-        <p>Now that we have a vocabulary, we can use it to describe data. To this end, let us introduce the two most renowned obelisks designers of their time: <a href="https://vuittonluis.solid.community/profile/card#me">Vuittonluis</a> and <a href="https://garmani.solid.community/profile/card#me">G. Armani</a>. if you look up their profile, you will notice that each of them describes himself as an <a href="http://w3id.org/obelisk/Sculptor"><code class="highlighter-rouge">obelisk:Sculptor</code></a>:</p>
+        <p>Now that we have a vocabulary, we can use it to describe data. To this end, let us introduce the two most renowned obelisks designers of their time: <a href="https://vuittonluis.solid.community/profile/card#me">Vuittonluis</a> and <a href="https://garmani.solid.community/profile/card#me">G. Armani</a>. if you look up their profile, you will notice that each of them describes himself as an <a href="http://w3id.org/obelisk/Sculptor"><code class="language-plaintext highlighter-rouge">obelisk:Sculptor</code></a>:</p>
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="c1"># The next line defines an empty prefix ":", which points to the current document (e.g. https://garmani.solid.community/profile/card)</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="nl">&lt;#&gt;</span><span class="p">.</span><span class="w">
@@ -115,7 +117,7 @@
 </span><span class="c1">#...</span><span class="w">
 </span></code></pre></div></div>
 
-<p>In this case, the thing that we are talking about is <a href="https://garmani.solid.community/profile/card#me"><code class="highlighter-rouge">:me</code></a>, and we are saying that this thing is of type <a href="http://w3id.org/obelisk/Sculptor"><code class="highlighter-rouge">obelisk:Sculptor</code></a>. <a href="https://vuittonluis.solid.community/profile/card#me">Vuittonluis</a> keeps track of the <a href="https://vuittonluis.solid.community/public/gallery/prestigious%20sales/">obelisks he sold to VIP</a>. For instance, he built a <a href="https://vuittonluis.solid.community/public/gallery/prestigious%20sales/cleopatra.ttl#cleopatras_obelisk">custom one</a> for his queen <a href="https://cleopatra.solid.community/profile/card#me">Cleopatra</a>:</p>
+<p>In this case, the thing that we are talking about is <a href="https://garmani.solid.community/profile/card#me"><code class="language-plaintext highlighter-rouge">:me</code></a>, and we are saying that this thing is of type <a href="http://w3id.org/obelisk/Sculptor"><code class="language-plaintext highlighter-rouge">obelisk:Sculptor</code></a>. <a href="https://vuittonluis.solid.community/profile/card#me">Vuittonluis</a> keeps track of the <a href="https://vuittonluis.solid.community/public/gallery/prestigious%20sales/">obelisks he sold to VIP</a>. For instance, he built a <a href="https://vuittonluis.solid.community/public/gallery/prestigious%20sales/cleopatra.ttl#cleopatras_obelisk">custom one</a> for his queen <a href="https://cleopatra.solid.community/profile/card#me">Cleopatra</a>:</p>
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="nl">&lt;#&gt;</span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -157,7 +159,7 @@
     </span><span class="nn">rdfs:</span><span class="n">comment</span><span class="w"> </span><span class="s">"I made this one myself!"</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Some of the elements (e.g. <a href="http://www.w3.org/ns/ldp#Container">ldp:Container</a>) in there are specific to how Solid represents data storage. If you want to find out more about that, you can look up the <a href="/for-developers/apps/vocabularies/well-known/technical">description of this vocabulary</a>. Otherwise, we can conclude this short tutorial by creating a nice collection of obelisks in your own pod. You can see the vocabulary snippet into <code class="highlighter-rouge">src/collection.js</code>.</p>
+<p>Some of the elements (e.g. <a href="http://www.w3.org/ns/ldp#Container">ldp:Container</a>) in there are specific to how Solid represents data storage. If you want to find out more about that, you can look up the <a href="/for-developers/apps/vocabularies/well-known/technical">description of this vocabulary</a>. Otherwise, we can conclude this short tutorial by creating a nice collection of obelisks in your own pod. You can see the vocabulary snippet into <code class="language-plaintext highlighter-rouge">src/collection.js</code>.</p>
 
 <iframe src="https://codesandbox.io/embed/my-first-obelisk-collection-1ybvq?fontsize=14" title="my first obelisk collection" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
@@ -425,7 +427,7 @@
             
               <li>
                 
-                  <a class="is-size-5" href="/this-week-in-solid">This week in Solid</a>
+                  <a class="is-size-5" href="/newsletter">This Month in Solid</a>
                 
               </li>
             

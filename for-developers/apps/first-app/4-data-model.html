@@ -88,6 +88,8 @@
         
         
         
+        
+        
           <li>
             <a href="">
               Step 4: Setting up a Data Model
@@ -124,11 +126,11 @@ the concept of the <em>Public Type Index</em>.</p>
 <p>The Public Type Index is itself a publicly accessible Document stored in the user’s Pod. This
 Document contains a list of links to other Documents, along with the type of data that is to be
 included in those Documents. To store notes, the data type we will use is the
-<a href="http://schema.org/TextDigitalDocument"><code class="highlighter-rouge">TextDigitalDocument</code></a>, defined by
+<a href="http://schema.org/TextDigitalDocument"><code class="language-plaintext highlighter-rouge">TextDigitalDocument</code></a>, defined by
 <a href="http://schema.org/">Schema.org</a>. Every time the user saves a note, we will store it as a
 TextDigitalDocument.</p>
 
-<p>If the Document containing these notes was located in the user’s Pod at <code class="highlighter-rouge">/public/notes.ttl</code>, their
+<p>If the Document containing these notes was located in the user’s Pod at <code class="language-plaintext highlighter-rouge">/public/notes.ttl</code>, their
 Public Type Index could refer to it like this:</p>
 
 <table>
@@ -141,25 +143,25 @@ Public Type Index could refer to it like this:</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">#notes</code></td>
-      <td><code class="highlighter-rouge">rdf:type</code></td>
-      <td><code class="highlighter-rouge">solid:TypeRegistration</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#notes</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rdf:type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">solid:TypeRegistration</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#notes</code></td>
-      <td><code class="highlighter-rouge">solid:forClass</code></td>
-      <td><code class="highlighter-rouge">schema:TextDigitalDocument</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#notes</code></td>
+      <td><code class="language-plaintext highlighter-rouge">solid:forClass</code></td>
+      <td><code class="language-plaintext highlighter-rouge">schema:TextDigitalDocument</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#notes</code></td>
-      <td><code class="highlighter-rouge">solid:instance</code></td>
-      <td><code class="highlighter-rouge">/public/notes.ttl</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#notes</code></td>
+      <td><code class="language-plaintext highlighter-rouge">solid:instance</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/public/notes.ttl</code></td>
     </tr>
   </tbody>
 </table>
 
-<p>The above Type Index includes one Type Registration, identified by <code class="highlighter-rouge">#notes</code>, that registers
-<code class="highlighter-rouge">/public/notes.ttl</code> for the data type <code class="highlighter-rouge">schema:TextDigitalDocument</code>.</p>
+<p>The above Type Index includes one Type Registration, identified by <code class="language-plaintext highlighter-rouge">#notes</code>, that registers
+<code class="language-plaintext highlighter-rouge">/public/notes.ttl</code> for the data type <code class="language-plaintext highlighter-rouge">schema:TextDigitalDocument</code>.</p>
 
 <p>So how do we find the user’s Public Type Index? It’s usually listed in their profile, i.e. the
 Document accessible at their WebID:</p>
@@ -174,9 +176,9 @@ Document accessible at their WebID:</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">#me</code></td>
-      <td><code class="highlighter-rouge">solid:publicTypeIndex</code></td>
-      <td><code class="highlighter-rouge">/settings/publicTypeIndex.ttl</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#me</code></td>
+      <td><code class="language-plaintext highlighter-rouge">solid:publicTypeIndex</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/settings/publicTypeIndex.ttl</code></td>
     </tr>
   </tbody>
 </table>
@@ -210,22 +212,22 @@ read the profile Document located there, and from there you can find the data yo
 <a href="https://codesandbox.io/s/github/Vinnl/notepod/tree/4-data-model/?module=%2Fsrc%2Fservices%2FfetchPublicTypeIndex.ts"><img src="/assets/img/play-codesandbox.svg" alt="Edit on CodeSandbox" /></a>
 </span></p>
 
-<p>Given the <code class="highlighter-rouge">profile</code> <a href="/for-developers/apps/first-app/3-reading-data">we fetched before</a>, we can find a reference to the public Type
-Index under <code class="highlighter-rouge">solid:publicTypeIndex</code>. Then in the public Type Index, we can find the <code class="highlighter-rouge">#notes</code> entry
+<p>Given the <code class="language-plaintext highlighter-rouge">profile</code> <a href="/for-developers/apps/first-app/3-reading-data">we fetched before</a>, we can find a reference to the public Type
+Index under <code class="language-plaintext highlighter-rouge">solid:publicTypeIndex</code>. Then in the public Type Index, we can find the <code class="language-plaintext highlighter-rouge">#notes</code> entry
 by looking for the Subject that has a Statement saying it is for the class
-<code class="highlighter-rouge">schema:TextDigitalDocument</code>.</p>
+<code class="language-plaintext highlighter-rouge">schema:TextDigitalDocument</code>.</p>
 
 <p>If that Subject is not found, we initialise a new Document to contain the notes — more on that
 later. If it <em>is</em> found, we find the URL of the Document that should contain notes under the
-<code class="highlighter-rouge">solid:instance</code> key. All we then have to do is to call <code class="highlighter-rouge">fetchDocument</code> to retrieve the Document at
+<code class="language-plaintext highlighter-rouge">solid:instance</code> key. All we then have to do is to call <code class="language-plaintext highlighter-rouge">fetchDocument</code> to retrieve the Document at
 that URL.</p>
 
 <p>One thing to keep in mind, again, is that you can make no assumptions about the data in the user’s
-Pod. Thus, to be safe you should always check whether the return value of <code class="highlighter-rouge">getRef()</code> is <code class="highlighter-rouge">null</code>.
+Pod. Thus, to be safe you should always check whether the return value of <code class="language-plaintext highlighter-rouge">getRef()</code> is <code class="language-plaintext highlighter-rouge">null</code>.
 Consider using <a href="https://www.typescriptlang.org/">TypeScript</a> to get a warning when you forget to do
 so.</p>
 
-<p>That leaves us with one loose thread: the function <code class="highlighter-rouge">initialiseNotesList()</code>, which creates a new
+<p>That leaves us with one loose thread: the function <code class="language-plaintext highlighter-rouge">initialiseNotesList()</code>, which creates a new
 Document that will contain the notes, and adds it to the Public Type Index. Let’s take a look:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createDocument</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">tripledoc</span><span class="dl">'</span><span class="p">;</span>
@@ -409,7 +411,7 @@ these step-by-step instructions.</p>
             
               <li>
                 
-                  <a class="is-size-5" href="/this-week-in-solid">This week in Solid</a>
+                  <a class="is-size-5" href="/newsletter">This Month in Solid</a>
                 
               </li>
             

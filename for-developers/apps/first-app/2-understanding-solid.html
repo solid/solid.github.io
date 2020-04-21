@@ -88,6 +88,8 @@
         
         
         
+        
+        
           <li>
             <a href="">
               Step 2: Understanding Solid
@@ -116,8 +118,8 @@ live at a URL.</p>
 <p>The user’s WebID can be used both to identify someone — because there’s only one person that
 controls that URL — and as a pointer to a Document containing information relevant to that user.</p>
 
-<p>My WebID is <code class="highlighter-rouge">https://vincentt.inrupt.net/profile/card#me</code>. That means that there is a Document at
-<code class="highlighter-rouge">https://vincentt.inrupt.net/profile/card</code> that contains data relevant to me.</p>
+<p>My WebID is <code class="language-plaintext highlighter-rouge">https://vincentt.inrupt.net/profile/card#me</code>. That means that there is a Document at
+<code class="language-plaintext highlighter-rouge">https://vincentt.inrupt.net/profile/card</code> that contains data relevant to me.</p>
 
 <p>The most important thing to understand when writing a Solid app is how that data is represented. In
 a nutshell, a Document contains a list of relationships between things. For example, the Document
@@ -133,17 +135,17 @@ referred to by my WebID contain the following relationships:</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">&lt;some person&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;some person&gt;</code></td>
       <td>has name</td>
       <td>Vincent</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;some person&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;some person&gt;</code></td>
       <td>works at</td>
       <td>inrupt</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;some person&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;some person&gt;</code></td>
       <td>job title</td>
       <td>Developer</td>
     </tr>
@@ -154,8 +156,8 @@ referred to by my WebID contain the following relationships:</p>
 Statement’s <em>Subject</em>, the second column being a <em>Predicate</em>, and the third column the <em>Object</em>.
 These three together are also commonly referred to as a <em>Triple</em>.)</p>
 
-<p>You might notice that the table above is a description of <code class="highlighter-rouge">&lt;some person&gt;</code>: it’s someone whose name
-is Vincent, who works at inrupt and is a developer. However, <code class="highlighter-rouge">&lt;some person&gt;</code> is not really usable as
+<p>You might notice that the table above is a description of <code class="language-plaintext highlighter-rouge">&lt;some person&gt;</code>: it’s someone whose name
+is Vincent, who works at inrupt and is a developer. However, <code class="language-plaintext highlighter-rouge">&lt;some person&gt;</code> is not really usable as
 a stable and unique identifier: for all we know, someone else might have a Document elsewhere that
 uses the exact same identifier. To solve this problem, Solid uses URLs as unique identifiers: after
 all, the Document that describes the entries already has a URL, and we can be sure that no other
@@ -163,8 +165,8 @@ Document on the web uses the same one.</p>
 
 <p>And like specific elements in an HTML document can be referred to by appending their ID to the
 document’s URL, we can give elements we want to describe in a Document a unique identifier. As you
-might have been able to guess, instead of <code class="highlighter-rouge">&lt;some person&gt;</code> we can use <code class="highlighter-rouge">me</code> - hence the WebID
-<code class="highlighter-rouge">https://vincentt.inrupt.net/profile/card#me</code>!</p>
+might have been able to guess, instead of <code class="language-plaintext highlighter-rouge">&lt;some person&gt;</code> we can use <code class="language-plaintext highlighter-rouge">me</code> - hence the WebID
+<code class="language-plaintext highlighter-rouge">https://vincentt.inrupt.net/profile/card#me</code>!</p>
 
 <p>So now we might consider my Document to look as follows:</p>
 
@@ -178,17 +180,17 @@ might have been able to guess, instead of <code class="highlighter-rouge">&lt;so
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">#me</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#me</code></td>
       <td>has name</td>
       <td>Vincent</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#me</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#me</code></td>
       <td>works at</td>
       <td>inrupt</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#me</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#me</code></td>
       <td>job title</td>
       <td>Developer</td>
     </tr>
@@ -217,34 +219,34 @@ http://www.w3.org/2006/vcard/ns — the <em>vCard</em> Vocabulary. It contains S
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">#role</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#role</code></td>
       <td>label</td>
       <td>Role</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#role</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#role</code></td>
       <td>comment</td>
       <td>To specify the function or part played in a particular situation</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#organization-name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#organization-name</code></td>
       <td>label</td>
       <td>Organization name</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#organization-name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#organization-name</code></td>
       <td>comment</td>
       <td>To specify the organizational name</td>
     </tr>
   </tbody>
 </table>
 
-<p>(As a shorthand for <code class="highlighter-rouge">http://www.w3.org/2006/vcard/ns#role</code>, we will use <code class="highlighter-rouge">vcard:role</code>.)</p>
+<p>(As a shorthand for <code class="language-plaintext highlighter-rouge">http://www.w3.org/2006/vcard/ns#role</code>, we will use <code class="language-plaintext highlighter-rouge">vcard:role</code>.)</p>
 
-<p>So now we can use <code class="highlighter-rouge">vcard:role</code>, and be relatively confident that every other app using it will use
+<p>So now we can use <code class="language-plaintext highlighter-rouge">vcard:role</code>, and be relatively confident that every other app using it will use
 it in the way described at that URL. We can combine terms from different Vocabularies, e.g. the FOAF
 (“Friend of a friend”) vocabulary has a term to refer to a person’s name at
-<code class="highlighter-rouge">http://xmlns.com/foaf/0.1/name</code>. My Document could thus look something like this:</p>
+<code class="language-plaintext highlighter-rouge">http://xmlns.com/foaf/0.1/name</code>. My Document could thus look something like this:</p>
 
 <table>
   <thead>
@@ -256,18 +258,18 @@ it in the way described at that URL. We can combine terms from different Vocabul
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">#me</code></td>
-      <td><code class="highlighter-rouge">foaf:name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#me</code></td>
+      <td><code class="language-plaintext highlighter-rouge">foaf:name</code></td>
       <td>Vincent</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#me</code></td>
-      <td><code class="highlighter-rouge">vcard:organization-name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#me</code></td>
+      <td><code class="language-plaintext highlighter-rouge">vcard:organization-name</code></td>
       <td>inrupt</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#me</code></td>
-      <td><code class="highlighter-rouge">vcard:role</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#me</code></td>
+      <td><code class="language-plaintext highlighter-rouge">vcard:role</code></td>
       <td>Developer</td>
     </tr>
   </tbody>
@@ -425,7 +427,7 @@ Solid. Next up: actually reading data from such a Document.</p>
             
               <li>
                 
-                  <a class="is-size-5" href="/this-week-in-solid">This week in Solid</a>
+                  <a class="is-size-5" href="/newsletter">This Month in Solid</a>
                 
               </li>
             
