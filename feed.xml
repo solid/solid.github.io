@@ -1,23 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2020-05-19T13:04:21+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><subtitle>Website for solidproject.org</subtitle><entry><title type="html">This Month in Solid 2020-05-07</title><link href="https://solidproject.org//newsletter/2020-05-07" rel="alternate" type="text/html" title="This Month in Solid 2020-05-07" /><published>2020-05-07T00:00:00+00:00</published><updated>2020-05-07T00:00:00+00:00</updated><id>https://solidproject.org//newsletter/this-month-in-solid</id><content type="html" xml:base="https://solidproject.org//newsletter/2020-05-07">&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2020-05-19T13:27:12+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><subtitle>Website for solidproject.org</subtitle><entry><title type="html">This Month in Solid 2020-05-07</title><link href="https://solidproject.org//newsletter/2020-05-07" rel="alternate" type="text/html" title="This Month in Solid 2020-05-07" /><published>2020-05-07T00:00:00+00:00</published><updated>2020-05-07T00:00:00+00:00</updated><id>https://solidproject.org//newsletter/this-month-in-solid</id><content type="html" xml:base="https://solidproject.org//newsletter/2020-05-07">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
-&lt;p&gt;This is a weekly summary of Solid progress.&lt;/p&gt;
+&lt;p&gt;This is a monthly summary of Solid progress.&lt;/p&gt;
 
-&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this week’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Want to get involved? &lt;a href=&quot;https://solidproject.org/standardisation&quot;&gt;Contributions are welcome.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid.&lt;/p&gt;
-
-&lt;p&gt;Tune in at &lt;a href=&quot;https://zoom.us/j/261297657&quot;&gt;this line&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;on the 2nd January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 9th January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;on the 16th January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 23rd January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;(and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this month’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;updates&quot;&gt;Updates&lt;/h2&gt;
 
@@ -93,26 +80,13 @@
   &lt;li&gt;Use cases for server managed auxiliary resources related to resource provenance, auditing, and access history are being undertaken in the &lt;a href=&quot;https://github.com/solid/data-interoperability-panel&quot;&gt;Data Interoperability Panel&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Work towards a normative specification for &lt;a href=&quot;https://github.com/solid/web-access-control-spec&quot;&gt;Web Access Control&lt;/a&gt; will begin soon, organized through the &lt;a href=&quot;https://github.com/solid/authorization-and-access-control-panel&quot;&gt;Authorization Panel&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/solid/data-interoperability-panel/blob/master/problems-and-goals.md&quot;&gt;Problems and Goals&lt;/a&gt; for an interoperable Solid ecosystem have been published by the &lt;a href=&quot;https://github.com/solid/data-interoperability-panel&quot;&gt;Data Interoperability Panel&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="monthly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Week in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a weekly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed on GitHub. If you find any errors in this week’s issue please submit a pull request. Want to get involved? Contributions are welcome. Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid. Tune in at this line: on the 2nd January 2020 at 16:00. on the 9th January 2020 at 10:00. on the 16th January 2020 at 16:00. on the 23rd January 2020 at 10:00. (and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)</summary></entry><entry><title type="html">This Month in Solid 2020-04-09</title><link href="https://solidproject.org//newsletter/2020-04-09" rel="alternate" type="text/html" title="This Month in Solid 2020-04-09" /><published>2020-04-09T00:00:00+00:00</published><updated>2020-04-09T00:00:00+00:00</updated><id>https://solidproject.org//newsletter/this-month-in-solid</id><content type="html" xml:base="https://solidproject.org//newsletter/2020-04-09">&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="monthly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Month in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a monthly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed on GitHub. If you find any errors in this month’s issue please submit a pull request.</summary></entry><entry><title type="html">This Month in Solid 2020-04-09</title><link href="https://solidproject.org//newsletter/2020-04-09" rel="alternate" type="text/html" title="This Month in Solid 2020-04-09" /><published>2020-04-09T00:00:00+00:00</published><updated>2020-04-09T00:00:00+00:00</updated><id>https://solidproject.org//newsletter/this-month-in-solid</id><content type="html" xml:base="https://solidproject.org//newsletter/2020-04-09">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
-&lt;p&gt;This is a weekly summary of Solid progress.&lt;/p&gt;
+&lt;p&gt;This is a monthly summary of Solid progress.&lt;/p&gt;
 
-&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this week’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Want to get involved? &lt;a href=&quot;https://solidproject.org/standardisation&quot;&gt;Contributions are welcome.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid.&lt;/p&gt;
-
-&lt;p&gt;Tune in at &lt;a href=&quot;https://zoom.us/j/261297657&quot;&gt;this line&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;on the 2nd January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 9th January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;on the 16th January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 23rd January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;(and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this month’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;updates&quot;&gt;Updates&lt;/h2&gt;
 
@@ -165,26 +139,13 @@
     &lt;p&gt;&lt;a href=&quot;https://inrupt.com/careers&quot;&gt;Inrupt&lt;/a&gt; is hiring a DevOps Engineer and Technical Writer. Email jobs@inrupt.com for more information.
  &lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="monthly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Week in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a weekly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed on GitHub. If you find any errors in this week’s issue please submit a pull request. Want to get involved? Contributions are welcome. Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid. Tune in at this line: on the 2nd January 2020 at 16:00. on the 9th January 2020 at 10:00. on the 16th January 2020 at 16:00. on the 23rd January 2020 at 10:00. (and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)</summary></entry><entry><title type="html">This Week in Solid 2020-04-01</title><link href="https://solidproject.org//this-week-in-solid/2020-04-01" rel="alternate" type="text/html" title="This Week in Solid 2020-04-01" /><published>2020-04-01T00:00:00+00:00</published><updated>2020-04-01T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-04-01">&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="monthly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Month in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a monthly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed on GitHub. If you find any errors in this month’s issue please submit a pull request.</summary></entry><entry><title type="html">This Week in Solid 2020-04-01</title><link href="https://solidproject.org//this-week-in-solid/2020-04-01" rel="alternate" type="text/html" title="This Week in Solid 2020-04-01" /><published>2020-04-01T00:00:00+00:00</published><updated>2020-04-01T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-04-01">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
-&lt;p&gt;This is a weekly summary of Solid progress.&lt;/p&gt;
+&lt;p&gt;This is a monthly summary of Solid progress.&lt;/p&gt;
 
-&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this week’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Want to get involved? &lt;a href=&quot;https://solidproject.org/standardisation&quot;&gt;Contributions are welcome.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid.&lt;/p&gt;
-
-&lt;p&gt;Tune in at &lt;a href=&quot;https://zoom.us/j/261297657&quot;&gt;this line&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;on the 2nd January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 9th January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;on the 16th January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 23rd January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;(and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this month’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;updates&quot;&gt;Updates&lt;/h2&gt;
 
@@ -221,26 +182,13 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.digita.ai/careers&quot;&gt;Digita is hiring&lt;/a&gt; a Full Stack Developer and a Linked Data Principal. Email &lt;a href=&quot;mailto:tom@digita.ai&quot;&gt;tom@digita.ai&lt;/a&gt; for more information.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://inrupt.com/careers&quot;&gt;Inrupt is hiring&lt;/a&gt; a DevOps Engineer and Technical Writer. Email &lt;a href=&quot;mailto:jobs@inrupt.com&quot;&gt;jobs@inrupt.com&lt;/a&gt; for more information.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="weekly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Week in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a weekly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed on GitHub. If you find any errors in this week’s issue please submit a pull request. Want to get involved? Contributions are welcome. Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid. Tune in at this line: on the 2nd January 2020 at 16:00. on the 9th January 2020 at 10:00. on the 16th January 2020 at 16:00. on the 23rd January 2020 at 10:00. (and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)</summary></entry><entry><title type="html">This Week in Solid 2020-03-26</title><link href="https://solidproject.org//this-week-in-solid/2020-03-26" rel="alternate" type="text/html" title="This Week in Solid 2020-03-26" /><published>2020-03-26T00:00:00+00:00</published><updated>2020-03-26T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-03-26">&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="weekly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Month in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a monthly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed on GitHub. If you find any errors in this month’s issue please submit a pull request.</summary></entry><entry><title type="html">This Week in Solid 2020-03-26</title><link href="https://solidproject.org//this-week-in-solid/2020-03-26" rel="alternate" type="text/html" title="This Week in Solid 2020-03-26" /><published>2020-03-26T00:00:00+00:00</published><updated>2020-03-26T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-03-26">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
-&lt;p&gt;This is a weekly summary of Solid progress.&lt;/p&gt;
+&lt;p&gt;This is a monthly summary of Solid progress.&lt;/p&gt;
 
-&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this week’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Want to get involved? &lt;a href=&quot;https://solidproject.org/standardisation&quot;&gt;Contributions are welcome.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid.&lt;/p&gt;
-
-&lt;p&gt;Tune in at &lt;a href=&quot;https://zoom.us/j/261297657&quot;&gt;this line&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;on the 2nd January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 9th January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;on the 16th January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 23rd January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;(and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this month’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;updates&quot;&gt;Updates&lt;/h2&gt;
 
@@ -266,26 +214,13 @@
   &lt;li&gt;&lt;a href=&quot;https://inrupt.com/careers&quot;&gt;Inrupt is hiring&lt;/a&gt; a DevOps Engineer and Technical Writer. Email jobs@inrupt.com for more information.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Have you seen any articles or talks about Solid this week? If you’ve seen any talks, articles, or written blog posts about Solid please do send them over for next week.&lt;/p&gt;</content><author><name></name></author><category term="weekly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Week in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a weekly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed on GitHub. If you find any errors in this week’s issue please submit a pull request. Want to get involved? Contributions are welcome. Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid. Tune in at this line: on the 2nd January 2020 at 16:00. on the 9th January 2020 at 10:00. on the 16th January 2020 at 16:00. on the 23rd January 2020 at 10:00. (and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)</summary></entry><entry><title type="html">This Week in Solid 2020-03-19</title><link href="https://solidproject.org//this-week-in-solid/2020-03-19" rel="alternate" type="text/html" title="This Week in Solid 2020-03-19" /><published>2020-03-19T00:00:00+00:00</published><updated>2020-03-19T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-03-19">&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
+&lt;p&gt;Have you seen any articles or talks about Solid this week? If you’ve seen any talks, articles, or written blog posts about Solid please do send them over for next week.&lt;/p&gt;</content><author><name></name></author><category term="weekly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Month in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a monthly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed on GitHub. If you find any errors in this month’s issue please submit a pull request.</summary></entry><entry><title type="html">This Week in Solid 2020-03-19</title><link href="https://solidproject.org//this-week-in-solid/2020-03-19" rel="alternate" type="text/html" title="This Week in Solid 2020-03-19" /><published>2020-03-19T00:00:00+00:00</published><updated>2020-03-19T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-03-19">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
-&lt;p&gt;This is a weekly summary of Solid progress.&lt;/p&gt;
+&lt;p&gt;This is a monthly summary of Solid progress.&lt;/p&gt;
 
-&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this week’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Want to get involved? &lt;a href=&quot;https://solidproject.org/standardisation&quot;&gt;Contributions are welcome.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid.&lt;/p&gt;
-
-&lt;p&gt;Tune in at &lt;a href=&quot;https://zoom.us/j/261297657&quot;&gt;this line&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;on the 2nd January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 9th January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;on the 16th January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 23rd January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;(and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this month’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;updates&quot;&gt;Updates&lt;/h2&gt;
 
@@ -307,26 +242,13 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.digita.ai/careers&quot;&gt;Digita is hiring&lt;/a&gt; a Full Stack Developer and a Linked Data Principal. Email tom@digita.ai for more information&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://inrupt.com/careers&quot;&gt;Inrupt is hiring&lt;/a&gt; a Head of Business Development, DevOps Engineer, and Senior Front-End Engineer/Architect.)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="weekly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Week in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a weekly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed on GitHub. If you find any errors in this week’s issue please submit a pull request. Want to get involved? Contributions are welcome. Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid. Tune in at this line: on the 2nd January 2020 at 16:00. on the 9th January 2020 at 10:00. on the 16th January 2020 at 16:00. on the 23rd January 2020 at 10:00. (and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)</summary></entry><entry><title type="html">This Week in Solid 2020-03-12</title><link href="https://solidproject.org//this-week-in-solid/2020-03-12" rel="alternate" type="text/html" title="This Week in Solid 2020-03-12" /><published>2020-03-12T00:00:00+00:00</published><updated>2020-03-12T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-03-12">&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="weekly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Month in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a monthly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed on GitHub. If you find any errors in this month’s issue please submit a pull request.</summary></entry><entry><title type="html">This Week in Solid 2020-03-12</title><link href="https://solidproject.org//this-week-in-solid/2020-03-12" rel="alternate" type="text/html" title="This Week in Solid 2020-03-12" /><published>2020-03-12T00:00:00+00:00</published><updated>2020-03-12T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-03-12">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
-&lt;p&gt;This is a weekly summary of Solid progress.&lt;/p&gt;
+&lt;p&gt;This is a monthly summary of Solid progress.&lt;/p&gt;
 
-&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this week’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Want to get involved? &lt;a href=&quot;https://solidproject.org/standardisation&quot;&gt;Contributions are welcome.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid.&lt;/p&gt;
-
-&lt;p&gt;Tune in at &lt;a href=&quot;https://zoom.us/j/261297657&quot;&gt;this line&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;on the 2nd January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 9th January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;on the 16th January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 23rd January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;(and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this month’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;updates&quot;&gt;Updates&lt;/h2&gt;
 
@@ -433,26 +355,13 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.digita.ai/careers&quot;&gt;Digita is hiring&lt;/a&gt; a Full Stack Developer and a Linked Data Principal. Email tom@digita.ai for more information&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://inrupt.com/careers&quot;&gt;Inrupt is hiring&lt;/a&gt; a Head of Business Development, DevOps Engineer, and Senior Front-End Engineer/Architect.)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="weekly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Week in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a weekly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed on GitHub. If you find any errors in this week’s issue please submit a pull request. Want to get involved? Contributions are welcome. Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid. Tune in at this line: on the 2nd January 2020 at 16:00. on the 9th January 2020 at 10:00. on the 16th January 2020 at 16:00. on the 23rd January 2020 at 10:00. (and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)</summary></entry><entry><title type="html">This Week in Solid 2020-03-05</title><link href="https://solidproject.org//this-week-in-solid/2020-03-05" rel="alternate" type="text/html" title="This Week in Solid 2020-03-05" /><published>2020-03-05T00:00:00+00:00</published><updated>2020-03-05T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-03-05">&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="weekly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Month in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a monthly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed on GitHub. If you find any errors in this month’s issue please submit a pull request.</summary></entry><entry><title type="html">This Week in Solid 2020-03-05</title><link href="https://solidproject.org//this-week-in-solid/2020-03-05" rel="alternate" type="text/html" title="This Week in Solid 2020-03-05" /><published>2020-03-05T00:00:00+00:00</published><updated>2020-03-05T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-03-05">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
-&lt;p&gt;This is a weekly summary of Solid progress.&lt;/p&gt;
+&lt;p&gt;This is a monthly summary of Solid progress.&lt;/p&gt;
 
-&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this week’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Want to get involved? &lt;a href=&quot;https://solidproject.org/standardisation&quot;&gt;Contributions are welcome.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid.&lt;/p&gt;
-
-&lt;p&gt;Tune in at &lt;a href=&quot;https://zoom.us/j/261297657&quot;&gt;this line&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;on the 2nd January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 9th January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;on the 16th January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 23rd January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;(and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this month’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;updates&quot;&gt;Updates&lt;/h2&gt;
 
@@ -894,7 +803,7 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.digita.ai/careers&quot;&gt;Digita is hiring&lt;/a&gt; a Full Stack Developer and a Linked Data Principal. Email tom@digita.ai for more information&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://inrupt.com/careers&quot;&gt;Inrupt is hiring&lt;/a&gt; a Head of Business Development, DevOps Engineer, and Senior Front-End Engineer/Architect.)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="weekly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Week in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a weekly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed on GitHub. If you find any errors in this week’s issue please submit a pull request. Want to get involved? Contributions are welcome. Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid. Tune in at this line: on the 2nd January 2020 at 16:00. on the 9th January 2020 at 10:00. on the 16th January 2020 at 16:00. on the 23rd January 2020 at 10:00. (and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)</summary></entry><entry><title type="html">This Week in Solid 2019-12-18</title><link href="https://solidproject.org//this-week-in-solid/2019-12-18" rel="alternate" type="text/html" title="This Week in Solid 2019-12-18" /><published>2019-12-18T00:00:00+00:00</published><updated>2019-12-18T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-18">&lt;h1 id=&quot;this-year-in-solid-2019&quot;&gt;This Year in Solid 2019&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="weekly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Month in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a monthly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed on GitHub. If you find any errors in this month’s issue please submit a pull request.</summary></entry><entry><title type="html">This Week in Solid 2019-12-18</title><link href="https://solidproject.org//this-week-in-solid/2019-12-18" rel="alternate" type="text/html" title="This Week in Solid 2019-12-18" /><published>2019-12-18T00:00:00+00:00</published><updated>2019-12-18T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-18">&lt;h1 id=&quot;this-year-in-solid-2019&quot;&gt;This Year in Solid 2019&lt;/h1&gt;
 
 &lt;p&gt;Hello and welcome to another edition of &lt;a href=&quot;https://solidproject.org/this-week-in-solid&quot;&gt;This Week in Solid&lt;/a&gt;!&lt;/p&gt;
 
@@ -962,26 +871,13 @@ The focus has been to make it easier to develop the project itself via &lt;a hre
 
 &lt;p&gt;Until next year :)&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/Mitzi-Laszlo&quot;&gt;Mitzi László&lt;/a&gt;&lt;/p&gt;</content><author><name>Mitzi László</name></author><category term="weekly" /><category term="updates" /><summary type="html">This Year in Solid 2019</summary></entry><entry><title type="html">This Week in Solid 2019-12-12</title><link href="https://solidproject.org//this-week-in-solid/2019-12-12" rel="alternate" type="text/html" title="This Week in Solid 2019-12-12" /><published>2019-12-12T00:00:00+00:00</published><updated>2019-12-12T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-12">&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Mitzi-Laszlo&quot;&gt;Mitzi László&lt;/a&gt;&lt;/p&gt;</content><author><name>Mitzi László</name></author><category term="weekly" /><category term="updates" /><summary type="html">This Year in Solid 2019</summary></entry><entry><title type="html">This Week in Solid 2019-12-12</title><link href="https://solidproject.org//this-week-in-solid/2019-12-12" rel="alternate" type="text/html" title="This Week in Solid 2019-12-12" /><published>2019-12-12T00:00:00+00:00</published><updated>2019-12-12T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-12">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
-&lt;p&gt;This is a weekly summary of Solid progress.&lt;/p&gt;
+&lt;p&gt;This is a monthly summary of Solid progress.&lt;/p&gt;
 
-&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this week’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Want to get involved? &lt;a href=&quot;https://solidproject.org/standardisation&quot;&gt;Contributions are welcome.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid.&lt;/p&gt;
-
-&lt;p&gt;Tune in at &lt;a href=&quot;https://zoom.us/j/261297657&quot;&gt;this line&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;on the 2nd January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 9th January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;on the 16th January 2020 at 16:00.&lt;/li&gt;
-  &lt;li&gt;on the 23rd January 2020 at 10:00.&lt;/li&gt;
-  &lt;li&gt;(and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this month’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;press&quot;&gt;&lt;a href=&quot;https://solidproject.org/press&quot;&gt;Press&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;There are a few upcoming events where you can learn more and meet others working on Solid:&lt;/p&gt;
@@ -1003,7 +899,7 @@ The focus has been to make it easier to develop the project itself via &lt;a hre
 
 &lt;p&gt;Until next week!&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/Mitzi-Laszlo&quot;&gt;Mitzi László&lt;/a&gt;&lt;/p&gt;</content><author><name>Mitzi László</name></author><category term="weekly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Week in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a weekly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Week in Solid is openly developed on GitHub. If you find any errors in this week’s issue please submit a pull request. Want to get involved? Contributions are welcome. Every Thursday there is an hour-long public call where newcomers can introduce themselves, anyone can ask general questions about Solid, and we recap the weeks’ works on Solid. Tune in at this line: on the 2nd January 2020 at 16:00. on the 9th January 2020 at 10:00. on the 16th January 2020 at 16:00. on the 23rd January 2020 at 10:00. (and so on, alternating at 10:00 CET and 16:00 CET, unless otherwise noted here)</summary></entry><entry><title type="html">This Week in Solid 2019-12-05</title><link href="https://solidproject.org//this-week-in-solid/2019-12-05" rel="alternate" type="text/html" title="This Week in Solid 2019-12-05" /><published>2019-12-05T00:00:00+00:00</published><updated>2019-12-05T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-05">&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Mitzi-Laszlo&quot;&gt;Mitzi László&lt;/a&gt;&lt;/p&gt;</content><author><name>Mitzi László</name></author><category term="weekly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Month in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a monthly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed on GitHub. If you find any errors in this month’s issue please submit a pull request.</summary></entry><entry><title type="html">This Week in Solid 2019-12-05</title><link href="https://solidproject.org//this-week-in-solid/2019-12-05" rel="alternate" type="text/html" title="This Week in Solid 2019-12-05" /><published>2019-12-05T00:00:00+00:00</published><updated>2019-12-05T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2019-12-05">&lt;p&gt;Hello and welcome to another edition of This Week in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
