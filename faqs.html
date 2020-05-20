@@ -340,6 +340,15 @@ If you would like to ask for your data to be deleted from other services, In Eur
 <h2 id="is-it-wise-to-trust-people-to-make-ethical-decisions-on-such-a-complicated-issue">Is it wise to trust people to make ethical decisions on such a complicated issue?</h2>
 <p>There is a lot of variation in what people feel to be right and wrong, and ultimately it is down to you to decide what to do with your data. Solid does try to help you make informed choices by providing relevant information and by constantly validating the accuracy of that information.</p>
 
+<h2 id="are-apps-vulnerable-to-an-origin-bypass">Are apps vulnerable to an “Origin” bypass?</h2>
+
+<p>The Solid specification <a href="https://github.com/solid/web-access-control-spec#adding-trusted-web-apps">warns</a> that the “trusted apps” feature is new and experimental, as it is known that <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin">Origin</a> has the common weakness (<a href="https://cwe.mitre.org/data/definitions/346.html">CWE-346</a>) of “origin validation”.</p>
+
+<p>Currently when a user gives a Solid web app access to their Pod, the app Origin is added to that user’s list of trusted apps. The app then receives a token that allows it to interact with the Pod on behalf of the user, and only the Origin included with those interactions is verified using the list of trusted apps.</p>
+
+<p>Although standard browsers automatically include the Origin when they send HTTPS requests, a non-browser client is not required to send one. This means anyone with access to the aforementioned Origin-based token can use non-browser clients to bypass Origin validation for the Pod.</p>
+
+<p>Solutions already are planned to revise and replace this experimental use of Origin, in order to evolve security of the trusted app feature.</p>
 
       </article>
     </div>
@@ -411,6 +420,7 @@ If you would like to ask for your data to be deleted from other services, In Eur
       <li><a href="#why-do-we-need-solid-when-we-already-have-laws-for-data-protection">Why do we need Solid when we already have laws for data protection?</a></li>
       <li><a href="#isnt-having-free-web-services-a-good-exchange-for-giving-access-to-my-data">Isn’t having free Web services a good exchange for giving access to my data?</a></li>
       <li><a href="#is-it-wise-to-trust-people-to-make-ethical-decisions-on-such-a-complicated-issue">Is it wise to trust people to make ethical decisions on such a complicated issue?</a></li>
+      <li><a href="#are-apps-vulnerable-to-an-origin-bypass">Are apps vulnerable to an “Origin” bypass?</a></li>
     </ul>
   </li>
 </ul>
