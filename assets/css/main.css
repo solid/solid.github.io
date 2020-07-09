@@ -2202,10 +2202,10 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 #breadcrumb { border-bottom: 1px solid #f4f4f4; }
 
 #home-hero { background-image: url("/assets/img/solid-bg-dark-ui.svg"); background-blend-mode: soft-light; background-repeat: no-repeat; background-size: cover; }
-#home-hero .hero-body { padding-top: 11.421875rem; padding-bottom: 24.578125rem; }
+#home-hero .hero-body { padding-top: 18rem; padding-bottom: 18rem; }
 
-#landing-content { background-image: url("/assets/img/hexagon.svg"); background-repeat: no-repeat; background-position: right 13.15625rem; }
-#home-hero + #landing-content { margin-top: -13.15625rem; }
+#landing-content { background-image: url("/assets/img/hexagon.svg"); background-repeat: no-repeat; background-position: right 0; }
+#home-hero + #landing-content { margin-top: 0; }
 
 #why-carousel .card { min-height: 20.3125rem; border-radius: 4px; word-break: keep-all; }
 #why-carousel .image { display: inline-block; }
