@@ -2202,6 +2202,8 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 #breadcrumb { border-bottom: 1px solid #f4f4f4; }
 
 #home-hero { background-image: url("/assets/img/solid-bg-dark-ui.svg"); background-blend-mode: soft-light; background-repeat: no-repeat; background-size: cover; }
+#home-hero a, #home-hero a:visited { color: white; text-decoration: none; }
+#home-hero a:hover { text-decoration: underline; }
 #home-hero .hero-body { padding-top: 18rem; padding-bottom: 18rem; }
 
 #landing-content { background-image: url("/assets/img/hexagon.svg"); background-repeat: no-repeat; background-position: right 0; }
