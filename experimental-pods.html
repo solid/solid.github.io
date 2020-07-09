@@ -1,0 +1,356 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Solid</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/favicon.ico?"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+
+  <body>
+    <header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img
+          src="/assets/img/solid-emblem.svg"
+          alt="[Solid logo]"
+        />
+      </a>
+      <a class="is-hidden-mobile navbar-item navbar-brand-name is-uppercase is-size-4" href="/">
+        Solid
+      </a>
+    </div>
+  
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/use-solid"
+          >Use Solid</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/for-developers"
+          >For Developers</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/for-enterprises"
+          >For Enterprises</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet"
+            href="/faqs"
+          >FAQ</a>
+        
+      </div>
+    </div>
+  </nav>
+</header>
+
+    <div id="draft-warning"></div>
+<script>
+  if (document.location.hostname === 'localhost' || document.location.hostname === 'solid.github.io') {
+    const draftWarningElement = document.getElementById('draft-warning')
+    draftWarningElement.innerHTML = `
+      <div class="message is-danger is-large" role="alert">
+        <div class="message-body">
+          You are currently viewing a draft version of the Solid website. If you are looking for reliable information, visit the live site at <a href="https://solidproject.org/experimental-pods.html" title="The official Solid website">SolidProject.org</a>.
+        </div>
+      </div>
+    `;
+  }
+</script>
+
+    
+  <nav id="breadcrumb" class="breadcrumb">
+    <div class="container">
+      <ul>
+        <li>
+          <a href="/">
+            Home
+          </a>
+        </li>
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+  </nav>
+
+
+    <main>
+      <div class="container">
+  <div class="columns">
+    <div class="column is-two-thirds">
+      <article class="section content">
+        <p>Here is a list of experimental Pods for developers to test Solid apps against.</p>
+
+<p>If you would like to edit the table below or add an experimental Pod to this table <a href="https://github.com/solid/solidproject.org/pulls">submit a pull reqest</a> or email info@solidproject.org with details.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Link</th>
+      <th>Responsible for Hosting</th>
+      <th>Location of Hosting</th>
+      <th>Solid Server Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>https://solid.pldn.nl/</td>
+      <td><a href="http://www.pilod.nl/wiki/Platform_Linked_Data_Nederland">PLDN</a></td>
+      <td>——————-</td>
+      <td>——————-</td>
+    </tr>
+    <tr>
+      <td>https://solid.community/</td>
+      <td>started at <a href="https://solid.mit.edu">Solid MIT academic project</a></td>
+      <td>UK</td>
+      <td>NSS 5.x</td>
+    </tr>
+    <tr>
+      <td>https://solid.openlinksw.com:8444</td>
+      <td><a href="https://www.openlinksw.com/">OpenLink Software</a></td>
+      <td>USA</td>
+      <td>NSS 4.x</td>
+    </tr>
+    <tr>
+      <td>https://solid.openlinksw.com:8445</td>
+      <td><a href="https://www.openlinksw.com/">OpenLink Software</a></td>
+      <td>USA</td>
+      <td>NSS 5.x</td>
+    </tr>
+    <tr>
+      <td>https://dev.inrupt.net</td>
+      <td><a href="https://www.inrupt.com/">Inrupt, Inc.</a></td>
+      <td>USA</td>
+      <td>NSS 5.x</td>
+    </tr>
+    <tr>
+      <td>https://solidweb.org</td>
+      <td><a href="https://github.com/ewingson">Matthias Evering</a></td>
+      <td>Germany</td>
+      <td>NSS 5.x</td>
+    </tr>
+    <tr>
+      <td>https://ld.solidbase.info</td>
+      <td>https://github.com/y0va</td>
+      <td>?</td>
+      <td>NSS 5.1.0</td>
+    </tr>
+    <tr>
+      <td>https://podware.org</td>
+      <td><a href="https://github.com/etcware">Alessandra Donnini</a></td>
+      <td>Italy</td>
+      <td>NSS 5.x</td>
+    </tr>
+  </tbody>
+</table>
+
+      </article>
+    </div>
+    <aside id="sidebar" class="column is-one-third is-hidden-mobile section">
+      <div class="menu is-large">
+        
+      </div>
+    </aside>
+  </div>
+</div>
+
+    </main>
+    <footer id="footer" class="footer">
+  <div class="container">
+    <div class="columns">
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <a class="title is-size-5" href="/">Home</a>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/use-solid">Use Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/use-solid/apps">Solid Apps</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/implement">Implement Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/team">Team</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/faqs">FAQs</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <span class="title is-size-5">What's New</span>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/newsletter">This Month in Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/press">Press</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/events">Solid events</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <a class="title is-size-5" href="/for-developers">For Developers</a>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/for-developers/apps">Writing apps</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/for-developers/pod-server">Running a Pod server</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/funding">Funding</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="https://forum.solidproject.org">Forum</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <span class="title is-size-5">More</span>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/standardisation">Standardisation</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/license">License</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/logo-usage-guidelines">Logo usage guidelines</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="https://github.com/solid/solidproject.org/issues/new">Website feedback</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+    </div>
+  </div>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img
+          src="/assets/img/solid-emblem.svg"
+          alt="[Solid logo]"
+        />
+      </a>
+      <a class="navbar-item" href="mailto:info@solidproject.org">
+        info@solidproject.org
+      </a>
+      <a class="navbar-item" href="https://github.com/solid/" title="Solid on GitHub">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/github.svg"
+            alt="GitHub"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+      <a class="navbar-item" href="https://twitter.com/project_solid" title="Solid on Twitter">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/twitter.svg"
+            alt="Twitter"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+    </div>
+  </nav>
+</footer>
+
+  </body>
+
+
+</html>
