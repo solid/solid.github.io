@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2020-07-09T11:10:16+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><subtitle>Website for solidproject.org</subtitle><entry><title type="html">This Month in Solid 2020-07-02</title><link href="https://solidproject.org//newsletter/2020-07-02" rel="alternate" type="text/html" title="This Month in Solid 2020-07-02" /><published>2020-07-02T00:00:00+00:00</published><updated>2020-07-02T00:00:00+00:00</updated><id>https://solidproject.org//newsletter/this-month-in-solid</id><content type="html" xml:base="https://solidproject.org//newsletter/2020-07-02">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2020-07-09T11:34:39+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><subtitle>Website for solidproject.org</subtitle><entry><title type="html">This Month in Solid 2020-07-02</title><link href="https://solidproject.org//newsletter/2020-07-02" rel="alternate" type="text/html" title="This Month in Solid 2020-07-02" /><published>2020-07-02T00:00:00+00:00</published><updated>2020-07-02T00:00:00+00:00</updated><id>https://solidproject.org//newsletter/this-month-in-solid</id><content type="html" xml:base="https://solidproject.org//newsletter/2020-07-02">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
@@ -6,7 +6,60 @@
 
 &lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this month’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;updates&quot;&gt;Updates&lt;/h2&gt;</content><author><name></name></author><category term="monthly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Month in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a monthly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed on GitHub. If you find any errors in this month’s issue please submit a pull request.</summary></entry><entry><title type="html">This Month in Solid 2020-06-04</title><link href="https://solidproject.org//newsletter/2020-06-04" rel="alternate" type="text/html" title="This Month in Solid 2020-06-04" /><published>2020-06-04T00:00:00+00:00</published><updated>2020-06-04T00:00:00+00:00</updated><id>https://solidproject.org//newsletter/this-month-in-solid</id><content type="html" xml:base="https://solidproject.org//newsletter/2020-06-04">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
+&lt;h2 id=&quot;updates&quot;&gt;Updates&lt;/h2&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;layout: newsletter
+title: This Month in Solid 2020-07-02
+permalink: /newsletter/2020-07-02
+tags: [monthly, updates]
+categories: [Updates]
+—
+Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
+
+&lt;p&gt;This is a monthly summary of Solid progress.&lt;/p&gt;
+
+&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this month’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;updates-1&quot;&gt;Updates&lt;/h2&gt;
+
+&lt;h3 id=&quot;events&quot;&gt;&lt;a href=&quot;https://solidproject.org/events&quot;&gt;Events&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Solid World is an opportunity to meet people who are interested in or currently working on Solid.&lt;/p&gt;
+
+&lt;p&gt;If you missed Solid World you can &lt;a href=&quot;https://vimeo.com/434767351&quot;&gt;watch the recording here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This month, Solid Manager Mitzi László gave an overview of Solid as well as a mid-year recap. This was followed by a presentation by Sarven Capadisli on behalf of the Editors to give an overview of the specification progress this month. Two early companies to work on Solid introduced themselves and gave a quick update on what they are currently working on. Kelly O’Brien from Inrupt spoke about the UK COVID project with Open University and Kingsley Idehen introduced OpenLink.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://www.eventbrite.com/e/solid-world-tickets-111960609196&quot;&gt;next Solid World&lt;/a&gt; will happen on the 6th August 2020. If you have any content requests or would like to present at the next Solid world email info@solidproject.org.&lt;/p&gt;
+
+&lt;h3 id=&quot;articles-and-talks-mentioning-solid&quot;&gt;Articles and Talks mentioning Solid&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2020-06-24 BBC Rethink &lt;a href=&quot;https://www.bbc.co.uk/sounds/play/p08ht9tf&quot;&gt;Tim Berners-Lee: Rethinking Digital Access&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;in-other-news&quot;&gt;In Other News&lt;/h3&gt;
+
+&lt;p&gt;There’s a new category of &lt;a href=&quot;https://forum.solidproject.org/c/local-solid-communities/37&quot;&gt;conversations on the forum dedicated to local Solid communities&lt;/a&gt;. If you would like to connect to others working or interested in Solid in your city of country, open a thread and describe what you are working on so others know where to find you.&lt;/p&gt;
+
+&lt;h4 id=&quot;solid-implementations&quot;&gt;Solid Implementations&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://solid-groups.solid.community/&quot;&gt;Solid Groups&lt;/a&gt; app with open &lt;a href=&quot;https://gitlab.com/angelo-v/solid-groups&quot;&gt;source code&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://scenaristeur.github.io/generator-smag/&quot;&gt;Generator Smag&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The Dutch cultural heritage institutions and the ministry of Education, Culture and Science are working together in a joined national digital heritage program (NDE) to enlarge the social relevance of the digital cultural heritage information created and maintained by these institutes. The activities of NDE are focused on improving the visibility, usability and sustainability of the available digital cultural heritage information. In general the larger organizations in the network are equipped with fairly modern collection management systems. The NDE works with the IT-suppliers of these systems to support newer functionality such as Linked Data technologies. But there is still a large group of smaller institutes and associations that lack functionality to share their information in a digital and modern way. The “Solid for small cultural heritage institutions project” is aimed at this group of organisations and will provide easy to use tools to maintain and publish their data on the web. By using Solid these organizations will stay in control of their own data and at the same time be fully compliant with the state-of-the-art web publishing standards that will improve the visibility, usability and sustainability of their information. The project is set out to demonstrate the feasibility of this approach and will run for one year.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;job-openings&quot;&gt;Job Openings&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.digita.ai/careers&quot;&gt;Digita&lt;/a&gt; is hiring a Full Stack Developer and a Linked Data Principal. Email tom@digita.ai for more information.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://inrupt.com/careers&quot;&gt;Contact Inrupt careers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;update-from-the-specification-editors&quot;&gt;Update from the &lt;a href=&quot;https://github.com/solid/process/blob/master/editors.md&quot;&gt;Specification Editors&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;An &lt;a href=&quot;https://forum.solidproject.org/t/interoperability-panel-june-update/3279&quot;&gt;interoperability panel update&lt;/a&gt; can be found on the fourum.&lt;/p&gt;</content><author><name></name></author><category term="monthly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Month in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a monthly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed on GitHub. If you find any errors in this month’s issue please submit a pull request.</summary></entry><entry><title type="html">This Month in Solid 2020-06-04</title><link href="https://solidproject.org//newsletter/2020-06-04" rel="alternate" type="text/html" title="This Month in Solid 2020-06-04" /><published>2020-06-04T00:00:00+00:00</published><updated>2020-06-04T00:00:00+00:00</updated><id>https://solidproject.org//newsletter/this-month-in-solid</id><content type="html" xml:base="https://solidproject.org//newsletter/2020-06-04">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
