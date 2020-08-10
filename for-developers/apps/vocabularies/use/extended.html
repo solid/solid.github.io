@@ -109,27 +109,27 @@
         <p>Now that we have a vocabulary, we can use it to describe data. To this end, let us introduce the two most renowned obelisks designers of their time: <a href="https://vuittonluis.solid.community/profile/card#me">Vuittonluis</a> and <a href="https://garmani.solid.community/profile/card#me">G. Armani</a>. if you look up their profile, you will notice that each of them describes himself as an <a href="http://w3id.org/obelisk/Sculptor"><code class="language-plaintext highlighter-rouge">obelisk:Sculptor</code></a>:</p>
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="c1"># The next line defines an empty prefix ":", which points to the current document (e.g. https://garmani.solid.community/profile/card)</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="nl">&lt;#&gt;</span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nl">&lt;#&gt;</span><span class="p">.</span><span class="w">
 
-</span><span class="err">:</span><span class="n">me
+</span><span class="nn">:</span><span class="n">me
 </span><span class="w">    </span><span class="c1"># "a" is short for "rdf:type"</span><span class="w">
     </span><span class="k">a</span><span class="w"> </span><span class="nn">obelisk:</span><span class="n">Sculptor</span><span class="p">.</span><span class="w">
 </span><span class="c1">#...</span><span class="w">
 </span></code></pre></div></div>
 
 <p>In this case, the thing that we are talking about is <a href="https://garmani.solid.community/profile/card#me"><code class="language-plaintext highlighter-rouge">:me</code></a>, and we are saying that this thing is of type <a href="http://w3id.org/obelisk/Sculptor"><code class="language-plaintext highlighter-rouge">obelisk:Sculptor</code></a>. <a href="https://vuittonluis.solid.community/profile/card#me">Vuittonluis</a> keeps track of the <a href="https://vuittonluis.solid.community/public/gallery/prestigious%20sales/">obelisks he sold to VIP</a>. For instance, he built a <a href="https://vuittonluis.solid.community/public/gallery/prestigious%20sales/cleopatra.ttl#cleopatras_obelisk">custom one</a> for his queen <a href="https://cleopatra.solid.community/profile/card#me">Cleopatra</a>:</p>
-<div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="nl">&lt;#&gt;</span><span class="p">.</span><span class="w">
+<div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nl">&lt;#&gt;</span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 
-</span><span class="err">:</span><span class="n">cleopatras_obelisk</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">obelisk:</span><span class="n">Obelisk</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="nn">:</span><span class="n">cleopatras_obelisk</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">obelisk:</span><span class="n">Obelisk</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">obelisk:</span><span class="n">ownedBy</span><span class="w"> </span><span class="nl">&lt;https://cleopatra.solid.community/profile/card#me&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">obelisk:</span><span class="n">builtBy</span><span class="w"> </span><span class="nl">&lt;https://vuittonluis.solid.community/profile/card#me&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">obelisk:</span><span class="n">heigth</span><span class="w"> </span><span class="s">"25.0"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">float</span><span class="p">.</span><span class="w">
 </span></code></pre></div></div>
 
 <p><a href="https://cleopatra.solid.community/profile/card#me">Cleopatra</a> has a <a href="https://cleopatra.solid.community/public/collections/My%20obelisk%20collection/">collection of obelisks</a>. Let’s check it out:</p>
-<div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="nl">&lt;#&gt;</span><span class="p">.</span><span class="w">
+<div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nl">&lt;#&gt;</span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">coll:</span><span class="w"> </span><span class="nl">&lt;&gt;</span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">ldp:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/ldp#&gt;</span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">obelisk:</span><span class="w"> </span><span class="nl">&lt;http://w3id.org/obelisk/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -139,20 +139,20 @@
 
 </span><span class="nn">coll:</span><span class="w">
     </span><span class="k">a</span><span class="w"> </span><span class="nn">ldp:</span><span class="n">BasicContainer,</span><span class="w"> </span><span class="nn">ldp:</span><span class="n">Container</span><span class="p">;</span><span class="w">
-    </span><span class="nn">ldp:</span><span class="n">contains</span><span class="w"> </span><span class="err">:</span><span class="n">myFirstObelisk,</span><span class="w"> </span><span class="err">:</span><span class="n">myDesignerObelisk,</span><span class="w"> </span><span class="err">:</span><span class="n">myOwnObelisk</span><span class="p">.</span><span class="w">
+    </span><span class="nn">ldp:</span><span class="n">contains</span><span class="w"> </span><span class="nn">:</span><span class="n">myFirstObelisk,</span><span class="w"> </span><span class="nn">:</span><span class="n">myDesignerObelisk,</span><span class="w"> </span><span class="nn">:</span><span class="n">myOwnObelisk</span><span class="p">.</span><span class="w">
 
-</span><span class="err">:</span><span class="n">myFirstObelisk</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">obelisk:</span><span class="n">Obelisk</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="nn">:</span><span class="n">myFirstObelisk</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">obelisk:</span><span class="n">Obelisk</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">obelisk:</span><span class="n">ownedBy</span><span class="w"> </span><span class="nn">me:</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">obelisk:</span><span class="n">heigth</span><span class="w"> </span><span class="s">"3.0"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">float</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">comment</span><span class="w"> </span><span class="s">"I was offered this as a child. I don't remember who built it, and it's funny how it seemed big to me back then."</span><span class="p">.</span><span class="w">
 
-</span><span class="err">:</span><span class="n">myDesignerObelisk</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">obelisk:</span><span class="n">Obelisk</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="nn">:</span><span class="n">myDesignerObelisk</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">obelisk:</span><span class="n">Obelisk</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">obelisk:</span><span class="n">ownedBy</span><span class="w"> </span><span class="nn">me:</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">obelisk:</span><span class="n">builtBy</span><span class="w"> </span><span class="nl">&lt;https://vuittonluis.solid.community/profile/card#me&gt;</span><span class="p">;</span><span class="w">
     </span><span class="nn">obelisk:</span><span class="n">heigth</span><span class="w"> </span><span class="s">"25.0"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">float</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">seeAlso</span><span class="w"> </span><span class="nl">&lt;https://vuittonluis.solid.community/public/gallery/prestigious%20sales/cleopatra.ttl#cleopatras_obelisk&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 
-</span><span class="err">:</span><span class="n">myOwnObelisk</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">obelisk:</span><span class="n">Obelisk</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="nn">:</span><span class="n">myOwnObelisk</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">obelisk:</span><span class="n">Obelisk</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">obelisk:</span><span class="n">ownedBy</span><span class="w"> </span><span class="nn">me:</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">obelisk:</span><span class="n">builtBy</span><span class="w"> </span><span class="nn">me:</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">obelisk:</span><span class="n">heigth</span><span class="w"> </span><span class="s">"0.2"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">float</span><span class="w"> </span><span class="p">;</span><span class="w">

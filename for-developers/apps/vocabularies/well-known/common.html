@@ -125,16 +125,16 @@
 
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">prefix</span><span class="w"> </span><span class="nn">foaf:</span><span class="w"> </span><span class="nl">&lt;http://xmlns.com/foaf/0.1/&gt;</span><span class="w">
 
-</span><span class="err">:</span><span class="n">jcaesar</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">foaf:</span><span class="n">Person</span><span class="p">;</span><span class="w">
+</span><span class="nn">:</span><span class="n">jcaesar</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">foaf:</span><span class="n">Person</span><span class="p">;</span><span class="w">
     </span><span class="nn">foaf:</span><span class="n">title</span><span class="w"> </span><span class="s">"Imperator"</span><span class="p">;</span><span class="w">
     </span><span class="nn">foaf:</span><span class="n">name</span><span class="w"> </span><span class="s">"Gaius Julius Caesar"</span><span class="p">;</span><span class="w">
     </span><span class="nn">foaf:</span><span class="n">givenname</span><span class="w"> </span><span class="s">"Julius"</span><span class="p">;</span><span class="w">
     </span><span class="nn">foaf:</span><span class="n">family_name</span><span class="w"> </span><span class="s">"Caesar"</span><span class="p">;</span><span class="w">
     </span><span class="nn">foaf:</span><span class="n">nick</span><span class="w"> </span><span class="s">"Jul"</span><span class="p">.</span><span class="w">
 
-</span><span class="err">:</span><span class="n">spqr</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">foaf:</span><span class="n">Organization</span><span class="p">;</span><span class="w">
+</span><span class="nn">:</span><span class="n">spqr</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">foaf:</span><span class="n">Organization</span><span class="p">;</span><span class="w">
     </span><span class="nn">foaf:</span><span class="n">name</span><span class="w"> </span><span class="s">"Roman republic"</span><span class="p">;</span><span class="w">
-    </span><span class="nn">foaf:</span><span class="n">member</span><span class="w"> </span><span class="err">:</span><span class="n">jcaesar</span><span class="p">.</span><span class="w">
+    </span><span class="nn">foaf:</span><span class="n">member</span><span class="w"> </span><span class="nn">:</span><span class="n">jcaesar</span><span class="p">.</span><span class="w">
 </span></code></pre></div></div>
 
 <p><a id="vc"></a></p>
@@ -155,7 +155,7 @@
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">vc:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2006/vcard/ns#&gt;</span><span class="p">.</span><span class="w">
 
 
-</span><span class="err">:</span><span class="n">me
+</span><span class="nn">:</span><span class="n">me
 </span><span class="w">    </span><span class="nn">vc:</span><span class="n">fn</span><span class="w"> </span><span class="s">"Gaius Julius Caesar"</span><span class="p">;</span><span class="w">
     </span><span class="nn">vc:</span><span class="n">organization-name</span><span class="w"> </span><span class="s">"Roman republic"</span><span class="p">;</span><span class="w">
     </span><span class="nn">vc:</span><span class="n">role</span><span class="w"> </span><span class="s">"Imperator"</span><span class="p">.</span><span class="w">
@@ -195,7 +195,7 @@
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="p">.</span><span class="w">
 
-</span><span class="err">:</span><span class="n">party</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">as:</span><span class="n">Event</span><span class="p">;</span><span class="w">
+</span><span class="nn">:</span><span class="n">party</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">as:</span><span class="n">Event</span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Party at my p(a)lace"</span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">comment</span><span class="w"> </span><span class="s">"I'm celebrating the release of my book, 'De Bello Gallico'"</span><span class="p">;</span><span class="w">
     </span><span class="nn">as:</span><span class="n">startTime</span><span class="w"> </span><span class="s">"50BC-01-15T18:00:00-00:00"</span><span class="p">;</span><span class="w">

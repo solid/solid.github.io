@@ -127,7 +127,7 @@ add to config in the appropriate section as follows<br /></li>
 </span>
 <span class="p">&lt;</span><span class="nl">VirtualHost</span><span class="sr"> *:80</span><span class="p">&gt;
 </span><span class="nc">ServerAlias</span> *.example.org
-<span class="nc">RewriteEngine</span> On
+<span class="nc">RewriteEngine</span> <span class="ss">On</span>
 <span class="nc">RewriteCond</span> %{HTTPS} <span class="ss">off</span>
 <span class="nc">RewriteRule</span> (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 <span class="p">&lt;/</span><span class="nl">VirtualHost</span><span class="p">&gt;
@@ -136,13 +136,13 @@ add to config in the appropriate section as follows<br /></li>
 </span><span class="nc">ServerName</span> example.org
 <span class="nc">DocumentRoot</span> /var/www/example.org
 
-<span class="nc">SSLEngine</span> On
-<span class="nc">SSLProxyEngine</span> On
+<span class="nc">SSLEngine</span> <span class="ss">On</span>
+<span class="nc">SSLProxyEngine</span> <span class="ss">On</span>
 <span class="nc">SSLProxyVerify</span> <span class="ss">None</span>
-<span class="nc">SSLProxyCheckPeerCN</span> Off
-SSLProxyPeerName Off
-<span class="nc">SSLProxyCheckPeerExpire</span> Off
-<span class="nc">ProxyPreserveHost</span> On
+<span class="nc">SSLProxyCheckPeerCN</span> <span class="ss">Off</span>
+SSLProxyPeerName <span class="ss">Off</span>
+<span class="nc">SSLProxyCheckPeerExpire</span> <span class="ss">Off</span>
+<span class="nc">ProxyPreserveHost</span> <span class="ss">On</span>
 
 <span class="nc">SSLCertificateFile</span> /etc/letsencrypt/live/example.org/cert.pem
 <span class="nc">SSLCertificateKeyFile</span> /etc/letsencrypt/live/example.org/privkey.pem
@@ -155,13 +155,13 @@ SSLProxyPeerName Off
 <span class="p">&lt;</span><span class="nl">VirtualHost</span><span class="sr"> *:443</span><span class="p">&gt;
 </span><span class="nc">ServerAlias</span> *.example.org
 
-<span class="nc">SSLEngine</span> On
-<span class="nc">SSLProxyEngine</span> On
+<span class="nc">SSLEngine</span> <span class="ss">On</span>
+<span class="nc">SSLProxyEngine</span> <span class="ss">On</span>
 <span class="nc">SSLProxyVerify</span> <span class="ss">None</span>
-<span class="nc">SSLProxyCheckPeerCN</span> Off
-SSLProxyPeerName Off
-<span class="nc">SSLProxyCheckPeerExpire</span> Off
-<span class="nc">ProxyPreserveHost</span> On
+<span class="nc">SSLProxyCheckPeerCN</span> <span class="ss">Off</span>
+SSLProxyPeerName <span class="ss">Off</span>
+<span class="nc">SSLProxyCheckPeerExpire</span> <span class="ss">Off</span>
+<span class="nc">ProxyPreserveHost</span> <span class="ss">On</span>
 
 <span class="nc">SSLCertificateFile</span> /etc/letsencrypt/live/example.org/cert.pem
 <span class="nc">SSLCertificateKeyFile</span> /etc/letsencrypt/live/example.org/privkey.pem
