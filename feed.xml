@@ -1,4 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2020-08-12T14:44:31+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><subtitle>Website for solidproject.org</subtitle><entry><title type="html">This Month in Solid 2020-08-06</title><link href="https://solidproject.org//newsletter/2020-08-06" rel="alternate" type="text/html" title="This Month in Solid 2020-08-06" /><published>2020-08-06T00:00:00+00:00</published><updated>2020-08-06T00:00:00+00:00</updated><id>https://solidproject.org//newsletter/this-month-in-solid</id><content type="html" xml:base="https://solidproject.org//newsletter/2020-08-06">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2020-08-13T12:26:27+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><subtitle>Website for solidproject.org</subtitle><entry><title type="html">Use Nginx as a reverse proxy</title><link href="https://solidproject.org//for-developers/pod-server/nginx" rel="alternate" type="text/html" title="Use Nginx as a reverse proxy" /><published>2020-08-12T00:00:00+00:00</published><updated>2020-08-12T00:00:00+00:00</updated><id>https://solidproject.org//for-developers/pod-server/00_nginx-config</id><content type="html" xml:base="https://solidproject.org//for-developers/pod-server/nginx">&lt;p&gt;Nginx config&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;create or modify /etc/nginx/sites-available/default as follows (example editor nano)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ nano /etc/nginx/sites-available/default&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Nginx configuration for Solid on Port 8443
+## Redirects all HTTP traffic to the HTTPS host
+server {
+  ## In case of conflict, either remove &quot;default_server&quot; from the listen line below,
+  ## or delete the /etc/nginx/sites-enabled/default file.
+  listen 0.0.0.0:80;
+  listen [::]:80;
+  server_name example.org;
+  server_tokens off; ## Don't show the nginx version number, a security best practice
+  return 301 https://$http_host$request_uri;
+  access_log  /var/log/nginx/solid_access.log;
+  error_log   /var/log/nginx/solid_error.log;
+}
+
+server {
+  listen *:443 ssl;
+  listen [::]:443 ssl;
+  server_name example.org;
+  server_tokens off;
+
+  access_log  /var/log/nginx/solid_ssl_access.log;
+  error_log   /var/log/nginx/solid_ssl_error.log;
+
+ssl_certificate /etc/letsencrypt/live/example.org/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/example.org/privkey.pem;
+
+root /var/www/example.org; #webroot
+
+  ## [Optional] Enable HTTP Strict Transport Security
+  ## HSTS is a feature improving protection against MITM attacks
+  ## For more information see: https://www.nginx.com/blog/http-strict-transport-security-hsts-and-nginx/
+  add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot;;
+
+  location / {
+    proxy_pass https://localhost:8443;
+
+    gzip off;
+    proxy_redirect off;
+
+    ## Some requests take more than 30 seconds.
+    proxy_read_timeout      300;
+    proxy_connect_timeout   300;
+    proxy_redirect          off;
+
+    proxy_http_version 1.1;
+
+    proxy_set_header    Host                $http_host;
+    proxy_set_header    X-Real-IP           $remote_addr;
+    proxy_set_header    X-Forwarded-Ssl     on;
+    proxy_set_header    X-Forwarded-For     $proxy_add_x_forwarded_for;
+    proxy_set_header    X-Forwarded-Proto   $scheme;
+  }
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ systemctl restart nginx&lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><category term="pod-server" /><summary type="html">Nginx config</summary></entry><entry><title type="html">This Month in Solid 2020-08-06</title><link href="https://solidproject.org//newsletter/2020-08-06" rel="alternate" type="text/html" title="This Month in Solid 2020-08-06" /><published>2020-08-06T00:00:00+00:00</published><updated>2020-08-06T00:00:00+00:00</updated><id>https://solidproject.org//newsletter/this-month-in-solid</id><content type="html" xml:base="https://solidproject.org//newsletter/2020-08-06">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
@@ -529,454 +593,6 @@ for communications and subsequent discussions on spec-related activities.&lt;/p&
 &lt;/div&gt;
 
 &lt;p&gt;Have you seen any articles or talks about Solid this week? If you’ve seen any talks, articles, or written blog posts about Solid please do send them over for next week.&lt;/p&gt;
-
-&lt;h3 id=&quot;job-openings&quot;&gt;Job Openings&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.digita.ai/careers&quot;&gt;Digita is hiring&lt;/a&gt; a Full Stack Developer and a Linked Data Principal. Email tom@digita.ai for more information&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://inrupt.com/careers&quot;&gt;Inrupt is hiring&lt;/a&gt; a Head of Business Development, DevOps Engineer, and Senior Front-End Engineer/Architect.)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="weekly" /><category term="updates" /><summary type="html">Hello and welcome to another edition of This Month in Solid! Solid is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along. This is a monthly summary of Solid progress. Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed on GitHub. If you find any errors in this month’s issue please submit a pull request.</summary></entry><entry><title type="html">This Week in Solid 2020-03-05</title><link href="https://solidproject.org//this-week-in-solid/2020-03-05" rel="alternate" type="text/html" title="This Week in Solid 2020-03-05" /><published>2020-03-05T00:00:00+00:00</published><updated>2020-03-05T00:00:00+00:00</updated><id>https://solidproject.org//this-week-in-solid/this-week-in-solid</id><content type="html" xml:base="https://solidproject.org//this-week-in-solid/2020-03-05">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
-
-&lt;p&gt;This is a monthly summary of Solid progress.&lt;/p&gt;
-
-&lt;p&gt;Want something mentioned? Contact the Solid Manager at info@solidproject.org. This Month in Solid is openly developed &lt;a href=&quot;https://github.com/solid/solidproject.org/blob/staging/_posts/newsletter/next.md&quot;&gt;on GitHub&lt;/a&gt;. If you find any errors in this month’s issue please &lt;a href=&quot;https://github.com/solid/solidproject.org/pulls&quot;&gt;submit a pull request&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;updates&quot;&gt;Updates&lt;/h2&gt;
-
-&lt;h3 id=&quot;press&quot;&gt;&lt;a href=&quot;https://solidproject.org/press&quot;&gt;Press&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;There have been a few new articles about Solid:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.com/henshaw&quot;&gt;Jon Henshaw&lt;/a&gt; published an article about the work Angelo Veltens has been doing. &lt;a href=&quot;https://www.coywolf.news/social/solid-profile-design/&quot;&gt;Read more here&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://robboss.art/@travis&quot;&gt;Travis Vachon&lt;/a&gt; has published a series of articles about the Solid app prototyping he has been working on. Read &lt;a href=&quot;https://trav.page/log/solid-foundation&quot;&gt;a solid foundation for a new web&lt;/a&gt;, &lt;a href=&quot;https://trav.page/log/solid-ground/&quot;&gt;solid at ground level&lt;/a&gt; and &lt;a href=&quot;https://trav.page/log/write-solid&quot;&gt;writing the web with solid&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Solid Events are run by people like you, read more about tips on organising a successful Solid Event &lt;a href=&quot;https://solidproject.org/events&quot;&gt;here&lt;/a&gt; or &lt;a href=&quot;https://forum.solidproject.org/c/solid-events&quot;&gt;chat&lt;/a&gt; with other attendees and organisers.&lt;/p&gt;
-
-&lt;p&gt;There have been several more Solid Events:&lt;/p&gt;
-
-&lt;div class=&quot;talk&quot;&gt;
-  &lt;div class=&quot;columns&quot;&gt;
-    &lt;div class=&quot;column is-two-thirds&quot;&gt;
-      &lt;p&gt;
-        &lt;small&gt;2020-01-07&lt;/small&gt;
-      &lt;/p&gt;
-      &lt;p&gt;
-        
-          &lt;a href=&quot;http://solid-khartoum.atspace.cc&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-            Solid Khartoum
-          &lt;/a&gt;
-        
-        &lt;br /&gt;
-        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Ali Siragedien&lt;/i&gt;&lt;/span&gt;
-      &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;aside class=&quot;column&quot;&gt;
-      
-        &lt;a href=&quot;http://solid-khartoum.atspace.cc&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;Visit website&lt;/span&gt;
-        &lt;/a&gt;
-      
-      
-      
-        &lt;a href=&quot;https://youtu.be/BhFFCzjAqm4&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/file-video.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;Watch video&lt;/span&gt;
-        &lt;/a&gt;
-      
-    &lt;/aside&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;talk&quot;&gt;
-  &lt;div class=&quot;columns&quot;&gt;
-    &lt;div class=&quot;column is-two-thirds&quot;&gt;
-      &lt;p&gt;
-        &lt;small&gt;2020-01-30&lt;/small&gt;
-      &lt;/p&gt;
-      &lt;p&gt;
-        
-          &lt;a href=&quot;https://www.pldn.nl/index.php/2nd_Solid_Amsterdam_Meetup_%E2%80%93_January_30th,_2020&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-            Solid Amsterdam
-          &lt;/a&gt;
-        
-        &lt;br /&gt;
-        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Jeroen van Beele&lt;/i&gt;&lt;/span&gt;
-      &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;aside class=&quot;column&quot;&gt;
-      
-        &lt;a href=&quot;https://www.pldn.nl/index.php/2nd_Solid_Amsterdam_Meetup_%E2%80%93_January_30th,_2020&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;Visit website&lt;/span&gt;
-        &lt;/a&gt;
-      
-      
-      
-    &lt;/aside&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;talk&quot;&gt;
-  &lt;div class=&quot;columns&quot;&gt;
-    &lt;div class=&quot;column is-two-thirds&quot;&gt;
-      &lt;p&gt;
-        &lt;small&gt;2020-02-10&lt;/small&gt;
-      &lt;/p&gt;
-      &lt;p&gt;
-        
-          &lt;a href=&quot;https://www.eventbrite.com/e/solid-meetup-berlin-tickets-88843267605&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-            Solid Berlin
-          &lt;/a&gt;
-        
-        &lt;br /&gt;
-        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Christian Buggedei&lt;/i&gt;&lt;/span&gt;
-      &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;aside class=&quot;column&quot;&gt;
-      
-        &lt;a href=&quot;https://www.eventbrite.com/e/solid-meetup-berlin-tickets-88843267605&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;Visit website&lt;/span&gt;
-        &lt;/a&gt;
-      
-      
-      
-    &lt;/aside&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;talk&quot;&gt;
-  &lt;div class=&quot;columns&quot;&gt;
-    &lt;div class=&quot;column is-two-thirds&quot;&gt;
-      &lt;p&gt;
-        &lt;small&gt;2020-02-19&lt;/small&gt;
-      &lt;/p&gt;
-      &lt;p&gt;
-        
-          &lt;a href=&quot;https://ingenieriainformatica.uniovi.es/actualidad/eventos/-/asset_publisher/uS6D/content/conferencia-solid-search:-introduccion-a-solid-y-como-cambiar-el-paradigma-de-los-buscadores-de-co?redirect=%2F&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-            Solid Barcelona - Empathy.co on Solid search
-          &lt;/a&gt;
-        
-        &lt;br /&gt;
-        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Alex Corvis&lt;/i&gt;&lt;/span&gt;
-      &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;aside class=&quot;column&quot;&gt;
-      
-        &lt;a href=&quot;https://ingenieriainformatica.uniovi.es/actualidad/eventos/-/asset_publisher/uS6D/content/conferencia-solid-search:-introduccion-a-solid-y-como-cambiar-el-paradigma-de-los-buscadores-de-co?redirect=%2F&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;Visit website&lt;/span&gt;
-        &lt;/a&gt;
-      
-      
-        &lt;a href=&quot;https://docs.google.com/presentation/d/19Glq6dcIa83nliQR1fvS9ZzYglogFD7mT5Pb5JLFrIQ/edit?usp=sharing&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/file-powerpoint.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;View slides&lt;/span&gt;
-        &lt;/a&gt;
-      
-      
-        &lt;a href=&quot;https://youtu.be/xBopDO2NTxo&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/file-video.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;Watch video&lt;/span&gt;
-        &lt;/a&gt;
-      
-    &lt;/aside&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;talk&quot;&gt;
-  &lt;div class=&quot;columns&quot;&gt;
-    &lt;div class=&quot;column is-two-thirds&quot;&gt;
-      &lt;p&gt;
-        &lt;small&gt;2020-02-20&lt;/small&gt;
-      &lt;/p&gt;
-      &lt;p&gt;
-        
-          &lt;a href=&quot;https://meetabit.com/events/february-2020-bay-area-solid-interest-club-meetup&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-            Solid San Francisco
-          &lt;/a&gt;
-        
-        &lt;br /&gt;
-        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Travis Vachon&lt;/i&gt;&lt;/span&gt;
-      &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;aside class=&quot;column&quot;&gt;
-      
-        &lt;a href=&quot;https://meetabit.com/events/february-2020-bay-area-solid-interest-club-meetup&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;Visit website&lt;/span&gt;
-        &lt;/a&gt;
-      
-      
-      
-    &lt;/aside&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;There have been several talks on Solid around the world:&lt;/p&gt;
-
-&lt;div class=&quot;talk&quot;&gt;
-  &lt;div class=&quot;columns&quot;&gt;
-    &lt;div class=&quot;column is-two-thirds&quot;&gt;
-      &lt;p&gt;
-        &lt;small&gt;2020-01-10&lt;/small&gt;
-      &lt;/p&gt;
-      &lt;p&gt;
-        
-          &lt;a href=&quot;https://p2p.paris/fr/event/festival-0/&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-            P2P
-          &lt;/a&gt;
-        
-        &lt;br /&gt;
-        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Alice Poggioli&lt;/i&gt;&lt;/span&gt;
-      &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;aside class=&quot;column&quot;&gt;
-      
-        &lt;a href=&quot;https://p2p.paris/fr/event/festival-0/&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;Visit website&lt;/span&gt;
-        &lt;/a&gt;
-      
-      
-      
-    &lt;/aside&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;talk&quot;&gt;
-  &lt;div class=&quot;columns&quot;&gt;
-    &lt;div class=&quot;column is-two-thirds&quot;&gt;
-      &lt;p&gt;
-        &lt;small&gt;2020-01-11&lt;/small&gt;
-      &lt;/p&gt;
-      &lt;p&gt;
-        
-          &lt;a href=&quot;https://p2p.paris/fr/event/festival-0/&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-            P2P
-          &lt;/a&gt;
-        
-        &lt;br /&gt;
-        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Jonas Smedegaard&lt;/i&gt;&lt;/span&gt;
-      &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;aside class=&quot;column&quot;&gt;
-      
-        &lt;a href=&quot;https://p2p.paris/fr/event/festival-0/&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;Visit website&lt;/span&gt;
-        &lt;/a&gt;
-      
-      
-      
-    &lt;/aside&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;talk&quot;&gt;
-  &lt;div class=&quot;columns&quot;&gt;
-    &lt;div class=&quot;column is-two-thirds&quot;&gt;
-      &lt;p&gt;
-        &lt;small&gt;2020-01-27&lt;/small&gt;
-      &lt;/p&gt;
-      &lt;p&gt;
-        
-          &lt;a href=&quot;https://cs3.deic.dk&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-            Workshop on Cloud Services for File Synchronisation and Sharing
-          &lt;/a&gt;
-        
-        &lt;br /&gt;
-        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Michiel de Jong&lt;/i&gt;&lt;/span&gt;
-      &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;aside class=&quot;column&quot;&gt;
-      
-        &lt;a href=&quot;https://cs3.deic.dk&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;Visit website&lt;/span&gt;
-        &lt;/a&gt;
-      
-      
-      
-    &lt;/aside&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;talk&quot;&gt;
-  &lt;div class=&quot;columns&quot;&gt;
-    &lt;div class=&quot;column is-two-thirds&quot;&gt;
-      &lt;p&gt;
-        &lt;small&gt;2020-02-24&lt;/small&gt;
-      &lt;/p&gt;
-      &lt;p&gt;
-        
-          &lt;a href=&quot;https://www.rsaconference.com/experts/davi-ottenheimer-3&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-            RSA
-          &lt;/a&gt;
-        
-        &lt;br /&gt;
-        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Davi Ottenheimer&lt;/i&gt;&lt;/span&gt;
-      &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;aside class=&quot;column&quot;&gt;
-      
-        &lt;a href=&quot;https://www.rsaconference.com/experts/davi-ottenheimer-3&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;Visit website&lt;/span&gt;
-        &lt;/a&gt;
-      
-      
-      
-    &lt;/aside&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;talk&quot;&gt;
-  &lt;div class=&quot;columns&quot;&gt;
-    &lt;div class=&quot;column is-two-thirds&quot;&gt;
-      &lt;p&gt;
-        &lt;small&gt;2020-02-07&lt;/small&gt;
-      &lt;/p&gt;
-      &lt;p&gt;
-        
-          &lt;a href=&quot;https://indico.cern.ch/e/CERN-Solid-brainstorming&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-            Solid CERN
-          &lt;/a&gt;
-        
-        &lt;br /&gt;
-        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Maria Dimou, Sarven Capadisli, and Mitzi László&lt;/i&gt;&lt;/span&gt;
-      &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;aside class=&quot;column&quot;&gt;
-      
-        &lt;a href=&quot;https://indico.cern.ch/e/CERN-Solid-brainstorming&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;Visit website&lt;/span&gt;
-        &lt;/a&gt;
-      
-      
-      
-    &lt;/aside&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;talk&quot;&gt;
-  &lt;div class=&quot;columns&quot;&gt;
-    &lt;div class=&quot;column is-two-thirds&quot;&gt;
-      &lt;p&gt;
-        &lt;small&gt;2020-02-12&lt;/small&gt;
-      &lt;/p&gt;
-      &lt;p&gt;
-        
-          &lt;a href=&quot;https://www.knvi.nl/agenda/5e1b2ec705aac30110b2fe90/Je-persoonlijke-data-beheren-met-Solid?backUrl=%2Fagenda&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-            KNVI
-          &lt;/a&gt;
-        
-        &lt;br /&gt;
-        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;Pieter van Everdingen&lt;/i&gt;&lt;/span&gt;
-      &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;aside class=&quot;column&quot;&gt;
-      
-        &lt;a href=&quot;https://www.knvi.nl/agenda/5e1b2ec705aac30110b2fe90/Je-persoonlijke-data-beheren-met-Solid?backUrl=%2Fagenda&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;Visit website&lt;/span&gt;
-        &lt;/a&gt;
-      
-      
-      
-    &lt;/aside&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;There are a few upcoming events where you can learn more and meet others working on Solid:&lt;/p&gt;
-
-&lt;div class=&quot;talk&quot;&gt;
-  &lt;div class=&quot;columns&quot;&gt;
-    &lt;div class=&quot;column is-two-thirds&quot;&gt;
-      &lt;p&gt;
-        &lt;small&gt;2020-04-02&lt;/small&gt;
-      &lt;/p&gt;
-      &lt;p&gt;
-        
-          &lt;a href=&quot;https://meetabit.com/events/4-2-20-bay-area-solid-interest-club-meetup&quot; class=&quot;is-size-4 is-uppercase&quot;&gt;
-            Bay Area Solid Interest Club
-          &lt;/a&gt;
-        
-        &lt;br /&gt;
-        &lt;span class=&quot;speaker&quot;&gt;By &lt;i&gt;TBD&lt;/i&gt;&lt;/span&gt;
-      &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;aside class=&quot;column&quot;&gt;
-      
-        &lt;a href=&quot;https://meetabit.com/events/4-2-20-bay-area-solid-interest-club-meetup&quot; class=&quot;button is-text&quot;&gt;
-          &lt;span class=&quot;icon is-small&quot;&gt;
-            &lt;img src=&quot;/assets/img/fontawesome-free-5.11.2-web/svgs/solid/link.svg&quot; alt=&quot;[]&quot; /&gt;
-          &lt;/span&gt;
-          &lt;span&gt;Visit website&lt;/span&gt;
-        &lt;/a&gt;
-      
-      
-      
-    &lt;/aside&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Have you seen any articles or talks about Solid this week? If you’ve seen any talks, articles, or written blog posts about Solid please do send them over for next week.&lt;/p&gt;
-
-&lt;h3 id=&quot;solidprojectorg&quot;&gt;Solidproject.org&lt;/h3&gt;
-&lt;p&gt;The landing page has been redesigned, and most other pages have received a small touch-up. Additionally, most content has undergone editing to ensure the information is relevant and free of typos. All in all, the starting point for all things Solid should be more pleasant to use now.&lt;/p&gt;
-
-&lt;h3 id=&quot;developer-tools&quot;&gt;&lt;a href=&quot;https://solidproject.org/for-developers/apps/tools&quot;&gt;Developer Tools&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/theWebalyst&quot;&gt;Mark Hughes&lt;/a&gt; is working on &lt;a href=&quot;https://github.com/theWebalyst/svelte-with-rdf-libs-webpack&quot;&gt;showing how to use various RDF libs with Sveltejs&lt;/a&gt; and has rdflib.js and graphy working&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jeff-zucker&quot;&gt;Jeff Zucker&lt;/a&gt;, &lt;a href=&quot;https://github.com/bourgeoa&quot;&gt;Alain Bourgeois&lt;/a&gt;, and &lt;a href=&quot;https://github.com/Otto-AA&quot;&gt;Otto_AA&lt;/a&gt; released &lt;strong&gt;&lt;a href=&quot;https://github.com/jeff-zucker/solid-file-client&quot;&gt;version 1.0.0 of Solid-File-Client&lt;/a&gt;&lt;/strong&gt;, a library of methods to manage Solid files and folders that now has the ability to copy and move entire folder trees from one pod to another or back and forth between a pod and a local file system. It supports both text and binary files and works in either a browser or node/console context. Also new in this version is extensive support for linked resources (.acl and .meta files). &lt;a href=&quot;https://forum.solidproject.org/t/announce-major-new-version-of-solid-shell/2561&quot;&gt;Read the release announcement.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jeff-zucker&quot;&gt;Jeff Zucker&lt;/a&gt; also released a major new version of &lt;strong&gt;&lt;a href=&quot;https://github.com/jeff-zucker/solid-shell&quot;&gt;Solid-Shell&lt;/a&gt;&lt;/strong&gt;, a tool for handling Solid files and folders from the command-line, in an interactive shell, and using batch-processing. You can automate and test tasks with robust error logging options. Solid Shell is built on top of Solid-File-Client and is therefore able to handle uploading, downloading, copying, moving, linked resources (.acl,.meta) and other Solid-specific features. &lt;a href=&quot;https://forum.solidproject.org/t/announce-major-new-version-of-solid-shell/2561&quot;&gt;Read the release announcement&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://angelo.veltens.org/profile/card#me&quot;&gt;Angelo Veltens&lt;/a&gt; published &lt;a href=&quot;https://molid.readthedocs.io/en/latest/&quot;&gt;Molid&lt;/a&gt;, a mock server&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/ewingson&quot;&gt;Matthias Evering&lt;/a&gt; has upgraded &lt;a href=&quot;https://solidweb.org&quot;&gt;solidweb.org&lt;/a&gt;, an experimental server, to 5.2.3&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;apps-pods-and-identity-providers&quot;&gt;&lt;a href=&quot;https://solidproject.org/use-solid/apps&quot;&gt;Apps&lt;/a&gt;, &lt;a href=&quot;https://solidproject.org/use-solid&quot;&gt;Pods, and Identity Providers&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;If you have any new apps, Pods, or identity providers, or there are updates to existing Solid implementations, make sure to add them to the list so they get included in next week’s edition. Here are a few updates on implementations of Solid:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://scenaristeur.github.io/compagent-tuto/&quot;&gt;Social app&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ibex.darcy.is&quot;&gt;Darcy Ibex&lt;/a&gt; got made in a hackathon. Darcy Ibex is a prototype social media stream based entirely on Solid&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://gitlab.com/angelo-v/pod-homepage&quot;&gt;Pod Homepage&lt;/a&gt;, a potential homepage for your Solid Pod (&lt;a href=&quot;https://angelo.veltens.org/&quot;&gt;Live Example&lt;/a&gt;).&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://scenaristeur.github.io/solidarity/&quot;&gt;Solidarity&lt;/a&gt; is the start of a new chat forum project based on LongChat and inbox&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://gca-solid.now.sh/&quot;&gt;Golf Course Assistant&lt;/a&gt; is an app where golfers can track their score on the course. Built with the solid-react SDK.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/steamory/portal&quot;&gt;Portal&lt;/a&gt; is a competely new data browser that allows you to explore your personal data in SoLiD Pod.&lt;a href=&quot;https://useconcept.art/&quot;&gt;Concept&lt;/a&gt; (&lt;a href=&quot;https://github.com/travis/concept&quot;&gt;GitHub&lt;/a&gt;) is an embarrassingly simple clone of &lt;a href=&quot;https://notion.so&quot;&gt;notion.so&lt;/a&gt; built on Solid. Currently very much in alpha.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pmbrull.github.io/solid-webbook/&quot;&gt;Webbook&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;h3 id=&quot;job-openings&quot;&gt;Job Openings&lt;/h3&gt;
 &lt;ul&gt;

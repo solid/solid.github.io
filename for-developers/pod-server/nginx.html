@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Use Apache as a reverse proxy · Solid</title>
+    <title>Use Nginx as a reverse proxy · Solid</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
@@ -62,7 +62,7 @@
     draftWarningElement.innerHTML = `
       <div class="message is-danger is-large" role="alert">
         <div class="message-body">
-          You are currently viewing a draft version of the Solid website. If you are looking for reliable information, visit the live site at <a href="https://solidproject.org/for-developers/pod-server/apache" title="The official Solid website">SolidProject.org</a>.
+          You are currently viewing a draft version of the Solid website. If you are looking for reliable information, visit the live site at <a href="https://solidproject.org/for-developers/pod-server/nginx" title="The official Solid website">SolidProject.org</a>.
         </div>
       </div>
     `;
@@ -92,7 +92,7 @@
         
           <li>
             <a href="">
-              Use Apache as a reverse proxy
+              Use Nginx as a reverse proxy
             </a>
           </li>
         
@@ -106,89 +106,71 @@
   <div class="columns">
     <div class="column is-two-thirds">
       <article class="section content">
-        <p>Apache config<br /></p>
-<ul>
-  <li>enable modules (ssl.conf, ssl.load, proxy.conf, proxy.load, proxy_html.conf, proxy_html.load, proxy_http.conf, proxy_http.load, rewrite.load, socache_shmcb.load)<br /></li>
-  <li>this is done by creating symlinks in <code class="language-plaintext highlighter-rouge">/etc/apache2/mods-enabled/</code> pointing to <code class="language-plaintext highlighter-rouge">/etc/apache2/mods-available/*</code><br /></li>
-  <li>sample for one module other modules equivalent<br />
-<code class="language-plaintext highlighter-rouge">$ cd /etc/apache2/mods-enabled</code><br />
-<code class="language-plaintext highlighter-rouge">$ ln -s ../mods-available/ssl.conf ssl.conf</code><br /></li>
-  <li>edit 000-default.conf<br />
-<code class="language-plaintext highlighter-rouge">nano /etc/apache2/sites-available/000-default.conf</code><br />
-add to config in the appropriate section as follows<br /></li>
-</ul>
-
-<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nl">VirtualHost</span><span class="sr"> *:80</span><span class="p">&gt;
-</span><span class="nc">ServerName</span> example.org
-<span class="nc">Redirect</span> / https://example.org
-
-<span class="nc">DocumentRoot</span> /var/www/example.org
-<span class="p">&lt;/</span><span class="nl">VirtualHost</span><span class="p">&gt;
-</span>
-<span class="p">&lt;</span><span class="nl">VirtualHost</span><span class="sr"> *:80</span><span class="p">&gt;
-</span><span class="nc">ServerAlias</span> *.example.org
-<span class="nc">RewriteEngine</span> <span class="ss">On</span>
-<span class="nc">RewriteCond</span> %{HTTPS} <span class="ss">off</span>
-<span class="nc">RewriteRule</span> (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-<span class="p">&lt;/</span><span class="nl">VirtualHost</span><span class="p">&gt;
-</span>
-<span class="p">&lt;</span><span class="nl">VirtualHost</span><span class="sr"> *.443</span><span class="p">&gt;
-</span><span class="nc">ServerName</span> example.org
-<span class="nc">DocumentRoot</span> /var/www/example.org
-
-<span class="nc">SSLEngine</span> <span class="ss">On</span>
-<span class="nc">SSLProxyEngine</span> <span class="ss">On</span>
-<span class="nc">SSLProxyVerify</span> <span class="ss">None</span>
-<span class="nc">SSLProxyCheckPeerCN</span> <span class="ss">Off</span>
-SSLProxyPeerName <span class="ss">Off</span>
-<span class="nc">SSLProxyCheckPeerExpire</span> <span class="ss">Off</span>
-<span class="nc">ProxyPreserveHost</span> <span class="ss">On</span>
-
-<span class="nc">SSLCertificateFile</span> /etc/letsencrypt/live/example.org/cert.pem
-<span class="nc">SSLCertificateKeyFile</span> /etc/letsencrypt/live/example.org/privkey.pem
-<span class="nc">SSLCertificateChainFile</span> /etc/letsencrypt/live/example.org/fullchain.pem
-
-<span class="nc">ProxyPass</span> / https://localhost:8443/
-<span class="nc">ProxyPassReverse</span> / https://localhost:8443/
-<span class="p">&lt;/</span><span class="nl">VirtualHost</span><span class="p">&gt;
-</span>
-<span class="p">&lt;</span><span class="nl">VirtualHost</span><span class="sr"> *:443</span><span class="p">&gt;
-</span><span class="nc">ServerAlias</span> *.example.org
-
-<span class="nc">SSLEngine</span> <span class="ss">On</span>
-<span class="nc">SSLProxyEngine</span> <span class="ss">On</span>
-<span class="nc">SSLProxyVerify</span> <span class="ss">None</span>
-<span class="nc">SSLProxyCheckPeerCN</span> <span class="ss">Off</span>
-SSLProxyPeerName <span class="ss">Off</span>
-<span class="nc">SSLProxyCheckPeerExpire</span> <span class="ss">Off</span>
-<span class="nc">ProxyPreserveHost</span> <span class="ss">On</span>
-
-<span class="nc">SSLCertificateFile</span> /etc/letsencrypt/live/example.org/cert.pem
-<span class="nc">SSLCertificateKeyFile</span> /etc/letsencrypt/live/example.org/privkey.pem
-<span class="nc">SSLCertificateChainFile</span> /etc/letsencrypt/live/example.org/fullchain.pem
-
-<span class="nc">ProxyPass</span> / https://localhost:8443/
-<span class="nc">ProxyPassReverse</span> / https://localhost:8443/
-<span class="p">&lt;/</span><span class="nl">VirtualHost</span><span class="p">&gt;
-</span></code></pre></div></div>
+        <p>Nginx config</p>
 
 <ul>
-  <li>edit default-ssl.conf<br />
-<code class="language-plaintext highlighter-rouge">nano /etc/apache2/sites-available/default-ssl.conf</code><br />
-add to config in the appropriate section as follows<br /></li>
+  <li>create or modify /etc/nginx/sites-available/default as follows (example editor nano)</li>
 </ul>
 
-<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nl">VirtualHost</span><span class="sr"> _default_:443</span><span class="p">&gt;
-</span><span class="nc">ServerName</span> example.org:443
-<span class="nc">DocumentRoot</span> /var/www/example.org
+<p><code class="language-plaintext highlighter-rouge">$ nano /etc/nginx/sites-available/default</code></p>
 
-<span class="nc">SSLEngine</span> <span class="ss">on</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Nginx configuration for Solid on Port 8443
+## Redirects all HTTP traffic to the HTTPS host
+server {
+  ## In case of conflict, either remove "default_server" from the listen line below,
+  ## or delete the /etc/nginx/sites-enabled/default file.
+  listen 0.0.0.0:80;
+  listen [::]:80;
+  server_name example.org;
+  server_tokens off; ## Don't show the nginx version number, a security best practice
+  return 301 https://$http_host$request_uri;
+  access_log  /var/log/nginx/solid_access.log;
+  error_log   /var/log/nginx/solid_error.log;
+}
 
-<span class="nc">SSLCertificateFile</span> /etc/letsencrypt/live/example.org/cert.pem
-<span class="nc">SSLCertificateKeyFile</span> /etc/letsencrypt/live/example.org/privkey.pem
-<span class="nc">SSLCertificateChainFile</span> /etc/letsencrypt/live/example.org/fullchain.pem
-<span class="p">&lt;/</span><span class="nl">VirtualHost</span><span class="p">&gt;
-</span></code></pre></div></div>
+server {
+  listen *:443 ssl;
+  listen [::]:443 ssl;
+  server_name example.org;
+  server_tokens off;
+
+  access_log  /var/log/nginx/solid_ssl_access.log;
+  error_log   /var/log/nginx/solid_ssl_error.log;
+
+ssl_certificate /etc/letsencrypt/live/example.org/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/example.org/privkey.pem;
+
+root /var/www/example.org; #webroot
+
+  ## [Optional] Enable HTTP Strict Transport Security
+  ## HSTS is a feature improving protection against MITM attacks
+  ## For more information see: https://www.nginx.com/blog/http-strict-transport-security-hsts-and-nginx/
+  add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+
+  location / {
+    proxy_pass https://localhost:8443;
+
+    gzip off;
+    proxy_redirect off;
+
+    ## Some requests take more than 30 seconds.
+    proxy_read_timeout      300;
+    proxy_connect_timeout   300;
+    proxy_redirect          off;
+
+    proxy_http_version 1.1;
+
+    proxy_set_header    Host                $http_host;
+    proxy_set_header    X-Real-IP           $remote_addr;
+    proxy_set_header    X-Forwarded-Ssl     on;
+    proxy_set_header    X-Forwarded-For     $proxy_add_x_forwarded_for;
+    proxy_set_header    X-Forwarded-Proto   $scheme;
+  }
+
+}
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">$ systemctl restart nginx</code></p>
 
       </article>
     </div>
@@ -212,14 +194,14 @@ add to config in the appropriate section as follows<br /></li>
           <li>
             <a
               href="/for-developers/pod-server/apache"
-               class="is-active" 
+              
             >Use Apache as a reverse proxy</a>
           </li
         
           <li>
             <a
               href="/for-developers/pod-server/nginx"
-              
+               class="is-active" 
             >Use Nginx as a reverse proxy</a>
           </li
         
