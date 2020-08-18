@@ -2243,3 +2243,5 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 .illustration { margin-left: auto; margin-right: auto; display: block; }
 
 .codesandbox-button-wrapper { display: block; text-align: right; }
+
+details > summary { cursor: pointer; }
