@@ -216,7 +216,8 @@ config created on /root/config.json
   <li>chown solid config directories and config-file:
     <ul>
       <li><code class="language-plaintext highlighter-rouge">$ cd /var/www/your.host.example.org/</code></li>
-      <li><code class="language-plaintext highlighter-rouge">$ chown solid:www-data config/ data/ .db/ config.json</code></li>
+      <li><code class="language-plaintext highlighter-rouge">$ chown solid:www-data config.json</code></li>
+      <li><code class="language-plaintext highlighter-rouge">$ chown solid:www-data -R config/ data/ .db/</code></li>
     </ul>
   </li>
   <li>start the service:  <code class="language-plaintext highlighter-rouge">$ systemctl start solid.service</code></li>
