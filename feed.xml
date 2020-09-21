@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2020-09-17T11:06:17+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><subtitle>Website for solidproject.org</subtitle><entry><title type="html">This Month in Solid 2020-09-03</title><link href="https://solidproject.org//newsletter/2020-09-03" rel="alternate" type="text/html" title="This Month in Solid 2020-09-03" /><published>2020-09-03T00:00:00+00:00</published><updated>2020-09-03T00:00:00+00:00</updated><id>https://solidproject.org//newsletter/this-month-in-solid</id><content type="html" xml:base="https://solidproject.org//newsletter/2020-09-03">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://solidproject.org//feed.xml" rel="self" type="application/atom+xml" /><link href="https://solidproject.org//" rel="alternate" type="text/html" /><updated>2020-09-21T08:05:08+00:00</updated><id>https://solidproject.org//feed.xml</id><title type="html">Solid</title><subtitle>Website for solidproject.org</subtitle><entry><title type="html">This Month in Solid 2020-09-03</title><link href="https://solidproject.org//newsletter/2020-09-03" rel="alternate" type="text/html" title="This Month in Solid 2020-09-03" /><published>2020-09-03T00:00:00+00:00</published><updated>2020-09-03T00:00:00+00:00</updated><id>https://solidproject.org//newsletter/this-month-in-solid</id><content type="html" xml:base="https://solidproject.org//newsletter/2020-09-03">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://solidproject.org&quot;&gt;Solid&lt;/a&gt; is a set of open specifications, built on existing open standards, that describes how to build applications in such a way that users can conveniently switch between data storage providers and application providers and take the data generated along.&lt;/p&gt;
 
@@ -52,60 +52,60 @@
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ nano /etc/nginx/sites-available/default&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Nginx configuration for Solid on Port 8443
-## Redirects all HTTP traffic to the HTTPS host
-server {
-  ## In case of conflict, either remove &quot;default_server&quot; from the listen line below,
-  ## or delete the /etc/nginx/sites-enabled/default file.
-  listen 0.0.0.0:80;
-  listen [::]:80;
-  server_name example.org;
-  server_tokens off; ## Don't show the nginx version number, a security best practice
-  return 301 https://$http_host$request_uri;
-  access_log  /var/log/nginx/solid_access.log;
-  error_log   /var/log/nginx/solid_error.log;
-}
+&lt;div class=&quot;language-nginx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Nginx configuration for Solid on Port 8443&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;## Redirects all HTTP traffic to the HTTPS host&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;## In case of conflict, either remove &quot;default_server&quot; from the listen line below,&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;## or delete the /etc/nginx/sites-enabled/default file.&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;0.0.0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;[::]:80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;example.org&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;server_tokens&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;off&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;## Don't show the nginx version number, a security best practice&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;301&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$http_host$request_uri&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;access_log&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;/var/log/nginx/solid_access.log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;error_log&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;/var/log/nginx/solid_error.log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-server {
-  listen *:443 ssl;
-  listen [::]:443 ssl;
-  server_name example.org;
-  server_tokens off;
+&lt;span class=&quot;k&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;*:443&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ssl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;[::]:443&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ssl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;example.org&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;server_tokens&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;off&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-  access_log  /var/log/nginx/solid_ssl_access.log;
-  error_log   /var/log/nginx/solid_ssl_error.log;
+  &lt;span class=&quot;kn&quot;&gt;access_log&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;/var/log/nginx/solid_ssl_access.log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;error_log&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;/var/log/nginx/solid_ssl_error.log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-ssl_certificate /etc/letsencrypt/live/example.org/fullchain.pem;
-ssl_certificate_key /etc/letsencrypt/live/example.org/privkey.pem;
+&lt;span class=&quot;kn&quot;&gt;ssl_certificate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/etc/letsencrypt/live/example.org/fullchain.pem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;ssl_certificate_key&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/etc/letsencrypt/live/example.org/privkey.pem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-root /var/www/example.org; #webroot
+&lt;span class=&quot;kn&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/var/www/example.org&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#webroot&lt;/span&gt;
 
-  ## [Optional] Enable HTTP Strict Transport Security
-  ## HSTS is a feature improving protection against MITM attacks
-  ## For more information see: https://www.nginx.com/blog/http-strict-transport-security-hsts-and-nginx/
-  add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot;;
+  &lt;span class=&quot;c1&quot;&gt;## [Optional] Enable HTTP Strict Transport Security&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;## HSTS is a feature improving protection against MITM attacks&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;## For more information see: https://www.nginx.com/blog/http-strict-transport-security-hsts-and-nginx/&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;add_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Strict-Transport-Security&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;max-age=31536000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;includeSubDomains&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-  location / {
-    proxy_pass https://localhost:8443;
+  &lt;span class=&quot;kn&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;proxy_pass&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://localhost:8443&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-    gzip off;
-    proxy_redirect off;
+    &lt;span class=&quot;kn&quot;&gt;gzip&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;off&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;proxy_redirect&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;off&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-    ## Some requests take more than 30 seconds.
-    proxy_read_timeout      300;
-    proxy_connect_timeout   300;
-    proxy_redirect          off;
+    &lt;span class=&quot;c1&quot;&gt;## Some requests take more than 30 seconds.&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;proxy_read_timeout&lt;/span&gt;      &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;proxy_connect_timeout&lt;/span&gt;   &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;proxy_redirect&lt;/span&gt;          &lt;span class=&quot;no&quot;&gt;off&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-    proxy_http_version 1.1;
+    &lt;span class=&quot;kn&quot;&gt;proxy_http_version&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-    proxy_set_header    Host                $http_host;
-    proxy_set_header    X-Real-IP           $remote_addr;
-    proxy_set_header    X-Forwarded-Ssl     on;
-    proxy_set_header    X-Forwarded-For     $proxy_add_x_forwarded_for;
-    proxy_set_header    X-Forwarded-Proto   $scheme;
-  }
+    &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;Host&lt;/span&gt;                &lt;span class=&quot;nv&quot;&gt;$http_host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;X-Real-IP&lt;/span&gt;           &lt;span class=&quot;nv&quot;&gt;$remote_addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;X-Forwarded-Ssl&lt;/span&gt;     &lt;span class=&quot;no&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;X-Forwarded-For&lt;/span&gt;     &lt;span class=&quot;nv&quot;&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;X-Forwarded-Proto&lt;/span&gt;   &lt;span class=&quot;nv&quot;&gt;$scheme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-}
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ systemctl restart nginx&lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><category term="pod-server" /><summary type="html">Nginx config</summary></entry><entry><title type="html">This Month in Solid 2020-08-06</title><link href="https://solidproject.org//newsletter/2020-08-06" rel="alternate" type="text/html" title="This Month in Solid 2020-08-06" /><published>2020-08-06T00:00:00+00:00</published><updated>2020-08-06T00:00:00+00:00</updated><id>https://solidproject.org//newsletter/this-month-in-solid</id><content type="html" xml:base="https://solidproject.org//newsletter/2020-08-06">&lt;p&gt;Hello and welcome to another edition of This Month in Solid!&lt;/p&gt;
