@@ -119,7 +119,7 @@
 <code class="language-plaintext highlighter-rouge">$ cd /etc/apache2/mods-enabled</code><br />
 <code class="language-plaintext highlighter-rouge">$ ln -s ../mods-available/ssl.conf ssl.conf</code><br /></li>
   <li>edit 000-default.conf<br />
-<code class="language-plaintext highlighter-rouge">nano /etc/apache2/sites-available/000-default.conf</code><br />
+<code class="language-plaintext highlighter-rouge">$ nano /etc/apache2/sites-available/000-default.conf</code><br />
 add to config in the appropriate section as follows<br /></li>
 </ul>
 
@@ -179,7 +179,7 @@ SSLProxyPeerName <span class="ss">Off</span>
 
 <ul>
   <li>edit default-ssl.conf<br />
-<code class="language-plaintext highlighter-rouge">nano /etc/apache2/sites-available/default-ssl.conf</code><br />
+<code class="language-plaintext highlighter-rouge">$ nano /etc/apache2/sites-available/default-ssl.conf</code><br />
 add to config in the appropriate section as follows<br /></li>
 </ul>
 
@@ -194,6 +194,7 @@ add to config in the appropriate section as follows<br /></li>
 <span class="nc">SSLCertificateChainFile</span> /etc/letsencrypt/live/example.org/fullchain.pem
 <span class="p">&lt;/</span><span class="nl">VirtualHost</span><span class="p">&gt;
 </span></code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">$ systemctl restart apache2</code></p>
 
       </article>
     </div>
