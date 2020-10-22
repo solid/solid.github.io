@@ -120,8 +120,8 @@
 <h3 id="interacting-entities">Interacting entities</h3>
 
 <ul>
-  <li>We’ll consider the online exchanges between <a href="https://cleopatra.solid.community">Cleopatra</a> and <a href="https://jcaesar.solid.community">Julius Caesar</a>, both known for their activity on social media (among other things). In this case, we’re not interested in Caesar as an imperarot, but rather as a successful book author: ‘De Bello Gallico’ is about to be out, and Caesar is having a release party for his memoirs. He wants to invite Cleopatra as a fellow elite member of the Roman society.</li>
-  <li>If you have one, you’ll also be able to use your own pod and webid to be invited to the party! These can easily be set up on the <a href="https://solid.community/">solid community server</a>.</li>
+  <li>We’ll consider the online exchanges between <a href="https://cleopatra.solidcommunity.net">Cleopatra</a> and <a href="https://jcaesar.solidcommunity.net">Julius Caesar</a>, both known for their activity on social media (among other things). In this case, we’re not interested in Caesar as an imperarot, but rather as a successful book author: ‘De Bello Gallico’ is about to be out, and Caesar is having a release party for his memoirs. He wants to invite Cleopatra as a fellow elite member of the Roman society.</li>
+  <li>If you have one, you’ll also be able to use your own pod and webid to be invited to the party! These can easily be set up on the <a href="https://solidcommunity.net/">solid community server</a>.</li>
   <li>If you want to run pieces of code illustrating these examples, check out the <a href="https://tech.io/playgrounds/51181/common-patterns-with-solid">associated playground</a></li>
 </ul>
 
@@ -142,9 +142,9 @@
 
 <h2 id="first-things-first-inbox-discovery">First things first: inbox discovery</h2>
 
-<p>Notifications should be sent to inboxes, and any resource can advertise for an inbox (not only WebIDs). It’s up to the sender and to the receiver to select the appropriate resource when sending/receiving notifications. For instance, when sending a notification specifically related to Cleopatra’s busy schedule, one might consider addressing it to the inbox advertised by her calendar resource, <code class="language-plaintext highlighter-rouge">https://cleopatra.solid.community/public/calendar/inbox/</code>, that you can discover by examining the response to a GET on <code class="language-plaintext highlighter-rouge">https://cleopatra.solid.community/public/calendar</code>.</p>
+<p>Notifications should be sent to inboxes, and any resource can advertise for an inbox (not only WebIDs). It’s up to the sender and to the receiver to select the appropriate resource when sending/receiving notifications. For instance, when sending a notification specifically related to Cleopatra’s busy schedule, one might consider addressing it to the inbox advertised by her calendar resource, <code class="language-plaintext highlighter-rouge">https://cleopatra.solidcommunity.net/public/calendar/inbox/</code>, that you can discover by examining the response to a GET on <code class="language-plaintext highlighter-rouge">https://cleopatra.solidcommunity.net/public/calendar</code>.</p>
 
-<p>Let’s dereference <a href="https://cleopatra.solid.community/profile/card#me">Cleopatra’s WebID</a>, with a simple HTTP GET. You should be served an RDF document in which, among other things, you will find:</p>
+<p>Let’s dereference <a href="https://cleopatra.solidcommunity.net/profile/card#me">Cleopatra’s WebID</a>, with a simple HTTP GET. You should be served an RDF document in which, among other things, you will find:</p>
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">ldp:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/ldp#&gt;</span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">inbox:</span><span class="w"> </span><span class="nl">&lt;/inbox/&gt;</span><span class="p">.</span><span class="w">
 
@@ -154,7 +154,7 @@
     </span><span class="nn">ldp:</span><span class="n">inbox</span><span class="w"> </span><span class="nn">inbox:</span><span class="p">;</span><span class="w">
 </span></code></pre></div></div>
 
-<p>From this snippet, we see that the WebID advertises for an inbox, in this case <code class="language-plaintext highlighter-rouge">https://cleopatra.solid.community/inbox/</code>, thanks to the property <code class="language-plaintext highlighter-rouge">ldp:inbox</code>. And that’s it, no we can get to notification sending!</p>
+<p>From this snippet, we see that the WebID advertises for an inbox, in this case <code class="language-plaintext highlighter-rouge">https://cleopatra.solidcommunity.net/inbox/</code>, thanks to the property <code class="language-plaintext highlighter-rouge">ldp:inbox</code>. And that’s it, no we can get to notification sending!</p>
 
 <iframe src="https://codesandbox.io/embed/discover-inbox-cf6gs?fontsize=14" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="discover-inbox" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
@@ -162,9 +162,9 @@
 
 <p>A notification is sent to the previously discovered inbox through a POST request, containing the notification body. Although it is not a strict requirement, a notification can be expressed using the ActivityStreams vocabulary (TODO: add link to voc documentation).</p>
 
-<p>First, Caesar created the event <a href="https://jcaesar.solid.community/public/calendar/50BC/Martius/PartyAtCaesarPalace.ttl">on his pod</a>. He then sends the invite to Cleopatra’s calendar inbox:</p>
+<p>First, Caesar created the event <a href="https://jcaesar.solidcommunity.net/public/calendar/50BC/Martius/PartyAtCaesarPalace.ttl">on his pod</a>. He then sends the invite to Cleopatra’s calendar inbox:</p>
 <div class="language-turtle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">POST</span><span class="w"> </span><span class="n">/public/calendar/inbox/</span><span class="w"> </span><span class="n">HTTPS/1</span><span class="mf">.1</span><span class="w">
-</span><span class="nn">Host:</span><span class="w"> </span><span class="n">cleopatra</span><span class="p">.</span><span class="n">solid</span><span class="p">.</span><span class="nn">community
+</span><span class="nn">Host:</span><span class="w"> </span><span class="n">cleopatra</span><span class="p">.</span><span class="n">solidcommunity</span><span class="p">.</span><span class="nn">net
 Content-Type:</span><span class="w"> </span><span class="n">text/turtle
 
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">inv:</span><span class="w"> </span><span class="nl">&lt;&gt;</span><span class="p">.</span><span class="w">
@@ -175,7 +175,7 @@ Content-Type:</span><span class="w"> </span><span class="n">text/turtle
 </span><span class="nn">inv:</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">as:</span><span class="n">Invite</span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Invitation"</span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">comment</span><span class="w"> </span><span class="s">"You are invited to my book release party"</span><span class="p">;</span><span class="w">
-    </span><span class="nn">as:</span><span class="n">object</span><span class="w"> </span><span class="nl">&lt;https://jcaesar.solid.community/public/calendar/50BC/Martius/PartyAtCaesarPalace.ttl&gt;</span><span class="p">.</span><span class="w">
+    </span><span class="nn">as:</span><span class="n">object</span><span class="w"> </span><span class="nl">&lt;https://jcaesar.solidcommunity.net/public/calendar/50BC/Martius/PartyAtCaesarPalace.ttl&gt;</span><span class="p">.</span><span class="w">
 </span></code></pre></div></div>
 
 <p>In the response, the Location header indicates the IRI of the created event. In order to get a name nicer than a generated UUID, Caesar could have proposed a name with a Slug header in his request.</p>
