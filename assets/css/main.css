@@ -2205,15 +2205,15 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 #home-hero a, #home-hero a:visited { color: white; text-decoration: none; }
 #home-hero .image { width: 25%; max-width: 256px; min-width: 128px; height: auto; display: block; margin-left: auto; margin-right: auto; }
 #home-hero a:hover { text-decoration: underline; }
-#home-hero .hero-body { padding-top: 18rem; padding-bottom: 18rem; }
+#home-hero .hero-body { padding-top: 8rem; padding-bottom: 8rem; }
+#home-hero #get-a-pod { background-color: #363E78; border-color: #363E78; color: #fff; }
 
 #landing-content { background-image: url("/assets/img/hexagon.svg"); background-repeat: no-repeat; background-position: right 0; }
 #home-hero + #landing-content { margin-top: 0; }
 
-#landing-cards { padding-bottom: 2rem; }
-#landing-cards .card { min-height: 32rem; border-radius: 4px; word-break: keep-all; }
-#landing-cards .image { display: inline-block; }
-#landing-cards .title { margin: 32px 0; }
+#ecosystem { background-image: url("/assets/img/solid-bg-dark-ui.svg"); background-blend-mode: soft-light; background-repeat: no-repeat; background-size: cover; }
+#ecosystem a, #ecosystem a:visited { color: white; text-decoration: none; }
+#ecosystem a:hover { text-decoration: underline; }
 
 #why-carousel .card { min-height: 20.3125rem; border-radius: 4px; word-break: keep-all; }
 #why-carousel .image { display: inline-block; }
@@ -2228,9 +2228,10 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 @media (max-width: 769px) { #choose-your-own-adventure .button { width: 100%; } }
 #choose-your-own-adventure .button:hover, #choose-your-own-adventure .button:focus { background-color: white; color: #7C4DFF; }
 
-#tour .section { margin: 160px 0; }
-#tour .section:first-child { margin-top: 0; }
-#tour .section:last-child { margin-bottom: 0; }
+#tour .section { padding: 1rem 1.5rem; }
+#tour .section:first-child { padding-top: 3rem; }
+#tour .section:last-child { padding-bottom: 3rem; }
+@media (max-width: 769px) { #tour .image { height: 100%; display: block; margin-left: auto; margin-right: auto; } }
 #tour .column { display: flex; flex-direction: column; justify-content: center; }
 
 #newsletter { margin-bottom: 32px; }
