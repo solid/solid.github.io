@@ -1,0 +1,475 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Setting up Node Solid Server · Solid</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/favicon.ico?"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+
+  <body>
+    <header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img
+          src="/assets/img/solid-emblem.svg"
+          alt="[Solid logo]"
+        />
+      </a>
+      <a class="navbar-item navbar-brand-name is-uppercase is-size-4" href="/">
+        Solid
+      </a>
+    </div>
+  
+    <div class="navbar-menu is-hidden-mobile">
+      <div class="navbar-end is-hidden-mobile">
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/developers"
+          >Developers</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/users"
+          >Users</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/newsletter"
+          >Newsletter</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/events"
+          >Events</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/specification"
+          >Specification</a>
+        
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    <div id="draft-warning"></div>
+<script>
+  if (
+    document.location.hostname === 'localhost'
+    || document.location.hostname === 'solid.github.io'
+    || document.location.hostname.substring(document.location.hostname.length - 10) === "vercel.app"
+  ) {
+    const draftWarningElement = document.getElementById('draft-warning')
+    draftWarningElement.innerHTML = `
+      <div class="message is-danger is-large" role="alert">
+        <div class="message-body">
+          You are currently viewing a draft version of the Solid website. If you are looking for reliable information, visit the live site at <a href="https://solidproject.org/self-hosting/nss" title="The official Solid website">SolidProject.org</a>.
+        </div>
+      </div>
+    `;
+  }
+</script>
+
+    
+  <nav id="breadcrumb" class="breadcrumb">
+    <div class="container">
+      <ul>
+        <li>
+          <a href="/">
+            Home
+          </a>
+        </li>
+        
+        
+        
+        
+        
+          <li>
+            <a href="">
+              Setting up Node Solid Server
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+
+    <main>
+      <div class="container">
+  <div class="columns">
+    <div class="column is-two-thirds">
+      <article class="section content">
+        <h1 id="setting-up-node-solid-server">Setting up Node Solid Server</h1>
+
+<p>There is currently one publicly available Pod server available that you can run yourself: <a href="https://github.com/solid/node-solid-server">Node Solid Server</a>. Instructions on how to set it up and how to get help are available <a href="https://github.com/solid/node-solid-server">at its website</a>, and some documentation is also provided below.</p>
+
+<h2 id="example-config-for-nss-on-a-root-server">Example config for NSS on a root server</h2>
+
+<p>We assume Linux (Debian 8) on the host system. This is how it’s tested. The aim is to get a Solid Pod Server that is publicly reachable in the Internet using a reverse-proxy.<br /></p>
+
+<h3 id="connect-root-server-to-net-depends-on-hosting-service-provider-you-will-need-ssh">Connect root-server to net (depends on Hosting Service Provider) (you will need ssh)<br /></h3>
+
+<ul>
+  <li>Order virtual server at Provider of your choice</li>
+  <li>Assign Fully Qualified Domain Name to the machine</li>
+  <li>Setup DNS properly</li>
+  <li>Get and deploy https certificate</li>
+  <li>ssh into the machine as user root</li>
+  <li>Deploy two certificates with <a href="https://letsencrypt.org/">letsencrypt/certbot</a> (domain-cert and wildcard-cert). Note that you might need to edit a DNS-text-record depending on the challenge.</li>
+  <li>sample commands using certbot-auto<br />
+<code class="language-plaintext highlighter-rouge">$ wget https://dl.eff.org/certbot-auto</code><br />
+<code class="language-plaintext highlighter-rouge">$ mv certbot-auto /usr/local/bin/certbot-auto</code><br />
+<code class="language-plaintext highlighter-rouge">$ chown root /usr/local/bin/certbot-auto</code><br />
+<code class="language-plaintext highlighter-rouge">$ chmod 0755 /usr/local/bin/certbot-auto</code><br />
+<code class="language-plaintext highlighter-rouge">$ cd /usr/local/bin/</code><br />
+<code class="language-plaintext highlighter-rouge">$ ./certbot-auto certonly \</code><br />
+<code class="language-plaintext highlighter-rouge">--manual \</code><br />
+<code class="language-plaintext highlighter-rouge">--preferred-challenges=dns \</code><br />
+<code class="language-plaintext highlighter-rouge">--email mail@host.com \</code><br />
+<code class="language-plaintext highlighter-rouge">--server https://acme-v02.api.letsencrypt.org/directory \</code><br />
+<code class="language-plaintext highlighter-rouge">--agree-tos \</code><br />
+<code class="language-plaintext highlighter-rouge">-d example.org -d *.example.org</code><br />
+//now DNS-challenge<br />
+<code class="language-plaintext highlighter-rouge">$ chmod -R 755 /etc/letsencrypt/live/</code><br /></li>
+</ul>
+
+<h3 id="configure-a-reverse-proxy">Configure a reverse proxy</h3>
+
+<p>The Solid server will run as a local Web server. You can directly expose the port it binds to, but you may also choose to access it through a reverse proxy. We provide some guidance for the following reverse proxies:</p>
+<ul>
+  <li><a href="/for-developers/pod-server/apache">Apache</a></li>
+  <li><a href="/for-developers/pod-server/nginx">Nginx</a></li>
+</ul>
+
+<h3 id="install-node-solid-server">Install Node Solid Server</h3>
+
+<ul>
+  <li>
+    <p>First, if it is not already done on your machine, install Node.js (version 12 or above), and npm (<a href="https://tecadmin.net/install-latest-nodejs-npm-on-debian/">this guide</a> provides detailed instructions).</p>
+  </li>
+  <li>
+    <p>Then, run the command <code class="language-plaintext highlighter-rouge">$ npm install -g solid-server</code>. After the init-command you’ll be prompted a series of questions to configure the server:</p>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ solid init
+* ? Path to the folder you want to serve. Default is (./data) /var/www/your.host.example.org/data
+? SSL port to run on. Default is (8443) 8443
+? Solid server uri (with protocol, hostname and port) https://your.host.example.org
+? Enable WebID authentication Yes
+? Serve Solid on URL path /
+? Path to the config directory (for example: /etc/solid-server) (./config) /var/www/your.host.example.org/config
+? Path to the config file (for example: ./config.json) (./config.json) /var/www/your.host.example.org/config.json
+? Path to the server metadata db directory (for users/apps etc) (./.db) /var/www/your.host.example.org/.db
+? Path to the SSL private key in PEM format /etc/letsencrypt/live/your.host.example.org/privkey.pem
+? Path to the SSL certificate key in PEM format /etc/letsencrypt/live/your.host.example.org/fullchain.pem
+? Enable multi-user mode Yes
+? Do you want to set up an email service (y/N) N
+? A name for your server (not required) your.host.example.org
+? A description of your server (not requred) undefined
+? A logo (not required) undefined
+? Do you want to enforce Terms &amp; Conditions for your service (y/N) N
+? Do you want to disable password strength checking (y/N) N
+? The support email you provide for your users (not required) undefined
+config created on /root/config.json
+</code></pre></div></div>
+
+<ul>
+  <li>Finally, make sure to create the paths that you entered if they do not already exist. You would also need to copy the config.json file to where you indicated it should be.</li>
+</ul>
+
+<h3 id="run-nss-at-startup">Run NSS at startup</h3>
+
+<ul>
+  <li>add user solid: <code class="language-plaintext highlighter-rouge">$ adduser --system --ingroup www-data --no-create-home solid</code></li>
+  <li>create <code class="language-plaintext highlighter-rouge">/lib/systemd/system/solid.service</code></li>
+</ul>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[<span class="n">Unit</span>]
+<span class="n">Description</span>=<span class="n">solid</span> - <span class="n">Social</span> <span class="n">Linked</span> <span class="n">Data</span>
+<span class="n">Documentation</span>=<span class="n">https</span>://<span class="n">solid</span>.<span class="n">inrupt</span>.<span class="n">com</span>/<span class="n">docs</span>/
+<span class="n">After</span>=<span class="n">network</span>.<span class="n">target</span>
+
+[<span class="n">Service</span>]
+<span class="n">Type</span>=<span class="n">simple</span>
+<span class="n">User</span>=<span class="n">solid</span>
+<span class="n">WorkingDirectory</span>=/<span class="n">var</span>/<span class="n">www</span>/<span class="n">your</span>.<span class="n">host</span>.<span class="n">example</span>.<span class="n">org</span>
+<span class="n">ExecStart</span>=/<span class="n">usr</span>/<span class="n">bin</span>/<span class="n">solid</span> <span class="n">start</span>
+<span class="n">Restart</span>=<span class="n">on</span>-<span class="n">failure</span>
+
+[<span class="n">Install</span>]
+<span class="n">WantedBy</span>=<span class="n">multi</span>-<span class="n">user</span>.<span class="n">target</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Create symlink <code class="language-plaintext highlighter-rouge">$ ln -s /lib/systemd/system/solid.service /etc/systemd/system/multi-user.target.wants/</code></li>
+  <li>chown solid config directories and config-file:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">$ cd /var/www/your.host.example.org/</code></li>
+      <li><code class="language-plaintext highlighter-rouge">$ chown solid:www-data config.json</code></li>
+      <li><code class="language-plaintext highlighter-rouge">$ chown solid:www-data -R config/ data/ .db/</code></li>
+    </ul>
+  </li>
+  <li>start the service:  <code class="language-plaintext highlighter-rouge">$ systemctl start solid.service</code></li>
+</ul>
+
+      </article>
+      <footer class="section is-small">
+        <a href="https://github.com/solid/solidproject.org/edit/staging/_posts/developers/pod-server/2019-01-01-00_overview.md" class="button is-text">Edit this page on GitHub</a>
+      </footer>
+    </div>
+    <aside id="sidebar" class="column is-one-third is-hidden-mobile section">
+      <div class="menu is-large">
+        
+          <ul class="menu-list" role="navigation">
+  
+    <li>
+      Running Node Solid Server
+      <!-- This is for categories with sub-categories -->
+      <ul>
+        
+          <li>
+            <a
+              href="/self-hosting/nss"
+               class="is-active" 
+            >Setting up Node Solid Server</a>
+          </li
+        
+          <li>
+            <a
+              href="/self-hosting/nss/apache"
+              
+            >Using Apache as a reverse proxy</a>
+          </li
+        
+          <li>
+            <a
+              href="/self-hosting/nss/nginx"
+              
+            >Using Nginx as a reverse proxy</a>
+          </li
+        
+      </ul>
+    </li>
+  
+</ul>
+
+        
+      </div>
+    </aside>
+  </div>
+</div>
+
+    </main>
+    <footer id="footer" class="footer">
+  <div class="container">
+    <div class="columns">
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <a class="title is-size-5" href="/">Home</a>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/users">Using Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/users/get-a-pod">Get a Pod</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/apps">Solid Apps</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/team">Team</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/labs">Research Labs</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/faqs">FAQs</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <span class="title is-size-5">What's New</span>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/newsletter">This Month in Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/events">Solid Events</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/press">Press</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <a class="title is-size-5" href="/developers">Developers</a>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/developers/tutorial/getting-started">Getting Started</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/self-hosting/">Self-hosting</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/funding">Funding</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="https://forum.solidproject.org">Forum</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <span class="title is-size-5">More</span>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/specification">Specification</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/license">License</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/logo-usage-guidelines">Logo usage guidelines</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="https://github.com/solid/solidproject.org/issues/new">Website feedback</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+    </div>
+  </div>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img
+          src="/assets/img/solid-emblem.svg"
+          alt="[Solid logo]"
+        />
+      </a>
+      <a class="navbar-item is-hidden-mobile" href="mailto:info@solidproject.org">
+        info@solidproject.org
+      </a>
+      <a class="navbar-item is-size-3-mobile is-hidden-tablet" href="mailto:info@solidproject.org" aria-label="info@solidproject.org">
+        @
+      </a>      
+      <a class="navbar-item" href="https://github.com/solid/" title="Solid on GitHub">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/github.svg"
+            alt="GitHub"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+      <a class="navbar-item" href="https://twitter.com/project_solid" title="Solid on Twitter">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/twitter.svg"
+            alt="Twitter"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+      <a class="navbar-item" href="https://vimeo.com/solidworld" title="Solid on Vimeo">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/vimeo-v.svg"
+            alt="Vimeo"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+    </div>
+  </nav>
+</footer>
+
+  </body>
+
+
+</html>

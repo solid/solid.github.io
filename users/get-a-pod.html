@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>For Developers · Solid</title>
+    <title>Get a Pod · Solid</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
@@ -32,23 +32,28 @@
         
           <a
             class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
-            href="/use-solid"
-          >Use Solid</a>
+            href="/developers"
+          >Developers</a>
         
           <a
             class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
-            href="/for-developers"
-          >For Developers</a>
+            href="/users"
+          >Users</a>
         
           <a
             class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
-            href="/for-enterprises"
-          >For Enterprises</a>
+            href="/newsletter"
+          >Newsletter</a>
         
           <a
             class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
-            href="/faqs"
-          >FAQ</a>
+            href="/events"
+          >Events</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/specification"
+          >Specification</a>
         
       </div>
     </div>
@@ -67,7 +72,7 @@
     draftWarningElement.innerHTML = `
       <div class="message is-danger is-large" role="alert">
         <div class="message-body">
-          You are currently viewing a draft version of the Solid website. If you are looking for reliable information, visit the live site at <a href="https://solidproject.org/for-developers/" title="The official Solid website">SolidProject.org</a>.
+          You are currently viewing a draft version of the Solid website. If you are looking for reliable information, visit the live site at <a href="https://solidproject.org/users/get-a-pod" title="The official Solid website">SolidProject.org</a>.
         </div>
       </div>
     `;
@@ -84,6 +89,11 @@
           </a>
         </li>
         
+          <li>
+            <a href="/users/">
+              Using Solid
+            </a>
+          </li>
         
         
         
@@ -91,7 +101,7 @@
         
           <li>
             <a href="">
-              For Developers
+              Get a Pod
             </a>
           </li>
         
@@ -101,131 +111,87 @@
 
 
     <main>
-      <section id="why-carousel" class="section">
+      <div class="container">
+  <div class="columns">
+    <div class="column is-two-thirds">
+      <article class="section content">
+        <h1 id="get-a-pod-and-a-webid">Get a Pod and a WebID</h1>
+<p>Pods are where you store your data. Your WebID lets you login to Solid apps and Pods as well as letting you connect to other people using Solid.</p>
 
-  <div class="container">
-    
-      <h2 class="title has-text-centered">
+<p>Once you get a Pod and WebID, you can 
+<a href="/developers/tutorials/getting-started/">develop your first application</a>, 
+and check out some applications <a href="/apps">developed by the community</a>.</p>
 
-        Why you'll love Solid as a developer
-      </h2>
-    
+<h2 id="how-to-pick-a-provider">How to pick a Provider</h2>
 
-    <div class="columns is-desktop">
-      <div class="column">
-        <div class="card">
-  <div class="card-body has-text-centered section">
-    <figure class="image is-64x64">
-      <img
-        src="/assets/img/fontawesome-free-5.11.2-web/svgs/solid/crop-alt.svg"
-        alt="[]"
-      />
-    </figure>
-    <p class="title is-size-4 is-uppercase">
-      <strong>Focus on your idea</strong>
-    </p>
-    <hr/>
-    <p class="content is-size-5">
-      Build applications decoupled from data, and avoid maintaining a separate back-end
-    </p>
-  </div>
-</div>
-      </div>
-      <div class="column">
-        <div class="card">
-  <div class="card-body has-text-centered section">
-    <figure class="image is-64x64">
-      <img
-        src="/assets/img/fontawesome-free-5.11.2-web/svgs/solid/box-open.svg"
-        alt="[]"
-      />
-    </figure>
-    <p class="title is-size-4 is-uppercase">
-      <strong>Go directly to the data</strong>
-    </p>
-    <hr/>
-    <p class="content is-size-5">
-      Access the data you need straight from the user, without depending on any API provider-specific feature.
-    </p>
-  </div>
-</div>
-      </div>
-      <div class="column">
-        <div class="card">
-  <div class="card-body has-text-centered section">
-    <figure class="image is-64x64">
-      <img
-        src="/assets/img/fontawesome-free-5.11.2-web/svgs/solid/boxes.svg"
-        alt="[]"
-      />
-    </figure>
-    <p class="title is-size-4 is-uppercase">
-      <strong>Be part of a community</strong>
-    </p>
-    <hr/>
-    <p class="content is-size-5">
-      Reuse other apps' data, and let other reuse yours.
-    </p>
-  </div>
-</div>
-      </div>
-      <div class="column">
-        <div class="card">
-  <div class="card-body has-text-centered section">
-    <figure class="image is-64x64">
-      <img
-        src="/assets/img/fontawesome-free-5.11.2-web/svgs/solid/unlock.svg"
-        alt="[]"
-      />
-    </figure>
-    <p class="title is-size-4 is-uppercase">
-      <strong>Contribute to the whole stack</strong>
-    </p>
-    <hr/>
-    <p class="content is-size-5">
-      The Solid standard and various implementations are open for contributions.
-    </p>
-  </div>
-</div>
-      </div>
+<p>Different providers may suit different people.</p>
+
+<p>The legal identity of the provider will be an important factor in how your data is handled. Some providers may engage with third parties, for example, to host the data. Mapping out clearly who is involved in what element of the provision is an important step in picking your Pod.</p>
+
+<p>Reading the Terms of the provider is a good way to understand the implications of picking that provider.</p>
+
+<p>The geographical location of the legal entities involved and the physical location of the hosting is an important factor in determining which law the provider responsibilities fall under. Depending on your nationality and degree of trust in various laws you may prefer specific geographical locations.</p>
+
+<p><img class="illustration" src="/assets/img/single-sign-on.svg" alt="[]" /></p>
+
+<p>To recap, some questions you may want to consider are:</p>
+<ul>
+  <li>Who is involved?</li>
+  <li>Where are all the parties that are involved?</li>
+  <li>Where is the data physically stored?</li>
+</ul>
+
+<p>You can pick a Provider in the following list. However, keep in mind that Solid is about freedom: <strong>you won’t be tied to the provider you choose now</strong>, and you will have the ability to <strong>move your data elsewhere</strong> if you want to.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Provider</th>
+      <th style="text-align: center">Responsible for Domain Name and Terms</th>
+      <th style="text-align: center">Responsible for Hosting</th>
+      <th style="text-align: center">Location of Hosting</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://inrupt.net">inrupt.net</a></td>
+      <td style="text-align: center"><a href="https://inrupt.com/terms-of-service">Inrupt, Inc.</a></td>
+      <td style="text-align: center"><a href="https://aws.amazon.com">Amazon</a></td>
+      <td style="text-align: center">USA</td>
+    </tr>
+    <tr>
+      <td><a href="https://solidcommunity.net/">solidcommunity.net</a></td>
+      <td style="text-align: center"><a href="https://github.com/solid/solidcommunity.net_operations">Solid Project</a></td>
+      <td style="text-align: center"><a href="https://www.digitalocean.com">Digital Ocean</a></td>
+      <td style="text-align: center">UK</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If you are a provider you can add your service to this list by emailing <a href="mailto:info@solidproject.org">info@solidproject.org</a>.</p>
+
+<h2 id="how-to-self-host-your-pod">How to self-host your Pod</h2>
+
+<p>The way to get most control of your data is to <strong>self-host</strong>. Self-hosting means that your data is physically stored on a hard drive you hold at home, and managed by <a href="/for-developers/pod-server">a software</a> you run on your own machine. This way, you don’t have to entrust any third party with your data. Currently, this option still requires some technical background, and it may not be suitable for everyone yet.</p>
+
+<p>We would like to make self-hosting a more user-friendly option in the future. The great thing about Solid is the flexibility it offers: you can choose to outsource the work for now and pick a provider, and <strong>move to self-hosting later</strong> on when the tools are ready for you.</p>
+
+      </article>
     </div>
-  </div>
-</section>
-
-
-<section id="choose-your-own-adventure" class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title has-text-centered is-size-3 is-size-2-tablet is-size-2-desktop">
-        Get started with Solid
-      </h1>
-      <div class="section field is-grouped">
-        <div class="control">
-          <a
-            href="/for-developers/apps"
-            class="button is-large is-primary is-rounded is-uppercase"
-          >Build Solid web apps</a>
-        </div>
-        <div class="control">
-          <a
-            href="/for-developers/pod-server"
-            class="button is-large is-primary is-rounded is-uppercase"
-          >Host Solid Pods</a>
-        </div>
-        
+    <aside id="sidebar" class="column is-one-third is-hidden-mobile section">
+      <div class="menu is-large">
+        <ul class="menu-list">
+  <li><a href="#get-a-pod-and-a-webid">Get a Pod and a WebID</a>
+    <ul>
+      <li><a href="#how-to-pick-a-provider">How to pick a Provider</a></li>
+      <li><a href="#how-to-self-host-your-pod">How to self-host your Pod</a></li>
+    </ul>
+  </li>
+</ul>
       </div>
-    </div>
+    </aside>
   </div>
-</section>
-
-
-<section class="section">
-  <div class="container content">
-    If you're not sure which one of those paths is right for you, and just want to start playing with Solid try to <a href="/for-developers/apps/first-app">develop your first Web app</a>. Alternatively, you can <a href="/#tour">read more about Solid</a> or search the <a href="/faqs">FAQs</a>.
-
-    Once you are familiar with Solid, you can check out the <a href="/job-board">job board</a>.
-  </div>
-</section>
+</div>
 
     </main>
     <footer id="footer" class="footer">
@@ -242,19 +208,19 @@
             
               <li>
                 
-                  <a class="is-size-5" href="/use-solid">Use Solid</a>
+                  <a class="is-size-5" href="/users">Using Solid</a>
                 
               </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/use-solid/apps">Solid Apps</a>
+                  <a class="is-size-5" href="/users/get-a-pod">Get a Pod</a>
                 
               </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/implement">Implement Solid</a>
+                  <a class="is-size-5" href="/apps">Solid Apps</a>
                 
               </li>
             
@@ -266,7 +232,7 @@
             
               <li>
                 
-                  <a class="is-size-5" href="/labs">Labs</a>
+                  <a class="is-size-5" href="/labs">Research Labs</a>
                 
               </li>
             
@@ -295,13 +261,13 @@
             
               <li>
                 
-                  <a class="is-size-5" href="/press">Press</a>
+                  <a class="is-size-5" href="/events">Solid Events</a>
                 
               </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/events">Solid events</a>
+                  <a class="is-size-5" href="/press">Press</a>
                 
               </li>
             
@@ -312,19 +278,19 @@
           <ul>
             <li>
               
-                <a class="title is-size-5" href="/for-developers">For Developers</a>
+                <a class="title is-size-5" href="/developers">Developers</a>
               
             </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/for-developers/apps">Writing apps</a>
+                  <a class="is-size-5" href="/developers/tutorial/getting-started">Getting Started</a>
                 
               </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/for-developers/pod-server">Running a Pod server</a>
+                  <a class="is-size-5" href="/self-hosting/">Self-hosting</a>
                 
               </li>
             
@@ -353,7 +319,7 @@
             
               <li>
                 
-                  <a class="is-size-5" href="/standardisation">Standardisation</a>
+                  <a class="is-size-5" href="/specification">Specification</a>
                 
               </li>
             

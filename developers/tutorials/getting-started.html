@@ -1,0 +1,932 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started · Solid</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/favicon.ico?"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+
+  <body>
+    <header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img
+          src="/assets/img/solid-emblem.svg"
+          alt="[Solid logo]"
+        />
+      </a>
+      <a class="navbar-item navbar-brand-name is-uppercase is-size-4" href="/">
+        Solid
+      </a>
+    </div>
+  
+    <div class="navbar-menu is-hidden-mobile">
+      <div class="navbar-end is-hidden-mobile">
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/developers"
+          >Developers</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/users"
+          >Users</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/newsletter"
+          >Newsletter</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/events"
+          >Events</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/specification"
+          >Specification</a>
+        
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    <div id="draft-warning"></div>
+<script>
+  if (
+    document.location.hostname === 'localhost'
+    || document.location.hostname === 'solid.github.io'
+    || document.location.hostname.substring(document.location.hostname.length - 10) === "vercel.app"
+  ) {
+    const draftWarningElement = document.getElementById('draft-warning')
+    draftWarningElement.innerHTML = `
+      <div class="message is-danger is-large" role="alert">
+        <div class="message-body">
+          You are currently viewing a draft version of the Solid website. If you are looking for reliable information, visit the live site at <a href="https://solidproject.org/developers/tutorials/getting-started" title="The official Solid website">SolidProject.org</a>.
+        </div>
+      </div>
+    `;
+  }
+</script>
+
+    
+  <nav id="breadcrumb" class="breadcrumb">
+    <div class="container">
+      <ul>
+        <li>
+          <a href="/">
+            Home
+          </a>
+        </li>
+        
+        
+          <li>
+            <a href="/developers/">
+              Developers
+            </a>
+          </li>
+        
+        
+        
+        
+          <li>
+            <a href="">
+              Getting Started
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+
+    <main>
+      <div class="container">
+  <div class="columns">
+    <div class="column is-two-thirds">
+      <article class="section content">
+        <h1 id="getting-started">Getting Started</h1>
+
+<p>This tutorial creates an introductory application that uses Inrupt’s
+<a href="https://github.com/inrupt/solid-client-js">JavaScript Client Libraries</a> to read
+and write your user profile data.</p>
+
+<p>Alternatively, to create a sample application using Inrupt’s Solid React SDK,
+refer to Inrupt’s <a href="https://docs.inrupt.com/developer-tools/javascript/react-sdk/">Solid React SDK documentation</a>.</p>
+
+<p>This tutorial uses <a href="https://www.npmjs.com/get-npm">npm</a> and <a href="https://parceljs.org/">Parcel</a>
+to run the application locally on <code class="language-plaintext highlighter-rouge">localhost:1234</code>.</p>
+
+<p><img src="/assets/img/tutorials/locally-run-application.png" alt="Locally Run Getting Started Application" /></p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p><strong>NOTE:</strong> This tutorial assumes the creation of a testing Pod on
+   <code class="language-plaintext highlighter-rouge">https://solidcommunity.net/</code>. If your Pod is not on 
+   <code class="language-plaintext highlighter-rouge">https://solidcommunity.net/</code> (e.g. perhaps you created your Pod on 
+   <code class="language-plaintext highlighter-rouge">https://pod.inrupt.com</code>), then you’ll just need to change the value of the
+   <code class="language-plaintext highlighter-rouge">IDENTITY_PROVIDER</code> variable in the application’s <code class="language-plaintext highlighter-rouge">index.js</code> file (shown
+    below) accordingly, and you can ignore the following Pod registration steps.</p>
+
+<h3 id="register-your-pod-and-create-your-profile">Register Your Pod and Create Your Profile</h3>
+
+<p>If you don’t already have a Pod, simply register one now:</p>
+
+<ul>
+  <li>
+    <p>Open a browser to <code class="language-plaintext highlighter-rouge">https://solidcommunity.net/</code>.</p>
+  </li>
+  <li>
+    <p>Click <code class="language-plaintext highlighter-rouge">Register</code>.</p>
+  </li>
+  <li>
+    <p>Fill in the registration form and click <code class="language-plaintext highlighter-rouge">Register</code>.</p>
+
+    <p>You’ll be redirected to your public Solid Pod URL:
+<code class="language-plaintext highlighter-rouge">https://&lt;yourusername&gt;.solidcommunity.net/</code>.</p>
+  </li>
+</ul>
+
+<h3 id="install-npm">Install <code class="language-plaintext highlighter-rouge">npm</code></h3>
+
+<p>If you don’t already have <code class="language-plaintext highlighter-rouge">npm</code> installed, follow the appropriate instructions
+here: <a href="https://www.npmjs.com/get-npm">install npm</a>. <code class="language-plaintext highlighter-rouge">npm</code> is installed as part of the
+Node.js installation.</p>
+
+<h2 id="build-the-application">Build the Application</h2>
+
+<ol>
+  <li>
+    <p>Initialize the application</p>
+
+    <ul>
+      <li>Create a directory for the application:</li>
+    </ul>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">mkdir </span>my-demo-app
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Go into the newly created directory:</li>
+    </ul>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">cd </span>my-demo-app
+</code></pre></div>    </div>
+
+    <ul>
+      <li>
+        <p>Create a brand new, empty application:</p>
+
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    npm init
+</code></pre></div>        </div>
+
+        <ul>
+          <li>
+            <p>During initialization, you can either hit return to accept the
+default values (including empty values), or supply your own values.</p>
+          </li>
+          <li>
+            <p>When prompted <code class="language-plaintext highlighter-rouge">Is this OK? (yes)</code>, hit return to accept <code class="language-plaintext highlighter-rouge">yes</code>.</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Install the Inrupt client libraries:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> npm <span class="nb">install</span> @inrupt/solid-client @inrupt/solid-client-authn-browser @inrupt/vocab-common-rdf
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install Parcel:</p>
+
+    <ul>
+      <li>
+        <p>Use <code class="language-plaintext highlighter-rouge">npm</code> to install <code class="language-plaintext highlighter-rouge">Parcel</code>:</p>
+
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  npm <span class="nb">install </span>parcel-bundler
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Edit the <code class="language-plaintext highlighter-rouge">package.json</code> file to list the browsers supported by
+this application. Specifically, add the <code class="language-plaintext highlighter-rouge">browserslist</code> field and value:</p>
+
+    <p><strong>NOTE:</strong> Be sure to add the comma after the preceding field before adding
+   the <code class="language-plaintext highlighter-rouge">browserslist</code> field.</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="s2">"dependencies"</span>: <span class="o">{</span>
+    ...
+ <span class="o">}</span>,
+ <span class="s2">"browserslist"</span>: <span class="o">[</span>
+   <span class="s2">"last 3 and_chr versions"</span>,
+   <span class="s2">"last 3 chrome versions"</span>,
+   <span class="s2">"last 3 opera versions"</span>,
+   <span class="s2">"last 3 ios_saf versions"</span>,
+   <span class="s2">"last 3 safari versions"</span>,
+   <span class="s2">"last 3 edge versions"</span>
+ <span class="o">]</span>
+</code></pre></div>    </div>
+
+    <p><strong>NOTE:</strong> Without the <code class="language-plaintext highlighter-rouge">browserslist</code> specification, Parcel would need to
+inject a compatibility layer to avoid a <code class="language-plaintext highlighter-rouge">regeneratorRuntime</code> reference error
+since our sample application uses <code class="language-plaintext highlighter-rouge">async</code> functions.</p>
+
+    <p>As an alternative to modifying the <code class="language-plaintext highlighter-rouge">package.json</code> file, you could import
+<code class="language-plaintext highlighter-rouge">regenerator-runtime/runtime</code> in your JavaScript code, which will inject a
+ suitable compatibility layer.</p>
+  </li>
+  <li>
+    <p>Create the Application:</p>
+
+    <p>In the <code class="language-plaintext highlighter-rouge">my-demo-app</code> directory, create the files for our application.</p>
+
+    <ul>
+      <li>
+        <p>Create a <code class="language-plaintext highlighter-rouge">my-demo.css</code> file with the following content:</p>
+
+        <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">h2</span><span class="o">,</span><span class="nt">h3</span> <span class="p">{</span>
+      <span class="nl">margin</span><span class="p">:</span> <span class="m">1rem</span> <span class="m">1.2rem</span> <span class="m">1rem</span> <span class="m">1.4rem</span><span class="p">;</span>
+  <span class="p">}</span>
+        
+  <span class="nt">header</span> <span class="p">{</span>
+     <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">#5795b9</span> <span class="nb">solid</span><span class="p">;</span>
+     <span class="nl">padding-left</span><span class="p">:</span> <span class="m">.5rem</span><span class="p">;</span>
+  <span class="p">}</span>
+        
+  <span class="nc">.panel</span> <span class="p">{</span>
+     <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#005b81</span><span class="p">;</span>
+     <span class="nl">border-radius</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span>
+     <span class="nl">box-shadow</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">184</span><span class="p">,</span> <span class="m">196</span><span class="p">,</span> <span class="m">194</span><span class="p">)</span> <span class="m">0px</span> <span class="m">4px</span> <span class="m">10px</span> <span class="m">-4px</span><span class="p">;</span>
+     <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+        
+     <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span> <span class="m">1.5rem</span><span class="p">;</span>
+     <span class="nl">margin</span><span class="p">:</span> <span class="m">1rem</span> <span class="m">1.2rem</span> <span class="m">1rem</span> <span class="m">1.2rem</span><span class="p">;</span>
+  <span class="p">}</span>
+        
+  <span class="nf">#login</span> <span class="p">{</span>
+     <span class="nl">background</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="p">}</span>
+        
+  <span class="nf">#read</span> <span class="p">{</span>
+     <span class="nl">background</span><span class="p">:</span> <span class="m">#e6f4f9</span><span class="p">;</span>
+  <span class="p">}</span>
+        
+  <span class="nf">#labelStatus</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"alert"</span><span class="o">]</span> <span class="p">{</span>
+     <span class="nl">padding-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+     <span class="nl">color</span><span class="p">:</span> <span class="no">purple</span><span class="p">;</span>
+  <span class="p">}</span>
+        
+  <span class="nc">.display</span> <span class="p">{</span>
+      <span class="nl">margin-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+      <span class="nl">color</span><span class="p">:</span> <span class="no">gray</span><span class="p">;</span>
+  <span class="p">}</span>
+        
+  <span class="nt">dl</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+    <span class="py">grid-template-columns</span><span class="p">:</span>  <span class="n">max-content</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Create an <code class="language-plaintext highlighter-rouge">index.html</code> file with the following content:</p>
+
+        <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;html&gt;</span>
+      <span class="nt">&lt;head&gt;</span>
+          <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;title&gt;</span>Getting Started: Inrupt JavaScript Client Libraries<span class="nt">&lt;/title&gt;</span>
+          <span class="nt">&lt;script </span><span class="na">defer</span> <span class="na">src=</span><span class="s">"./index.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+          <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"my-demo.css"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/head&gt;</span>
+        
+      <span class="nt">&lt;body&gt;</span>
+          <span class="nt">&lt;header&gt;</span>
+              <span class="nt">&lt;h2&gt;</span>Getting Started<span class="nt">&lt;/h2&gt;</span>
+              <span class="nt">&lt;h3&gt;</span>with Inrupt JavaScript Client Libraries<span class="nt">&lt;/h3&gt;</span>
+          <span class="nt">&lt;/header&gt;</span>
+          <span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">"login"</span> <span class="na">class=</span><span class="s">"panel"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;label</span> <span class="na">id=</span><span class="s">"labelLogin"</span> <span class="na">for=</span><span class="s">"btnLogin"</span><span class="nt">&gt;</span>1. Click the button to log into
+                      <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"identity_provider"</span><span class="nt">&gt;</span>...provided by the JavaScript code...<span class="nt">&lt;/span&gt;</span>:
+                  <span class="nt">&lt;/label&gt;</span>
+                  <span class="nt">&lt;button</span> <span class="na">name=</span><span class="s">"btnLogin"</span> <span class="na">id=</span><span class="s">"btnLogin"</span><span class="nt">&gt;</span>Login<span class="nt">&lt;/button&gt;</span>
+                  <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"labelStatus"</span><span class="nt">&gt;&lt;/p&gt;</span>
+              <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/section&gt;</span>
+        
+          <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"read"</span> <span class="na">class=</span><span class="s">"panel"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;label</span> <span class="na">id=</span><span class="s">"writelabel"</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>2. Write your name: <span class="nt">&lt;/label&gt;</span>
+                  <span class="nt">&lt;input</span>
+                          <span class="na">type=</span><span class="s">"text"</span>
+                          <span class="na">id=</span><span class="s">"input_name"</span>
+                          <span class="na">name=</span><span class="s">"name"</span>
+                          <span class="na">size=</span><span class="s">"50"</span>
+                          <span class="na">value=</span><span class="s">"Your name here"</span>
+                  <span class="nt">/&gt;</span>
+                  <span class="nt">&lt;button</span> <span class="na">name=</span><span class="s">"btnWrite"</span> <span class="na">id=</span><span class="s">"btnWrite"</span><span class="nt">&gt;</span>Write to Profile<span class="nt">&lt;/button&gt;</span>
+              <span class="nt">&lt;/div&gt;</span>
+        
+              <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"display"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;dt&gt;</span>Writing status:<span class="err">&amp;</span>nbsp<span class="nt">&lt;/dt&gt;</span>
+                  <span class="nt">&lt;strong&gt;&lt;span</span> <span class="na">id=</span><span class="s">"labelWriteStatus"</span><span class="nt">&gt;</span>...not written yet...<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+              <span class="nt">&lt;/dl&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        
+          <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"read"</span> <span class="na">class=</span><span class="s">"panel"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;label</span> <span class="na">id=</span><span class="s">"readlabel"</span> <span class="na">for=</span><span class="s">"webID"</span>
+                  <span class="nt">&gt;</span>3. Read back name (anyone's!) from their WebID:
+                  <span class="nt">&lt;/label&gt;</span>
+                  <span class="nt">&lt;input</span>
+                          <span class="na">type=</span><span class="s">"url"</span>
+                          <span class="na">id=</span><span class="s">"webID"</span>
+                          <span class="na">name=</span><span class="s">"webID"</span>
+                          <span class="na">size=</span><span class="s">"50"</span>
+                          <span class="na">value=</span><span class="s">"...not logged in yet - but enter any WebID to read from its profile..."</span>
+                  <span class="nt">/&gt;</span>
+                  <span class="nt">&lt;button</span> <span class="na">name=</span><span class="s">"btnRead"</span> <span class="na">id=</span><span class="s">"btnRead"</span><span class="nt">&gt;</span>Read Profile<span class="nt">&lt;/button&gt;</span>
+              <span class="nt">&lt;/div&gt;</span>
+              <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"display"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;dt&gt;</span>Formatted Name (FN) read from Pod:<span class="err">&amp;</span>nbsp<span class="nt">&lt;/dt&gt;</span>
+                  <span class="nt">&lt;strong&gt;&lt;span</span> <span class="na">id=</span><span class="s">"labelFN"</span><span class="nt">&gt;</span>...not read yet...<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+              <span class="nt">&lt;/dl&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Create an <code class="language-plaintext highlighter-rouge">index.js</code> file with the following content:</p>
+
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">import</span> <span class="p">{</span>
+    <span class="nx">getSolidDataset</span><span class="p">,</span>
+    <span class="nx">getThing</span><span class="p">,</span>
+    <span class="nx">setThing</span><span class="p">,</span>
+    <span class="nx">getStringNoLocale</span><span class="p">,</span>
+    <span class="nx">setStringNoLocale</span><span class="p">,</span>
+    <span class="nx">saveSolidDatasetAt</span>
+  <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@inrupt/solid-client</span><span class="dl">"</span><span class="p">;</span>
+        
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">Session</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@inrupt/solid-client-authn-browser</span><span class="dl">"</span><span class="p">;</span>
+        
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">VCARD</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@inrupt/vocab-common-rdf</span><span class="dl">"</span><span class="p">;</span>
+        
+  <span class="c1">// If your Pod is *not* on `solidcommunity.net`, change this to your identity provider.</span>
+  <span class="kd">const</span> <span class="nx">IDENTITY_PROVIDER</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://solidcommunity.net</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">identity_provider</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`[&lt;a target="_blank" href="</span><span class="p">${</span><span class="nx">IDENTITY_PROVIDER</span><span class="p">}</span><span class="s2">"&gt;</span><span class="p">${</span><span class="nx">IDENTITY_PROVIDER</span><span class="p">}</span><span class="s2">&lt;/a&gt;]`</span><span class="p">;</span>
+      
+  <span class="kd">const</span> <span class="nx">NOT_ENTERED_WEBID</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">...not logged in yet - but enter any WebID to read from its profile...</span><span class="dl">"</span><span class="p">;</span>
+        
+  <span class="kd">const</span> <span class="nx">session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">();</span>
+        
+  <span class="kd">const</span> <span class="nx">buttonLogin</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#btnLogin</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">buttonWrite</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#btnWrite</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">buttonRead</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#btnRead</span><span class="dl">"</span><span class="p">);</span>
+      
+  <span class="c1">// Click button if the user hits the 'Enter' key when entering name.</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#input_name</span><span class="dl">"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">keyup</span><span class="dl">"</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">Enter</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">buttonWrite</span><span class="p">.</span><span class="nx">click</span><span class="p">();</span>
+      <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+        
+  <span class="c1">// Click button if the user hits the 'Enter' key when entering WebID.</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#webID</span><span class="dl">"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">keyup</span><span class="dl">"</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">Enter</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">buttonRead</span><span class="p">.</span><span class="nx">click</span><span class="p">();</span>
+      <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+        
+        
+  <span class="c1">// 1a. Start Login Process. Call session.login() function.</span>
+  <span class="k">async</span> <span class="kd">function</span> <span class="nx">login</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span>
+      <span class="o">!</span><span class="nx">session</span><span class="p">.</span><span class="nx">info</span><span class="p">.</span><span class="nx">isLoggedIn</span> <span class="o">&amp;&amp;</span>
+      <span class="o">!</span><span class="k">new</span> <span class="nx">URL</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">).</span><span class="nx">searchParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">code</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">)</span> <span class="p">{</span>
+      <span class="k">await</span> <span class="nx">session</span><span class="p">.</span><span class="nx">login</span><span class="p">({</span>
+        <span class="na">oidcIssuer</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://solidcommunity.net</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">clientName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Inrupt tutorial client app</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">redirectUrl</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+        
+  <span class="c1">// 1b. Login Redirect. Call session.handleIncomingRedirect() function.</span>
+  <span class="c1">// When redirected after login, finish the process by retrieving session information.</span>
+  <span class="k">async</span> <span class="kd">function</span> <span class="nx">handleRedirectAfterLogin</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="nx">session</span><span class="p">.</span><span class="nx">handleIncomingRedirect</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">session</span><span class="p">.</span><span class="nx">info</span><span class="p">.</span><span class="nx">isLoggedIn</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Update the page with the status.</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
+        <span class="dl">"</span><span class="s2">labelStatus</span><span class="dl">"</span>
+      <span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`Your session is logged in with the WebID [&lt;a target="_blank" href="</span><span class="p">${</span><span class="nx">session</span><span class="p">.</span><span class="nx">info</span><span class="p">.</span><span class="nx">webId</span><span class="p">}</span><span class="s2">"&gt;</span><span class="p">${</span><span class="nx">session</span><span class="p">.</span><span class="nx">info</span><span class="p">.</span><span class="nx">webId</span><span class="p">}</span><span class="s2">&lt;/a&gt;].`</span><span class="p">;</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelStatus</span><span class="dl">"</span><span class="p">).</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">role</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">alert</span><span class="dl">"</span><span class="p">);</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">webID</span><span class="dl">"</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">session</span><span class="p">.</span><span class="nx">info</span><span class="p">.</span><span class="nx">webId</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+        
+  <span class="c1">// The example has the login redirect back to the index.html.</span>
+  <span class="c1">// This calls the function to process login information.</span>
+  <span class="c1">// If the function is called when not part of the login redirect, the function is a no-op.</span>
+  <span class="nx">handleRedirectAfterLogin</span><span class="p">();</span>
+        
+  <span class="c1">// 2. Write to profile</span>
+  <span class="k">async</span> <span class="kd">function</span> <span class="nx">writeProfile</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">input_name</span><span class="dl">"</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+        
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">session</span><span class="p">.</span><span class="nx">info</span><span class="p">.</span><span class="nx">isLoggedIn</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// You must be authenticated to write.</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelWriteStatus</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`...you can't write [</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">] until you first login!`</span><span class="p">;</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelWriteStatus</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">`red`</span><span class="p">;</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">const</span> <span class="nx">webID</span> <span class="o">=</span> <span class="nx">session</span><span class="p">.</span><span class="nx">info</span><span class="p">.</span><span class="nx">webId</span><span class="p">;</span>
+        
+    <span class="c1">// To write to a profile, you must be authenticated. That is the role of the fetch</span>
+    <span class="c1">// parameter in the following call.</span>
+    <span class="kd">let</span> <span class="nx">myProfileDataset</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getSolidDataset</span><span class="p">(</span><span class="nx">webID</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">fetch</span><span class="p">:</span> <span class="nx">session</span><span class="p">.</span><span class="nx">fetch</span>
+    <span class="p">});</span>
+        
+    <span class="kd">let</span> <span class="nx">profile</span> <span class="o">=</span> <span class="nx">getThing</span><span class="p">(</span><span class="nx">myProfileDataset</span><span class="p">,</span> <span class="nx">webID</span><span class="p">);</span>
+        
+    <span class="c1">// Using the name provided in text field, update the name in your profile.</span>
+    <span class="c1">// VCARD.fn object is a convenience object that includes the identifier string "http://www.w3.org/2006/vcard/ns#fn".</span>
+    <span class="c1">// As an alternative, you can pass in the "http://www.w3.org/2006/vcard/ns#fn" string instead of VCARD.fn.</span>
+    <span class="nx">profile</span> <span class="o">=</span> <span class="nx">setStringNoLocale</span><span class="p">(</span><span class="nx">profile</span><span class="p">,</span> <span class="nx">VCARD</span><span class="p">.</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span>
+        
+    <span class="c1">// Write back the profile to the dataset.</span>
+    <span class="nx">myProfileDataset</span> <span class="o">=</span> <span class="nx">setThing</span><span class="p">(</span><span class="nx">myProfileDataset</span><span class="p">,</span> <span class="nx">profile</span><span class="p">);</span>
+        
+    <span class="c1">// Write back the dataset to your Pod.</span>
+    <span class="k">await</span> <span class="nx">saveSolidDatasetAt</span><span class="p">(</span><span class="nx">webID</span><span class="p">,</span> <span class="nx">myProfileDataset</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">fetch</span><span class="p">:</span> <span class="nx">session</span><span class="p">.</span><span class="nx">fetch</span>
+    <span class="p">});</span>
+        
+    <span class="c1">// Update the page with the retrieved values.</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelWriteStatus</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`Wrote [</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">] as name successfully!`</span><span class="p">;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelWriteStatus</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">`black`</span><span class="p">;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelFN</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">`red`</span><span class="p">;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelFN</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`...click the 'Read Profile' button to to see what the name might be now...?!`</span><span class="p">;</span>
+  <span class="p">}</span>
+        
+  <span class="c1">// 3. Read profile</span>
+  <span class="k">async</span> <span class="kd">function</span> <span class="nx">readProfile</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">webID</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">webID</span><span class="dl">"</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+        
+    <span class="k">if</span> <span class="p">(</span><span class="nx">webID</span> <span class="o">===</span> <span class="nx">NOT_ENTERED_WEBID</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelFN</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`Login first, or enter a WebID (any WebID!) to read from its profile`</span><span class="p">;</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelFN</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">`red`</span><span class="p">;</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+        
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="k">new</span> <span class="nx">URL</span><span class="p">(</span><span class="nx">webID</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">_</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelFN</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`Provided WebID [</span><span class="p">${</span><span class="nx">webID</span><span class="p">}</span><span class="s2">] is not a valid URL - please try again`</span><span class="p">;</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelFN</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">`red`</span><span class="p">;</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+        
+    <span class="c1">// Profile is public data; i.e., you do not need to be logged in to read the data.</span>
+    <span class="c1">// For illustrative purposes, shows both an authenticated and non-authenticated reads.</span>
+        
+    <span class="kd">let</span> <span class="nx">myDataset</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">session</span><span class="p">.</span><span class="nx">isLoggedIn</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">myDataset</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getSolidDataset</span><span class="p">(</span><span class="nx">webID</span><span class="p">,</span> <span class="p">{</span><span class="na">fetch</span><span class="p">:</span> <span class="nx">session</span><span class="p">.</span><span class="nx">fetch</span><span class="p">});</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">myDataset</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getSolidDataset</span><span class="p">(</span><span class="nx">webID</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelFN</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`Entered value [</span><span class="p">${</span><span class="nx">webID</span><span class="p">}</span><span class="s2">] does not appear to be a WebID. Error: [</span><span class="p">${</span><span class="nx">error</span><span class="p">}</span><span class="s2">]`</span><span class="p">;</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelFN</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">`red`</span><span class="p">;</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+        
+    <span class="kd">const</span> <span class="nx">profile</span> <span class="o">=</span> <span class="nx">getThing</span><span class="p">(</span><span class="nx">myDataset</span><span class="p">,</span> <span class="nx">webID</span><span class="p">);</span>
+        
+    <span class="c1">// Get the formatted name (fn) using the property identifier "http://www.w3.org/2006/vcard/ns#fn".</span>
+    <span class="c1">// VCARD.fn object is a convenience object that includes the identifier string "http://www.w3.org/2006/vcard/ns#fn".</span>
+    <span class="c1">// As an alternative, you can pass in the "http://www.w3.org/2006/vcard/ns#fn" string instead of VCARD.fn.</span>
+        
+    <span class="kd">const</span> <span class="nx">formattedName</span> <span class="o">=</span> <span class="nx">getStringNoLocale</span><span class="p">(</span><span class="nx">profile</span><span class="p">,</span> <span class="nx">VCARD</span><span class="p">.</span><span class="nx">fn</span><span class="p">);</span>
+        
+    <span class="c1">// Update the page with the retrieved values.</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelFN</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">`black`</span><span class="p">;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">labelFN</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`[</span><span class="p">${</span><span class="nx">formattedName</span><span class="p">}</span><span class="s2">]`</span><span class="p">;</span>
+  <span class="p">}</span>
+        
+  <span class="nx">buttonLogin</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">login</span><span class="p">();</span>
+  <span class="p">};</span>
+        
+  <span class="nx">buttonWrite</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">writeProfile</span><span class="p">();</span>
+  <span class="p">};</span>
+        
+  <span class="nx">buttonRead</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">readProfile</span><span class="p">();</span>
+  <span class="p">};</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+
+    <p><strong>NOTE:</strong> If your Pod is not on <code class="language-plaintext highlighter-rouge">https://solidcommunity.net</code>, modify the
+   value of the <code class="language-plaintext highlighter-rouge">IDENTITY_PROVIDER</code> variable accordingly.</p>
+  </li>
+  <li>
+    <p>Run the Application:</p>
+
+    <ul>
+      <li>
+        <p>In the <code class="language-plaintext highlighter-rouge">my-demo-app</code> directory, run:</p>
+
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  npx parcel index.html
+</code></pre></div>        </div>
+
+        <p>The output should resemble the following:</p>
+
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    Server running at http://localhost:1234
+    ...
+    Built <span class="k">in </span>2ms.
+</code></pre></div>        </div>
+
+        <p>If there are warnings with regards to the various source maps, you
+  can safely ignore them.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Open <code class="language-plaintext highlighter-rouge">localhost:1234</code> in a browser. If you want, you can also check out the running app on CodeSandbox. Note that you’ll have to open the app in a new window (button in the upper right hand corner) to be able to log in.<span> 
+<a href="https://codesandbox.io/s/musing-bouman-n1ghd"><img src="/assets/img/play-codesandbox.svg" alt="Edit on CodeSandbox" /></a>
+</span></p>
+  </li>
+  <li>
+    <p>Login.</p>
+
+    <ul>
+      <li>
+        <p>Click <code class="language-plaintext highlighter-rouge">Login</code> to login.</p>
+      </li>
+      <li>
+        <p>If you have logged out of your Pod, you are prompted to log in.
+Enter your username and password to log in.</p>
+      </li>
+      <li>
+        <p>The first time you log into your Pod with this brand new application you
+just created, you’ll be prompted to authorize it to access your Pod (it’ll
+be named <code class="language-plaintext highlighter-rouge">http://localhost:1234</code>). To allow the application to read and
+write to your Pod, click <code class="language-plaintext highlighter-rouge">Authorize</code>.</p>
+      </li>
+      <li>
+        <p>You should be redirected back to our client application.</p>
+
+        <p><strong>NOTE:</strong> If you encounter redirect issues trying to log in, you may
+  need to clear your browser’s cache.</p>
+      </li>
+      <li>
+        <p>You should now see a message telling you:</p>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   Your session is logged in with the WebID [&lt;your WebID&gt;].
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Now that you’re logged in, you can freely read and write the information in
+your Solid profile.</p>
+
+    <ul>
+      <li>Let’s start by simply clicking the <code class="language-plaintext highlighter-rouge">Read Profile</code> button.
+        <ul>
+          <li>You should see the name you entered when you registered your Pod.</li>
+        </ul>
+      </li>
+      <li>Now let’s update your name. Simply enter a new name in the ‘2. Write your
+name’ textfield, and click the ‘Write to Profile’ button.
+        <ul>
+          <li>You should see the message:
+            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Wrote [&lt;your new name&gt;] as name successfully!
+</code></pre></div>            </div>
+          </li>
+        </ul>
+      </li>
+      <li>Now let’s verify that your profile really was updated by clicking again on
+the ‘Read Profile’ button.
+        <ul>
+          <li>You should see the updated name displayed!</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>You can also read the public profiles of anyone else in the world with a
+Solid Pod by simply entering their WebID into the text box of section 3;
+ e.g., <code class="language-plaintext highlighter-rouge">https://docs-example.inrupt.net/profile/card#me</code> (<strong>NOTE:</strong> If you do try that example WebID, you should see the name
+<code class="language-plaintext highlighter-rouge">Changing Docs Example</code>!).</p>
+  </li>
+  <li>
+    <p>Exit the Application</p>
+
+    <ul>
+      <li>To exit the application, simply stop the <code class="language-plaintext highlighter-rouge">npx parcel</code> process; e.g.,
+ <code class="language-plaintext highlighter-rouge">Ctrl-C</code>.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="additional-information">Additional Information</h2>
+
+<h4 id="api-documentation">API Documentation</h4>
+
+<ul>
+  <li>
+    <p><a href="https://docs.inrupt.com/developer-tools/api/javascript/solid-client/README.html">solid-client API</a></p>
+  </li>
+  <li>
+    <p><a href="https://docs.inrupt.com/developer-tools/api/javascript/solid-client-authn-browser/README.html">solid-client-authn-browser API</a></p>
+  </li>
+</ul>
+
+<h4 id="react-sdk-availability">React SDK Availability</h4>
+
+<p>To create a sample application using Inrupt’s Solid React SDK, refer to the
+<a href="https://docs.inrupt.com/developer-tools/javascript/react-sdk/">Solid React SDK documentation</a></p>
+
+      </article>
+      <footer class="section is-small">
+        <a href="https://github.com/solid/solidproject.org/edit/staging/_posts/developers/apps/inrupt-tutorial/2020-11-06-00_getting-started.md" class="button is-text">Edit this page on GitHub</a>
+      </footer>
+    </div>
+    <aside id="sidebar" class="column is-one-third is-hidden-mobile section">
+      <div class="menu is-large">
+        
+          
+
+<ul class="menu-list" role="navigation">
+  
+    
+      <li>
+        
+          <a href="/developers/tutorials/getting-started">Tutorials</a>
+        
+        <!-- This is for categories with sub-categories -->
+        
+          <!-- List all posts in the category (no subcategories) -->
+          <ul>
+            
+              <li>
+                <a
+                  href="/developers/tutorials/getting-started"
+                   class="is-active" 
+                >Getting Started</a></li>
+            
+          </ul>
+        
+      </li>
+                    <a href="/developers/vocabularies"></a>
+    
+  
+    
+      <li>
+        
+          <a href="/developers/vocabularies">Vocabularies</a>
+        
+      </li>
+    
+  
+    
+      <li>
+        
+          <a href="/developers/tools">Tools and libraries</a>
+        
+      </li>
+    
+  
+</ul>
+
+        
+      </div>
+    </aside>
+  </div>
+</div>
+
+    </main>
+    <footer id="footer" class="footer">
+  <div class="container">
+    <div class="columns">
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <a class="title is-size-5" href="/">Home</a>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/users">Using Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/users/get-a-pod">Get a Pod</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/apps">Solid Apps</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/team">Team</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/labs">Research Labs</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/faqs">FAQs</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <span class="title is-size-5">What's New</span>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/newsletter">This Month in Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/events">Solid Events</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/press">Press</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <a class="title is-size-5" href="/developers">Developers</a>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/developers/tutorial/getting-started">Getting Started</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/self-hosting/">Self-hosting</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/funding">Funding</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="https://forum.solidproject.org">Forum</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <span class="title is-size-5">More</span>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/specification">Specification</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/license">License</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/logo-usage-guidelines">Logo usage guidelines</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="https://github.com/solid/solidproject.org/issues/new">Website feedback</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+    </div>
+  </div>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img
+          src="/assets/img/solid-emblem.svg"
+          alt="[Solid logo]"
+        />
+      </a>
+      <a class="navbar-item is-hidden-mobile" href="mailto:info@solidproject.org">
+        info@solidproject.org
+      </a>
+      <a class="navbar-item is-size-3-mobile is-hidden-tablet" href="mailto:info@solidproject.org" aria-label="info@solidproject.org">
+        @
+      </a>      
+      <a class="navbar-item" href="https://github.com/solid/" title="Solid on GitHub">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/github.svg"
+            alt="GitHub"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+      <a class="navbar-item" href="https://twitter.com/project_solid" title="Solid on Twitter">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/twitter.svg"
+            alt="Twitter"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+      <a class="navbar-item" href="https://vimeo.com/solidworld" title="Solid on Vimeo">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/vimeo-v.svg"
+            alt="Vimeo"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+    </div>
+  </nav>
+</footer>
+
+  </body>
+
+
+</html>

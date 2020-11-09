@@ -1,0 +1,640 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Well-known vocabularies · Solid</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/favicon.ico?"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+
+  <body>
+    <header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img
+          src="/assets/img/solid-emblem.svg"
+          alt="[Solid logo]"
+        />
+      </a>
+      <a class="navbar-item navbar-brand-name is-uppercase is-size-4" href="/">
+        Solid
+      </a>
+    </div>
+  
+    <div class="navbar-menu is-hidden-mobile">
+      <div class="navbar-end is-hidden-mobile">
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/developers"
+          >Developers</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/users"
+          >Users</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/newsletter"
+          >Newsletter</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/events"
+          >Events</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/specification"
+          >Specification</a>
+        
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    <div id="draft-warning"></div>
+<script>
+  if (
+    document.location.hostname === 'localhost'
+    || document.location.hostname === 'solid.github.io'
+    || document.location.hostname.substring(document.location.hostname.length - 10) === "vercel.app"
+  ) {
+    const draftWarningElement = document.getElementById('draft-warning')
+    draftWarningElement.innerHTML = `
+      <div class="message is-danger is-large" role="alert">
+        <div class="message-body">
+          You are currently viewing a draft version of the Solid website. If you are looking for reliable information, visit the live site at <a href="https://solidproject.org/developers/vocabularies/well-known" title="The official Solid website">SolidProject.org</a>.
+        </div>
+      </div>
+    `;
+  }
+</script>
+
+    
+  <nav id="breadcrumb" class="breadcrumb">
+    <div class="container">
+      <ul>
+        <li>
+          <a href="/">
+            Home
+          </a>
+        </li>
+        
+        
+          <li>
+            <a href="/developers/">
+              Developers
+            </a>
+          </li>
+        
+        
+        
+        
+          <li>
+            <a href="">
+              Well-known vocabularies
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+
+    <main>
+      <div class="container">
+  <div class="columns">
+    <div class="column is-two-thirds">
+      <article class="section content">
+        <p>This page references vocabularies that are widely used, and that are likely to cover some aspects of your app:</p>
+<ul>
+  <li><a href="#common">Common vocabularies</a> are all-purpose vocabularies solving everyday life issues (for app development)</li>
+  <li><a href="#technical">Technical vocabularies</a> are vocabularies describing technical entities: HTTP messages, RSS feeds…</li>
+  <li><a href="#core">Core vocabularies</a> are vocabularies used to build vocabularies.</li>
+  <li><a href="#solid">Solid vocabularies</a> are vocabularies present in the Solid standard.</li>
+</ul>
+
+<h1 id="-vocabularies-solving-common-issues"><a id="common"></a> Vocabularies solving common issues</h1>
+
+<p>These vocabularies have a general community support, and they address issues that are horizontal to many applications.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Frequently Asked Questions</th>
+      <th>Relevant vocabularies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>I want to talk about social interaction</td>
+      <td><a href="/developers/vocabularies/well-known/common#as">as</a></td>
+    </tr>
+    <tr>
+      <td>I want to talk about licenses</td>
+      <td><a href="/developers/vocabularies/well-known/common#cc">cc</a></td>
+    </tr>
+    <tr>
+      <td>I want to talk about documents’ metadata (author, title, etc.)</td>
+      <td><a href="/developers/vocabularies/well-known/common#dc">dc elements and terms</a></td>
+    </tr>
+    <tr>
+      <td>I want to talk about events</td>
+      <td><a href="/developers/vocabularies/well-known/common#as">as</a>, <a href="/developers/vocabularies/well-known/common#ical">ical</a></td>
+    </tr>
+    <tr>
+      <td>I want to talk about people, communities and organizations</td>
+      <td><a href="/developers/vocabularies/well-known/common#foaf">foaf</a>, <a href="/developers/vocabularies/well-known/common#vc">vcard</a>, <a href="/developers/vocabularies/well-known/common#sioc">sioc</a></td>
+    </tr>
+    <tr>
+      <td>I want to talk about places</td>
+      <td><a href="/developers/vocabularies/well-known/common#geonames">geonames</a>, <a href="/developers/vocabularies/well-known/common#geonames">wgs84</a></td>
+    </tr>
+    <tr>
+      <td>I want to describe an online meeting</td>
+      <td><a href="/developers/vocabularies/well-known/common#meeting">meeting</a></td>
+    </tr>
+    <tr>
+      <td>I want to talk about music</td>
+      <td><a href="/developers/vocabularies/well-known/common#mo">mo</a></td>
+    </tr>
+    <tr>
+      <td>I want to describe things that are usually found on web pages</td>
+      <td><a href="/developers/vocabularies/well-known/common#schema">schema</a></td>
+    </tr>
+    <tr>
+      <td>I want to talk about time and timezones</td>
+      <td><a href="/developers/vocabularies/well-known/common#time">time</a>, <a href="/developers/vocabularies/well-known/common#tzont">tzont</a></td>
+    </tr>
+    <tr>
+      <td>I want to track issues and log events</td>
+      <td><a href="/developers/vocabularies/well-known/common#rlog">rlog</a>, <a href="/developers/vocabularies/well-known/common#wf">wf</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="-vocabularies-describing-technical-elements"><a id="technical"></a> Vocabularies describing technical elements</h1>
+
+<p>These vocabularies are tied to technical standard.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Described element</th>
+      <th>Vocabulary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>X509 Certificates</td>
+      <td><a href="/developers/vocabularies/well-known/technical#cert">cert</a></td>
+    </tr>
+    <tr>
+      <td>HTTP messages</td>
+      <td><a href="/developers/vocabularies/well-known/technical#http">http</a></td>
+    </tr>
+    <tr>
+      <td>HTTP headers</td>
+      <td><a href="/developers/vocabularies/well-known/technical#httph">httph</a></td>
+    </tr>
+    <tr>
+      <td>Linked Data Platform</td>
+      <td><a href="/developers/vocabularies/well-known/technical">ldp</a></td>
+    </tr>
+    <tr>
+      <td>RSS feeds</td>
+      <td><a href="/developers/vocabularies/well-known/technical">rss</a></td>
+    </tr>
+    <tr>
+      <td>XML Schema</td>
+      <td><a href="/developers/vocabularies/well-known/technical#xsd">xsd</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="-core-vocabularies"><a id="core"></a> Core vocabularies</h1>
+
+<p>These vocabularies are used as building blocks to make the others.</p>
+
+<ul>
+  <li><a href="/developers/vocabularies/well-known/core#rdf">Resource Description Framework (rdf)</a></li>
+  <li><a href="/developers/vocabularies/well-known/core#rdfs">RDF Schema (rdfs)</a></li>
+  <li><a href="/developers/vocabularies/well-known/core#owl">Web Ontology Language (owl)</a></li>
+</ul>
+
+<h1 id="-vocabularies-essential-to-solid"><a id="solid"></a> Vocabularies essential to Solid</h1>
+
+<p>These vocabularies are the ones featured in the Solid standard.</p>
+
+<ul>
+  <li><a href="/developers/vocabularies/well-known/solid#acl">Access Control List (acl)</a></li>
+  <li><a href="/developers/vocabularies/well-known/technical">Linked Data Platform (ldp)</a></li>
+  <li><a href="/developers/vocabularies/well-known/technical#mime">Media types (mime)</a></li>
+  <li><a href="/developers/vocabularies/well-known/solid#terms">Solid terms</a></li>
+  <li><a href="/developers/vocabularies/well-known/solid#space">Workspace</a></li>
+  <li><a href="/developers/vocabularies/well-known/solid#posix">POSIX stat</a></li>
+  <li><a href="/developers/vocabularies/well-known/solid#ui">User Interface (ui)</a></li>
+</ul>
+
+<p>Your application requires a vocabulary that you did not find on this page? Maybe it’s out there somewhere. Next, we see how to <a href="/developers/vocabularies/discover">discover vocabularies</a>.</p>
+
+      </article>
+      <footer class="section is-small">
+        <a href="https://github.com/solid/solidproject.org/edit/staging/_posts/developers/apps/vocabularies/2019-01-01-04_well-known.md" class="button is-text">Edit this page on GitHub</a>
+      </footer>
+    </div>
+    <aside id="sidebar" class="column is-one-third is-hidden-mobile section">
+      <div class="menu is-large">
+        
+          
+
+<ul class="menu-list" role="navigation">
+  
+    
+      <li>
+        
+          <a href="/developers/tutorials/getting-started">Tutorials</a>
+        
+      </li>
+    
+  
+    
+      <li>
+        
+          <a href="/developers/vocabularies">Vocabularies</a>
+        
+        <!-- This is for categories with sub-categories -->
+        
+          
+            <ul>
+              <li>
+                
+                  
+                    <a href="/developers/vocabularies">Overview</a>
+                  
+                
+              </li>
+            </ul>
+          
+            <ul>
+              <li>
+                
+                  
+                    <a href="/developers/vocabularies/create/quickstart">Quickstart</a>
+                  
+                
+              </li>
+            </ul>
+          
+            <ul>
+              <li>
+                
+                  
+                    <a href="/developers/vocabularies/well-known">Discover</a>
+                  
+                  <ul>
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/well-known"
+                             class="is-active" 
+                          >Well-known vocabularies</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/well-known/common"
+                            
+                          >Common vocabularies</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/well-known/technical"
+                            
+                          >Vocabularies describing technical standards</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/well-known/core"
+                            
+                          >Core vocabularies for Linked Data</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/well-known/solid"
+                            
+                          >Vocabularies essential to solid</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/discover"
+                            
+                          >Discover new vocabularies</a>
+                        </li>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                  </ul>
+                
+              </li>
+            </ul>
+          
+            <ul>
+              <li>
+                
+                  
+                    <a href="/developers/vocabularies/create">Create</a>
+                  
+                
+              </li>
+            </ul>
+          
+            <ul>
+              <li>
+                
+                  
+                
+              </li>
+            </ul>
+          
+            <ul>
+              <li>
+                
+                  
+                
+              </li>
+            </ul>
+          
+        
+      </li>
+                    <a href="/developers/vocabularies"></a>
+    
+  
+    
+      <li>
+        
+          <a href="/developers/tools">Tools and libraries</a>
+        
+      </li>
+    
+  
+</ul>
+
+        
+      </div>
+    </aside>
+  </div>
+</div>
+
+    </main>
+    <footer id="footer" class="footer">
+  <div class="container">
+    <div class="columns">
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <a class="title is-size-5" href="/">Home</a>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/users">Using Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/users/get-a-pod">Get a Pod</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/apps">Solid Apps</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/team">Team</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/labs">Research Labs</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/faqs">FAQs</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <span class="title is-size-5">What's New</span>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/newsletter">This Month in Solid</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/events">Solid Events</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/press">Press</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <a class="title is-size-5" href="/developers">Developers</a>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/developers/tutorial/getting-started">Getting Started</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/self-hosting/">Self-hosting</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/funding">Funding</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="https://forum.solidproject.org">Forum</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div class="column">
+          <ul>
+            <li>
+              
+                <span class="title is-size-5">More</span>
+              
+            </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/specification">Specification</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/license">License</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="/logo-usage-guidelines">Logo usage guidelines</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a class="is-size-5" href="https://github.com/solid/solidproject.org/issues/new">Website feedback</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      
+    </div>
+  </div>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img
+          src="/assets/img/solid-emblem.svg"
+          alt="[Solid logo]"
+        />
+      </a>
+      <a class="navbar-item is-hidden-mobile" href="mailto:info@solidproject.org">
+        info@solidproject.org
+      </a>
+      <a class="navbar-item is-size-3-mobile is-hidden-tablet" href="mailto:info@solidproject.org" aria-label="info@solidproject.org">
+        @
+      </a>      
+      <a class="navbar-item" href="https://github.com/solid/" title="Solid on GitHub">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/github.svg"
+            alt="GitHub"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+      <a class="navbar-item" href="https://twitter.com/project_solid" title="Solid on Twitter">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/twitter.svg"
+            alt="Twitter"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+      <a class="navbar-item" href="https://vimeo.com/solidworld" title="Solid on Vimeo">
+        <span class="image is-24x24">
+          <img
+            src="/assets/img/fontawesome-free-5.11.2-web/svgs/brands/vimeo-v.svg"
+            alt="Vimeo"
+            class="brand-icon"
+          />
+        </span>
+      </a>
+    </div>
+  </nav>
+</footer>
+
+  </body>
+
+
+</html>

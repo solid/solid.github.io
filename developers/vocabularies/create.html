@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Use your vocabulary to describe data · Solid</title>
+    <title>Create your own vocabulary · Solid</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
@@ -32,23 +32,28 @@
         
           <a
             class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
-            href="/use-solid"
-          >Use Solid</a>
+            href="/developers"
+          >Developers</a>
         
           <a
             class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
-            href="/for-developers"
-          >For Developers</a>
+            href="/users"
+          >Users</a>
         
           <a
             class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
-            href="/for-enterprises"
-          >For Enterprises</a>
+            href="/newsletter"
+          >Newsletter</a>
         
           <a
             class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
-            href="/faqs"
-          >FAQ</a>
+            href="/events"
+          >Events</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/specification"
+          >Specification</a>
         
       </div>
     </div>
@@ -67,7 +72,7 @@
     draftWarningElement.innerHTML = `
       <div class="message is-danger is-large" role="alert">
         <div class="message-body">
-          You are currently viewing a draft version of the Solid website. If you are looking for reliable information, visit the live site at <a href="https://solidproject.org/for-developers/apps/vocabularies/use" title="The official Solid website">SolidProject.org</a>.
+          You are currently viewing a draft version of the Solid website. If you are looking for reliable information, visit the live site at <a href="https://solidproject.org/developers/vocabularies/create" title="The official Solid website">SolidProject.org</a>.
         </div>
       </div>
     `;
@@ -86,18 +91,17 @@
         
         
           <li>
-            <a href="/for-developers/">
-              For Developers
+            <a href="/developers/">
+              Developers
             </a>
           </li>
         
         
         
         
-        
           <li>
             <a href="">
-              Use your vocabulary to describe data
+              Create your own vocabulary
             </a>
           </li>
         
@@ -111,11 +115,33 @@
   <div class="columns">
     <div class="column is-two-thirds">
       <article class="section content">
-        <p>This page is under construction. Please refer to <a href="/for-developers/apps/vocabularies/use/quickstart">this one</a> in the meantime.</p>
+        <p>If you’re here, it means that there are portions of your application that are covered by no existing vocabulary. If this is the case, you’ll need to <strong>build your own vocabulary</strong>. Before getting started, let us remind you that the more existing vocabularies you reuse, the more reusable data from your app will be reusable by others. Therefore, a good thing to keep in mind is that your vocabulary should really be focused on a specific domain that you want to be able to describe, and for which nothing else exists.</p>
+
+<p>To make things more hands-on, we’ll see how <a href="https://cleopatra.solidcommunity.net/profile/card#me">Cleopatra</a> and <a href="https://jcaesar.solidcommunity.net/profile/card#me">Caesar</a> build an overly simplified obelisk vocabulary as a toy example.</p>
+
+<ol>
+  <li>If you are in a hurry:
+    <ul>
+      <li><a href="/developers/vocabularies/create/quickstart">Quickstart creation</a>: Build a vocabulary in 10 minutes</li>
+      <li><a href="/developers/vocabularies/use/quickstart">Quickstart usage</a>: Use this vocabulary to describe some data</li>
+      <li><a href="/developers/vocabularies/code/quickstart">Quickstart code</a>: Build a small app using your new vocabulary</li>
+    </ul>
+  </li>
+  <li>If you have some more time
+    <ul>
+      <li>Before implementing your own vocabulary, you might consider browsing these <a href="/developers/vocabularies/create/best-practices">best practices for building vocabularies</a></li>
+      <li><a href="/developers/vocabularies/create/extended">Extended creation</a>: Let us polish up the quickstart vocabulary to make it look even better by implementing these best practices</li>
+      <li>For a more advanced tutorial, there exist <a href="/developers/vocabularies/create/methodology">methodologies for building vocabularies</a></li>
+      <li><a href="/developers/vocabularies/use/extended">Extended usage</a>: Describe your data and store it in a Solid pod</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Once you have your vocabulary RDF and documentation, the next step is <a href="/developers/vocabularies/publish">publishing it</a>.</p>
 
       </article>
       <footer class="section is-small">
-        <a href="https://github.com/solid/solidproject.org/edit/staging/_posts/for-developers/apps/vocabularies/2019-01-01-19_use.md" class="button is-text">Edit this page on GitHub</a>
+        <a href="https://github.com/solid/solidproject.org/edit/staging/_posts/developers/apps/vocabularies/2019-01-01-10_create.md" class="button is-text">Edit this page on GitHub</a>
       </footer>
     </div>
     <aside id="sidebar" class="column is-one-third is-hidden-mobile section">
@@ -128,7 +154,7 @@
     
       <li>
         
-          <a href="/for-developers/apps/first-app">Writing a Solid application</a>
+          <a href="/developers/tutorials/getting-started">Tutorials</a>
         
       </li>
     
@@ -136,7 +162,7 @@
     
       <li>
         
-          <a href="/for-developers/apps/vocabularies">Vocabularies</a>
+          <a href="/developers/vocabularies">Vocabularies</a>
         
         <!-- This is for categories with sub-categories -->
         
@@ -145,7 +171,7 @@
               <li>
                 
                   
-                    <a href="/for-developers/apps/vocabularies">Overview</a>
+                    <a href="/developers/vocabularies">Overview</a>
                   
                 
               </li>
@@ -155,7 +181,7 @@
               <li>
                 
                   
-                    <a href="/for-developers/apps/vocabularies/create/quickstart">Quickstart</a>
+                    <a href="/developers/vocabularies/create/quickstart">Quickstart</a>
                   
                 
               </li>
@@ -165,7 +191,7 @@
               <li>
                 
                   
-                    <a href="/for-developers/apps/vocabularies/well-known">Discover</a>
+                    <a href="/developers/vocabularies/well-known">Discover</a>
                   
                 
               </li>
@@ -175,17 +201,7 @@
               <li>
                 
                   
-                    <a href="/for-developers/apps/vocabularies/create">Create</a>
-                  
-                
-              </li>
-            </ul>
-          
-            <ul>
-              <li>
-                
-                  
-                    <a href="/for-developers/apps/vocabularies/code">Code</a>
+                    <a href="/developers/vocabularies/create">Create</a>
                   
                   <ul>
                     
@@ -212,36 +228,74 @@
                       
                     
                       
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
                         <li>
                           <a
-                            href="/for-developers/apps/vocabularies/code"
-                            
-                          >Use your vocabulary in your app</a>
+                            href="/developers/vocabularies/create"
+                             class="is-active" 
+                          >Create your own vocabulary</a>
                         </li>
                       
                     
                       
                         <li>
                           <a
-                            href="/for-developers/apps/vocabularies/use"
-                             class="is-active" 
-                          >Use your vocabulary to describe data</a>
+                            href="/developers/vocabularies/create/best-practices"
+                            
+                          >Vocabulary building best practices</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/create/extended"
+                            
+                          >Improve your vocabulary</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/create/methodology"
+                            
+                          >NeOn, a vocabulary creation methodology</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/use/extended"
+                            
+                          >Describe data for Solid</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/publish"
+                            
+                          >Publish your vocabulary</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/publish/rdf"
+                            
+                          >Publish your vocabulary as RDF</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/publish/artifacts"
+                            
+                          >Publish your vocabulary as code artifacts</a>
                         </li>
                       
                     
@@ -258,23 +312,23 @@
               </li>
             </ul>
           
+            <ul>
+              <li>
+                
+                  
+                
+              </li>
+            </ul>
+          
         
       </li>
-                    <a href="/for-developers/apps/vocabularies"></a>
+                    <a href="/developers/vocabularies"></a>
     
   
     
       <li>
         
-          <a href="/for-developers/apps/common-patterns">Common patterns</a>
-        
-      </li>
-    
-  
-    
-      <li>
-        
-          <a href="/for-developers/apps/tools">Tools and libraries</a>
+          <a href="/developers/tools">Tools and libraries</a>
         
       </li>
     
@@ -302,19 +356,19 @@
             
               <li>
                 
-                  <a class="is-size-5" href="/use-solid">Use Solid</a>
+                  <a class="is-size-5" href="/users">Using Solid</a>
                 
               </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/use-solid/apps">Solid Apps</a>
+                  <a class="is-size-5" href="/users/get-a-pod">Get a Pod</a>
                 
               </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/implement">Implement Solid</a>
+                  <a class="is-size-5" href="/apps">Solid Apps</a>
                 
               </li>
             
@@ -326,7 +380,7 @@
             
               <li>
                 
-                  <a class="is-size-5" href="/labs">Labs</a>
+                  <a class="is-size-5" href="/labs">Research Labs</a>
                 
               </li>
             
@@ -355,13 +409,13 @@
             
               <li>
                 
-                  <a class="is-size-5" href="/press">Press</a>
+                  <a class="is-size-5" href="/events">Solid Events</a>
                 
               </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/events">Solid events</a>
+                  <a class="is-size-5" href="/press">Press</a>
                 
               </li>
             
@@ -372,19 +426,19 @@
           <ul>
             <li>
               
-                <a class="title is-size-5" href="/for-developers">For Developers</a>
+                <a class="title is-size-5" href="/developers">Developers</a>
               
             </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/for-developers/apps">Writing apps</a>
+                  <a class="is-size-5" href="/developers/tutorial/getting-started">Getting Started</a>
                 
               </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/for-developers/pod-server">Running a Pod server</a>
+                  <a class="is-size-5" href="/self-hosting/">Self-hosting</a>
                 
               </li>
             
@@ -413,7 +467,7 @@
             
               <li>
                 
-                  <a class="is-size-5" href="/standardisation">Standardisation</a>
+                  <a class="is-size-5" href="/specification">Specification</a>
                 
               </li>
             

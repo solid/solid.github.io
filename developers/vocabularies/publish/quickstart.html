@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Step 5: Writing data & what's next · Solid</title>
+    <title>Publish your vocabulary on your Pod · Solid</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
@@ -32,23 +32,28 @@
         
           <a
             class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
-            href="/use-solid"
-          >Use Solid</a>
+            href="/developers"
+          >Developers</a>
         
           <a
             class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
-            href="/for-developers"
-          >For Developers</a>
+            href="/users"
+          >Users</a>
         
           <a
             class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
-            href="/for-enterprises"
-          >For Enterprises</a>
+            href="/newsletter"
+          >Newsletter</a>
         
           <a
             class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
-            href="/faqs"
-          >FAQ</a>
+            href="/events"
+          >Events</a>
+        
+          <a
+            class="navbar-item is-size-6 is-size-5-tablet is-hidden-mobile"
+            href="/specification"
+          >Specification</a>
         
       </div>
     </div>
@@ -67,7 +72,7 @@
     draftWarningElement.innerHTML = `
       <div class="message is-danger is-large" role="alert">
         <div class="message-body">
-          You are currently viewing a draft version of the Solid website. If you are looking for reliable information, visit the live site at <a href="https://solidproject.org/for-developers/apps/first-app/5-writing-data" title="The official Solid website">SolidProject.org</a>.
+          You are currently viewing a draft version of the Solid website. If you are looking for reliable information, visit the live site at <a href="https://solidproject.org/developers/vocabularies/publish/quickstart" title="The official Solid website">SolidProject.org</a>.
         </div>
       </div>
     `;
@@ -86,18 +91,17 @@
         
         
           <li>
-            <a href="/for-developers/">
-              For Developers
+            <a href="/developers/">
+              Developers
             </a>
           </li>
         
         
         
         
-        
           <li>
             <a href="">
-              Step 5: Writing data & what's next
+              Publish your vocabulary on your Pod
             </a>
           </li>
         
@@ -111,48 +115,34 @@
   <div class="columns">
     <div class="column is-two-thirds">
       <article class="section content">
-        <p>(<a href="https://gitlab.com/vincenttunru/notepod/commit/41d805dadb1d85eecb9675fe715cfa82a1d89ef5">This step as a Git commit.</a>)</p>
+        <p>To share your vocabulary across different apps, the best way is to <strong>make it
+publicly available online</strong>. One easy way of publishing your vocabulary is
+<strong>putting it in your Pod</strong>. For instance, the obelisk vocabulary is published on
+<a href="https://cleopatra.solidcommunity.net/public/voc/obelisk.ttl">Cleopatra’s Pod</a>.</p>
 
-<p>Now that the user’s Pod is all set up, it’s time to store some actual notes. Luckily, <a href="/for-developers/apps/first-app/4-data-model">now that we
-already have our <code class="language-plaintext highlighter-rouge">notesList</code></a>, most of the heavy lifting is already done:</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">addNote</span><span class="p">(</span><span class="nx">note</span><span class="p">,</span> <span class="nx">notesList</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Initialise the new Subject:</span>
-  <span class="kd">const</span> <span class="nx">newNote</span> <span class="o">=</span> <span class="nx">notesList</span><span class="p">.</span><span class="nx">addSubject</span><span class="p">();</span>
-
-  <span class="c1">// Indicate that the Subject is a schema:TextDigitalDocument:</span>
-  <span class="nx">newNote</span><span class="p">.</span><span class="nx">addRef</span><span class="p">(</span><span class="nx">rdf</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span> <span class="nx">schema</span><span class="p">.</span><span class="nx">TextDigitalDocument</span><span class="p">);</span>
-
-  <span class="c1">// Set the Subject's `schema:text` to the actual note contents:</span>
-  <span class="nx">newNote</span><span class="p">.</span><span class="nx">addString</span><span class="p">(</span><span class="nx">schema</span><span class="p">.</span><span class="nx">text</span><span class="p">,</span> <span class="nx">note</span><span class="p">);</span>
-
-  <span class="c1">// Store the date the note was created (i.e. now):</span>
-  <span class="nx">newNote</span><span class="p">.</span><span class="nx">addDateTime</span><span class="p">(</span><span class="nx">schema</span><span class="p">.</span><span class="nx">dateCreated</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()))</span>
-
-  <span class="kd">const</span> <span class="nx">success</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">notesList</span><span class="p">.</span><span class="nx">save</span><span class="p">([</span><span class="nx">newNote</span><span class="p">]);</span>
-  <span class="k">return</span> <span class="nx">success</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<p><span class="codesandbox-button-wrapper">
-<a href="https://codesandbox.io/s/github/Vinnl/notepod/tree/5-writing-data/?module=%2Fsrc%2Fservices%2FaddNote.ts"><img src="/assets/img/play-codesandbox.svg" alt="Edit on CodeSandbox" /></a>
-</span></p>
-
-<p>With the user’s Pod fully set up, the above is all there is to it, really!</p>
-
-<p>So what’s next? Start writing your own App! A couple of suggestions for avenues to explore while doing so:</p>
-
+<p>It’s quite a straightforward operation:</p>
 <ul>
-  <li><a href="https://codesandbox.io/s/github/Vinnl/notepod/tree/5-writing-data/?module=%2Fsrc%2FApp.tsx">Play around in the completed note-taking app</a>.</li>
-  <li><a href="/for-developers/apps/vocabularies">Learn more about Vocabularies</a>: learn about commonly used Vocabularies, how to find other Vocabularies if those do not match your use case, or how to write your own if none suit your app.</li>
-  <li><a href="/for-developers/apps/tools">Try other libraries and tools</a>: we used <a href="https://vincenttunru.gitlab.io/tripledoc/">Tripledoc</a> in this tutorial, but you might be interested in libraries for languages other than JavaScript, or that give you more power.</li>
-  <li><a href="https://forum.solidproject.org/">Get help</a>: if you get stuck, please don’t hesitate to ask questions at our <a href="https://forum.solidproject.org/">Forum</a> or <a href="https://gitter.im/solid/chat">chat</a>.</li>
+  <li>create it as a new <code class="language-plaintext highlighter-rouge">Source</code> in a directory where people can access it,</li>
+  <li>paste your RDF into the newly created document,</li>
+  <li>there you go - you are now the proud owner of a published vocabulary!</li>
 </ul>
 
-<p>Good luck!</p>
+<p>If you don’t have a Pod yet, you can check out our
+ <a href="/use-solid">list of providers</a>, or <a href="/for-developers/pod-server">self-host your Pod</a>.</p>
+
+<p>Using a Pod IRI to store a vocabulary is fine during development, but imagine
+that your vocabulary grows hugely successful, and is used by multiple
+applications to describe the data they operate on. If you want to change your
+Pod provider, the IRI of your vocabulary would change, and all the applications
+depending on it would break. In our
+<a href="/developers/vocabularies/publish">advanced tutorial</a>, we’ll detail
+how to get a nice IRI, one that can be as <strong>permanent</strong> as possible.</p>
+
+<p>Next step: <a href="/developers/vocabularies/use/quickstart">use your vocabulary to describe some data</a>.</p>
 
       </article>
       <footer class="section is-small">
-        <a href="https://github.com/solid/solidproject.org/edit/staging/_posts/for-developers/apps/first-app/2019-01-01-05_writing-data.md" class="button is-text">Edit this page on GitHub</a>
+        <a href="https://github.com/solid/solidproject.org/edit/staging/_posts/developers/apps/vocabularies/2019-01-01-02_quickstart-publish.md" class="button is-text">Edit this page on GitHub</a>
       </footer>
     </div>
     <aside id="sidebar" class="column is-one-third is-hidden-mobile section">
@@ -165,75 +155,153 @@ already have our <code class="language-plaintext highlighter-rouge">notesList</c
     
       <li>
         
-          <a href="/for-developers/apps/first-app">Writing a Solid application</a>
+          <a href="/developers/tutorials/getting-started">Tutorials</a>
+        
+      </li>
+    
+  
+    
+      <li>
+        
+          <a href="/developers/vocabularies">Vocabularies</a>
         
         <!-- This is for categories with sub-categories -->
         
-          <!-- List all posts in the category (no subcategories) -->
-          <ul>
-            
+          
+            <ul>
               <li>
-                <a
-                  href="/for-developers/apps/first-app"
+                
                   
-                >Introduction</a></li>
-            
-              <li>
-                <a
-                  href="/for-developers/apps/first-app/1-authentication"
+                    <a href="/developers/vocabularies">Overview</a>
                   
-                >Step 1: identifying the user</a></li>
-            
+                
+              </li>
+            </ul>
+          
+            <ul>
               <li>
-                <a
-                  href="/for-developers/apps/first-app/2-understanding-solid"
+                
                   
-                >Step 2: Understanding Solid</a></li>
-            
-              <li>
-                <a
-                  href="/for-developers/apps/first-app/3-reading-data"
+                    <a href="/developers/vocabularies/create/quickstart">Quickstart</a>
                   
-                >Step 3: Reading data</a></li>
-            
+                  <ul>
+                    
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/create/quickstart"
+                            
+                          >How to create your own vocabulary</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/publish/quickstart"
+                             class="is-active" 
+                          >Publish your vocabulary on your Pod</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/use/quickstart"
+                            
+                          >Describe data</a>
+                        </li>
+                      
+                    
+                      
+                        <li>
+                          <a
+                            href="/developers/vocabularies/code/quickstart"
+                            
+                          >Code with your vocabulary</a>
+                        </li>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                  </ul>
+                
+              </li>
+            </ul>
+          
+            <ul>
               <li>
-                <a
-                  href="/for-developers/apps/first-app/4-data-model"
+                
                   
-                >Step 4: Setting up a Data Model</a></li>
-            
+                    <a href="/developers/vocabularies/well-known">Discover</a>
+                  
+                
+              </li>
+            </ul>
+          
+            <ul>
               <li>
-                <a
-                  href="/for-developers/apps/first-app/5-writing-data"
-                   class="is-active" 
-                >Step 5: Writing data & what's next</a></li>
-            
-          </ul>
+                
+                  
+                    <a href="/developers/vocabularies/create">Create</a>
+                  
+                
+              </li>
+            </ul>
+          
+            <ul>
+              <li>
+                
+                  
+                
+              </li>
+            </ul>
+          
+            <ul>
+              <li>
+                
+                  
+                
+              </li>
+            </ul>
+          
         
       </li>
-                    <a href="/for-developers/apps/vocabularies"></a>
+                    <a href="/developers/vocabularies"></a>
     
   
     
       <li>
         
-          <a href="/for-developers/apps/vocabularies">Vocabularies</a>
-        
-      </li>
-    
-  
-    
-      <li>
-        
-          <a href="/for-developers/apps/common-patterns">Common patterns</a>
-        
-      </li>
-    
-  
-    
-      <li>
-        
-          <a href="/for-developers/apps/tools">Tools and libraries</a>
+          <a href="/developers/tools">Tools and libraries</a>
         
       </li>
     
@@ -261,19 +329,19 @@ already have our <code class="language-plaintext highlighter-rouge">notesList</c
             
               <li>
                 
-                  <a class="is-size-5" href="/use-solid">Use Solid</a>
+                  <a class="is-size-5" href="/users">Using Solid</a>
                 
               </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/use-solid/apps">Solid Apps</a>
+                  <a class="is-size-5" href="/users/get-a-pod">Get a Pod</a>
                 
               </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/implement">Implement Solid</a>
+                  <a class="is-size-5" href="/apps">Solid Apps</a>
                 
               </li>
             
@@ -285,7 +353,7 @@ already have our <code class="language-plaintext highlighter-rouge">notesList</c
             
               <li>
                 
-                  <a class="is-size-5" href="/labs">Labs</a>
+                  <a class="is-size-5" href="/labs">Research Labs</a>
                 
               </li>
             
@@ -314,13 +382,13 @@ already have our <code class="language-plaintext highlighter-rouge">notesList</c
             
               <li>
                 
-                  <a class="is-size-5" href="/press">Press</a>
+                  <a class="is-size-5" href="/events">Solid Events</a>
                 
               </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/events">Solid events</a>
+                  <a class="is-size-5" href="/press">Press</a>
                 
               </li>
             
@@ -331,19 +399,19 @@ already have our <code class="language-plaintext highlighter-rouge">notesList</c
           <ul>
             <li>
               
-                <a class="title is-size-5" href="/for-developers">For Developers</a>
+                <a class="title is-size-5" href="/developers">Developers</a>
               
             </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/for-developers/apps">Writing apps</a>
+                  <a class="is-size-5" href="/developers/tutorial/getting-started">Getting Started</a>
                 
               </li>
             
               <li>
                 
-                  <a class="is-size-5" href="/for-developers/pod-server">Running a Pod server</a>
+                  <a class="is-size-5" href="/self-hosting/">Self-hosting</a>
                 
               </li>
             
@@ -372,7 +440,7 @@ already have our <code class="language-plaintext highlighter-rouge">notesList</c
             
               <li>
                 
-                  <a class="is-size-5" href="/standardisation">Standardisation</a>
+                  <a class="is-size-5" href="/specification">Specification</a>
                 
               </li>
             
