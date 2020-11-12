@@ -2199,6 +2199,9 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 
 .footer { background-color: #202542; padding: 3rem 1.5rem 0; color: #d8d8d8; }
 
+body { display: flex; min-height: 100vh; flex-direction: column; }
+body #main { flex-grow: 1; }
+
 #breadcrumb { border-bottom: 1px solid #f4f4f4; }
 
 #home-hero { background-image: url("/assets/img/solid-bg-dark-ui.svg"); background-blend-mode: soft-light; background-repeat: no-repeat; background-size: cover; }
